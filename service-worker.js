@@ -3,7 +3,7 @@ const CACHE_NAME  = 'MWALLEducator';
 
 /* Add relative URL of all the static content you want to store in
  * cache storage (this will help us use our app offline)*/
-let resourcesToCache = ["./"];
+let resourcesToCache = ["../vendor/js/","../vendor/style/"];
 
 self.addEventListener("install", e=>{
     e.waitUntil(
