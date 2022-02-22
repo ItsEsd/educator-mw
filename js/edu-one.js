@@ -91,6 +91,10 @@ function ctrlqup(e) {
   document.getElementById("loaderPro").style.visibility = "hidden";
   document.getElementById("eduProUpdate").disabled = true;
   document.getElementById("updateNotice").innerHTML = "<br>Information updated successfully<br>";
+  let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", '/');
+document.title = "Educator | MASTROWALL";
   deleteAllCookies();
   setTimeout(function(){ inwallEdu(),2000});
 }
@@ -175,6 +179,14 @@ document.body.style.pointerEvents ="auto";
 //   document.getElementById("prepost").style.display = "none";
   document.getElementById("loader").style.display = "none";
 //  live_tod();
+var fname = res[0].FName;
+var lname = res[0].LName;
+var name = fname.toLowerCase()+'-'+lname.toLowerCase();
+var shname = name.split(" ").join("-");
+let stateObj = { id: "0" };
+ window.history.replaceState(stateObj,
+       "", shname);
+document.title = res[0].FName + ' ' + res[0].LName +" | MASTROWALL";
 ewfSetCookie(14);
 }
 else{
