@@ -22,8 +22,8 @@ function getCookie(cname) {
 for(var p=0;p<ca.length;p++){
 var cookstr = ca[p].split('mwallced=')[1];
 if(cookstr=="true"){
-  var paem = atob(ca[p+1].split('mwallpswedus=')[1]);
-  var pacd = atob(ca[p+2].split('mwallpswedud=')[1]);
+  var paem = window.atob(ca[p+1].split('mwallpswedus=')[1]);
+  var pacd = window.atob(ca[p+2].split('mwallpswedud=')[1]);
   document.getElementById('email').value= paem;
   document.getElementById('pcodeEdu').value= pacd;
   inwallEdu();
