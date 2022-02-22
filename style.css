@@ -41,7 +41,7 @@ body {
     display: inline-block;
     width: 60px;
     height: 60px;
-    margin-top: 30%;
+    margin-top: 300px;
     display:none;
   }
 
@@ -856,6 +856,7 @@ float:left;
     padding:40px;
     font-size: 20px;
     padding-top:190px;
+    display:block;
   }
   .nocontentallst svg{
     margin-bottom:20px;
