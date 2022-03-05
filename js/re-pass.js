@@ -41,11 +41,11 @@ else{
     var mailat =  document.getElementById('mailrepass').value;
     document.getElementById('vercodepre').value = k;
       Email.send({
-        SecureToken : "2ecae5a7-d0bc-4df8-a933-fedd48053e4c",
+        SecureToken : "596b8b7e-d5a8-4bf3-88b5-2183733319bf",
         To: mailat,
         From: "noreply@mastrowall.com",
           Subject: "Email Verification",
-          Body:  "<html><body style='background-color:#161616;color:white;border-radius:10px;'><div align='center' style='padding:40px;'><h2 style='color:white'>W E L C O M E</h2><h2><a target='_blank' href='https://mastrowall.com' style='text-decoration:none;'>M A S T R O W A L L</a></h2>" + "<p style='color:white;'>Your Confirmation Code is: </p><h3 style='color:black;width:140px;background-color:#e6e6e6;border-radius:4px;padding:6px;'>"+ k +"</h3><br><p style='color:white;'>Contact: <a href='mailto:mail@mastrowall.in'>mail@mastrowall.in</a></p><h4 style='color:white;'>Thank You</h4><p style='font-size:12px;color:#cccccc;'>N.B. Do not reply to this email</p></div></body></html>",
+          Body:  "<html><body style='background-color:#161616;color:white;border-radius:10px;'><div align='center' style='padding:40px;'><h2 style='color:white'>W E L C O M E</h2><h2><a target='_blank' href='https://mastrowall.com' style='text-decoration:none;'>M A S T R O W A L L</a></h2>" + "<p style='color:white;'>Your Confirmation Code is: </p><h3 style='color:black;width:140px;background-color:#e6e6e6;border-radius:4px;padding:6px;'>"+ k +"</h3><br><p style='color:white;'>Contact: <a href='mailto:mail@mastrowall.com'>mail@mastrowall.com</a></p><h4 style='color:white;'>Thank You</h4><p style='font-size:12px;color:#cccccc;'>N.B. Do not reply to this email</p></div></body></html>",
       })
           .then(function (message) {
         document.getElementById('checkemid-2').style.display= 'block';
