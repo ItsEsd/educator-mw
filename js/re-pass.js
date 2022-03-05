@@ -41,7 +41,7 @@ else{
     var mailat =  document.getElementById('mailrepass').value;
     document.getElementById('vercodepre').value = k;
       Email.send({
-        SecureToken : "a8f44c63-6666-407d-9a0c-7635d614d5fb",
+        SecureToken : "6c70cce5-9887-4231-b703-afed94e0bd85",
         To: mailat,
         From: "noreply@mastrowall.com",
           Subject: "Email Verification",
