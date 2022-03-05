@@ -39,7 +39,7 @@
   <body>
     <div align="center">
       <div id="signInEdu" style="padding-top:85px;"><img src="images/educator.webp" style="pointer-events:none;width: 140px;">
-        <form id="df" onsubmit="inwallEdu(); return false;">
+        <form id="df" onsubmit="inwallEdu();" target="hdnfrm">
           <div class="form-group"><label for="inputEmail">Email address:</label> <input type="email" class="form-control" id="email" placeholder="Enter email" required /> </div>
           <div class="from-group"><label for="inputPass">Password:</label> <input type="password" class="form-control" id="pcodeEdu" placeholder="Enter password" required /> </div> <br>
           <div align="center"> <input type="submit" class="btn btn-primary" id="logEdu" value="Sign In" /> </div>
@@ -109,7 +109,7 @@
           <div align="center" class="allHide" id="updateTOD" style="display:none;">
            <!----<hr style="max-width:600px;">---->
             <h6 style="line-height:20px;">Update Topic</h6>
-            <form id="text_editor" onsubmit="return false" name="tod_editor">
+            <form id="text_editor" target="hdnfrm" name="tod_editor">
               <div class="input_fields_wrap">
                 <div class="container tod"> 
                   <input type="text" id="ttdtitle" oninput="ProTOD();" class="form-control border-hide todtitle" name="title" placeholder="Title of the topic" autocomplete="off" required>
@@ -160,7 +160,7 @@
             <div align="left" id="loadconnectdiv"><div align="center"><div id="loaderCON" class="spinner-border text-primary"></div></div>
             <span id="connect1"></span><span id="connect2"></span></div>
             <div id="editConnect" style="background-color:#f0f0f0;" align="center">
-              <form name="eduProConnect" onsubmit="return false">
+              <form name="eduProConnect" target="hdnfrm">
                 <div style="width:100%;float:left; margin:10px;" class="form-group">
                   <div class="row ">
                     <div class="form-group col2 "> <input class="form-control editProFormCss addconnect" type="text" style="width:120px; height:40px;margin-left:15px;" id="gconnect" name="idConnect" placeholder="Phone No." maxlength="10" required></div>
@@ -319,7 +319,7 @@
       <div id="resetp" align="center">
       <div id="resetp_one" class="repass">
         <h5 style="text-align: left;">Reset Password</h5><hr>
-      <form id="repassone" onsubmit="return false;">
+      <form id="repassone" target="hdnfrm">
         <input type="email" class="form-control" placeholder="Enter registered email" id="mailrepass" required/><br/>
         <input type="submit" class="btn btn-outline-dark" value="Continue >>"/>
         <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
@@ -328,7 +328,7 @@
       </div>
       <div id="resetp_two"class="repass">
         <h5 style="text-align: left;">Reset Password</h5><hr>
-        <form id="repasstwo" onsubmit="return false;">
+        <form id="repasstwo" target="hdnfrm">
           <input type="text" class="form-control" placeholder="Verification Code" id="vercode" oninput="verfycode();" required/><br/>
           <input type="submit" class="btn btn-outline-dark" id="verconfirm" value="Continue >>" onclick="$('#resetp_two').hide();$('#resetp_three').show('fast');" disabled/>
           <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
@@ -337,7 +337,7 @@
       </div>
       <div id="resetp_three"class="repass">
         <h5 style="text-align: left;">Reset Password</h5><hr>
-        <form id="repassthree" onsubmit="return false;">
+        <form id="repassthree" target="hdnfrm">
           <input type="password" class="form-control" placeholder="New Password" id="passwordnew" required/><br/>
           <span id="messagenew" style="float:right;margin-right:10px; color:red;"></span>
           <input type="password" class="form-control" placeholder="Confirm Password Code" id="confirm_passwordnew" required/><br/>
@@ -396,7 +396,7 @@
   </div></div>
   
   <div id="formsttod">
-  <form onsubmit="return false;" id="strtodedu">
+  <form target="hdnfrm" id="strtodedu">
   <input type="text" placeholder="TOD Id" id="todid" class="form-control sectodinput" required/>
   <input type="text" placeholder="Key" id="todpass"  class="form-control sectodinput" required/><br>
   <textarea placeholder="Comment"  id="todcmnt" class="form-control todcomm" rows="4" required></textarea><br>
@@ -427,7 +427,7 @@
         </div>
         
         <div class="clroomdivbd-two">
-          <form onsubmit="return false;">
+          <form target="hdnfrm">
             <input type="text" placeholder="Exam ID" class="form-control sectodinput" required/>
             <input type="text" placeholder="Exam Pass" class="form-control sectodinput" required/><br>
             <input type="submit" value="Save Exam" class="showexbtn"/>    
@@ -440,7 +440,7 @@
     </div>
     </div>
 </section>
-
+<iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
 <section>
   <div id="fbandreview" class="fwidthtwo" align="center">
     <div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle">Feedback & Reviews</span> </div> 
