@@ -51,8 +51,8 @@
         <div  style="margin-top:40px;left:0px;width:100%;position: relative;"><p align="center">© M A S T R O W A L L</p></div>
       </div>
     </div>
-    <div align="center">
-      <div id="EduDashboard" style="display:none;">
+    <div align="center" id="connectandeditpro">
+      <div id="EduDashboard">
        <div id="classrm"> <span onclick="openConnect();" class="classroominfo">
         <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
           <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
@@ -159,8 +159,14 @@
         <!--------connectivity------->
         <section>
         <div align="center" id="connectivityedu">  <div id="edconnectdiv">
+          <div id="editprofileedu"> <button type="button" class="btn btn-light" id="editEduPro"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> Edit Profile Information</button>
+     <!-- <hr style="max-width:400px;">-->  
+          <input id="cls2" type="button" class="btn-success" onclick="document.getElementById('connectivityedu').style.display='none';" value="Close"/>
+          </div>
           <div id="goconnect" >
-           <h4 align="left" style="margin:20px;">Connectivity:</h4>
+           <h5 align="left" style="margin:20px;">Connectivity:</h5>
             <div align="left" id="loadconnectdiv"><div align="center"><div id="loaderCON" class="spinner-border text-primary"></div></div>
             <span id="connect1"></span><span id="connect2"></span></div>
             <div id="editConnect" style="background-color:#f0f0f0;" align="center">
@@ -182,22 +188,18 @@
                   </div>
                 </div>
                 <div id="nxt"> 
-                  <input type="submit" class="btn-success" value="Next" style="padding:4px 16px;border-radius:4px;margin-right:6px;background-color:#008000;color:white;border:none;" />
-                  <input type="button" id="cls1" class="btn-success" onclick="document.getElementById('connectivityedu').style.display='none';" value="Close" />
+                  <input type="submit" id="connectnxtbtn" class="btn-success" value="Next" />
+                  <input type="button" id="cls1" class="btn-danger" onclick="document.getElementById('connectivityedu').style.display='none';" value="Close" />
                 </div>
                 <div id="sv" style="display:none;"> 
                   <input id="svconnect" type="button" value="Save" class="btn-danger"/>
-                  <input id="cls2" type="button" class="btn-success" onclick="document.getElementById('connectivityedu').style.display='none';" value="Close"/></div>
+                 </div>
               </form><br>
                <span style="color:black" id="connectUp"></span> 
                <input id="connectivity" style="display:none;" />
             </div>
           </div>
-          <div id="editprofileedu"> <button type="button" class="btn btn-light" id="editEduPro"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> Edit Profile Information</button>
-     <!-- <hr style="max-width:400px;">-->  
-      </div>
+         
         </div></div></section>
         <!--------------Edit Profile-------------->
         <section>
@@ -439,11 +441,13 @@
           <form target="hdnfrm">
             <input type="text" placeholder="Exam ID" class="form-control sectodinput" required/>
             <input type="text" placeholder="Exam Pass" class="form-control sectodinput" required/><br>
-            <input type="submit" value="Save Exam" class="showexbtn"/>    
+            <input type="submit" value="Save Exam" class="showexbtn" disabled/>    
         <input type="button" value="Close"  onclick="$('#experform').hide();" class='showexbtn'>
         </form>
         </div>
         
+           <button class="btn btn-danger" onclick="window.open('https://exam-portal.mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');" id="examportalbtn">Exam Portal</button>
+
         </div>
 
     </div>
