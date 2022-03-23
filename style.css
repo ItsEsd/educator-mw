@@ -1,7 +1,7 @@
 body {
     overflow-x: hidden;
     min-height: 460px;
-    background-color: #7facff;
+    background-color: #cfcfcf;
     padding-bottom:85px;
   }
 
@@ -323,7 +323,7 @@ body {
   }
 
   #upDash{
-    background-image: linear-gradient(to top right, #7fb6ff, white);
+    background-image: linear-gradient(to top right, #526af3, white);
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
     max-width:90%;
@@ -337,7 +337,7 @@ body {
     
   }
   #footdashcenter{
-    background-image: linear-gradient(to bottom right, #0c29cd, white);
+    background-image: linear-gradient(to bottom right, #585858, white);
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
     max-width: 1000px;
@@ -363,16 +363,15 @@ body {
   .classroominfo{
     margin-top:10px;
     float:right;
-    font-size: 16px;
     cursor: pointer;
     color:white;
-    padding:6px 10px;
-    background-color: #100880;
+    padding:2px;
+    background-color: #474747;
     opacity:0.96;
+    border-radius: 50%;
   }
-  .classroominfo:hover{
-    background-color: #161616;
-  }
+ 
+
   #classrm{
     bottom:56px;
     right:20px;
@@ -384,8 +383,8 @@ body {
     transform: scale(1.06);
   }
 #classrm svg{
-width:40px;
-height:40px;
+width:50px;
+height:50px;
 }
   @keyframes zoom-in-zoom-out {
     0% {
@@ -479,7 +478,7 @@ height:40px;
 }
 
 #infoMastrowallEdu{
-  padding-top: 6px;
+  padding-top: 0px;
 }
 .closedashfull{
   font-size: 16px;
@@ -1281,4 +1280,24 @@ position: fixed;
   display: inline-block;
   margin-left:4px;
   font-size: 14px;
+}
+
+#editprofileedu{
+margin-top:60px;
+}
+
+#mwallopennew{
+  width:100%;
+max-width:400px;
+padding:4px 40px;
+margin-top:6px;
+background-color: #1b1b1bb9;
+border: 0px;
+border-radius: 0px;
+border-bottom: 1px solid white;
+color:white;
+text-align: center;
+}
+#mwallopennew:hover{
+background-color: #1b1b1b86;
 }
