@@ -253,6 +253,7 @@ body {
     display:none;
     width:100%;
     max-width:720px;
+    opacity: 1;
   }
 
   .editProFormCss {
@@ -343,6 +344,7 @@ body {
     max-width: 1000px;
     padding: 10px;
   }
+
   .card-body {
     background-color: #0c29cd;
     color: white;
@@ -501,24 +503,27 @@ height:50px;
   display: none;
   overflow-y: hidden;
  background-color: #161616cc;
+ padding:2px;
 }
 #edconnectdiv{
-  top:0px;
+  bottom:120px;
+  margin-right:20px;
  width:100%;
- height:100%;
+ height:500px;
  overflow-y: hidden;
   right:0px;
-  position: absolute;
+  position: fixed;
   background-color: #fff;
   background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, .2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .2) 75%, transparent 75%, transparent);
   background-image: -webkit-linear-gradient(0deg, rgba(0, 0, 0, .2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .2) 75%, transparent 75%, transparent);
   -moz-background-size: 4px 4px;
   background-size: 6px 6px;
   width:100%;
-  max-width:500px;
+  max-width:400px;
+  border-radius: 10px;
 }
 #goconnect{
-  margin-top: 100px;
+  margin-top: 20px;
   width:100%;
   max-width:340px;
   display:none;
@@ -528,7 +533,7 @@ height:50px;
 }
 #editConnect{
 
-  max-height:300px;
+  max-height:240px;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -978,7 +983,11 @@ opacity: 0.90;
   -moz-background-size: 4px 4px;
   background-size: 6px 6px;
 }
-
+#examportalbtn{
+  bottom:20px;
+  right:20px;
+  position: fixed;
+}
 .showexbtn{
   margin-top:4px;
   margin-right:4px;
@@ -1259,13 +1268,24 @@ position: fixed;
   display:none;
   margin-top:30px;
 }
-
+#editEduPro svg{
+  height:22px;
+  width:22px;
+  margin-right:4px;
+}
+#editEduPro{
+margin-right: 4px;
+}
 #cls1{
-  border-radius:4px;padding:4px 16px;background-color:#008000;color:white;border:none;
+  padding:4px 16px;background-color:#f3351c;color:white;border:0px;
 }
 
 #cls2{
-  border-radius:4px;padding:4px 16px;background-color:#008000;color:white;border:none;
+ padding:7px 20px;background-color:#03b803;color:white;border:0px;
+ top:20px;right:10px;position: absolute;
+}
+#connectnxtbtn{
+  padding:4px 40px;border-radius:0px;margin:4px;background-color:#03b803;color:white;border:none;
 }
 
 #svconnect{
@@ -1283,7 +1303,10 @@ position: fixed;
 }
 
 #editprofileedu{
-margin-top:60px;
+  padding:10px;
+  padding-top:20px;
+  padding-bottom:20px;
+background-color: #141414;
 }
 
 #mwallopennew{
@@ -1300,4 +1323,11 @@ text-align: center;
 }
 #mwallopennew:hover{
 background-color: #1b1b1b86;
+}
+#EduDashboard{
+  
+  display:none;
+}
+#connectandeditpro{
+z-index: 1;
 }
