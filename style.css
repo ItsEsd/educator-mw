@@ -1375,3 +1375,35 @@ height:20px;
   margin-top:6px;
   font-size: 14px;
 }
+
+.sharebiton{
+  float:right;
+  background-color: #ffffff;
+  border-radius: 50px;
+  cursor: pointer;
+  color:#000000;
+}
+.sharebiton svg{
+  width:40px;
+  height:40px;
+  padding:10px;
+}
+.sharebiton:hover{
+background-color:#181717;
+color:white;
+}
+
+#lkcopied{
+  bottom:20px;
+  position: fixed;
+  width:100%;
+  z-index:10000;
+  display: none;
+}
+#lkcopied div{
+  max-width:240px;
+  font-size: 16px;
+  padding:10px;
+  background-color: #e9b405;
+  border-radius: 0px;
+}
