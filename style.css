@@ -419,6 +419,7 @@ height:50px;
   padding:10px;
   width:100%;
   max-width: 900px;
+  display:none;
 }
   #educlassroom{
     top:0px;
@@ -885,7 +886,7 @@ float:left;
   #noexiddiv{
     padding:20px;
     max-width: 300px;
-    background-color: #474749;
+    background-color: #1f1f1f;
     color:white;
   }
   @keyframes MoveUpDown {
@@ -1330,4 +1331,47 @@ background-color: #1b1b1b86;
 }
 #connectandeditpro{
 z-index: 1;
+}
+
+
+#showdelnote{
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  position: fixed;
+  padding:10px;
+  background-color: #050505be;
+  display:none;
+}
+
+#delnote{
+  width:100%;
+  margin-top:200px;
+  padding:20px;
+  max-width:300px;
+  background-color: white;
+}
+#delnote h4{
+  text-align: center;
+  line-height:40px;
+  font-size: 20px;
+}
+#delnote svg{
+  width:40px;
+  height:40px;
+  color:#f53c3c;
+}
+
+#delnote button{
+  padding:4px 20px;}
+
+#editpronotebtn svg{
+width:20px;
+height:20px;
+}
+
+#editpronotebtn button{
+  margin-top:6px;
+  font-size: 14px;
 }
