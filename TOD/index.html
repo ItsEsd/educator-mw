@@ -196,7 +196,7 @@
    
 <script>
   $("#previewTD").click(function(){
-    // $("#textBox,#toolBar1,#toolBar2").hide();
+    // $("#textBox,#toolBar1,#toolBar2").slideUp('fast');
     $('html,body').animate({
             scrollTop: $("#p1").offset().top + 400 
           }, 1000);
@@ -207,10 +207,10 @@
      
   });
   $(".avatarPro").click(function(){
-    $("#avatarBrd").hide();
+    $("#avatarBrd").slideUp('fast');
   });
   $('#backtotdbrd').click(function(){
-  $('#preview').hide();
+  $('#preview').slideUp('fast');
   document.getElementById('dashboard').style.display='block'
 });
 </script>
