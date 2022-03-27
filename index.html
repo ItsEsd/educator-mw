@@ -44,7 +44,7 @@
           <div class="from-group"><label for="inputPass">Password:</label> <input type="password" class="form-control" id="pcodeEdu" placeholder="Enter password" required /> </div> <br>
           <div align="center"> <input type="submit" class="btn btn-primary" id="logEdu" value="Sign In" /> </div>
         </form> 
-        <div style="display:block;"><p style="float:right;padding-left: 10px;padding-top: 6px;"><span id="frepass" style="cursor: pointer;" onclick="$('#resetp').show('fast');">Forgot Credentials?</p></div>
+        <div style="display:block;"><p style="float:right;padding-left: 10px;padding-top: 6px;"><span id="frepass" style="cursor: pointer;" onclick="$('#resetp').slideDown('fast');">Forgot Credentials?</p></div>
         <br>
         <div id="loader" class="spinner-border text-primary"></div><br>
         <div id="checkP" style="color:red;"></div>
@@ -63,10 +63,10 @@
           <div id="showprofileInfoEdu"></div>
         </div><hr style="width:60%;border-width:2px;">
           <div id="showServiceEdu">
-            <div class="dashicon" onclick="live_tod();$('#connectivityedu').hide();"><img class="dashiconimg" src="images/sttod.png">
+            <div class="dashicon" onclick="live_tod();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/sttod.png">
               <div id="tod" ></div>
              </div>
-              <div class="dashicon" onclick="showclroom();$('#connectivityedu').hide();"><img class="dashiconimg" src="images/educonn.jpg">
+              <div class="dashicon" onclick="showclroom();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/educonn.jpg">
               <div id="golive" ></div>
               </div>  
             <div class="dashicon">
@@ -101,16 +101,16 @@
         <div id="TODdash" align="center">
          <div class="contentheader">
           <span class="tpdayhead">Topic of The Day</span>
-          <span class="closedashfull" onclick="$('#TODdash').hide();">X</span>
+          <span class="closedashfull" onclick="$('#TODdash').slideUp('fast');">X</span>
         </div>
           <div id="loaderTOD" class="spinner-border text-primary"></div>
           <div align="center" class="allHide" id="LiveTOD"></div>
           
          <div id="pviewcontain" align="center"> 
-          <span onclick="$('#pviewcontain').hide();" class="closepview">X</span>
+          <span onclick="$('#pviewcontain').slideUp('fast');" class="closepview">X</span>
            <div id="previewTOD" align="center" style="width:100%; max-width:600px;"></div> </div>
           <!---TOD Edit------>
-          <div align="center" class="allHide" id="updateTOD" style="display:none;">
+          <div align="center" class="allHide" id="updateTOD">
            <!----<hr style="max-width:600px;">---->
             <h6 style="line-height:20px;">Update Topic</h6>
             <form id="text_editor" target="hdnfrm" name="tod_editor">
@@ -145,7 +145,7 @@
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" /></svg> Add Topic</button> -->  
               <div align="center" style="display:inline-block;"> 
 
-                <button type="button" onclick="$('#pviewcontain').show('fast');ProTOD();" id="previewt" class="btn btn-success" style="background-color:#008000;border:none;margin-right:5px;" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <button type="button" onclick="$('#pviewcontain').slideDown('fast');ProTOD();" id="previewt" class="btn btn-success" style="background-color:#008000;border:none;margin-right:5px;" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
                   <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
                   <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" /> </svg> Preview</button>
                   <br>
@@ -204,7 +204,7 @@
         <!--------------Edit Profile-------------->
         <section>
         <div id="scrollEdit" align="center"> 
-          <span class="closedashfull" onclick="$('#scrollEdit').hide();">X</span>
+          <span class="closedashfull" onclick="$('#scrollEdit').slideUp('fast');">X</span>
           <div id="updatePro"> <br>
             <div class="container" id="EditPro">
               <div id="profilePic"></div>
@@ -278,7 +278,7 @@
                 <div class="form-group"> <label class="editproLabel" for="confirmPcode">Confirm password:</label><span id='message' style="float:right;margin-right:10px;"></span> <input type="password" class="form-control editProFormCss" id="confirmPcode" placeholder="**********" required> </div> <br>
                 <div align="center">
                   <button type="submit" class="btn btn-success" style="background-color:#008000;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;margin-right:6px;" id="eduProUpdate" onclick="update_pro();" disabled="disabled">Save</button>
-                  <button type="button" class="btn btn-success" style="background-color:#008000;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;" id="" onclick="document.getElementById('updatePro').style.display='none';$('#scrollEdit').hide();">Close</button></div> <span style="color:black;" id="updateNotice"></span><br>
+                  <button type="button" class="btn btn-success" style="background-color:#008000;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;" id="" onclick="document.getElementById('updatePro').style.display='none';$('#scrollEdit').slideUp('fast');">Close</button></div> <span style="color:black;" id="updateNotice"></span><br>
               </form>
             </div>
           </div>
@@ -287,13 +287,13 @@
        
       <section>
         <div id="educlassroom" align="center">
-          <span class="closeclassinfo" onclick="$('#educlassroom').hide();">X</span>
-            <div id="allstu" class="clsroomelem" onclick="$('#allstud').show('fast');document.getElementById('allstud-one').style.pointerEvents ='auto';">All Students</div><hr>
-            <div id="storedtd" class="clsroomelem" onclick="$('#crtod').show('fast');">Create / Store TOD</div><hr>
+          <span class="closeclassinfo" onclick="$('#educlassroom').slideUp('fast');">X</span>
+            <div id="allstu" class="clsroomelem" onclick="$('#allstud').slideDown('fast');document.getElementById('allstud-one').style.pointerEvents ='auto';">All Students</div><hr>
+            <div id="storedtd" class="clsroomelem" onclick="$('#crtod').slideDown('fast');">Create / Store TOD</div><hr>
            <!---- <div id="examinfo" class="clsroomelem">Exams & Performance<span style="color:red;font-size: 14px;"> !</span></div><hr>
             <div id="reviewed" class="clsroomelem">Feedback & Reviews<span style="color:red;font-size: 14px;"> !</span></div><hr>--> 
-          <div id="examinfo" class="clsroomelem"  onclick="$('#experform').show('fast');">Exams & Performance</div><hr>
-         <!----   <div id="reviewed" class="clsroomelem" onclick="$('#fbandreview').show('fast');">Feedback & Reviews</div><hr> --->
+          <div id="examinfo" class="clsroomelem"  onclick="$('#experform').slideDown('fast');">Exams & Performance</div><hr>
+         <!----   <div id="reviewed" class="clsroomelem" onclick="$('#fbandreview').slideDown('fast');">Feedback & Reviews</div><hr> --->
             <div id="andservices">
           <span onclick="opensframe();">&#8226; Search</span>
         <span onclick="window.open('https://library.mastrowall.in', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');">&#8226; Library</span>
@@ -333,7 +333,7 @@
       <form id="repassone" target="hdnfrm">
         <input type="email" class="form-control" placeholder="Enter registered email" id="mailrepass" required/><br/>
         <input type="submit" class="btn btn-outline-dark" value="Continue >>"/>
-        <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
+        <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').slideUp('fast');">
        
       </form>
       </div>
@@ -341,8 +341,8 @@
         <h5 style="text-align: left;">Reset Password</h5><hr>
         <form id="repasstwo" target="hdnfrm">
           <input type="text" class="form-control" placeholder="Verification Code" id="vercode" oninput="verfycode();" required/><br/>
-          <input type="submit" class="btn btn-outline-dark" id="verconfirm" value="Continue >>" onclick="$('#resetp_two').hide();$('#resetp_three').show('fast');" disabled/>
-          <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
+          <input type="submit" class="btn btn-outline-dark" id="verconfirm" value="Continue >>" onclick="$('#resetp_two').slideUp('fast');$('#resetp_three').slideDown('fast');" disabled/>
+          <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').slideUp('fast');">
         </form>
       
       </div>
@@ -353,7 +353,7 @@
           <span id="messagenew" style="float:right;margin-right:10px; color:red;"></span>
           <input type="password" class="form-control" placeholder="Confirm Password Code" id="confirm_passwordnew" required/><br/>
           <input type="submit" class="btn btn-outline-dark" id="repassconfirm" value="Change Password" disabled/>
-          <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').hide();">
+          <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').slideUp('fast');">
         </form>
       </div>
       <div id="resetp_four"class="repass">
@@ -394,7 +394,7 @@
   <div id="crtod" class="fwidthtwo" align="center">
     <div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle">Create TOD</span> </div>
     <div class="functodelem-one" >
-      <button class='btn btn-dark' id="sttodedu" onclick="$('#storetd').show('fast');">Store</button>
+      <button class='btn btn-dark' id="sttodedu" onclick="$('#storetd').slideDown('fast');">Store</button>
     </div>
     <div id="storetd" align='center'>
       <div id="sttodbdy">
@@ -412,7 +412,7 @@
   <input type="text" placeholder="Key" id="todpass"  class="form-control sectodinput" required/><br>
   <textarea placeholder="Comment"  id="todcmnt" class="form-control todcomm" rows="4" required></textarea><br>
   <input type="submit" value="Store" class="storetdbtn" id="storetdbtnfin"/>    
-  <input type="button" value="Close"  onclick="$('#storetd').hide();" class='storetdbtn'>
+  <input type="button" value="Close"  onclick="$('#storetd').slideUp('fast');" class='storetdbtn'>
   <p id="renotitod" style="margin-top:20px;color:#ffffff;"></p>
   </form>
   </div>
@@ -421,7 +421,20 @@
     </div> 
     <div style="height:100%;margin-top:36px;"><iframe class="todframe" height="100%" src="TOD/index.html" frameborder="0"></iframe>
     </div>
-    </div>
+    
+    <div id="showdelnote" align="center">
+      <div id="delnote" align="center">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+          <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+        </svg>
+      <h4>Confirm Deletion</h4>
+      <button class="btn btn-danger" id="deletetodst">Delete</button>
+      <button class="btn btn-dark" id="hidedelnote">Close</button>
+    </div>   
+      </div>
+  
+  </div>
 </section>
 <section>
   <div id="experform" class="fwidthtwo" align="center">
@@ -442,7 +455,7 @@
             <input type="text" placeholder="Exam ID" class="form-control sectodinput" required/>
             <input type="text" placeholder="Exam Pass" class="form-control sectodinput" required/><br>
             <input type="submit" value="Save Exam" class="showexbtn" disabled/>    
-        <input type="button" value="Close"  onclick="$('#experform').hide();" class='showexbtn'>
+        <input type="button" value="Close"  onclick="$('#experform').slideUp('fast');" class='showexbtn'>
         </form>
         </div>
         
@@ -480,7 +493,12 @@
 </section>
 <section>
   <div id="noextlinkdiv" align="center">
-    <div id="noexiddiv">Please Add External Link<br>&#8595;&#8595;&#8595;&#8595;</div>
+    <div id="noexiddiv">Please Add External Link <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+      <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+      <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+    </svg><br><span id="editpronotebtn"><button class="btn btn-light"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> Edit Profile Information</button></span></div>
   </div>
 </section>
 <section><div id="CharExcd" align="center">
@@ -503,7 +521,7 @@
     </div><br><br><button class="btn btn-primary" id="backtotdbrd">Go Back</button><br>
   </div>
 
-</section>
+</section><input style="display: none;"id='varvrdigit' value="0"/>
 <!----<section>
   <div id="loader_false">
   <center><div id="loader-false" class="spinner-border text-light"></div></center>
@@ -518,8 +536,8 @@
           if ( input.files && input.files[0] ) {
               var FR= new FileReader();
               FR.onload = function(e) {
-                   $('#img').show('fast').attr( "src", e.target.result );
-                   $('#base').show('fast').text( e.target.result );
+                   $('#img').slideDown('fast').attr( "src", e.target.result );
+                   $('#base').slideDown('fast').text( e.target.result );
               };       
               FR.readAsDataURL( input.files[0] );
           }
@@ -574,8 +592,8 @@
           if ( input.files && input.files[0] ) {
               var FR= new FileReader();
               FR.onload = function(e) {
-                   $('#img').show('fast').attr( "src", e.target.result );
-                   $('#base').show('fast').text( e.target.result );
+                   $('#img').slideDown('fast').attr( "src", e.target.result );
+                   $('#base').slideDown('fast').text( e.target.result );
               };       
               FR.readAsDataURL( input.files[0] );
           }
