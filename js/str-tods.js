@@ -96,7 +96,7 @@ $.getJSON(url, function(json) {
        var st = 0;
        var srno = 1;
        for(st;st<lenstr-1;st+=3){
-            document.getElementById("prevsttod").innerHTML += '<div class="storedtd"><p>TOD No. '+srno+'</p><p><span class="todcommnt">'+
+            document.getElementById("prevsttod").innerHTML += '<div class="storedtd"><div class="sharebiton" title="Copy Link" onclick="crcpbitlink(this)"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"> <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/> <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></div><p>TOD No. '+srno+'</p><p><span class="todcommnt">'+
             JSON.parse(singlesttod[st+2])+'</span><br><span class="todidstyl">ID: '+JSON.parse(singlesttod[st])+
             ' Key: '+JSON.parse(singlesttod[st+1])+'</span></p>'+
             '<div align="right"><button class="btn btn-warning showsttod" onclick="showtopictod(this);">View</button>'+
@@ -151,7 +151,26 @@ function showtopictod(label){
        })     
 }
 
-
+function crcpbitlink(label){
+  var list=document.getElementsByClassName("sharebiton");
+  list = [].slice.call(list); 
+  var posofinput = list.indexOf(label);
+  var x = document.getElementsByClassName('tdcid');console.log();
+  var y = document.getElementsByClassName('tdkeyid');
+       var tdid = window.btoa(x[posofinput].value);
+       var tdkid = window.btoa(y[posofinput].value);
+  var newlk = "https://tods.mastrowall.com?topictd="+tdid+"&tdkey="+tdkid+"&td=valid";
+  copytodlink(newlk);
+}
+function copytodlink(newlk){
+  var textA = document.createElement("input");
+  textA.value = newlk;
+  textA.select();
+  textA.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(textA.value);
+  $('#lkcopied').slideDown('fast');
+  setTimeout(function(){$('#lkcopied').slideUp('fast');},2000);
+}
 function getId(url) {
   var regExpYT = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
   var regExpVM = /^.*(vimeo.com\/)([^#\&\?]*).*/;
