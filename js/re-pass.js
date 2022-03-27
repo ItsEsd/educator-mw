@@ -1,6 +1,6 @@
 
 repassone.addEventListener('submit', (event) => {
-    $('#checkemid').hide();
+    $('#checkemid').slideUp('fast');
     document.getElementById("loader-fp").style.visibility = "visible";
     var mailat =  document.getElementById('mailrepass').value;
     var ur1 = "https://script.google.com/macros/s/";
@@ -19,7 +19,7 @@ function ctrlqchemid(e){
 if(res=="ID found!"){
   document.getElementById("checkemid").style.display = "none";
           $("#resetp_two").show();
-          $("#resetp_one").hide();
+          $("#resetp_one").slideUp('fast');
           var k =Math.random().toString(26).substring(2, 6) + Math.random().toString(26).substring(2, 6);
           document.getElementById('vercodepre').value = k;
           sendEmail();
@@ -99,6 +99,6 @@ else{
   function ctrlqrepass(){
   
     document.getElementById("loader-fp").style.visibility = "hidden";
-    $('#resetp_three').hide();
+    $('#resetp_three').slideUp('fast');
     $('#resetp_four').show();
   }
