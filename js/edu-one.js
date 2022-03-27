@@ -28,7 +28,7 @@ var script_url_eduPro2 ="AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr-
 var script_url_eduPro = script_url_eduPro1+ script_url_eduPro2+"/exec";
 
 function loadPrevData() {
-  $('#scrollEdit').show('fast');
+  $('#scrollEdit').slideDown('fast');
   $('#updateNotice').empty();
   document.getElementById("loaderPro").style.display = "block";
   var email1 = $("#email").val();
@@ -142,15 +142,15 @@ if(res!="ID not found!"){
   document.getElementById("EduDashboard").style.display = "block";
   document.getElementById("showprofileInfoEdu").innerHTML = '<div align="center"><img id="propic" src="' + res[0].ProfilePic + '"><div id="name" style="padding-top:14px;"><h5 style="margin:0px;">' + res[0].Subject + ' </h5></div><p style="font-size:18px;margin:0px;">' + res[0].Class + ' (' + res[0].Board + ') </p><h4 style="margin:0px;color:#48485c;">' + res[0].FName + ' ' + res[0].LName + ' </h4><span class="geninfoid">&#8226; ID: '+res[0].CardId+' '+'&#8226; Email: '+res[0].Email+'</span></div>';
  if(res[0].ExternalNoteId !=0){
-  document.getElementById("notes").innerHTML = '<a style="color:black;text-decoration:none;"target="_blank" href="' + res[0].ExternalNoteId + '"> <img class="dashiconimg" src="images/nlimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16"> <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/> <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/></svg> Notes</button></a>';
+  document.getElementById("notes").innerHTML = '<a style="color:black;text-decoration:none;"target="_blank" href="' + res[0].ExternalNoteId + '"><div><img class="dashiconimg" src="images/nlimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16"> <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/> <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/></svg> Notes</div></a>';
  }
  else{
-  document.getElementById("notes").innerHTML = '<a style="color:black;text-decoration:none;" class="noextlink" onclick="noextlink(this);"> <img class="dashiconimg" src="images/nlimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16"> <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/> <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/></svg> Notes</button></a>';
+  document.getElementById("notes").innerHTML = '<a style="color:black;text-decoration:none;" class="noextlink" onclick="noextlink(this);"><div><img class="dashiconimg" src="images/nlimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16"> <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/> <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/></svg> Notes</div></a>';
  }
  if( res[0].ExternalLecId !=0){
-  document.getElementById("lecture").innerHTML = '<a style="color:black;text-decoration:none;"target="_blank" href="' + res[0].ExternalLecId + '"> <img class="dashiconimg" src="images/vdimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16"> <path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z"/> <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></svg> Lectures</a>';
+  document.getElementById("lecture").innerHTML = '<a style="color:black;text-decoration:none;"target="_blank" href="' + res[0].ExternalLecId + '"><div><img class="dashiconimg" src="images/vdimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16"> <path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z"/> <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></svg> Lectures</div></a>';
  }else{
-  document.getElementById("lecture").innerHTML = '<a style="color:black;text-decoration:none;" class="noextlink" onclick="noextlink(this);"> <img class="dashiconimg" src="images/vdimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16"> <path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z"/> <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></svg> Lectures</a>';
+  document.getElementById("lecture").innerHTML = '<a style="color:black;text-decoration:none;" class="noextlink" onclick="noextlink(this);"><div><img class="dashiconimg" src="images/vdimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-file-play" viewBox="0 0 16 16"> <path d="M6 10.117V5.883a.5.5 0 0 1 .757-.429l3.528 2.117a.5.5 0 0 1 0 .858l-3.528 2.117a.5.5 0 0 1-.757-.43z"/> <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4zm0 1h8a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1z"/></svg> Lectures</div></a>';
  }
 
   document.getElementById("golive").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"  class="svgicondash" fill="currentColor" class="bi bi-easel" viewBox="0 0 16 16"><path d="M8 0a.5.5 0 0 1 .473.337L9.046 2H14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1.85l1.323 3.837a.5.5 0 1 1-.946.326L11.092 11H8.5v3a.5.5 0 0 1-1 0v-3H4.908l-1.435 4.163a.5.5 0 1 1-.946-.326L3.85 11H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4.954L7.527.337A.5.5 0 0 1 8 0zM2 3v7h12V3H2z"/></svg> Classroom';
@@ -205,9 +205,8 @@ function live_tod() {
 document.documentElement.scrollTop = 0;
 document.getElementById("updateTOD").style.pointerEvents ="auto";
 document.getElementById("LiveTOD").style.pointerEvents ="auto";
-  $('#TODdash').show('fast');
-  $('#LiveTOD').empty();
-  $('#updateTOD').hide();
+  $('#TODdash').slideDown('fast');
+  $('#LiveTOD').empty();$('#updateTOD').hide();
   document.getElementById("loaderTOD").style.display = "block";
   document.getElementById("updatePro").style.display = "none";
   document.getElementById("goconnect").style.display = "none";
@@ -217,7 +216,7 @@ document.getElementById("LiveTOD").style.pointerEvents ="auto";
   $.getJSON(url, function(json) {
     for (var i = 0; i < json.records.length - 1; i++) {
       if (email1 == json.records[i].Email && pass == json.records[i].Passcode && json.records[i].TOD != "") {
-        $('#updateTOD').show('fast');
+        $('#updateTOD').slideDown('fast');
         var TOD = unescape(json.records[i].TOD);
         var singlest = TOD.split("{td},");
         var lenstr = singlest.length;
@@ -238,7 +237,7 @@ document.getElementById("LiveTOD").style.pointerEvents ="auto";
               $(wrapperTOD).append('<br><div class="wrapTOD"><div class="card"> <img class="card-img-top" src="' + TOD.thumb_ref[j] + '"><div class="card-body"><h4>' + TOD.title[j] + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + TOD.brief_topic[j] + '</p></div> </div></div>');
             }
             if (j == maxTOD - 1) {
-              $(".add_button_TOD").hide();
+              $(".add_button_TOD").slideUp('fast');
             }
           });*/
           document.getElementById("loaderTOD").style.display = "none";
@@ -305,18 +304,24 @@ $('form input[id="emailid"]').blur(function() {
   var email = $(this).val();
   var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/igm;
   if (re.test(email)) {
-    $('.msg').hide();
+    $('.msg').slideUp('fast');
   } else {
-    $('.msg').hide();
-    $('.error').show('fast');
+    $('.msg').slideUp('fast');
+    $('.error').slideDown('fast');
   }
 });
 
 $(document).ready(function() {
   $("#editEduPro").click(function() {
-    $(".allHide").hide();
-    $("#updatePro").show('fast');
-    $('#connectivityedu').hide();
+    $(".allHide").slideUp('fast');
+    $("#updatePro").slideDown('fast');
+    $('#connectivityedu').slideUp('fast');
+  });
+});
+$(document).ready(function() {
+  $("#editpronotebtn").click(function() {
+    loadPrevData();document.getElementById("updatePro").style.display = "block";
+    $("#updatePro").slideDown('fast'); $("#noextlinkdiv").hide();
   });
 });
 
@@ -336,10 +341,10 @@ $(document).ready(function() {
   $(wrap).on("click", ".remove_field", function(e) {
     e.preventDefault();
     $(this).parent('div').remove();
-    $(".addmoreConnect").show('fast');
+    $(".addmoreConnect").slideDown('fast');
     k--;
     if (k == 1) {
-      $(".golive").hide();
+      $(".golive").slideUp('fast');
     }
   })
 });
@@ -382,8 +387,8 @@ $(function() {
 document.getElementById("golive").addEventListener("click", openConnect);
 
 function openConnect() {
-  $('#TODdash').hide();
-  $('#connectivityedu').show('fast');
+  $('#TODdash').slideUp('fast');
+  $('#connectivityedu').slideDown('fast');
   document.getElementById("goconnect").style.display = "block";
   document.getElementById("nxt").style.display = "block";
   document.getElementById("sv").style.display = "none";
@@ -451,37 +456,37 @@ function showavatarBrd() {
 
 
 $('#editEduPro').click(function(){
-  $('#TODdash').hide();
+  $('#TODdash').slideUp('fast');
 document.body.scrollTop = 460;
 document.documentElement.scrollTop = 460;
 }) ;   
 
 function showclroom(){
-$('#educlassroom').show('fast');
+$('#educlassroom').slideDown('fast');
 
 }
 
 function opensframe(){
-  $("#fmcontainers").show('fast');
+  $("#fmcontainers").slideDown('fast');
 
   
 }
 
 function openlframe(){
-  $("#fmcontainert").show('fast');
+  $("#fmcontainert").slideDown('fast');
  
 }
 $('.closefw').on('click',function(){
-  $('.fullwidth').hide();
+  $('.fullwidth').slideUp('fast');
 });
 
 $('.closefwtwo').on('click',function(){
-  $('.fwidthtwo').hide();
+  $('.fwidthtwo').slideUp('fast');
 });
 
 
 function noextlink(){
-  $('#noextlinkdiv').show('fast');
+  $('#noextlinkdiv').slideDown('fast');
   setTimeout(function() {
     jQuery('#noextlinkdiv').fadeOut('fast');
   }, 6000);
