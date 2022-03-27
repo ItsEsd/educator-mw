@@ -1,9 +1,11 @@
 
 function deltopictod(label){
+  $("#showdelnote").show();
+var click = 1;
+document.getElementById('varvrdigit').value = click;
   var list=document.getElementsByClassName("delsttod");
   list = [].slice.call(list); 
   var posofinput = list.indexOf(label);
-  document.getElementsByClassName("delsttod")[posofinput].disabled = true;
   var x = document.getElementsByClassName('tdcid');
   var y = document.getElementsByClassName('tdkeyid');
        var todid = JSON.stringify(x[posofinput].value);
@@ -11,17 +13,31 @@ function deltopictod(label){
        var eduid =$('#eduid').val();
        var ur1 = "https://script.google.com/macros/s/";
        var ur2 = "AKfycbzdo5abHFtSSXazxfC8HAfo4dCQ-NsAl21DHCGJT-TQfhoBHTBcf07AMZ_rFIEWvkjZaA";
-       var url = ur1+ur2+"/exec" + "?callback=removefrmlst&tdid="+todid+"&eduid="+eduid+"&action=rmvtod";
-       var request = jQuery.ajax({
-        crossDomain: true,
-        url: url,
-        method: "GET",
-        dataType: "jsonp"
-      });
+       var urlrmv = ur1+ur2+"/exec" + "?callback=removefrmlst&tdid="+todid+"&eduid="+eduid+"&action=rmvtod";
+       document.getElementById('varvrdigit').value = urlrmv;
 }
+
+$('#deletetodst').click(function(click){
+  document.getElementById("deletetodst").disabled = true;
+  var url = $('#varvrdigit').val();
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url: url,
+    method: "GET",
+    dataType: "jsonp"
+  });
+  document.getElementById('varvrdigit').value = 0;
+});  
+
+ $('#hidedelnote').click(function(){
+  $("#showdelnote").hide();
+    }); 
+
+
 
 function removefrmlst(e){
   storedtods();
+  $("#showdelnote").hide();
 }
 
 
@@ -155,9 +171,9 @@ function getId(url) {
 }
 
 $('#backtotdbrd').click(function(){
-  $('#preview').hide();
+  $('#preview').slideUp('fast');
 });
 
 $('#avthumb').click(function(){
-  $('#preview').hide();
+  $('#preview').slideUp('fast');
 });
