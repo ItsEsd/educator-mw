@@ -84,8 +84,7 @@ body {
     height: 440px;
     max-width: 1000px;
     border: none;
-    border-bottom: 1px solid #008000;
-    border-right: 1px dotted #008000;
+    border: 1px dotted #515251;
     padding: 10px;
     overflow-y: scroll;
     outline: none;
@@ -125,8 +124,9 @@ body {
     display: inline-block;
     width: 45px;
     float: left;
-    border: 1px solid #0c09c9;
+    border: 1px solid #515251;
     margin-top: 0px;
+    padding-bottom:2px;
   }
 
   #toolBar1 {
