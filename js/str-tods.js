@@ -341,6 +341,7 @@ function readsaveexm(){
 
 
 function shoeprevexresult(label){
+  $("#stresultall").empty();
   document.getElementById('loaderback').style.display = "block";
   var list=document.getElementsByClassName("svshowexres");
   list = [].slice.call(list); 
