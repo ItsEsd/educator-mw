@@ -451,10 +451,10 @@
         </div>
         
         <div class="clroomdivbd-two">
-          <form target="hdnfrm">
-            <input type="text" placeholder="Exam ID" class="form-control sectodinput" required/>
-            <input type="text" placeholder="Exam Pass" class="form-control sectodinput" required/><br>
-            <input type="submit" value="Save Exam" class="showexbtn" disabled/>    
+          <form target="hdnfrm" id="srcandsvex" autocomplete="off">
+            <input type="text" placeholder="Exam ID" class="form-control sectodinput" id="cpexid" required/>
+            <input type="password" placeholder="Exam Pass" class="form-control sectodinput" id="cppass" required/><br>
+            <input type="submit" value="Search" class="showexbtn" id="srcexambtn"/>    
         <input type="button" value="Close"  onclick="$('#experform').slideUp('fast');" class='showexbtn'>
         </form>
         </div>
@@ -464,33 +464,38 @@
         </div>
 
     </div>
+
+    <div id="loaderback" align="center"><div id="loader-cp" class="spinner-border text-primary" style="display: block;"></div></div>
+  
+    <div align="center" id="loadercp">
+      <div id="examdescpin"></div>
+      <div id="stresultall"></div><br>
+      <div style="max-width:146px;" align="center"><span style="float:left;"><button type="button" class="btn btn-primary" style="font-size:14px;padding:4px 10px;" onclick="examresultpdf();">Download</button></span><span style="float:right;"><button type="button" class="btn btn-primary" id="backcp">Back</button></span></div>
+      <button class="btn btn-light" id="svexminfo">Save Exam</button>
+    </div>
+
+
     </div>
 </section>
 <iframe name="hdnfrm" id="hdnfrm" style="display:none;"></iframe>
-<section>
+<!----<section>
   <div id="fbandreview" class="fwidthtwo" align="center">
     <div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle">Feedback & Reviews</span> </div> 
-   
     <div style="height:100%;margin-top:36px;">
       <div class="clroomdivbd">
-        <div id="prevexperform" class="clroomdivbd-one">
+        <div id="feedbacked" class="clroomdivbd-one">
           <svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
             <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
             <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> 
          <br> <br><p>Students Dash</p>
-        
         </div>
-        
         <div class="clroomdivbd-two">
           Reviews
         </div>
-        
         </div>
-
-      
     </div>
     </div>
-</section>
+</section>--->
 <section>
   <div id="noextlinkdiv" align="center">
     <div id="noexiddiv">Please Add External Link <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
