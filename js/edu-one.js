@@ -110,7 +110,7 @@ function enableSave() {
 
 function inwallEdu() {
   document.body.style.pointerEvents ="none";
-  allstudwait();
+  allstudwait();readsaveexm();
   allstudapprv();
   var email1 = $("#email").val();
   var pass = $("#pcodeEdu").val();
