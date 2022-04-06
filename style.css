@@ -504,15 +504,14 @@ height:50px;
   display: none;
   overflow-y: hidden;
  background-color: #161616cc;
- padding:2px;
+ padding:10px;
 }
 #edconnectdiv{
   bottom:120px;
-  margin-right:20px;
  width:100%;
  height:500px;
  overflow-y: hidden;
-  right:0px;
+  right:10px;
   position: fixed;
   background-color: #fff;
   background-image: -moz-linear-gradient(0deg, rgba(0, 0, 0, .2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .2) 75%, transparent 75%, transparent);
@@ -520,7 +519,7 @@ height:50px;
   -moz-background-size: 4px 4px;
   background-size: 6px 6px;
   width:100%;
-  max-width:400px;
+  max-width:380px;
   border-radius: 10px;
 }
 #goconnect{
@@ -1277,6 +1276,7 @@ position: fixed;
 }
 #editEduPro{
 margin-right: 4px;
+top:20px;left:10px;position: absolute;
 }
 #cls1{
   padding:4px 16px;background-color:#f3351c;color:white;border:0px;
@@ -1305,10 +1305,11 @@ margin-right: 4px;
 }
 
 #editprofileedu{
-  padding:10px;
+  padding:6px;
   padding-top:20px;
   padding-bottom:20px;
-background-color: #141414;
+  background-color: #141414;
+  height:80px;
 }
 
 #mwallopennew{
