@@ -240,13 +240,18 @@ body {
   input:valid {
     background-color: #e6e6e6;
   }
-
+  #topictod{
+    font-size: 14px;
+  }
   #postTD,
   #previewTD {
+    width:100%;
+    max-width:500px;
+    margin:5px;
     border: 1px solid white;
     padding: 6px 16px;
     border-radius: 4px;
-    background-color: #cc6600;
+    background-color: #202020;
     color: white;
   }
 
