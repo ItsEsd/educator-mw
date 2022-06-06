@@ -17,9 +17,7 @@ var ur2= "AKfycbzEjdgac0XtZRxKgc1Pie6viAp8cEEjcklhbNe9XIeZjnrO6CQ5TMpO1f5YLwsVRa
 function ctrlqchemid(e){
   var res= e.records;
 if(res=="ID found!"){
-  document.getElementById("checkemid").style.display = "none";
-          $("#resetp_two").show();
-          $("#resetp_one").slideUp('fast');
+          document.getElementById("checkemid").style.display = "none";
           var k =Math.random().toString(26).substring(2, 6) + Math.random().toString(26).substring(2, 6);
           document.getElementById('vercodepre').value = k;
           sendEmail();
@@ -45,15 +43,23 @@ else{
         To: mailat,
         From: "noreply@mastrowall.com",
           Subject: "Email Verification",
-          Body:  "<html><body style='background-color:#161616;color:white;border-radius:10px;'><div align='center' style='padding:40px;'><h2 style='color:white'>W E L C O M E</h2><h2><a target='_blank' href='https://mastrowall.com' style='text-decoration:none;'>M A S T R O W A L L</a></h2>" + "<p style='color:white;'>Your Confirmation Code is: </p><h3 style='color:black;width:140px;background-color:#e6e6e6;border-radius:4px;padding:6px;'>"+ k +"</h3><br><p style='color:white;'>Contact: <a href='mailto:mail@mastrowall.com'>mail@mastrowall.com</a></p><h4 style='color:white;'>Thank You</h4><p style='font-size:12px;color:#cccccc;'>N.B. Do not reply to this email</p></div></body></html>",
+          Body:  "<html><body style='color:white;'><center><div align='center' style='border-radius:10px;background-color:#161616;padding:40px;max-width:600px;'><h2 style='color:white'>W E L C O M E</h2><h2><a target='_blank' href='https://mastrowall.com' style='text-decoration:none;'>M A S T R O W A L L</a></h2>" + "<p style='color:white;'>Your Confirmation Code is: </p><h3 style='color:black;width:140px;background-color:#e6e6e6;border-radius:4px;padding:6px;'>"+ k +"</h3><br><p style='color:white;'>Contact: <a href='mailto:mail@mastrowall.com'>mail@mastrowall.com</a></p><h4 style='color:white;'>Thank You</h4><p style='font-size:12px;color:#cccccc;'>N.B. Do not reply to this email</p></div></center></body></html>",
       })
           .then(function (message) {
-        document.getElementById('checkemid-2').style.display= 'block';
-        document.getElementById('checkemid-2').innerHTML= 'Verification code send to your email.';
-        setTimeout(function() {
-          jQuery('#checkemid').fadeOut('fast');
-        }, 10000);
-          
+         if(message=="OK"){
+          $("#resetp_two").show();
+          $("#resetp_one").slideUp('fast');
+          document.getElementById('checkemid-2').style.display= 'block';
+          document.getElementById('checkemid-2').innerHTML= 'Verification code send to your email.';
+          setTimeout(function() {
+            jQuery('#checkemid').fadeOut('fast');
+          }, 10000);
+            
+         }
+         else{
+          document.getElementById('checkemid-2').style.display= 'block';
+          document.getElementById('checkemid-2').innerHTML= 'Contact Mastro Desk: '+'<a class="veremfalse" href="mailto:mail@mastrowall.com">Send Mail</a>';
+         } 
           });
       }
   
