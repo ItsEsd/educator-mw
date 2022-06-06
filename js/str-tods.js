@@ -36,6 +36,7 @@ $('#deletetodst').click(function(click){
 
 
 function removefrmlst(e){
+  document.getElementById("deletetodst").disabled = false;
   storedtods();
   $("#showdelnote").hide();
 }
