@@ -1,6 +1,5 @@
 
 var ewfSetCookie = function(exdays) {
-    
   var psmed = $("#email").val();
   var pswed = $("#pcodeEdu").val();
   var d = new Date();
@@ -10,29 +9,23 @@ var ewfSetCookie = function(exdays) {
   document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
   document.cookie = "mwallpswedud="+btoa(pswed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
 };
-
 function getCookie(cname) {
     var name = cname + "="; 
     var decodedCookie = decodeURIComponent(document.cookie); 
     var ca = decodedCookie.split(';'); 
-    for (var i = 0; i < ca.length; i++) {
-       var c = ca[i]; 
-    
-      } 
-      console.log(ca);
 for(var p=0;p<ca.length;p++){
-var cookstr = ca[p].split('mwallced=')[1];
-if(cookstr=="true"){
-  var paem = window.atob(ca[p+1].split('mwallpswedus=')[1]);
-  var pacd = window.atob(ca[p+2].split('mwallpswedud=')[1]);
+var cookstrem = ca[p].split('mwallpswedus='); 
+var cookstrkd = ca[p].split('mwallpswedud='); 
+if(cookstrem[0] == 0){
+  var paem = window.atob(cookstrem[1]);
   document.getElementById('email').value= paem;
+}
+else if(cookstrkd[0]== 0){
+  var pacd = window.atob(cookstrkd[1]);
   document.getElementById('pcodeEdu').value= pacd;
   inwallEdu();
-}
-}} 
-
+}}} 
   $(document).ready(function(){getCookie() })  ;
-
 function deleteAllCookies() {
  var cookies = document.cookie.split(";");
      for (var i = 0; i < cookies.length; i++) {
@@ -43,4 +36,3 @@ function deleteAllCookies() {
              }
             setTimeout(function(){location.reload();},2000);
      }     
-     
