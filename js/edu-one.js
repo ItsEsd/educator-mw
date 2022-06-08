@@ -107,7 +107,7 @@ function enableSave() {
     document.getElementById("eduProUpdate").disabled = true;
   }
 }
-
+document.getElementById('df').addEventListener('submit',inwallEdu);
 function inwallEdu() {
   document.body.style.pointerEvents ="none";
   allstudwait();readsaveexm();
@@ -119,12 +119,12 @@ function inwallEdu() {
     document.getElementById("loader").style.visibility = "visible";
     document.getElementById("checkP").innerHTML = "";    
 var pt_url1 = "https://script.google.com/macros/s/";
-var pt_url2 = "AKfycbxdJvyQbxBZZhZIYVKx_tchZN3krnZp2cJ2stKNhzhrxmgkNrmmk_kpqN1Ei_DhxCEWYw";
+var pt_url2 = "AKfycbwdJsH-RYY4k-w4M2bcXjtDS39OpC2qymDs_uxy1pyKpI_XQFSbJ21GVemavhcQTLazvQ";
 var pt_url = pt_url1+pt_url2+"/exec";
-    var url = pt_url + "?callback=ctrlqeduin&chemid=" + email1 + "&chpass=" + pass + "&action=cheduc";
-    var request = jQuery.ajax({
+    var urled = pt_url + "?callback=ctrlqeduin&chemid=" + email1 + "&chpass=" + pass + "&action=cheduc";
+    var request = $.ajax({
       crossDomain: true,
-      url: url,
+      url: urled,
       method: "GET",
       dataType: "jsonp"
     });
