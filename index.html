@@ -41,6 +41,8 @@
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <script src="js/wallcook.js"></script> <base target="_blank">
+    <link href='apps/calender/main.css' rel='stylesheet' />
+    <script src='apps/calender/main.js'></script>
   </head>
 
   <body>
@@ -68,8 +70,18 @@
       </span></div>
         <div id="upDash">
           <div id="showprofileInfoEdu"></div>
-        </div><hr style="width:60%;border-width:2px;">
+          <div id="footDash" align="center"><div id="footdashcenter">
+            <div id="infoMastrowallEdu">|| An Art of Learning ||</div>
+            <button type="button" class="btn btn-light" id="mwallopennew"  onclick="window.open('https://mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');">M A S T R O W A L L</button>
+         <!-- <hr style="max-width:400px;">-->  
+           
+          </div></div>
+        </div>
+        
+        <!--<hr style="width:60%;border-width:2px;">-->
           <div id="showServiceEdu">
+            <div id="titleleft">Educator | MASTROWALL</div>
+            <div id="leftnav">
             <div class="dashicon" onclick="live_tod();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/sttod.png">
               <div id="tod" ></div>
              </div>
@@ -84,14 +96,10 @@
             </div>
            
           </div>
+          <div id='calendar'></div>
+       </div>
+       <!--<hr style="width:60%;border-width:2px;">--> 
        
-        <hr style="width:60%;border-width:2px;">
-        <div id="footDash" align="center"><div id="footdashcenter">
-          <div id="infoMastrowallEdu">|| An Art of Learning ||</div>
-          <button type="button" class="btn btn-light" id="mwallopennew"  onclick="window.open('https://mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');">M A S T R O W A L L</button>
-       <!-- <hr style="max-width:400px;">-->  
-         
-        </div></div>
       </div>
       <div class="modal" id="insthttp">
         <div class="modal-dialog">
@@ -534,6 +542,7 @@
   </div>
 
 </section><input style="display: none;"id='varvrdigit' value="0"/>
+<input style="display: none;" id="allsvevnt"/>
 <!----<section>
   <div id="loader_false">
   <center><div id="loader-false" class="spinner-border text-light"></div></center>
