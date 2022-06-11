@@ -174,6 +174,13 @@ if(res!="ID not found!"){
  }
 
 }
+
+var preevn = res[0].CalenderTODO;
+document.getElementById('allsvevnt').value =preevn;
+console.log(preevn);
+
+
+getcalendar();
 document.body.style.pointerEvents ="auto";
   document.getElementById("loader").style.visibility = "hidden";
 //   document.getElementById("prepost").style.display = "none";
@@ -663,3 +670,110 @@ else{
 }
 
 })
+
+/////////////////Calender////////////////
+
+
+ function getcalendar() {
+  var calendarEl = document.getElementById('calendar');
+  
+  
+var preevent =$('#allsvevnt').val();
+  var elemev = preevent.split("{e},");
+  var eventsup =[];
+for(var i=0;i<elemev.length-1;i+=3){
+var entry = {};
+entry.title = JSON.parse(elemev[i]);
+entry.start = JSON.parse(elemev[i+1]);
+entry.end= JSON.parse(elemev[i+2]);
+eventsup.push(entry);
+}
+
+console.log(eventsup);
+
+var date = new Date();
+var tois = date.toISOString();
+var flcaldate = tois.substring(0, 10);
+
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+
+    headerToolbar: {
+      left: 'prev,next today',
+      center: 'title',
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+    },
+    initialDate: flcaldate,
+    navLinks: true, 
+    weekNumbers: true,
+    weekNumberCalculation: 'ISO',
+    selectable: true,
+    selectMirror: true,
+    select: function(arg) {
+      var title = prompt('Event Title:');
+      if (title) {
+        calendar.addEvent({
+          title: title,
+          start: arg.start,
+          end: arg.end,
+          allDay: arg.allDay
+        })
+      console.log(title,arg.start,arg.allDay);
+   var t = JSON.stringify(title);
+   var s = JSON.stringify(arg.start.toISOString());
+   var e = JSON.stringify(arg.end.toISOString());
+   var k = "{e},";
+   var evnt = t+k+s+k+e+k;
+         var email1 = $("#email").val();
+         var pass = $("#pcodeEdu").val();
+         var ur1="https://script.google.com/macros/s/";
+         var ur2 ="AKfycbxVC3qMPiJWjSJXdls1n87pldEYjmPllLvtV5UYb_1cqMHZYkicpxg9ztFc5vLPk4cziA";
+         var url = ur1+ur2+"/exec" + "?callback=ctrlqevsv&usem=" + email1 + "&usid=" + pass + "&event=" + evnt + "&action=upevnt";
+         var request = jQuery.ajax({
+          crossDomain: true,
+          url: url,
+          method: "GET",
+          dataType: "jsonp"
+        });
+      }
+      calendar.unselect();
+    },
+    eventClick: function(arg) {
+      if (confirm('Are you sure you want to delete this event?')) {
+        arg.event.remove();
+var tt = JSON.stringify(arg.event.title);
+var st = JSON.stringify(arg.event.start.toISOString());
+var et = JSON.stringify(arg.event.end.toISOString());
+var kt = "{e},";
+var delitm = tt+kt+st+kt+et+kt;
+        var email1 = $("#email").val();
+        var pass = $("#pcodeEdu").val();
+        var ur1="https://script.google.com/macros/s/";
+         var ur2 ="AKfycbxVC3qMPiJWjSJXdls1n87pldEYjmPllLvtV5UYb_1cqMHZYkicpxg9ztFc5vLPk4cziA";
+         var url = ur1+ur2+"/exec" + "?callback=ctrlqevrmv&usem=" + email1 + "&usid=" + pass + "&event=" + delitm + "&action=rmvevnt";
+        var request = jQuery.ajax({
+         crossDomain: true,
+         url: url,
+         method: "GET",
+         dataType: "jsonp"
+       });
+       console.log(url);
+      }
+    },
+
+   // editable: true,
+    dayMaxEvents: true, 
+    events:eventsup
+    
+  });
+
+  calendar.render();
+}
+
+
+function ctrlqevsv(e){
+inwallEdu();
+}
+
+function ctrlqevrmv(e){
+  inwallEdu();
+}
