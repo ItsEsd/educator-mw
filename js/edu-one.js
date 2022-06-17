@@ -689,8 +689,6 @@ entry.end= JSON.parse(elemev[i+2]);
 eventsup.push(entry);
 }
 
-console.log(eventsup);
-
 var date = new Date();
 var tois = date.toISOString();
 var flcaldate = tois.substring(0, 10);
@@ -777,3 +775,33 @@ inwallEdu();
 function ctrlqevrmv(e){
   inwallEdu();
 }
+
+$('#skpad').click(function(){
+  window.open('/apps/sketchpad/', '_blank', 'location=center,height=670,width=1200,left=80,top=0,scrollbars=yes,status=yes');
+});
+
+
+  $('#opcal').click(function(){
+    $('#showServiceEdu').show();
+    $('#calendar').show();
+   });
+
+   $('#opensrvc').click(function(){
+    $('#showServiceEdu').show();
+    $('#calendar').hide();
+   });
+   $('#hidenavl').click(function(){
+    $('#showServiceEdu').hide();
+   });
+   window.addEventListener("resize", displayWindowSize);
+   function displayWindowSize(){
+    var w = document.documentElement.clientWidth;
+    var h = document.documentElement.clientHeight;
+       if(w>1320){
+        $('#showServiceEdu').show();
+         $('#calendar').show();
+       }
+    }
+
+
+ 
