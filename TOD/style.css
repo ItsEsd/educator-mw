@@ -399,3 +399,6 @@ body {
     max-width: 1000px;
     padding: 20px;
   }
+  #radioS span{
+    cursor: pointer;
+  } 
