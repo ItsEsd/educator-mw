@@ -696,7 +696,7 @@ var flcaldate = tois.substring(0, 10);
   var calendar = new FullCalendar.Calendar(calendarEl, {
 
     headerToolbar: {
-      left: 'prev,next today',
+      left: 'prev,next',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
