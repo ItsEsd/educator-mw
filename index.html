@@ -100,7 +100,7 @@
               </svg>
           </span></div>
             <div id="leftnav">
-            <div class="dashicon" onclick="live_tod();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/sttod.png">
+            <div class="dashicon" onclick="$('#TODdash').slideDown('fast');$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/sttod.png">
               <div id="tod" ></div>
              </div>
               <div class="dashicon" onclick="showclroom();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/educonn.jpg">
@@ -158,7 +158,7 @@
           <span class="tpdayhead">Topic of The Day</span>
           <span class="closedashfull" onclick="$('#TODdash').slideUp('fast');">X</span>
         </div>
-          <div id="loaderTOD" class="spinner-border text-primary"></div>
+          <div id="loaderTOD"><center><div id="loaderldtd" class="spinner-border text-primary"></div></center></div>
           <div align="center" class="allHide" id="LiveTOD"></div>
           
          <div id="pviewcontain" align="center"> 
@@ -176,11 +176,20 @@
                     <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>
                   </div>
                   <textarea class="form-control todbrief" oninput="ProTOD();" rows="10" name="brief_topic" placeholder="Topic briefing" id="tbrief" required></textarea>
-                  <div style="float:left;width:180px;">
-                    <input type="url" name="thumb_ref" oninput="ProTOD();" id="tthumb" class="form-control border-hide thumbref" placeholder="&#10010; Add thumbnail link " autocomplete="off" required>
-                    <input type="button" data-target="#insthttp" data-toggle="modal" id="addvideoed" Value="Add Video (YouTube / Vimeo)" />
-                  </div><input type="file" accept="image/png, image/gif, image/jpeg" id="upload" class="topicidfile"/><br>
-                  <input id="resetuptopic" type="button" value="Reset" class="btn btn-dark"> <input id="uptday" type="submit" value="Update" class="btn btn-outline-primary"><br><br> </div>
+                  <div style="width:100%;">
+                    <div class="row">
+                      <div class="col-md-6">
+                      <input type="button" data-target="#insthttp" data-toggle="modal" id="addvideoed" Value="Add Video (YouTube / Vimeo)" />
+                      </div>
+                      <div class="col-md-6">
+                        <input type="url" name="thumb_ref" oninput="ProTOD();" id="tthumb" class="form-control border-hide thumbref" placeholder="&#10010; Add thumbnail link " autocomplete="off" required>
+                        <span><input type="file" accept="image/png, image/gif, image/jpeg" id="upload" class="topicidfile"/></span></div>
+                     
+                      </div></div><hr>
+                  <input id="resetuptopic" type="button" value="Reset" class="btn btn-dark"> <input id="uptday" type="submit" value="Update" class="btn btn-outline-primary">
+                  <button type="button" onclick="$('#pviewcontain').slideDown('fast');ProTOD();" id="previewt" class="btn btn-success" style="background-color:#008000;border:none;margin-right:5px;float:left;" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" /> </svg> Preview</button><br></div>
               </div>
             </form><input id="posinthumb" style="display:none;"><input id="tdtopicidrmv" style="display:none;"><br>
             <div id="nocontent"></div>
@@ -198,14 +207,6 @@
                     <path d="M.5 3l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm.694 2.09A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09l-.636 7a1 1 0 0 1-.996.91H2.826a1 1 0 0 1-.995-.91l-.637-7zM6.172 2a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z" /> </svg>
                      Post</button></span><br> <br></div><button class="add_field_button btn btn-primary" style="background-color:#0c29cd;border:none;" id="addtod" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" /></svg> Add Topic</button> -->  
-              <div align="center" style="display:inline-block;"> 
-
-                <button type="button" onclick="$('#pviewcontain').slideDown('fast');ProTOD();" id="previewt" class="btn btn-success" style="background-color:#008000;border:none;margin-right:5px;" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                  <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                  <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" /> </svg> Preview</button>
-                  <br>
-                </div>
-
            <!-- To Parse DATA -->
             <input id="json_tod" style="display:none;height:100px;" /> <!-- Parse DATA -->
           </div>
