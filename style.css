@@ -37,12 +37,11 @@ body {
     visibility: hidden;
   }
 
-  #loaderTOD {
-    display: inline-block;
+  #loaderldtd {
+    margin-top:300px;
     width: 60px;
     height: 60px;
-    margin-top: 300px;
-    display:none;
+    /* margin-top: 300px; */
   }
 
   #loaderCON {
@@ -61,7 +60,15 @@ body {
     margin: -20px 0 0 -20px;
     visibility: hidden;
   }
-
+#loaderTOD{
+top:0px;left: 0px;
+width:100%;
+height:100%;
+position: fixed;
+background-color: #ffffff6b;
+display: none;
+z-index: 10000;
+}
   @-webkit-keyframes spin {
     0% {
       -webkit-transform: rotate(0deg);
@@ -141,18 +148,25 @@ body {
 
   #tthumb {
     border: none;
-    text-decoration: underline;
+    text-decoration: none;
     box-shadow: none;
-    padding: 2px;
-    padding-bottom: 4px;
+    max-width: 200px;
+    float:left;
+    padding-left:0px;
   }
 
   .tod {
     margin-top:20px;
     padding-left:20px;
-    border: 1px dashed #0c29cd;
+    /* border: 1px dashed #0c29cd; */
   }
-
+#ttdtitle{
+  background-color: #0a06f034;
+}
+#ttdtitle:focus,#ttdtitle:active,#ttdtitle:valid{
+  background-color: #0c09c9;
+  color: white;
+}
   .input_fields_wrap {
     max-width: 800px;
   }
@@ -465,12 +479,14 @@ height:50px;
     display:none;
   }
 #updateTOD{
+  margin-top:40px;
   background-color: white;
   padding:10px;
   width:100%;
   max-width: 900px;
-  display:none;
+  display:block;
   padding-bottom:20px;
+  border:1px solid #0c09c9;
 }
   #educlassroom{
     top:0px;
@@ -962,11 +978,18 @@ float:left;
   display: none;
 }
 
-
 .topicidfile{
-  margin-top: 6px;
+  margin-top:10px;
+  font-size: 14px;
+  float:right;
+  width:90px;
 }
-
+#addvideoed{
+  margin-top:10px;
+  font-size: 14px;
+  border:1px solid grey;
+  float:left;
+}
 #pviewcontain{
   top:0px;
   left:0px;
@@ -1272,10 +1295,7 @@ position: fixed;
   margin-right: 50px;
   font-size: 20px;
 }
-#addvideoed{
-  font-size: 12px;
-  border:1px solid grey;
-}
+
 
 #uptday{
   float:right;
