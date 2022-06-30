@@ -175,10 +175,22 @@ if(res!="ID not found!"){
 
 }
 
+if(res[0].TOD!=""){
+  var TOD = unescape(res[0].TOD);
+  var singlest = TOD.split("{td},");
+  var lenstr = singlest.length;
+  document.getElementById("LiveTOD").style.display = "block";
+  for (var w=0; w<lenstr-1;w++) {
+    document.getElementById("LiveTOD").innerHTML += '<div class="wrapTOD"><div class="card">'+
+    '<img class="card-img-top" src="' + singlest[w+3] + '"><div class="card-body"><h4>' + singlest[w+1] + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + singlest[w+2] + '</p></div> </div><div class="notifyotcontain"><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>'+
+    '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></span></div></div><input class="topictdid" style="display: none;" value="'+singlest[w] +'"><br><hr style="width:90%;max-width:600px;"><br>';
+     w= w+3;
+  }
+}
+
 var preevn = res[0].CalenderTODO;
 document.getElementById('allsvevnt').value =preevn;
 console.log(preevn);
-
 
 getcalendar();
 document.body.style.pointerEvents ="auto";
@@ -205,15 +217,13 @@ else{
 }
 }
 
-document.getElementById("tod").addEventListener("click", live_tod);
+// document.getElementById("tod").addEventListener("click", live_tod);
 
 function live_tod() {
-  document.body.scrollTop = 0;
-document.documentElement.scrollTop = 0;
 document.getElementById("updateTOD").style.pointerEvents ="auto";
 document.getElementById("LiveTOD").style.pointerEvents ="auto";
   $('#TODdash').slideDown('fast');
-  $('#LiveTOD').empty();$('#updateTOD').hide();
+  $('#LiveTOD').empty();
   document.getElementById("loaderTOD").style.display = "block";
   document.getElementById("updatePro").style.display = "none";
   document.getElementById("goconnect").style.display = "none";
@@ -223,30 +233,15 @@ document.getElementById("LiveTOD").style.pointerEvents ="auto";
   $.getJSON(url, function(json) {
     for (var i = 0; i < json.records.length - 1; i++) {
       if (email1 == json.records[i].Email && pass == json.records[i].Passcode && json.records[i].TOD != "") {
-        $('#updateTOD').slideDown('fast');
         var TOD = unescape(json.records[i].TOD);
         var singlest = TOD.split("{td},");
         var lenstr = singlest.length;
         document.getElementById("LiveTOD").style.display = "block";
         for (var w=0; w<lenstr-1;w++) {
-     //     var j = 0;
           document.getElementById("LiveTOD").innerHTML += '<div class="wrapTOD"><div class="card">'+
           '<img class="card-img-top" src="' + singlest[w+3] + '"><div class="card-body"><h4>' + singlest[w+1] + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + singlest[w+2] + '</p></div> </div><div class="notifyotcontain"><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>'+
           '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></span></div></div><input class="topictdid" style="display: none;" value="'+singlest[w] +'"><br><hr style="width:90%;max-width:600px;"><br>';
            w= w+3;
-        //  var maxTOD = TOD.title.length;
-       /*   var wrapperTOD = $(".wrapTOD");
-          var add_buttonTOD = $(".add_button_TOD");
-          $(add_buttonTOD).on("click", function(e) {
-            e.preventDefault();
-            if (j < maxTOD) {
-              j++;
-              $(wrapperTOD).append('<br><div class="wrapTOD"><div class="card"> <img class="card-img-top" src="' + TOD.thumb_ref[j] + '"><div class="card-body"><h4>' + TOD.title[j] + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + TOD.brief_topic[j] + '</p></div> </div></div>');
-            }
-            if (j == maxTOD - 1) {
-              $(".add_button_TOD").slideUp('fast');
-            }
-          });*/
           document.getElementById("loaderTOD").style.display = "none";
         }
       }
@@ -262,6 +257,8 @@ document.getElementById("LiveTOD").style.pointerEvents ="auto";
       }
     }
   });
+  document.getElementById('TODdash').scrollTop = 0;
+  document.documentElement.scrollTop = 0;
   document.getElementById("uptday").disabled = false;
 }
 
@@ -803,5 +800,5 @@ $('#skpad').click(function(){
        }
     }
 
-
- 
+    $('#loaderTOD').click(function(){
+      $('#loaderTOD').hide();});
