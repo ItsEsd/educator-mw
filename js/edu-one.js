@@ -188,10 +188,8 @@ if(res[0].TOD!=""){
   }
 }
 
-var preevn = res[0].CalenderTODO;
+var preevn = res[0].CalendarTODO;
 document.getElementById('allsvevnt').value =preevn;
-console.log(preevn);
-
 getcalendar();
 document.body.style.pointerEvents ="auto";
   document.getElementById("loader").style.visibility = "hidden";
@@ -712,7 +710,7 @@ var flcaldate = tois.substring(0, 10);
           end: arg.end,
           allDay: arg.allDay
         })
-      console.log(title,arg.start,arg.allDay);
+      // console.log(title,arg.start,arg.allDay);
    var t = JSON.stringify(title);
    var s = JSON.stringify(arg.start.toISOString());
    var e = JSON.stringify(arg.end.toISOString());
@@ -751,7 +749,6 @@ var delitm = tt+kt+st+kt+et+kt;
          method: "GET",
          dataType: "jsonp"
        });
-       console.log(url);
       }
     },
 
@@ -774,7 +771,7 @@ function ctrlqevrmv(e){
 }
 
 $('#skpad').click(function(){
-  window.open('/apps/sketchpad/', '_blank', 'location=center,height=670,width=1200,left=80,top=0,scrollbars=yes,status=yes');
+  window.open('https://sketch.mastrowall.com', '_blank', 'location=center,height=670,width=1200,left=80,top=0,scrollbars=yes,status=yes');
 });
 
 
