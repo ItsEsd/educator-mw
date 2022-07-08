@@ -228,41 +228,50 @@ $.getJSON(url, function(json) {
 }
 
 
-function rmvstclsrm(label)
-{
+function rmvstclsrm(label){
+$('#ntfyrmv').show();
+var click = 1;
+document.getElementById('varvrdigit').value = click;
    var list=document.getElementsByClassName("rmvstbtn");
    list = [].slice.call(list); 
-
    var posofinput = list.indexOf(label);
-
    var x = document.getElementsByClassName('strmvid');
-   //   var lenposition = x[v].val();
         var stadid = x[posofinput].value;
-        document.getElementById('allstud-two').style.pointerEvents = "none";
         document.getElementById('stuid').value= stadid;
         document.getElementById('posof').value= posofinput;
-        list[posofinput].disabled = true;
-        list[posofinput].innerHTML= "Removing..";
         var eduid =$("#eduid").val();
         var studid =$("#stuid").val();
         var ur1= "https://script.google.com/macros/s/";
         var ur2="AKfycbxs7gRSD9zK7tDZby_yTWmhFpYuMJCOI2BCgdl74gI-0nFxFbJxv7IARFRhJF_bbVVn";
-      
         var urlrmvst = ur1+ur2+"/exec" + "?callback=ctrlqrmvst&eduid=" + eduid + "&stuid=" + studid + "&action=rmvstu";
-        var request = jQuery.ajax({
-          crossDomain: true,
-          url: urlrmvst,
-          method: "GET",
-          dataType: "jsonp"
-        });      
+        document.getElementById('varvrdigit').value = urlrmvst;
+      
 }
 
+
+$('#rmvstclrm').click(function(){
+  document.getElementById('rmvstclrm').disabled = true;
+  document.getElementById('rmvstclrm').innerHTML = "Removing..";
+  document.getElementById('allstud-two').style.pointerEvents = "none";
+  var url = $('#varvrdigit').val();
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url: url,
+    method: "GET",
+    dataType: "jsonp"
+  });      
+  document.getElementById('varvrdigit').value = 0;
+})
+
 function ctrlqrmvst(){
+  $('#ntfyrmv').hide();
   var p = $('#posof').val();
   var z =document.getElementsByClassName('rmvstbtn');
   z[p].innerHTML = "Removed";
   z[p].style.backgroundColor = "black";
-  document.getElementById('allstud-two').style.pointerEvents = "auto";
+   document.getElementById('allstud-two').style.pointerEvents = "auto";
+document.getElementById('rmvstclrm').innerHTML = "Remove";
+document.getElementById('rmvstclrm').disabled = false;
   allstudapprv();
 /*var addeduid =$("#eduid").val();
  var studid =$("#stuid").val();
