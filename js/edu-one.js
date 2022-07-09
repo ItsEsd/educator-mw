@@ -50,7 +50,7 @@ function loadPrevData() {
         document.getElementById("subject_").value = json.records[i].Subject;
         document.getElementById("exidnote").value = json.records[i].ExternalNoteId;
         document.getElementById("exidlec").value = json.records[i].ExternalLecId;
-        document.getElementById("pCodeEdu").value = json.records[i].Passcode;
+        document.getElementById("pCodeEduPro").value = json.records[i].Passcode;
         document.getElementById("loaderPro").style.visibility = "hidden";
       }
     }
@@ -74,7 +74,7 @@ function update_pro() {
   var i = $("#subject_").val();
   var j = $("#exidnote").val();
   var k = $("#exidlec").val();
-  var m = $("#pCodeEdu").val();
+  var m = $("#pCodeEduPro").val();
   var o = $("#ppic").val();
   var email1 = $("#email").val();
   var url = script_eduPro + "?callback=ctrlqup&email=" + email1 + "&fname=" + a + "&lname=" + b + "&dob=" + c + "&emailid=" + d + "&countrycode=" + e + "&phoneno=" + f + "&class_=" + g + "&board_=" + h + "&subject_=" + i + "&exidnote=" + j + "&exidlec=" + k + "&pCodeEdu=" + m + "&ppic=" + o + "&action=update";
@@ -101,7 +101,9 @@ document.title = "Educator | MASTROWALL";
 document.getElementById("confirmPcode").addEventListener("input", enableSave);
 
 function enableSave() {
-  if ($('#pCodeEdu').val() == $('#confirmPcode').val()) {
+  var olpass = $('#pcodeEdu').val();
+  var diffpass = $('#pCodeEduPro').val()
+  if ( diffpass== $('#confirmPcode').val() && diffpass!= olpass) {
     document.getElementById("eduProUpdate").disabled = false;
   } else {
     document.getElementById("eduProUpdate").disabled = true;
@@ -137,7 +139,7 @@ var pt_url = pt_url1+pt_url2+"/exec";
 function ctrlqeduin(e){
   var res= e.records;
 if(res!="ID not found!"){
-
+  onstartswitch();
   document.getElementById("signInEdu").style.display = "none";
   document.getElementById("EduDashboard").style.display = "block";
   document.getElementById("showprofileInfoEdu").innerHTML = '<div align="center"><img id="propic" src="' + res[0].ProfilePic + '"><div id="name" style="padding-top:14px;"><h5 style="margin:0px;">' + res[0].Subject + ' </h5></div><p style="font-size:18px;margin:0px;">' + res[0].Class + ' (' + res[0].Board + ') </p><h4 style="margin:0px;color:#48485c;">' + res[0].FName + ' ' + res[0].LName + ' </h4><span class="geninfoid">&#8226; ID: '+res[0].CardId+' '+'&#8226; Email: '+res[0].Email+'</span></div>';
@@ -198,7 +200,8 @@ document.body.style.pointerEvents ="auto";
 //  live_tod();
 var fname = res[0].FName;
 var lname = res[0].LName;
-var name = fname.toLowerCase()+'-'+lname.toLowerCase();
+var cardn = res[0].CardId;
+var name = fname.toLowerCase()+'-'+lname.toLowerCase()+'?ed='+btoa(cardn)+'#true';
 var shname = name.split(" ").join("-");
 let stateObj = { id: "0" };
  window.history.replaceState(stateObj,
@@ -353,7 +356,7 @@ $(document).ready(function() {
 
 
 $('#confirmPcode').on('keyup', function() {
-  if ($('#pCodeEdu').val() == $('#confirmPcode').val()) {
+  if ($('#pCodeEduPro').val() == $('#confirmPcode').val()) {
     $('#message').html('Matching').css('font-size', '12px');
   } else $('#message').html('Not Matching').css('font-size', '12px');
 });
