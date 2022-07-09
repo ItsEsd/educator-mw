@@ -1854,3 +1854,81 @@ height:24px;
       max-width:310px;
     }
 }
+
+#crtnewadjacnt{
+  color:#e7e9eb;
+  font-size: 16px;
+  margin-bottom: 0px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #7d807d8e;
+}
+
+#crtnewadjacnt:hover{
+background-color: #ffffffb0;
+color: #000000e1;
+}
+#switchclsrm{
+  top:0px;
+  right:10px;
+  z-index: 10000;
+  position: absolute;
+  color:#000000;
+  cursor: pointer;
+}
+
+.cardd{
+font-size: 10px;
+}
+
+.switchmenu svg{
+width:20px;
+height:20px;
+padding: 2px;
+}
+#switchmenu:hover{
+  background-color: #012da8;
+}
+#newpassfacnt{
+  display:none;
+  top:0px;
+  left:0px;
+  width:100%;
+  height:100%;
+  position: fixed;
+  background-color: #000000b7;
+  padding:6px;
+}
+
+#swtchnwact{
+margin-top:140px;
+padding:10px;
+max-width: 500px;
+background-color: #0c08e2;
+}
+
+#swtchnwact .form-control{
+  margin:5px;
+}
+
+#swtchnwact button{
+  padding:4px 10px;
+  margin:5px;
+  
+}
+
+.cardd{
+  display: none;
+}
+
+#switchnoti{
+  bottom:0px;
+  position: absolute;
+  background-color: #1f1f1f;
+  color: white;
+  z-index: 10000;
+  padding:10px;
+  width:100%;
+  display: none;
+}
+
