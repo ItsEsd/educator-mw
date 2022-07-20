@@ -116,7 +116,11 @@ $(document).ready(function() {
   $(document).ready(function() {
     $('.box').hScroll(40);
     $('#showfeed').on('click',function(){
+      var elem = document.getElementById('feedholder');
+      if(elem.style.display != "block"){
         $('#feedholder').slideDown('slow');
+      }
+        else{$('#feedholder').slideUp('slow');}
     });
     $('#feedholder').on('click',function(){
         $('#feedholder').slideUp('fast');
