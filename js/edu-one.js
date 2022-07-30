@@ -23,9 +23,9 @@ function ctrlqcon(){
 }
 
 document.getElementById("editEduPro").addEventListener("click", loadPrevData);
-var script_url_eduPro1 = "https://script.google.com/macros/s/";
-var script_url_eduPro2 ="AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
-var script_url_eduPro = script_url_eduPro1+ script_url_eduPro2+"/exec";
+var aseduPro1 = "https://script.google.com/macros/s/";
+var aseduPro2 = "AKfycbwdJsH-RYY4k-w4M2bcXjtDS39OpC2qymDs_uxy1pyKpI_XQFSbJ21GVemavhcQTLazvQ";
+var aseduPro = aseduPro1+ aseduPro2+"/exec";
 
 function loadPrevData() {
   $('#scrollEdit').slideDown('fast');
@@ -33,29 +33,34 @@ function loadPrevData() {
   document.getElementById("loaderPro").style.display = "block";
   var email1 = $("#email").val();
   var pass = $("#pcodeEdu").val();
-  var url = script_url_eduPro + "?action=read";
-  $.getJSON(url, function(json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (email1 == json.records[i].Email && pass == json.records[i].Passcode) {
-        document.getElementById("profilePic").innerHTML = '<img class="proedimgup" src="' + json.records[i].ProfilePic + '">';
-        document.getElementById("ppic").value = json.records[i].ProfilePic;
-        document.getElementById("fname").value = json.records[i].FName;
-        document.getElementById("lname").value = json.records[i].LName;
-        document.getElementById("dob").value = JSON.parse(json.records[i].DOB);
-        document.getElementById("emailid").value = json.records[i].Email;
-        document.getElementById("countrycode").value = json.records[i].CountryCode;
-        document.getElementById("phoneno").value = json.records[i].PhoneNo;
-        document.getElementById("class_").value = json.records[i].Class;
-        document.getElementById("board_").value = json.records[i].Board;
-        document.getElementById("subject_").value = json.records[i].Subject;
-        document.getElementById("exidnote").value = json.records[i].ExternalNoteId;
-        document.getElementById("exidlec").value = json.records[i].ExternalLecId;
-        document.getElementById("pCodeEduPro").value = json.records[i].Passcode;
-        document.getElementById("loaderPro").style.visibility = "hidden";
-      }
-    }
-  });
-  
+  var urled = aseduPro + "?callback=ldpredata&chemid=" + email1 + "&chpass=" + pass + "&action=cheduc";
+  var request = $.ajax({
+    crossDomain: true,
+    url: urled,
+    method: "GET",
+    dataType: "jsonp"
+  });  
+}
+
+function ldpredata(e){
+  var reslt= e.records;
+  if(reslt!="ID not found!"){
+    document.getElementById("profilePic").innerHTML = '<img class="proedimgup" src="' + reslt[0].ProfilePic + '">';
+    document.getElementById("ppic").value = reslt[0].ProfilePic;
+    document.getElementById("fname").value = reslt[0].FName;
+    document.getElementById("lname").value = reslt[0].LName;
+    document.getElementById("dob").value = JSON.parse(reslt[0].DOB);
+    document.getElementById("emailid").value = reslt[0].Email;
+    document.getElementById("countrycode").value = reslt[0].CountryCode;
+    document.getElementById("phoneno").value = reslt[0].PhoneNo;
+    document.getElementById("class_").value = reslt[0].Class;
+    document.getElementById("board_").value = reslt[0].Board;
+    document.getElementById("subject_").value = reslt[0].Subject;
+    document.getElementById("exidnote").value = reslt[0].ExternalNoteId;
+    document.getElementById("exidlec").value = reslt[0].ExternalLecId;
+    document.getElementById("pCodeEduPro").value = reslt[0].Passcode;
+    document.getElementById("loaderPro").style.visibility = "hidden";
+  }
 }
 
 function update_pro() {
@@ -101,9 +106,9 @@ document.title = "Educator | MASTROWALL";
 document.getElementById("confirmPcode").addEventListener("input", enableSave);
 
 function enableSave() {
-  var olpass = $('#pcodeEdu').val();
+  // var olpass = $('#pcodeEdu').val();
   var diffpass = $('#pCodeEduPro').val()
-  if ( diffpass== $('#confirmPcode').val() && diffpass!= olpass) {
+  if ( diffpass== $('#confirmPcode').val()) {
     document.getElementById("eduProUpdate").disabled = false;
   } else {
     document.getElementById("eduProUpdate").disabled = true;
@@ -112,10 +117,9 @@ function enableSave() {
 document.getElementById('df').addEventListener('submit',inwallEdu);
 function inwallEdu() {
   document.body.style.pointerEvents ="none";
-  allstudwait();readsaveexm();
-  allstudapprv();
   var email1 = $("#email").val();
   var pass = $("#pcodeEdu").val();
+  allstudwait(); allstudapprv();readsaveexm();
   if (email1 != 0 && pass != 0) {
     document.getElementById("loader").style.display = "block";
     document.getElementById("loader").style.visibility = "visible";
@@ -230,34 +234,42 @@ document.getElementById("LiveTOD").style.pointerEvents ="auto";
   document.getElementById("goconnect").style.display = "none";
   var email1 = $("#email").val();
   var pass = $("#pcodeEdu").val();
-  var url = script_url + "?action=read";
-  $.getJSON(url, function(json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (email1 == json.records[i].Email && pass == json.records[i].Passcode && json.records[i].TOD != "") {
-        var TOD = unescape(json.records[i].TOD);
-        var singlest = TOD.split("{td},");
-        var lenstr = singlest.length;
-        document.getElementById("LiveTOD").style.display = "block";
-        for (var w=0; w<lenstr-1;w++) {
-          document.getElementById("LiveTOD").innerHTML += '<div class="wrapTOD"><div class="card">'+
-          '<img class="card-img-top" src="' + singlest[w+3] + '"><div class="card-body"><h4>' + singlest[w+1] + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + singlest[w+2] + '</p></div> </div><div class="notifyotcontain"><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>'+
-          '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></span></div></div><input class="topictdid" style="display: none;" value="'+singlest[w] +'"><br><hr style="width:90%;max-width:600px;"><br>';
-           w= w+3;
-          document.getElementById("loaderTOD").style.display = "none";
-        }
-      }
-      else if(email1 == json.records[i].Email && pass == json.records[i].Passcode && json.records[i].TOD == ""){
-        document.getElementById("updateTOD").style.display = "block";
-        document.getElementById("LiveTOD").style.display = "block";
-        document.getElementById("LiveTOD").innerHTML ='<div class="nocontenttod"><svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">'+
-        '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>'+
-        '<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/></svg>'+
-        '<br><h5 style="color:#474749;font-size:16px;">No Content</h5></div>';
-        document.getElementById("loaderTOD").style.display = "none";
+  var urltd = aseduPro +  "?callback=ldlivetd&chemid=" + email1 + "&chpass=" + pass + "&action=cheduc";
+  var request = $.ajax({
+    crossDomain: true,
+    url: urltd,
+    method: "GET",
+    dataType: "jsonp"
+  });  
+}
 
+function ldlivetd(e){
+  var reslt= e.records;
+  if(reslt!="ID not found!"){
+    if (reslt[0].TOD != "") {
+      var TOD = unescape(reslt[0].TOD);
+      var singlest = TOD.split("{td},");
+      var lenstr = singlest.length;
+      document.getElementById("LiveTOD").style.display = "block";
+      for (var w=0; w<lenstr-1;w++) {
+        document.getElementById("LiveTOD").innerHTML += '<div class="wrapTOD"><div class="card">'+
+        '<img class="card-img-top" src="' + singlest[w+3] + '"><div class="card-body"><h4>' + singlest[w+1] + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + singlest[w+2] + '</p></div> </div><div class="notifyotcontain"><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>'+
+        '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></span></div></div><input class="topictdid" style="display: none;" value="'+singlest[w] +'"><br><hr style="width:90%;max-width:600px;"><br>';
+         w= w+3;
+        document.getElementById("loaderTOD").style.display = "none";
       }
     }
-  });
+    else if(reslt[0].TOD == ""){
+      document.getElementById("updateTOD").style.display = "block";
+      document.getElementById("LiveTOD").style.display = "block";
+      document.getElementById("LiveTOD").innerHTML ='<div class="nocontenttod"><svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">'+
+      '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>'+
+      '<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/></svg>'+
+      '<br><h5 style="color:#474749;font-size:16px;">No Content</h5></div>';
+      document.getElementById("loaderTOD").style.display = "none";
+
+    }
+  }
   document.getElementById('TODdash').scrollTop = 0;
   document.documentElement.scrollTop = 0;
   document.getElementById("uptday").disabled = false;
@@ -379,15 +391,18 @@ $.fn.serializeObject = function() {
 };
 $(function() {
   $('form[name="eduProConnect"]').submit(function() {
-    document.getElementById("connectivity").value = JSON.stringify($('form[name="eduProConnect"]').serializeObject());
-    document.getElementById("nxt").style.display = "none";
-    document.getElementById("sv").style.display = "block";
-    document.getElementsByClassName("addmoreConnect")[0].disabled = false;
-    document.getElementsByClassName("addmoreConnect")[1].disabled = false;
+    document.getElementById("connectivity").value = escape(JSON.stringify($('form[name="eduProConnect"]').serializeObject()));
+   
+    // document.getElementsByClassName("addmoreConnect")[0].disabled = true;
+    // document.getElementsByClassName("addmoreConnect")[1].disabled = false;
     return false;
   });
 });
 
+$('#connectnxtbtn').click(function(){
+  document.getElementById("nxt").style.display = "none";
+  document.getElementById("sv").style.display = "block";
+});
 
 document.getElementById("golive").addEventListener("click", openConnect);
 
@@ -400,13 +415,13 @@ function openConnect() {
   document.getElementById("updatePro").style.display = "none";
   document.getElementById("LiveTOD").style.display = "none";
   document.getElementById("updateTOD").style.display = "none";
+  // document.getElementsByClassName("addmoreConnect")[0].disabled = false;
   showconnect();
 }
 
-
-var script_url1 = "https://script.google.com/macros/s/";
-var script_url2 = "AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
-var script_url = script_url1+script_url2+"/exec";
+// var script_url1 = "https://script.google.com/macros/s/";
+// var script_url2 = "AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
+// var script_url = script_url1+script_url2+"/exec";
 
 function showconnect() {
   document.getElementById("loaderCON").style.display = "block";
@@ -416,30 +431,39 @@ function showconnect() {
   $("#connect2").empty();$("#connectUp").empty();
   var email1 = $("#email").val();
   var pass = $("#pcodeEdu").val();
-  var url = script_url + "?action=read";
-  $.getJSON(url, function(json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (email1 == json.records[i].Email && pass == json.records[i].Passcode && json.records[i].Connectivity != "" ) {
-        var Go = JSON.parse(json.records[i].Connectivity);
-        for (var prop in Go.idConnect) {
-          var j = 0;
-          var totalConnect = Go.idConnect.length;
-          document.getElementById("loaderCON").style.display = "none";
-          document.getElementById("connect1").innerHTML = '<a href="tel:' + Go.idConnect[0] + '"><img class="connectIcon" src="' + Go.Connect[0] + '"></a><a href="mailto:' + Go.idConnect[1] + '"><img class="connectIcon" src="' + Go.Connect[1] + '"></a>';
-        }
-        for (j = 2; j < totalConnect; j++) {
-          document.getElementById("connect2").innerHTML += '<a target="_blank" href="' + Go.idConnect[j] + '"><img class="connectIcon" src="' + Go.Connect[j] + '"></a>';
-          document.getElementById("loaderCON").style.display = "none";
-        }
+  var urlcon = aseduPro + "?callback=ldconctdt&chemid=" + email1 + "&chpass=" + pass + "&action=cheduc";
+  var request = $.ajax({
+    crossDomain: true,
+    url: urlcon,
+    method: "GET",
+    dataType: "jsonp"
+  });
+}
+function ldconctdt(e){
+  var reslt= e.records;
+  if(reslt!="ID not found!"){
+    if (reslt[0].Connectivity != "" ) {
+      var Go = JSON.parse(unescape(reslt[0].Connectivity));
+      for (var prop in Go.idConnect) {
+        var j = 0;
+        var totalConnect = Go.idConnect.length;
+        document.getElementById("loaderCON").style.display = "none";
+        document.getElementById("connect1").innerHTML = '<a href="tel:' + Go.idConnect[0] + '"><img class="connectIcon" src="' + Go.Connect[0] + '"></a><a href="mailto:' + Go.idConnect[1] + '"><img class="connectIcon" src="' + Go.Connect[1] + '"></a>';
       }
-      else if(email1 == json.records[i].Email && pass == json.records[i].Passcode && json.records[i].Connectivity == "") {
-       
-        document.getElementById("connect1").innerHTML ='Update Connectivity';
+      for (j = 2; j < totalConnect; j++) {
+        document.getElementById("connect2").innerHTML += '<a target="_blank" href="' + Go.idConnect[j] + '"><img class="connectIcon" src="' + Go.Connect[j] + '"></a>';
         document.getElementById("loaderCON").style.display = "none";
       }
     }
-  });
+    else if(reslt[0].Connectivity == "") {
+     
+      document.getElementById("connect1").innerHTML ='Update Connectivity';
+      document.getElementById("loaderCON").style.display = "none";
+    }
+
+  }
 }
+
 
 $(function() {
   $('.proThumb').on("click", function() {
@@ -597,7 +621,6 @@ function notifyrmvtd(label){
 function ctrlqtdrmvd(e){
   document.getElementById("LiveTOD").style.pointerEvents ="auto";
   live_tod();
-
 }
 
 
