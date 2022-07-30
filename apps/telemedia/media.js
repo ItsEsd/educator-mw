@@ -23,7 +23,7 @@ function read_value_pic() {
   $.getJSON(url, function(json) {
     var n;
     var news1 = JSON.parse(json.records[0].InMedia1);
-    var maxMedia1 = news1.conTitle1.length;console.log(maxMedia1);
+    var maxMedia1 = news1.conTitle1.length;
       for (var a=[],i=0;i<maxMedia1;++i) a[i]=i;
       function shuffle(array) {
         var tmp, current, top = array.length;
