@@ -369,7 +369,6 @@ function shoeprevexresult(label){
            var restren = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
            var sprestren = restren.split(',');
            var lenstren = sprestren.length;
-        
            var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
            var sprestr = restr.split('{anst},');
            var lenstr = sprestr.length;
