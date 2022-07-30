@@ -80,44 +80,50 @@ function ctrlqsttd(e){
 }
 
 function storedtods(){
-  var ur1 = "https://script.google.com/macros/s/";
- var ur2 ="AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
- var url= ur1 +ur2+ "/exec"+"?action=read";
  var email1 = $("#email").val();
  var pass = $("#pcodeEdu").val();
-$.getJSON(url, function(json) {
-  for (var i = 0; i < json.records.length - 1; i++) {
-    if (email1 == json.records[i].Email && pass == json.records[i].Passcode) {
-          
-      if( json.records[i].AllTOD !=0){
-        $('#prevsttod').empty();
-       var allsttod = json.records[i].AllTOD;
-       var singlesttod = allsttod.split("{td},");
-       var lenstr = singlesttod.length;
-       var st = 0;
-       var srno = 1;
-       for(st;st<lenstr-1;st+=3){
-            document.getElementById("prevsttod").innerHTML += '<div class="storedtd"><div class="sharebiton" title="Copy Link" onclick="crcpbitlink(this)"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"> <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/> <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></div><p>TOD No. '+srno+'</p><p><span class="todcommnt">'+
-            JSON.parse(singlesttod[st+2])+'</span><br><span class="todidstyl">ID: '+JSON.parse(singlesttod[st])+
-            ' Key: '+JSON.parse(singlesttod[st+1])+'</span></p>'+
-            '<div align="right"><button class="btn btn-warning showsttod" onclick="showtopictod(this);">View</button>'+
-            '<button class="btn btn-dark delsttod" onclick="deltopictod(this);">Delete</button>'+'<input class="tdcid" style="display: none;" value="'+
-            JSON.parse(singlesttod[st])+'"/><input class="tdkeyid" style="display:none;" value="'+
-            JSON.parse(singlesttod[st+1])+'"/></div></div>'+
-            '<hr>';
-            srno = srno + 1;
-       }
-     
-      }
-      else{
-        document.getElementById("prevsttod").innerHTML=`<div style="padding:40px;"> <svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-        <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> 
-        <br> <br><p>No Stored TOD</p></div>`;
-      }
-    }
-  } 
+ var edurl1 = "https://script.google.com/macros/s/";
+ var edurl2 = "AKfycbwdJsH-RYY4k-w4M2bcXjtDS39OpC2qymDs_uxy1pyKpI_XQFSbJ21GVemavhcQTLazvQ";
+ var edurl = edurl1+edurl2+"/exec";
+ var strtd = edurl + "?callback=strdtd&chemid=" + email1 + "&chpass=" + pass + "&action=cheduc";
+ var request = $.ajax({
+  crossDomain: true,
+  url: strtd,
+  method: "GET",
+  dataType: "jsonp"
 });
+}
+
+function strdtd(e){
+  var res= e.records;
+  if(res!="ID not found!"){
+    if( res[0].AllTOD !=0){
+      $('#prevsttod').empty();
+     var allsttod = res[0].AllTOD;
+     var singlesttod = allsttod.split("{td},");
+     var lenstr = singlesttod.length;
+     var st = 0;
+     var srno = 1;
+     for(st;st<lenstr-1;st+=3){
+          document.getElementById("prevsttod").innerHTML += '<div class="storedtd"><div class="sharebiton" title="Copy Link" onclick="crcpbitlink(this)"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"> <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/> <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></div><p>TOD No. '+srno+'</p><p><span class="todcommnt">'+
+          JSON.parse(singlesttod[st+2])+'</span><br><span class="todidstyl">ID: '+JSON.parse(singlesttod[st])+
+          ' Key: '+JSON.parse(singlesttod[st+1])+'</span></p>'+
+          '<div align="right"><button class="btn btn-warning showsttod" onclick="showtopictod(this);">View</button>'+
+          '<button class="btn btn-dark delsttod" onclick="deltopictod(this);">Delete</button>'+'<input class="tdcid" style="display: none;" value="'+
+          JSON.parse(singlesttod[st])+'"/><input class="tdkeyid" style="display:none;" value="'+
+          JSON.parse(singlesttod[st+1])+'"/></div></div>'+
+          '<hr>';
+          srno = srno + 1;
+     }
+   
+    }
+    else{
+      document.getElementById("prevsttod").innerHTML=`<div style="padding:40px;"> <svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+      <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> 
+      <br> <br><p>No Stored TOD</p></div>`;
+    }
+  }
 }
 
 function showtopictod(label){
@@ -282,6 +288,7 @@ $("#loaderback").click(function(){
 });
 document.getElementById('svexminfo').addEventListener('click',saveexaminfo);
 function saveexaminfo(){
+  $('#loadercp').slideUp('fast');
   $('#loaderback').slideDown('fast');
 var edemid = $('#email').val();
 var examidst = $('#cpexid').val();
@@ -299,56 +306,53 @@ var request = jQuery.ajax({
 });
 }
 
-
 function ctrlqsvex(){
   $('#loaderback').slideUp('fast');
   readsaveexm();document.getElementById('prevexperform').style.display = 'block';
   $('#loadercp').slideUp('fast');
+  srcandsvex.reset();
 }
-
 
 function readsaveexm(){
-  var ur1 = "https://script.google.com/macros/s/";
-  var ur2 = "AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
-  var url = ur1+ur2+"/exec"+ "?action=read";
   var email1 = $("#email").val();
   var pass = $("#pcodeEdu").val();
-  $.getJSON(url, function(json) {
-  for (var i = 0; i < json.records.length - 1; i++) {
-    if (email1 == json.records[i].Email && pass == json.records[i].Passcode) {
-          
-      if( json.records[i].AllExam !=0){
-        $('#prevexperform').empty();
-       var allsvexm = json.records[i].AllExam;
-       var singlessvexm = allsvexm.split("{ex},");
-       var lenstr = singlessvexm.length;
-       var st = 0;
-       var srno = 1;
-       for(st;st<lenstr-1;st+=3){
-            document.getElementById("prevexperform").innerHTML += '<div align="left" class="savevexmdiv"><div style="text-align:left"><span style="float:left">No. '+srno+'</span>'+
-            '<span style="float:right;"><button class="btn btn-primary svshowexres" onclick="shoeprevexresult(this);">Check Performance</button></span></div><br>'+
-            '<p style="font-size:14px;"><span style="float:left;">Exam ID: '+singlessvexm[st]+'</span><br><span style="float:left;">Exam Pass: '+singlessvexm[st+1]+'</span></p><div class="exdtlsst">'+singlessvexm[st+2]+'</div>'+
-            '<input class="exidsv" style="display:none;" value="'+singlessvexm[st]+'"><input class="enidsv" value="'+singlessvexm[st+1]+'" style="display:none;"><br><hr>';
-            srno = srno + 1;
-
-       }
-     
-      }
-    }
-  }
-  
-  });
+  var asedurl1 = "https://script.google.com/macros/s/";
+ var asedurl2 = "AKfycbwdJsH-RYY4k-w4M2bcXjtDS39OpC2qymDs_uxy1pyKpI_XQFSbJ21GVemavhcQTLazvQ";
+ var asedurl = asedurl1+asedurl2+"/exec";
+ var asedsvex = asedurl + "?callback=rdsvexm&chemid=" + email1 + "&chpass=" + pass + "&action=cheduc";
+ var request = $.ajax({
+  crossDomain: true,
+  url: asedsvex,
+  method: "GET",
+  dataType: "jsonp"
+});
 }
 
+function rdsvexm(e){
+  var res= e.records;
+if(res!="ID not found!"){
+  if( res[0].AllExam !=0){
+    $('#prevexperform').empty();
+   var allsvexm = res[0].AllExam;
+   var singlessvexm = allsvexm.split("{ex},");
+   var lenstr = singlessvexm.length;
+   var st = 0;
+   var srno = 1;
+   for(st;st<lenstr-1;st+=3){
+        document.getElementById("prevexperform").innerHTML += '<div align="left" class="savevexmdiv"><div style="text-align:left"><span style="float:left">No. '+srno+'</span>'+
+        '<span style="float:right;"><button class="btn btn-primary svshowexres" onclick="shoeprevexresult(this);">Check Performance</button></span></div><br>'+
+        '<p style="font-size:14px;"><span style="float:left;">Exam ID: '+singlessvexm[st]+'</span><br><span style="float:left;">Exam Pass: '+singlessvexm[st+1]+'</span></p><div class="exdtlsst">'+singlessvexm[st+2]+'</div>'+
+        '<input class="exidsv" style="display:none;" value="'+singlessvexm[st]+'"><input class="enidsv" value="'+singlessvexm[st+1]+'" style="display:none;"><br><hr>';
+        srno = srno + 1;
+   }
+  }}
+}
 
 function shoeprevexresult(label){
   $("#stresultall").empty();
-  document.getElementById('loaderback').style.display = "block";
   var list=document.getElementsByClassName("svshowexres");
   list = [].slice.call(list); 
-
   var posofinput = list.indexOf(label);
-
   var x = document.getElementsByClassName('exidsv');
   var y = document.getElementsByClassName('enidsv');
        var examid = x[posofinput].value;
@@ -356,7 +360,7 @@ function shoeprevexresult(label){
        var url1 = "https://script.google.com/macros/s/";
        var url2 = "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
        var url = url1+url2+"/exec"+ "?action=gentestrd";
-       document.getElementById('loaderback').style.display = "block";
+       $('#loaderback').slideDown();
        $.getJSON(url, function(json) { 
 
         //console.log(json);
