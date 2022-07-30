@@ -35,10 +35,10 @@ function checkexisting(){
                 var dtime = currentTime;
                 var edid = "ED-"+ Math.random().toString(26).substring(2, 6) + Math.random().toString(26).substring(2, 6)+"/2";
                 var TPic = "https://mastrowall.com/images/mwalllogo.png";
-                var script_url_edureg1 = "https://script.google.com/macros/s/";
-                var script_url_edureg2 ="AKfycbxcb9RAuFYAyYt471GV9Jb3cLJGwI2D3HvrnzOO5Gv8-NSKcJm-eSa35-pjwF_-sEYJ1g";
-                var script_url_edureg = script_url_edureg1 + script_url_edureg2 + "/exec";
-                var url = script_url_edureg + "?callback=ctrlqnacnt&email=" + email + "&fname=" + fname + "&lname=" 
+                var asedureg1 = "https://script.google.com/macros/s/";
+                var asedureg2 ="AKfycbxcb9RAuFYAyYt471GV9Jb3cLJGwI2D3HvrnzOO5Gv8-NSKcJm-eSa35-pjwF_-sEYJ1g";
+                var asedureg = asedureg1 + asedureg2 + "/exec";
+                var url = asedureg + "?callback=ctrlqnacnt&email=" + email + "&fname=" + fname + "&lname=" 
                 + lname + "&dob=" + dob + "&countrycode=" + countryCode + "&phoneno=" + phoneNo + "&class_=" 
                 + Class + "&board_=" + Board + "&subject_=" + Subject + "&resume=" + Resume + "&storage=" 
                 + Storage + "&proPicT=" + TPic + "&eduregtime=" + dtime + "&eduregid=" + edid 
@@ -103,7 +103,7 @@ if(pascd !=json.records[i].Passcode){
 swtchnwact.addEventListener('submit',checkexisting);
 document.getElementById("confnwactpass").addEventListener("input", enableok);
 function enableok() {
-  if ($('#nwactpass').val() == $('#confnwactpass').val()) {
+  if ($('#nwactpass').val() == $('#confnwactpass').val() && $('#confnwactpass').val() != $("#pcodeEdu").val()) {
     document.getElementById("subnewactps").disabled = false;
   } else {
     document.getElementById("subnewactps").disabled = true;
@@ -117,8 +117,8 @@ function switchprof(){
     var d = new Date();
     d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toUTCString();
-    document.cookie = "mwallced=true; expires=" + expires + ";path=/;domain=mastrowall.com";
-    document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
-    document.cookie = "mwallpswedud="+btoa(newpr)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
+    document.cookie = "mwallced=true; expires=" + expires + ";path=/;domain=127.0.0.1";
+    document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=127.0.0.1";
+    document.cookie = "mwallpswedud="+btoa(newpr)+"; expires=" + expires + ";path=/;domain=127.0.0.1";
     getCookie();
 }
