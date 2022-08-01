@@ -106,7 +106,6 @@ document.title = "Educator | MASTROWALL";
 document.getElementById("confirmPcode").addEventListener("input", enableSave);
 
 function enableSave() {
-  // var olpass = $('#pcodeEdu').val();
   var diffpass = $('#pCodeEduPro').val()
   if ( diffpass== $('#confirmPcode').val()) {
     document.getElementById("eduProUpdate").disabled = false;
@@ -162,7 +161,6 @@ if(res!="ID not found!"){
   document.getElementById("golive").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg"  class="svgicondash" fill="currentColor" class="bi bi-easel" viewBox="0 0 16 16"><path d="M8 0a.5.5 0 0 1 .473.337L9.046 2H14a1 1 0 0 1 1 1v7a1 1 0 0 1-1 1h-1.85l1.323 3.837a.5.5 0 1 1-.946.326L11.092 11H8.5v3a.5.5 0 0 1-1 0v-3H4.908l-1.435 4.163a.5.5 0 1 1-.946-.326L3.85 11H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h4.954L7.527.337A.5.5 0 0 1 8 0zM2 3v7h12V3H2z"/></svg> Classroom';
   document.getElementById("tod").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-chat-right-text" viewBox="0 0 16 16"> <path d="M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z"/> <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/></svg> Topic of The Day';
   document.getElementById("eduid").value= res[0].CardId;
-
   
  if( res[0].AllTOD !=0){
   $('#prevsttod').empty();
@@ -177,9 +175,7 @@ if(res!="ID not found!"){
       JSON.parse(singlesttod[st])+'"/><input class="tdkeyid" style="display:none;" value="'+
       JSON.parse(singlesttod[st+1])+'"/></div></div><hr>';
       srno = srno + 1;
- }
-
-}
+ }}
 
 if(res[0].TOD!=""){
   var TOD = unescape(res[0].TOD);
@@ -199,9 +195,7 @@ document.getElementById('allsvevnt').value =preevn;
 getcalendar();
 document.body.style.pointerEvents ="auto";
   document.getElementById("loader").style.visibility = "hidden";
-//   document.getElementById("prepost").style.display = "none";
   document.getElementById("loader").style.display = "none";
-//  live_tod();
 var fname = res[0].FName;
 var lname = res[0].LName;
 var cardn = res[0].CardId;
@@ -211,18 +205,14 @@ let stateObj = { id: "0" };
  window.history.replaceState(stateObj,
        "", shname);
 document.title = res[0].FName + ' ' + res[0].LName +" | MASTROWALL";
-ewfSetCookie(14);
-}
+ewfSetCookie(14);}
 else{
-
   document.body.style.pointerEvents ="auto";
   document.getElementById("checkP").innerHTML = "User email and password not found.";
   document.getElementById("loader").style.visibility = "hidden";
   document.getElementById("loader").style.display = "none";
 }
 }
-
-// document.getElementById("tod").addEventListener("click", live_tod);
 
 function live_tod() {
 document.getElementById("updateTOD").style.pointerEvents ="auto";
@@ -276,7 +266,6 @@ function ldlivetd(e){
 }
 
 function ProTOD() {
- 
   var tdtitle = $("#ttdtitle").val();
   var tdbrief = $("#tbrief").val();
   var tdthumb = $("#tthumb").val();
@@ -286,9 +275,7 @@ function ProTOD() {
   }
   else{
     document.getElementById('previewt').disabled = true;
-  }
-
-}
+  }}
 
 function openTOD() {
   var x = document.getElementById("updateTOD");
@@ -307,11 +294,9 @@ function showServices() {
 
 function reset_editor() {
   document.getElementById("text_editor").reset();
- // document.getElementById("prepost").style.display = "none";
 }
 
 document.getElementById("editEduPro").addEventListener("click", updateEduPro);
-
 function updateEduPro() {
   document.getElementById("updatePro").style.display = "block";
   document.getElementById("goconnect").style.display = "none";
@@ -392,9 +377,6 @@ $.fn.serializeObject = function() {
 $(function() {
   $('form[name="eduProConnect"]').submit(function() {
     document.getElementById("connectivity").value = escape(JSON.stringify($('form[name="eduProConnect"]').serializeObject()));
-   
-    // document.getElementsByClassName("addmoreConnect")[0].disabled = true;
-    // document.getElementsByClassName("addmoreConnect")[1].disabled = false;
     return false;
   });
 });
@@ -405,7 +387,6 @@ $('#connectnxtbtn').click(function(){
 });
 
 document.getElementById("golive").addEventListener("click", openConnect);
-
 function openConnect() {
   $('#TODdash').slideUp('fast');
   $('#connectivityedu').slideDown('fast');
@@ -415,13 +396,8 @@ function openConnect() {
   document.getElementById("updatePro").style.display = "none";
   document.getElementById("LiveTOD").style.display = "none";
   document.getElementById("updateTOD").style.display = "none";
-  // document.getElementsByClassName("addmoreConnect")[0].disabled = false;
   showconnect();
 }
-
-// var script_url1 = "https://script.google.com/macros/s/";
-// var script_url2 = "AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
-// var script_url = script_url1+script_url2+"/exec";
 
 function showconnect() {
   document.getElementById("loaderCON").style.display = "block";
@@ -464,14 +440,12 @@ function ldconctdt(e){
   }
 }
 
-
 $(function() {
   $('.proThumb').on("click", function() {
     var z = document.getElementById("ppic").value;
     document.getElementById("profilePic").innerHTML = '<img width="140px" src="' + z + '">';
   });
 });
-
 
 function showavatarBrd() {
   var x = document.getElementById("avatarBrd");
@@ -482,8 +456,6 @@ function showavatarBrd() {
   }
 }
 
-
-
 $('#editEduPro').click(function(){
   $('#TODdash').slideUp('fast');
 document.body.scrollTop = 460;
@@ -491,20 +463,14 @@ document.documentElement.scrollTop = 460;
 }) ;   
 
 function showclroom(){
-$('#educlassroom').slideDown('fast');
-
-}
+$('#educlassroom').slideDown('fast');}
 
 function opensframe(){
-  $("#fmcontainers").slideDown('fast');
-
-  
-}
+  $("#fmcontainers").slideDown('fast');}
 
 function openlframe(){
-  $("#fmcontainert").slideDown('fast');
- 
-}
+  $("#fmcontainert").slideDown('fast');}
+  
 $('.closefw').on('click',function(){
   $('.fullwidth').slideUp('fast');
 });
@@ -512,7 +478,6 @@ $('.closefw').on('click',function(){
 $('.closefwtwo').on('click',function(){
   $('.fwidthtwo').slideUp('fast');
 });
-
 
 function noextlink(){
   $('#noextlinkdiv').slideDown('fast');
@@ -547,14 +512,10 @@ $('#resetuptopic').click(function(){
   document.getElementById("todconedit").innerHTML = ` <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>`;
 });
   
-
 text_editor.addEventListener('submit', (event) => {
- // document.getElementById("updateTOD").style.pointerEvents ="none";
  document.getElementById("uptday").disabled = true;
   updatetopicday();
 });
-
-
 
 function updatetopicday(){
   var pt_url11 = "https://script.google.com/macros/s/";
@@ -570,8 +531,6 @@ var pt_url = pt_url11 + pt_url22 +"/exec";
     method: "POST",
     dataType: "jsonp"
   }); 
-
-  //setTimeout( function(){live_tod();},2000);
 }
 
 function ctrlqaddtod(e){
@@ -586,12 +545,7 @@ live_tod();}
 else{
   document.getElementById("uptday").disabled = false;
 document.getElementById('previewt').disabled = true;
-document.getElementById("updateTOD").style.pointerEvents ="auto";
-
-}
- 
- 
-}
+document.getElementById("updateTOD").style.pointerEvents ="auto";}}
 
 function notifyrmvtd(label){
   document.getElementById("LiveTOD").style.pointerEvents ="none";
@@ -614,25 +568,20 @@ function notifyrmvtd(label){
    url: urlstside,
    method: "GET",
    dataType: "jsonp"
- });
-
-}
+ });}
 
 function ctrlqtdrmvd(e){
   document.getElementById("LiveTOD").style.pointerEvents ="auto";
-  live_tod();
-}
+  live_tod();}
 
 
 document.getElementById("insthttp").addEventListener("input", embed_vid);
-
 function embed_vid() {
   document.getElementById("previewvid").style.display = "block";
   var link = document.getElementById("crVideo").value;
   var myId = getId(link);
   if (link != '' && link != 'http://') {
     document.getElementById("previewvid").innerHTML = '<iframe class="youvidF" src="' + myId + '" frameborder="0" allowfullscreen="true"></iframe>';
-   
   } else {
     return false;
   }
@@ -643,15 +592,11 @@ function getId(url) {
   var regExpVM = /^.*(vimeo.com\/)([^#\&\?]*).*/;
   var matchYT = url.match(regExpYT);
   var matchVM = url.match(regExpVM);
-
   if (matchYT && matchYT[2].length == 11) { 
     return "https://www.youtube.com/embed/"+matchYT[2];
-    
   } 
-  
   else if(matchVM){
     return "https://player.vimeo.com/video/"+matchVM[2];
- 
   }
   else {
     return 'error';
@@ -688,18 +633,13 @@ if(tdvalue ==""){
 else{
   ProTOD();limitchar();
   document.getElementById('nocontent').style.display='none';
-}
-
-})
+}})
 
 /////////////////Calender////////////////
 
-
  function getcalendar() {
   var calendarEl = document.getElementById('calendar');
-  
-  
-var preevent =$('#allsvevnt').val();
+  var preevent =$('#allsvevnt').val();
   var elemev = preevent.split("{e},");
   var eventsup =[];
 for(var i=0;i<elemev.length-1;i+=3){
@@ -713,8 +653,7 @@ eventsup.push(entry);
 var date = new Date();
 var tois = date.toISOString();
 var flcaldate = tois.substring(0, 10);
-
-  var calendar = new FullCalendar.Calendar(calendarEl, {
+var calendar = new FullCalendar.Calendar(calendarEl, {
 
     headerToolbar: {
       left: 'prev,next',
@@ -787,19 +726,15 @@ var delitm = tt+kt+st+kt+et+kt;
   calendar.render();
 }
 
-
 function ctrlqevsv(e){
-inwallEdu();
-}
+inwallEdu();}
 
 function ctrlqevrmv(e){
-  inwallEdu();
-}
+  inwallEdu();}
 
 $('#skpad').click(function(){
   window.open('https://sketch.mastrowall.com', '_blank', 'location=center,height=670,width=1200,left=80,top=0,scrollbars=yes,status=yes');
 });
-
 
   $('#opcal').click(function(){
     $('#showServiceEdu').show();
