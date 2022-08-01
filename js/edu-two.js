@@ -1,5 +1,4 @@
-
-function checkexisting(){
+       function checkexisting(){
           var ur1 = "https://script.google.com/macros/s/";
           var ur2 ="AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
           var url = ur1+ ur2+"/exec"+"?action=read";
@@ -22,9 +21,7 @@ function checkexisting(){
                var Storage = elemin.Storage;
                }
             }
-            // console.log(flag);
             if(flag == 1){
-                
                var email = $("#email").val();
                var edpa = $('#confnwactpass').val();
                 var d = new Date();
@@ -60,8 +57,8 @@ function checkexisting(){
     }
 }
 function ctrlqnacnt(e){
-    inwallEdu();
-}
+    inwallEdu();}
+    
 function onstartswitch(){
     document.getElementById('switchclsrm').style.pointerEvents ="none";
     var ur1 = "https://script.google.com/macros/s/";
@@ -73,30 +70,19 @@ function onstartswitch(){
     $.getJSON(url, function(json) {
        for (var i = 0; i < json.records.length - 1; i++) {
          if (emailch == json.records[i].Email) {
-if(pascd !=json.records[i].Passcode){
+         if(pascd !=json.records[i].Passcode){
     $('#switchnoti').slideDown();       
     document.getElementById('switchnoti').innerHTML = "Switch to Class: "+json.records[i].Class+" <svg xmlns='http://www.w3.org/2000/svg fill='currentColor' width='20px' height='20px' style='background-color:white;margin-left:10px;padding:2px;' class='bi bi-arrow-left-right' viewBox='0 0 16 16'>"+
     "<path fill-rule='evenodd' d='M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z'/></svg>";
     setTimeout(function(){
         $('#switchnoti').slideUp();},6000);
-
-
     document.getElementById('switchclsrm').innerHTML = "<div class='switchmenu' onclick='switchprof()'><svg xmlns='http://www.w3.org/2000/svg fill='currentColor' class='bi bi-arrow-left-right' viewBox='0 0 16 16'>"+
     "<path fill-rule='evenodd' d='M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z'/></svg>"
     +" | <span class='cardd'>"+json.records[i].CardId+"<input id='andpass' value='"+json.records[i].Passcode+"'></span></div>";
     document.getElementById('switchclsrm').style.pointerEvents ="auto";
-   
-}
-            flag = flag + 1;
-         }
-        }
-        // console.log(flag);
-        if(flag == 1){
-            document.getElementById('crtnewadjacnt').style.display ="block";
-        }
-        else{
-            document.getElementById('crtnewadjacnt').style.display ="none";
-        }
+} flag = flag + 1; }}
+        if(flag == 1){document.getElementById('crtnewadjacnt').style.display ="block";}
+        else{document.getElementById('crtnewadjacnt').style.display ="none";}
     });
 }
 
@@ -117,8 +103,8 @@ function switchprof(){
     var d = new Date();
     d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toUTCString();
-    document.cookie = "mwallced=true; expires=" + expires + ";path=/;domain=mastrowall.com";
-    document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
-    document.cookie = "mwallpswedud="+btoa(newpr)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
+    document.cookie = "mwallced=true; expires=" + expires + ";path=/;domain=127.0.0.1";
+    document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=127.0.0.1";
+    document.cookie = "mwallpswedud="+btoa(newpr)+"; expires=" + expires + ";path=/;domain=127.0.0.1";
     getCookie();
 }
