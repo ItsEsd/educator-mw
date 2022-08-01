@@ -1,4 +1,3 @@
-
 function deltopictod(label){
   $("#showdelnote").show();
 var click = 1;
@@ -32,8 +31,6 @@ $('#deletetodst').click(function(click){
  $('#hidedelnote').click(function(){
   $("#showdelnote").hide();
     }); 
-
-
 
 function removefrmlst(e){
   document.getElementById("deletetodst").disabled = false;
@@ -133,30 +130,35 @@ function showtopictod(label){
   var x = document.getElementsByClassName('tdcid');
   var y = document.getElementsByClassName('tdkeyid');
   document.getElementsByClassName("showsttod")[posofinput].disabled = true;
-  //   var lenposition = x[v].val();
        var todid = JSON.stringify(x[posofinput].value);
        var todkey = JSON.stringify(y[posofinput].value);
-   var ur1 = "https://script.google.com/macros/s/";
-   var ur2 = "AKfycbzGI2GphM15BFPHN6Fow5pzs13UmZy5_AGRMkz7z3qT8tkop4l3M7JkYg";
-       var url = ur1+ur2+"/exec" + "?action=readTD";
-       $.getJSON(url, function(json) {
-         for (var i = 0; i < json.records.length - 1; i++) {
-           if (todid === json.records[i].TODidd && todkey === json.records[i].TODFood) {
-            document.getElementById("preview").style.display = "block";
-            var prepostpre = JSON.parse(JSON.parse(json.records[i].TODhtm));
-            var inHTML = atob(prepostpre.TODContent);
-            document.getElementById("previewPost").innerHTML = unescape(inHTML);
-            document.getElementById("previewPostTime").innerHTML = json.records[i].TimeStamp;
-            document.getElementById("previewPostId").innerHTML = "ID: " + JSON.parse(json.records[i].TODidd);
-            document.getElementById("previewPostCreator").innerHTML = JSON.parse(json.records[i].TODAddmin);
-            document.getElementById("avthumb").innerHTML = '<img width="60px" src="' + prepostpre.AVPic + '" style="padding:4px;">';
-            document.getElementById("previewPostTitle").innerHTML = prepostpre.TODTitle;
-            document.getElementById('preview').scrollTop = 0;
-            document.getElementsByClassName("showsttod")[posofinput].disabled = false;  
-          }         
-           }       
-       })     
+       var tdur1="https://script.google.com/macros/s/";
+       var tdur2="AKfycbzhBiB9M1ujqIqODdpuO6rBx4mQoR_niZMxJndRdY-A0OgbUi0gszQraZ4x__EnhwMq";
+       var tdur = tdur1+tdur2+"/exec" ;
+       var url = tdur + "?callback=rdreslt&tdid="+todid+"&tdkey="+todkey+"&action=rdgentd";
+       var request = jQuery.ajax({
+         crossDomain: true,
+         url: url,
+         method: "GET",
+         dataType: "jsonp"
+       }); 
 }
+
+function rdreslt(e){
+  var reslt = e.records;
+  if(reslt!="ID not found!"){
+  document.getElementById("preview").style.display = "block";
+  var prepostpre = JSON.parse(JSON.parse(reslt[0].TODhtm));
+  var inHTML = atob(prepostpre.TODContent);
+  document.getElementById("previewPost").innerHTML = unescape(inHTML);
+  document.getElementById("previewPostTime").innerHTML = reslt[0].TimeStamp;
+  document.getElementById("previewPostId").innerHTML = "ID: " + JSON.parse(reslt[0].TODidd);
+  document.getElementById("previewPostCreator").innerHTML = JSON.parse(reslt[0].TODAddmin);
+  document.getElementById("avthumb").innerHTML = '<img width="60px" src="' + prepostpre.AVPic + '" style="padding:4px;">';
+  document.getElementById("previewPostTitle").innerHTML = prepostpre.TODTitle;
+  document.getElementById('preview').scrollTop = 0;
+  document.getElementsByClassName("showsttod")[posofinput].disabled = false;  
+}}
 
 function crcpbitlink(label){
   var list=document.getElementsByClassName("sharebiton");
@@ -215,35 +217,26 @@ var url = url1+url2+"/exec"+ "?action=gentestrd";
 document.getElementById('loaderback').style.display = "block";
 document.getElementById('srcexambtn').disabled = true;
 $.getJSON(url, function(json) { 
-
-//console.log(json);
 for (var i = 0; i < json.records.length - 1; i++) {
  if (exid === json.records[i].ExamID && expass === json.records[i].ExamPass) {
    var restren = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
    var sprestren = restren.split(',');
    var lenstren = sprestren.length;
-
    var restr = JSON.parse(JSON.stringify(json.records[i].StuAnsFinal));
    var sprestr = restr.split('{anst},');
    var lenstr = sprestr.length;
    var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
    var anskey = ansk.split('{qfin}",');
    var lenstrkey = anskey.length;
-   //console.log(sprestr);
    for(var k =0; k<lenstr-1;k+=2){
-     
      var stenid = JSON.parse(sprestr[k]);
      var res = sprestr[k+1];
      var resone = JSON.parse(res);
      var count = 0;
      for(var j=0; j<lenstrkey-1;j++){
      if(resone.qnst[j] === anskey[j].substring(1)){
-     count = count+1;
-     }
-     else{
-       count = count;
-     }
-     }
+     count = count+1;}
+     else{ count = count;}}
    for(var v=0;v<lenstren;v++){
           if(stenid == JSON.parse(sprestren[v+2])){
            var stname = sprestren[v];break;
@@ -252,12 +245,10 @@ for (var i = 0; i < json.records.length - 1; i++) {
    document.getElementById('loadercp').style.display = "block";
    document.getElementById('stresultall').innerHTML += "<p style='font-size:14px;color:black;text-align:left;'>("+(k+2)/2+") Enrollment ID: "+JSON.parse(sprestr[k])+"</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>"+JSON.parse(stname)+"</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>"+ count+"</span></span></p><br><hr>"  ;   
    document.getElementById('backcp').style.display = "block";
-     
    }
    
     document.getElementById('examdescpin').innerHTML ="<div><p style='text-align:left;'>Educator: "+json.records[i].EducatorName+
     "<br>Exam Title: "+json.records[i].ExamTitle+"<br>Description: "+json.records[i].ExamDescp+"<br>Duration: "+json.records[i].TDuration+"</p></div>" ;
- 
     document.getElementById('srcexambtn').disabled = false;
   }
   else{
@@ -277,7 +268,6 @@ var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,
     oPrntWin.document.close();
 }
 
-
 $("#backcp").click(function(){
   document.getElementById('prevexperform').style.display = 'block';
   $('#loadercp').slideUp('fast');
@@ -286,6 +276,7 @@ $("#backcp").click(function(){
 $("#loaderback").click(function(){
   $('#loaderback').slideUp('fast');
 });
+
 document.getElementById('svexminfo').addEventListener('click',saveexaminfo);
 function saveexaminfo(){
   $('#loadercp').slideUp('fast');
@@ -362,8 +353,6 @@ function shoeprevexresult(label){
        var url = url1+url2+"/exec"+ "?action=gentestrd";
        $('#loaderback').slideDown();
        $.getJSON(url, function(json) { 
-
-        //console.log(json);
         for (var i = 0; i < json.records.length - 1; i++) {
          if (examid === json.records[i].ExamID && enpass === json.records[i].ExamPass) {
            var restren = JSON.parse(JSON.stringify(json.records[i].EnrolledStuFinal));
@@ -375,9 +364,7 @@ function shoeprevexresult(label){
            var ansk = JSON.parse(JSON.stringify(json.records[i].AnsSTfinal));
            var anskey = ansk.split('{qfin}",');
            var lenstrkey = anskey.length;
-           //console.log(sprestr);
            for(var k =0; k<lenstr-1;k+=2){
-             
              var stenid = JSON.parse(sprestr[k]);
              var res = sprestr[k+1];
              var resone = JSON.parse(res);
@@ -388,23 +375,18 @@ function shoeprevexresult(label){
              }
              else{
                count = count;
-             }
-             }
+             }}
            for(var v=0;v<lenstren;v++){
                   if(stenid == JSON.parse(sprestren[v+2])){
                    var stname = sprestren[v];break;
-               }
-           }
+               }}
            document.getElementById('loadercp').style.display = "block";
            document.getElementById('stresultall').innerHTML += "<p style='font-size:14px;color:black;text-align:left;'>("+(k+2)/2+") Enrollment ID: "+JSON.parse(sprestr[k])+"</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>"+JSON.parse(stname)+"</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>"+ count+"</span></span></p><br><hr>"  ;   
-           document.getElementById('backcp').style.display = "block";
-             
-           }
+           document.getElementById('backcp').style.display = "block";}
            
             document.getElementById('examdescpin').innerHTML ="<div><p style='text-align:left;'>Educator: "+json.records[i].EducatorName+
             "<br>Exam Title: "+json.records[i].ExamTitle+"<br>Description: "+json.records[i].ExamDescp+"<br>Duration: "+json.records[i].TDuration+"</p></div>" ;
             document.getElementById('svexminfo').style.display = "none";
-           
           }
           else{
             document.getElementById('loaderback').style.display = "none";
