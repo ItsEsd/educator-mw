@@ -43,6 +43,7 @@
     <script src="js/wallcook.js"></script> <base target="_blank">
     <link href='apps/calender/main.css' rel='stylesheet' />
     <script src='apps/calender/main.js'></script>
+    <script src="js/html2canvas.js"></script>
   </head>
 
   <body>
@@ -215,18 +216,31 @@
         <!--------connectivity------->
         <section>
         <div align="center" id="connectivityedu">  <div id="edconnectdiv">
-          <div id="editprofileedu"> <button type="button" class="btn btn-light" id="editEduPro"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
-            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-            <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg> Edit Profile Information</button>
+          <div id="editprofileedu"> 
+
+            <span id="getecard"><button class="btn btn-light" id="opecrd">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+                <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+              </svg>
+              My E Card</button></span>
+
      <!-- <hr style="max-width:400px;">-->  
           <input id="cls2" type="button" class="btn-success" onclick="document.getElementById('connectivityedu').style.display='none';" value="Close"/>
           </div>
           <div id="goconnect" >
-           <h5 align="left" style="margin:20px;">Connectivity:</h5>
+           <h5 align="left" style="margin:20px;">Connectivity: 
+
+            <span><button type="button" class="btn btn-outline-danger" id="editEduPro" title="Edit Profile Information"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path d="M8.93 6.588l-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" /></svg></button>
+            <span>
+
+            </h5>
             <div align="left" id="loadconnectdiv"><div align="center"><div id="loaderCON" class="spinner-border text-primary"></div></div>
             <span id="connect1"></span><span id="connect2"></span></div>
             <div id="editConnect" style="background-color:#f0f0f0;" align="center">
-              <form name="eduProConnect" target="hdnfrm">
+              <form name="eduProConnect" target="hdnfrm" id="connectup">
                 <div style="width:100%;float:left; margin:10px;" class="form-group">
                   <div class="row ">
                     <div class="form-group col2 "> <input class="form-control editProFormCss addconnect" type="text" style="width:120px; height:40px;margin-left:15px;" id="gconnect" name="idConnect" placeholder="Phone No." maxlength="10" required></div>
@@ -238,25 +252,36 @@
                     <div class="form-group col2 "> <input class="form-control editProFormCss addconnect" type="email" style="width:120px; height:40px;margin-left:15px;" name="idConnect" placeholder="Email Id" required></div>
                     <div class="col1 form-group"> <select style="width:140px; height:40px;margin-left:6px;" name="Connect" required>
                         <option value="../images/edconnect/mail.webp">Mail</option>
-                      </select> </div> <button class="addmoreConnect btn-danger" style="width:40px; height:40px;margin-left:10px;margin-right:12px;background-color:#cc6600;color:white;border:none; border-radius:6px;display:inline-block;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
-                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" /></svg></button>
+                      </select> </div>
                   </div>
                 </div>
                 <div id="nxt"> 
                   <input type="submit" id="connectnxtbtn" class="btn-success" value="Next" />
-                  <input type="button" id="cls1" class="btn-danger" onclick="document.getElementById('connectivityedu').style.display='none';" value="Close" />
+                   <button class="addmoreConnect btn-dark"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-plus-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" /></svg></button>
                 </div>
                 <div id="sv" style="display:none;"> 
-                  <input id="svconnect" type="button" value="Save" class="btn-danger"/>
+                  <input id="svconnect" type="button" value="Save" class="btn-success"/>
                  </div>
               </form><br>
                <span style="color:black" id="connectUp"></span> 
                <input id="connectivity" style="display:none;" />
             </div>
           </div>
-         
         </div></div></section>
+        <!-- ECard Design and Download -->
+        <section>
+          <div id="myerded" align="center">
+            <div id="prevcard">
+              <div id="canved" align="left"></div>
+             <p> <a class="btn btn-primary" id="downecrd" onclick="downloadecrd(this);">Download</a>
+              <span id="clsecrd">Close</span>  
+            </p>
+            </div>
+          </div>
+
+        </section>
         <!--------------Edit Profile-------------->
         <section>
         <div id="scrollEdit" align="center"> 
@@ -334,7 +359,7 @@
                 <div class="form-group"> <label class="editproLabel" for="confirmPcode">Confirm password:</label><span id='message' style="float:right;margin-right:10px;"></span> <input type="password" class="form-control editProFormCss" id="confirmPcode" placeholder="**********" required> </div> <br>
                 <div align="center">
                   <button type="submit" class="btn btn-success" style="background-color:#444444;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;margin-right:6px;" id="eduProUpdate" onclick="update_pro();" disabled="disabled">Save</button>
-                  <button type="button" class="btn btn-success" style="background-color:#444444;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;" id="" onclick="document.getElementById('updatePro').style.display='none';$('#scrollEdit').slideUp('fast');">Close</button></div> <span style="color:black;" id="updateNotice"></span><br>
+                  <button type="button" class="btn btn-success" style="background-color:#444444;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;" id="" onclick="$('#scrollEdit').slideUp('fast');">Close</button></div> <span style="color:black;" id="updateNotice"></span><br>
               </form>
               <p id="crtnewadjacnt" onclick="$('#newpassfacnt').slideDown();">Add a New Class</p>
 <div id="newpassfacnt"><form id="swtchnwact" onsubmit="$('#newpassfacnt').slideUp();return false;"><input type="password" id="nwactpass" class="form-control" placeholder="Create New Password" required/>
