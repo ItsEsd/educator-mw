@@ -205,7 +205,13 @@ let stateObj = { id: "0" };
  window.history.replaceState(stateObj,
        "", shname);
 document.title = res[0].FName + ' ' + res[0].LName +" | MASTROWALL";
-ewfSetCookie(14);}
+ewfSetCookie(14);
+$('#canved').empty();
+document.getElementById('canved').innerHTML = "<div class='edcrdinf'><div class='infone'>"+
+"<img src='"+res[0].ProfilePic+"'/><div><h4>EDUCATOR</h4><hr><p class='pinone'>"+fname+" "+lname+"</p><p class='pintwo'>"+res[0].Subject+" | "+res[0].Class+" | "+res[0].Board+
+"</p></div><span class='spincrd'>mastrowall.com</span></div><div class='inftwo'>Contact: +"+res[0].CountryCode+" "+res[0].PhoneNo+" | "+res[0].Email+"</div><hr></div>"
+
+}
 else{
   document.body.style.pointerEvents ="auto";
   document.getElementById("checkP").innerHTML = "User email and password not found.";
@@ -296,11 +302,6 @@ function reset_editor() {
   document.getElementById("text_editor").reset();
 }
 
-document.getElementById("editEduPro").addEventListener("click", updateEduPro);
-function updateEduPro() {
-  document.getElementById("updatePro").style.display = "block";
-  document.getElementById("goconnect").style.display = "none";
-}
 
 $('form input[id="emailid"]').blur(function() {
   var email = $(this).val();
@@ -317,7 +318,7 @@ $(document).ready(function() {
   $("#editEduPro").click(function() {
     $(".allHide").slideUp('fast');
     $("#updatePro").slideDown('fast');
-    $('#connectivityedu').slideUp('fast');
+    // $('#connectivityedu').slideUp('fast');
   });
 });
 $(document).ready(function() {
@@ -337,7 +338,7 @@ $(document).ready(function() {
     e.preventDefault();
     if (k < max_fi) {
       k++;
-      $(wrap).append(`<div class="golive form-group" style="margin-bottom:16px; width:340px;margin-left:4px;margin-right:12px;"> <input class="form-control addconnect" type="url" style="width:120px; height:40px; display:inline-block;" placeholder="Link url" name="idConnect" required><select id="exidother" name="Connect" style=" display:inline-block;width:140px; height:40px;margin-left:6px;"><option value="../images/edconnect/linkedin.webp">Linkedin</option> <option value="../images/edconnect/facebook.webp">Facebook</option> <option value="../images/edconnect/whatsapp.webp">WhatsApp</option> <option value="../images/edconnect/gduo.webp">Google Duo</option> <option value="../images/edconnect/skype.webp">Skype</option> <option value="../images/edconnect/ytube.webp">YouTube</option> <option value="../images/edconnect/vimeo.webp">Vimeo</option><option value="../images/edconnect/zoom.webp">Zoom</option><option value="../images/edconnect/teams.webp">Microsoft Teams</option><option value="../images/edconnect/gmeet.webp">Google Meet</option> <option value="../images/connectlinks.png">Social & Other</option>  </select> <button class="addmoreConnect btn-danger remove_field" style="width:40px; height:40px;margin-left:6px;background-color:#cc6600;color:white;border:none; border-radius:6px;"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/></svg></button> </div>`);
+      $(wrap).append(`<div class="golive form-group" style="margin-bottom:16px; width:340px;margin-left:4px;margin-right:12px;"> <input class="form-control addconnect" type="url" style="width:120px; height:40px; display:inline-block;" placeholder="Link url" name="idConnect" required><select id="exidother" name="Connect" style=" display:inline-block;width:140px; height:40px;margin-left:6px;"><option value="../images/edconnect/teams.webp">Microsoft Teams</option><option value="../images/edconnect/gmeet.webp">Google Meet</option> <option value="../images/edconnect/linkedin.webp">Linkedin</option> <option value="../images/edconnect/facebook.webp">Facebook</option> <option value="../images/edconnect/whatsapp.webp">WhatsApp</option> <option value="../images/edconnect/gduo.webp">Google Duo</option> <option value="../images/edconnect/skype.webp">Skype</option> <option value="../images/edconnect/ytube.webp">YouTube</option> <option value="../images/edconnect/vimeo.webp">Vimeo</option><option value="../images/edconnect/zoom.webp">Zoom</option><option value="../images/connectlinks.png">Social & Other</option>  </select> <button class="btn-dark remove_field"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/></svg></button> </div>`);
     }
   });
   $(wrap).on("click", ".remove_field", function(e) {
@@ -380,13 +381,12 @@ $(function() {
     return false;
   });
 });
-
-$('#connectnxtbtn').click(function(){
+connectup.addEventListener('submit',(event)=>{
   document.getElementById("nxt").style.display = "none";
   document.getElementById("sv").style.display = "block";
+$('.remove_field').prop('disabled',true);
 });
 
-document.getElementById("golive").addEventListener("click", openConnect);
 function openConnect() {
   $('#TODdash').slideUp('fast');
   $('#connectivityedu').slideDown('fast');
@@ -403,6 +403,8 @@ function showconnect() {
   document.getElementById("loaderCON").style.display = "block";
   document.getElementById("nxt").style.display = "block";
   document.getElementById("sv").style.display = "none";
+  $('.remove_field').prop('disabled',false);
+  document.getElementById("svconnect").disabled=false;
   $("#connect1").empty();
   $("#connect2").empty();$("#connectUp").empty();
   var email1 = $("#email").val();
@@ -438,6 +440,7 @@ function ldconctdt(e){
     }
 
   }
+  
 }
 
 $(function() {
@@ -456,11 +459,11 @@ function showavatarBrd() {
   }
 }
 
-$('#editEduPro').click(function(){
-  $('#TODdash').slideUp('fast');
-document.body.scrollTop = 460;
-document.documentElement.scrollTop = 460;
-}) ;   
+// $('#editEduPro').click(function(){
+//   $('#TODdash').slideUp('fast');
+// document.body.scrollTop = 460;
+// document.documentElement.scrollTop = 460;
+// }) ;   
 
 function showclroom(){
 $('#educlassroom').slideDown('fast');}
@@ -760,3 +763,29 @@ $('#skpad').click(function(){
 
     $('#loaderTOD').click(function(){
       $('#loaderTOD').hide();});
+  
+ $('#opecrd').click(function(){
+$('#myerded').slideDown();
+ });
+ 
+ $('#clsecrd').click(function(){
+  $('#myerded').slideUp();
+   });
+   
+   $(document).ready(function () {
+    $("#downecrd").on('click', function () {
+        html2canvas(document.getElementById("canved"),
+            {
+                allowTaint: true,
+                useCORS: true
+            }).then(function (canvas) {
+                var anchorTag = document.createElement("a");
+                document.body.appendChild(anchorTag);
+                anchorTag.download = "myEcard.png";
+                anchorTag.href = canvas.toDataURL();
+                anchorTag.target = '_blank';
+                anchorTag.click();
+            });
+    });
+
+});
