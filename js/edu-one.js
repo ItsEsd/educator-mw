@@ -1,11 +1,12 @@
 document.getElementById("svconnect").addEventListener("click", upConnect);
 var script_eduProCon1 = "https://script.google.com/macros/s/";
-var script_eduProCon2 ="AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
+var script_eduProCon2 ="AKfycbzzs9VY3btS5x_fN13iyKrf7ClYGzOwZorkXu-bGrY3WZzTiRdFW-dIANlpwImr9kZroA";
 var script_eduProCon =script_eduProCon1 + script_eduProCon2+"/exec";
 function upConnect() {
   var gconnect = $("#connectivity").val();
   var email1 = $("#email").val();
-  var url = script_eduProCon + "?callback=ctrlqcon&email=" + email1 + "&connectivity=" + gconnect + "&action=upconnect";
+  var pcon = $("#pcodeEdu").val();
+  var url = script_eduProCon + "?callback=ctrlqcon&email=" + email1 + "&pcon="+pcon+"&connectivity=" + gconnect + "&action=upconnect";
   var request = jQuery.ajax({
     crossDomain: true,
     url: url,
@@ -65,7 +66,7 @@ function ldpredata(e){
 
 function update_pro() {
   var script_eduPro1 = "https://script.google.com/macros/s/";
-  var script_eduPro2 = "AKfycbzQb1AFfuHBzUQZx-OYWzoMa-wGbrgwY13_nsVw9ndaV_57Mr--ondYLkpUJKVjSmn-5w";
+  var script_eduPro2 = "AKfycbzzs9VY3btS5x_fN13iyKrf7ClYGzOwZorkXu-bGrY3WZzTiRdFW-dIANlpwImr9kZroA";
   var script_eduPro = script_eduPro1+ script_eduPro2+ "/exec";
   document.getElementById("loaderPro").style.visibility = "visible";
   var a = $("#fname").val();
