@@ -52,7 +52,7 @@ else{
           document.getElementById('checkemid-2').style.display= 'block';
           document.getElementById('checkemid-2').innerHTML= 'Verification code send to your email.';
           setTimeout(function() {
-            jQuery('#checkemid').fadeOut('fast');
+            jQuery('#checkemid-2').fadeOut('fast');
           }, 10000);
             
          }
