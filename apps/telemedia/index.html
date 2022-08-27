@@ -20,15 +20,15 @@
   </head>
 
 
-  <body onload="myFunction(); read_value_pic();" style="margin:0;">
+  <body onload="myFunction(); telemed();" style="margin:0;">
     <div id="loader2" class="spinner-border text-light"></div>
     <div style="display:none;" id="myDiv">
       <!-----TOD MWALL News Feed----->
       <div class="telemhead">
         <div class="collapsible">
-          <h4 style="display:inline-block;padding-top:5px;padding-left:2px;color:white;"> Tele Media</h4><svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16" style="color:white;float:left;padding:5px;">
+          <a trget="_blank" href="https://telemedia.mastrowall.com"><h4 style="display:inline-block;padding-top:5px;padding-left:2px;color:white;"> Tele Media</h4><svg xmlns="http://www.w3.org/2000/svg" width="2.5em" height="2.5em" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16" style="color:white;float:left;padding:5px;">
             <path fill-rule="evenodd" d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z" />
-            <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" /> </svg>
+            <path fill-rule="evenodd" d="M9.5 1h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z" /> </svg></a>
             <span style="cursor:pointer;float:right;margin-right:0px;">
               <button id="showfeed"><img id="feedicon" src="../../images/newsfeedicon.png"></button>
             </span>
@@ -70,6 +70,49 @@
 </div>
     <script src="media.js"></script>
    <script>
+    var myVar;
+
+function myFunction() {
+  myVar = setTimeout(showPage, 2000);
+}
+
+function showPage() {
+  document.getElementById("loader2").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
+$(document).ready(function() {
+    $(".show").click(function() {
+      $(".collap").toggle();
+    });
+  });
+
+  jQuery(function($) {
+    $.fn.hScroll = function(amount) {
+      amount = amount || 120;
+      $(this).bind("DOMMouseScroll mousewheel", function(event) {
+        var oEvent = event.originalEvent,
+          direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta,
+          position = $(this).scrollLeft();
+        position += direction > 0 ? -amount : amount;
+        $(this).scrollLeft(position);
+        event.preventDefault();
+      })
+    };
+  });
+  $(document).ready(function() {
+    $('.box').hScroll(40);
+    $('#showfeed').on('click',function(){
+      var elem = document.getElementById('feedholder');
+      if(elem.style.display != "block"){
+        $('#feedholder').slideDown('slow');
+      }
+        else{$('#feedholder').slideUp('slow');}
+    });
+    $('#feedholder').on('click',function(){
+        $('#feedholder').slideUp('fast');
+    });
+  });
       document.addEventListener('contextmenu', event => event.preventDefault());
     </script>
   </body>
