@@ -217,7 +217,7 @@ function getData(e){
   var dataset = db+k;
   var data = nwone[dataset];
   var innews = JSON.parse(data[0].InMedia1);
-  document.getElementById("inm1").innerHTML += '<p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr> ';
+  document.getElementById("inm1").innerHTML += '<div class="inm1con"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
   }
   
   // Med News #2 /////////////////////
