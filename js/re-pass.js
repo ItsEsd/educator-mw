@@ -1,4 +1,4 @@
-/* MASTROWALL  */
+/* M A S T R O W A L L  */
 repassone.addEventListener('submit', (event) => {
     $('#checkemid').slideUp('fast');
     document.getElementById("loader-fp").style.visibility = "visible";
