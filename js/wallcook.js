@@ -1,4 +1,4 @@
-
+/* M A S T R O W A L L */
 var ewfSetCookie = function(exdays) {
   var psmed = $("#email").val();
   var pswed = $("#pcodeEdu").val();
