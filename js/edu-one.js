@@ -258,7 +258,7 @@ function ckeckactvst(dy,mn,yr){
   if(tyr>=yr){
     if(tmnth>=mn){
       if(tdy>dy){
-       $('#notifypay').show();
+       $('#notifypay').fadeIn();
       }
     }
   }
