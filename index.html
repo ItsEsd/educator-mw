@@ -45,7 +45,6 @@
     <script src='apps/calender/main.js'></script>
     <script src="js/html2canvas.js"></script>
   </head>
-
   <body>
     <div align="center">
       <div id="signInEdu" style="padding-top:85px;"><img src="images/educator.webp" style="pointer-events:none;width: 140px;">
@@ -76,7 +75,6 @@
            <span  id="opensrvc"> <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-easel2" viewBox="0 0 16 16">
               <path fill-rule="evenodd" d="M8 0a.5.5 0 0 1 .447.276L8.81 1h4.69A1.5 1.5 0 0 1 15 2.5V11h.5a.5.5 0 0 1 0 1h-2.86l.845 3.379a.5.5 0 0 1-.97.242L12.11 14H3.89l-.405 1.621a.5.5 0 0 1-.97-.242L3.36 12H.5a.5.5 0 0 1 0-1H1V2.5A1.5 1.5 0 0 1 2.5 1h4.691l.362-.724A.5.5 0 0 1 8 0ZM2 11h12V2.5a.5.5 0 0 0-.5-.5h-11a.5.5 0 0 0-.5.5V11Zm9.61 1H4.39l-.25 1h7.72l-.25-1Z"/>
             </svg> My Class</span>
-
             <span id="opcal"><svg  xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-calendar2-week" viewBox="0 0 16 16">
               <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
               <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
@@ -87,11 +85,9 @@
             <div id="infoMastrowallEdu">|| An Art of Learning ||</div>
             <button type="button" class="btn btn-light" id="mwallopennew"  onclick="window.open('https://mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');">M A S T R O W A L L</button>
          <!-- <hr style="max-width:400px;">-->  
-           
           </div></div>
         </div>
         <center><div id="switchnoti"></div></center>
-        <!--<hr style="width:60%;border-width:2px;">-->
           <div id="showServiceEdu">
             <div id="titleleft">Educator | MASTROWALL<span>
               <svg xmlns="http://www.w3.org/2000/svg"  id="skpad" fill="currentColor" class="bi bi-palette-fill" viewBox="0 0 16 16">
@@ -115,6 +111,12 @@
             <div class="dashicon">
               <div id="lecture" ></div>
             </div>
+            <div id="accntsts">
+            <div>Account Status : <span id="accntstat"></span></div>
+            <div id="activetime">
+              Start : <span id="accntstart"></span><br>
+              End : <span id="accntend"></span>
+            </div></div>
            <div id="mwallsocial">
             <hr>
             <ul class="icons"  style="display:block;">
@@ -141,8 +143,6 @@
           </div>
           <div id='calendar'></div>
        </div>
-       <!--<hr style="width:60%;border-width:2px;">--> 
-       
       </div>
       <div class="modal" id="insthttp">
         <div class="modal-dialog">
@@ -194,22 +194,7 @@
               </div>
             </form><input id="posinthumb" style="display:none;"><input id="tdtopicidrmv" style="display:none;"><br>
             <div id="nocontent"></div>
-            <!---------Form Complete---------->
-        <!---     <div align="center" style="display:block;margin-left:10px;margin-bottom:20px;" id="prepost">
-              <button type="button" onclick="ProTOD()" id="previewt" class="btn btn-success" style="background-color:#008000;border:none;margin-right:5px;" disabled="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                  <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                  <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" /> </svg> Preview</button>
-                  <span>
-                    <button class="add_field_button btn btn-primary" style="background-color:#0c29cd;border:none;display: inline-block;" id="addtod" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                      <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" /></svg> Add Topic</button> 
-                    
-                    <button type="button" id="post" value="Post" class="btn btn-danger" style="background-color:#cc6600;border:none;" onclick="update_tod();" disabled="disabled"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-folder-symlink" viewBox="0 0 16 16">
-                    <path d="M11.798 8.271l-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z" />
-                    <path d="M.5 3l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2zm.694 2.09A1 1 0 0 1 2.19 4h11.62a1 1 0 0 1 .996 1.09l-.636 7a1 1 0 0 1-.996.91H2.826a1 1 0 0 1-.995-.91l-.637-7zM6.172 2a1 1 0 0 1 .707.293L7.586 3H2.19c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672z" /> </svg>
-                     Post</button></span><br> <br></div><button class="add_field_button btn btn-primary" style="background-color:#0c29cd;border:none;" id="addtod" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" /></svg> Add Topic</button> -->  
-           <!-- To Parse DATA -->
-            <input id="json_tod" style="display:none;height:100px;" /> <!-- Parse DATA -->
+            <input id="json_tod" style="display:none;height:100px;" />
           </div>
         </div>
     </section>
@@ -611,131 +596,141 @@
   </div>
 
 </section><input style="display: none;"id='varvrdigit' value="0"/>
+<section>
+  <div id="notifypay">
+    <center>
+      <div id="actpcmplt">
+        <h4>Complete Activation</h4><hr>
+        <div id="actbtn">
+        <button class="btn btn-primary" id="cmpltpay">Pay & Continue >></button>
+        </div>
+      </div>
+    </center>
+  </div>
+</section>
 <input style="display: none;" id="allsvevnt"/>
-    <script src="js/edu-one.js"></script>
-    <script src="js/edu-two.js"></script>
-    <script src="js/re-pass.js"></script>
-    <script src="js/stu-aprv.js"></script>
-    <script src="js/str-tods.js"></script>
-    <script>
-      function readImage(input) {
-          if ( input.files && input.files[0] ) {
-              var FR= new FileReader();
-              FR.onload = function(e) {
-                   $('#img').slideDown('fast').attr( "src", e.target.result );
-                   $('#base').slideDown('fast').text( e.target.result );
-              };       
-              FR.readAsDataURL( input.files[0] );
-          }
-      }
-      
-      $("#upload").change(function(){
-          readImage( this );
-      });
-      </script>
-      <script>
-      $('document').ready(function () {
-        $('input[type=file]').on('change', function () {
-          var $files = $(this).get(0).files;
-             readImage( this );
-          if ($files.length) {
-            if ($files[0].size > $(this).data('max-size') * 1024) {
-              return false;
-            }
-            var apiUrl = 'https://api.imgur.com/3/image';
-            var apiKey = 'f1fb111ea7f4e5b';
-      
-            var settings = {
-              async: false,
-              crossDomain: true,
-              processData: false,
-              contentType: false,
-              type: 'POST',
-              url: apiUrl,
-              headers: {
-                Authorization: 'Client-ID ' + apiKey,
-                Accept: 'application/json',
-              },
-              mimeType: 'multipart/form-data',
-            };
-      
-            var formData = new FormData();
-            formData.append('image', $files[0]);
-            settings.data = formData;
-            $.ajax(settings).done(function (response) {
-            var k = response;
-            var url = JSON.parse(response);
-            document.getElementById('tthumb').value = url.data.link ;
-            limitchar();ProTOD();
-          
-            });
-          }
-        });
-      });
-      </script>
-      <script>
-          function readImagePro(input) {
-          if ( input.files && input.files[0] ) {
-              var FR= new FileReader();
-              FR.onload = function(e) {
-                   $('#img').slideDown('fast').attr( "src", e.target.result );
-                   $('#base').slideDown('fast').text( e.target.result );
-              };       
-              FR.readAsDataURL( input.files[0] );
-          }
-      }
-      
-      $("#uploadpropiced").change(function(){
-        readImagePro( this );
-      });
-      </script>
-      <script>
-        $('document').ready(function () {
-          $('input[type=file]').on('change', function () {
-            var $files = $(this).get(0).files;             
-            readImagePro( this );                            
-            if ($files.length) {
-              if ($files[0].size > $(this).data('max-size') * 1024) {
-      
-                return false;
-              }
-              var apiUrl = 'https://api.imgur.com/3/image';
-              var apiKey = 'f1fb111ea7f4e5b';
-              var settings = {
-                async: false,
-                crossDomain: true,
-                processData: false,
-                contentType: false,
-                type: 'POST',
-                url: apiUrl,
-                headers: {
-                  Authorization: 'Client-ID ' + apiKey,
-                  Accept: 'application/json',
-                },
-                mimeType: 'multipart/form-data',
-              };
-        
-              var formData = new FormData();
-              formData.append('image', $files[0]);
-              settings.data = formData;
-              $.ajax(settings).done(function (response) {
-              var k = response;
-              var url = JSON.parse(response);
-              document.getElementById('ppic').value = url.data.link ;
-              var z = url.data.link;
-              document.getElementById("profilePic").innerHTML = '<img class="proedimgup" src="' + z + '">';
-              });
-            }
-          });
-        });
-        </script>
-       <script>
-        if('serviceWorker' in navigator){
-          navigator.serviceWorker.register('service-worker.js');
-        } else {
-          console.log("Service worker is not supported");
-        }
-      </script>
-  </body>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/edu-one.js"></script><script src="js/edu-two.js"></script>
+<script src="js/re-pass.js"></script><script src="js/stu-aprv.js"></script>
+<script src="js/str-tods.js"></script><script>
+function readImage(input) {
+if ( input.files && input.files[0] ) {
+    var FR= new FileReader();
+    FR.onload = function(e) {
+          $('#img').slideDown('fast').attr( "src", e.target.result );
+          $('#base').slideDown('fast').text( e.target.result );
+    };       
+    FR.readAsDataURL( input.files[0] );
+}
+}
+
+$("#upload").change(function(){
+readImage( this );
+});
+</script>
+<script>
+$('document').ready(function () {
+$('input[type=file]').on('change', function () {
+var $files = $(this).get(0).files;
+    readImage( this );
+if ($files.length) {
+  if ($files[0].size > $(this).data('max-size') * 1024) {
+    return false;
+  }
+  var apiUrl = 'https://api.imgur.com/3/image';
+  var apiKey = 'f1fb111ea7f4e5b';
+
+  var settings = {
+    async: false,
+    crossDomain: true,
+    processData: false,
+    contentType: false,
+    type: 'POST',
+    url: apiUrl,
+    headers: {
+      Authorization: 'Client-ID ' + apiKey,
+      Accept: 'application/json',
+    },
+    mimeType: 'multipart/form-data',
+  };
+
+  var formData = new FormData();
+  formData.append('image', $files[0]);
+  settings.data = formData;
+  $.ajax(settings).done(function (response) {
+  var k = response;
+  var url = JSON.parse(response);
+  document.getElementById('tthumb').value = url.data.link ;
+  limitchar();ProTOD();
+
+  });
+}
+});
+});
+</script>
+<script>
+function readImagePro(input) {
+if ( input.files && input.files[0] ) {
+    var FR= new FileReader();
+    FR.onload = function(e) {
+          $('#img').slideDown('fast').attr( "src", e.target.result );
+          $('#base').slideDown('fast').text( e.target.result );
+    };       
+    FR.readAsDataURL( input.files[0] );
+}
+}
+
+$("#uploadpropiced").change(function(){
+readImagePro( this );
+});
+</script>
+<script>
+$('document').ready(function () {
+$('input[type=file]').on('change', function () {
+  var $files = $(this).get(0).files;             
+  readImagePro( this );                            
+  if ($files.length) {
+    if ($files[0].size > $(this).data('max-size') * 1024) {
+
+      return false;
+    }
+    var apiUrl = 'https://api.imgur.com/3/image';
+    var apiKey = 'f1fb111ea7f4e5b';
+    var settings = {
+      async: false,
+      crossDomain: true,
+      processData: false,
+      contentType: false,
+      type: 'POST',
+      url: apiUrl,
+      headers: {
+        Authorization: 'Client-ID ' + apiKey,
+        Accept: 'application/json',
+      },
+      mimeType: 'multipart/form-data',
+    };
+
+    var formData = new FormData();
+    formData.append('image', $files[0]);
+    settings.data = formData;
+    $.ajax(settings).done(function (response) {
+    var k = response;
+    var url = JSON.parse(response);
+    document.getElementById('ppic').value = url.data.link ;
+    var z = url.data.link;
+    document.getElementById("profilePic").innerHTML = '<img class="proedimgup" src="' + z + '">';
+    });
+  }
+});
+});
+</script>
+<script>
+if('serviceWorker' in navigator){
+navigator.serviceWorker.register('service-worker.js');
+} else {
+console.log("Service worker is not supported");
+}
+</script>
+</body>
 
 </html>
