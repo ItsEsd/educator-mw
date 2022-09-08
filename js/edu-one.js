@@ -256,11 +256,11 @@ function ckeckactvst(dy,mn,yr){
   var tyr = d.getFullYear();
   if(tyr==yr){
     if(tmnth>mn){
-       $('#notifypay').fadeIn();
+       $('#notifypay').fadeIn(); deleteAllCookies();
     }
     else if(tmnth==mn){
         if(tdy>dy){
-          $('#notifypay').fadeIn();
+          $('#notifypay').fadeIn(); deleteAllCookies();
         }
     }
   }
