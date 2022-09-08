@@ -254,11 +254,11 @@ function ckeckactvst(dy,mn,yr){
   var tyr = d.getFullYear();
   if(tyr==yr){
     if(tmnth>mn){
-       $('#notifypay').fadeIn(); deleteAllCookies();
+      deleteAllCookies(); $('#notifypay').fadeIn();
     }
     else if(tmnth==mn){
         if(tdy>dy){
-          $('#notifypay').fadeIn(); deleteAllCookies();
+          deleteAllCookies(); $('#notifypay').fadeIn();
         }
     }
   }
