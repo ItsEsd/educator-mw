@@ -888,6 +888,6 @@ $('#cmpltpay').click(function(e) {
 
 function ctrlqpcheck(e){
 if(e.result=="active"){
-  inwallEdu();
+  window.location.reload();
 }
 }
