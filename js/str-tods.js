@@ -1,3 +1,4 @@
+/* M A S T R O W A L L */
 function deltopictod(label){
   $("#showdelnote").show();
 var click = 1;
