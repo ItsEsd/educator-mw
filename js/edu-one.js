@@ -148,34 +148,6 @@ if(res!="ID not found!"){
   document.getElementById("signInEdu").style.display = "none";
   document.getElementById("EduDashboard").style.display = "block";
   document.getElementById("showprofileInfoEdu").innerHTML = '<div align="center"><img id="propic" src="' + res[0].ProfilePic + '"><div id="name" style="padding-top:14px;"><h5 style="margin:0px;">' + res[0].Subject + ' </h5></div><p style="font-size:18px;margin:0px;">' + res[0].Class + ' (' + res[0].Board + ') </p><h4 style="margin:0px;color:#48485c;">' + res[0].FName + ' ' + res[0].LName + ' </h4><span class="geninfoid">&#8226; ID: '+res[0].CardId+' '+'&#8226; Email: '+res[0].Email+'</span></div>';
-  var acstr = res[0].SubValue; 
-  if(acstr !=''){
-    var acst = JSON.parse(res[0].SubValue); 
-  document.getElementById('accntstat').innerHTML = acst.status[0];
-  document.getElementById('accntstart').innerHTML = acst.status[1];
-  document.getElementById('accntend').innerHTML = acst.status[2];
-  var endtim = acst.status[2];
-  var entmstr = endtim.split(" ");
-  var dt = entmstr[1]+"-"+entmstr[2]+"-"+entmstr[4]; var d =new Date(dt);
-  var day= d.getDate(); var mnth = d.getMonth(); var year = d.getFullYear();
-  ckeckactvst(day,mnth,year);
- }
- else{
-  document.getElementById('accntstat').innerHTML = "TRIAL";
-  var sttm = res[0].Timestamp;
-  var sttmstr = sttm.split(" ");
-  var dt = sttmstr[1]+"-"+sttmstr[2]+"-"+sttmstr[4];
-  var d = new Date(dt); 
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  d.setDate(d.getDate() + 7);
-  var endTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
-  var day= d.getDate(); var mnth = d.getMonth(); var year = d.getFullYear();
-  document.getElementById('accntstart').innerHTML = sttm;
-  document.getElementById('accntend').innerHTML = endTime;
-  ckeckactvst(day,mnth,year);
- }
- 
   if(res[0].ExternalNoteId !=0){
   document.getElementById("notes").innerHTML = '<a style="color:black;text-decoration:none;"target="_blank" href="' + res[0].ExternalNoteId + '"><div><img class="dashiconimg" src="images/nlimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16"> <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/> <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/></svg> Notes</div></a>';
  }
@@ -240,7 +212,33 @@ $('#canved').empty();
 document.getElementById('canved').innerHTML = "<div class='edcrdinf'><div class='infone'>"+
 "<img src='"+res[0].ProfilePic+"'/><div><h4>EDUCATOR</h4><hr><p class='pinone'>"+fname+" "+lname+"</p><p class='pintwo'>"+res[0].Subject+" | "+res[0].Class+" | "+res[0].Board+
 "</p></div><span class='spincrd'>mastrowall.com</span></div><div class='inftwo'>Contact: +"+res[0].CountryCode+" "+res[0].PhoneNo+" | "+res[0].Email+"</div><hr></div>"
-
+var acstr = res[0].SubValue; 
+  if(acstr !=''){
+    var acst = JSON.parse(res[0].SubValue); 
+  document.getElementById('accntstat').innerHTML = acst.status[0];
+  document.getElementById('accntstart').innerHTML = acst.status[1];
+  document.getElementById('accntend').innerHTML = acst.status[2];
+  var endtim = acst.status[2];
+  var entmstr = endtim.split(" ");
+  var dt = entmstr[1]+"-"+entmstr[2]+"-"+entmstr[4]; var d =new Date(dt);
+  var day= d.getDate(); var mnth = d.getMonth(); var year = d.getFullYear();
+  ckeckactvst(day,mnth,year);
+ }
+ else{
+  document.getElementById('accntstat').innerHTML = "TRIAL";
+  var sttm = res[0].Timestamp;
+  var sttmstr = sttm.split(" ");
+  var dt = sttmstr[1]+"-"+sttmstr[2]+"-"+sttmstr[4];
+  var d = new Date(dt); 
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  d.setDate(d.getDate() + 7);
+  var endTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
+  var day= d.getDate(); var mnth = d.getMonth(); var year = d.getFullYear();
+  document.getElementById('accntstart').innerHTML = sttm;
+  document.getElementById('accntend').innerHTML = endTime;
+  ckeckactvst(day,mnth,year);
+ }
 }
 else{
   document.body.style.pointerEvents ="auto";
