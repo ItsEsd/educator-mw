@@ -2079,7 +2079,7 @@ height:22px;
     }
     #notifypay h4{
     font-size: 20px;
-    background-color: #c7c7c7;
+    background-color: #ffa0a0;
     padding:10px;
     }
     
@@ -2108,16 +2108,4 @@ margin-top:20px;
 background-color: #0c0c0c5b;
 padding:0px 10px;
 float: right;
-}
-
-#activetime{
-
-}
-
-#accntstart{
-
-}
-
-#accntend{
-
 }
