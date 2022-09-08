@@ -254,12 +254,14 @@ function ckeckactvst(dy,mn,yr){
   var tdy = d.getDate();
   var tmnth = d.getMonth();
   var tyr = d.getFullYear();
-  // console.log(tmnth,mn,tdy,dy,tyr,yr);
-  if(tyr>=yr){
-    if(tmnth>=mn){
-      if(tdy>dy){
+  if(tyr==yr){
+    if(tmnth>mn){
        $('#notifypay').fadeIn();
-      }
+    }
+    else if(tmnth==mn){
+        if(tdy>dy){
+          $('#notifypay').fadeIn();
+        }
     }
   }
 }
