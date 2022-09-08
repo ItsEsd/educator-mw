@@ -103,7 +103,7 @@ function ctrlqup(e) {
        "", '/');
 document.title = "Educator | MASTROWALL";
   deleteAllCookies();
-  setTimeout(function(){ inwallEdu(),2000});
+  setTimeout(function(){location.reload();},2000);
 }
 document.getElementById("confirmPcode").addEventListener("input", enableSave);
 
