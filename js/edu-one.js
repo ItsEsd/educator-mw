@@ -818,22 +818,22 @@ $('#myerded').slideDown();
  $('#clsecrd').click(function(){
   $('#myerded').slideUp();
    });
-   
-   $(document).ready(function () {
-    $("#downecrd").on('click', function () {
-        html2canvas(document.getElementById("canved"),
-            {
-                allowTaint: true,
-                useCORS: true
-            }).then(function (canvas) {
-                var anchorTag = document.createElement("a");
-                document.body.appendChild(anchorTag);
-                anchorTag.download = "myEcard.png";
-                anchorTag.href = canvas.toDataURL();
-                anchorTag.target = '_blank';
-                anchorTag.click();
-            });
-    });
+
+$(document).ready(function () {
+$("#downecrd").on('click', function () {
+  html2canvas(document.getElementById("canved"),
+      {
+          allowTaint: true,
+          useCORS: true
+      }).then(function (canvas) {
+          var anchorTag = document.createElement("a");
+          document.body.appendChild(anchorTag);
+          anchorTag.download = "myEcard.png";
+          anchorTag.href = canvas.toDataURL();
+          anchorTag.target = '_blank';
+          anchorTag.click();
+      });
+});
 
 });
 
