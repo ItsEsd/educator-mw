@@ -9,6 +9,28 @@ body {
   width:100%;
   height:100%;
   }
+
+  /* width */
+::-webkit-scrollbar {
+  height: 0px;
+  width: 4px;
+  
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+  background: #ffffff83;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+  background: #0c29cd;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+  background: #0d0672;
+  }
 .telemhead{
   height:60px;
   
@@ -16,7 +38,7 @@ body {
 .collapsible{
   z-index:10; padding:10px;
   background-image:url('../images/backimg.gif');
-  background-color: #1f0246;
+  background-color: #464646;
   width:100%;
   position: fixed;
   background-repeat: repeat;
@@ -379,6 +401,7 @@ body {
 #showfeed{
   background-color: transparent;
   border: none;
+  outline:none;
 }
 #feedholder{
 top:60px;
