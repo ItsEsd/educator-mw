@@ -271,9 +271,12 @@ body {
 }
 #inm1,#inm1{
   max-width: 820px;
+  min-height:120px;
 }
 .inm1con{
   padding:5px;
+  padding-left:10px;
+  padding-right:10px;
   padding-bottom: 0px;
   border: 1px solid #242424;
   border-radius: 10px;
