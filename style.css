@@ -1178,7 +1178,9 @@ padding:4px 20px;
 border:1px solid #aaa8a8;
 color:black
 }
-
+#sttodedu{
+    width:80px;
+}
 .storetdbtn:focus,.storetdbtn:active{
 -webkit-transform: scale(1.04);
 transform: scale(1.04);
