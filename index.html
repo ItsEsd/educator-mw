@@ -344,7 +344,7 @@
                 <div class="form-group"> <label class="editproLabel" for="confirmPcode">Confirm password:</label><span id='message' style="float:right;margin-right:10px;"></span> <input type="password" class="form-control editProFormCss" id="confirmPcode" placeholder="**********" required> </div> <br>
                 <div align="center">
                   <button type="submit" class="btn btn-dark" style="background-color:#444444;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;margin-right:6px;" id="eduProUpdate" onclick="update_pro();" disabled="disabled">Save</button>
-                  <button type="button" class="btn btn-dark" style="background-color:#444444;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;" id="" onclick="$('#scrollEdit').slideUp('fast');">Close</button></div> <span style="color:black;" id="updateNotice"></span><br>
+                  <button type="button" class="btn btn-dark" style="background-color:#444444;color:white;border-radius:4px;border:none; font-size: 18px; padding:6px 15px; width:140px;height:40px;" id="" onclick="$('#scrollEdit').slideUp('fast');">Close</button></div> <span style="color:#0c29cd;" id="updateNotice"></span><br>
               </form>
               <p id="crtnewadjacnt" onclick="$('#newpassfacnt').slideDown();">Add a New Class</p>
               <div id="newpassfacnt"><form id="swtchnwact" onsubmit="$('#newpassfacnt').slideUp();return false;"><input type="password" id="nwactpass" class="form-control" placeholder="Create New Password" required/>
@@ -473,7 +473,7 @@
   <div id="crtod" class="fwidthtwo" align="center">
     <div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle">Create TOD</span> </div>
     <div class="functodelem-one" >
-      <button class='btn btn-dark' id="sttodedu" onclick="$('#storetd').slideDown('fast');">Store</button>
+      <button class='btn btn-danger' id="sttodedu" onclick="$('#storetd').slideDown('fast');">Store</button>
     </div>
     <div id="storetd" align='center'>
       <div id="sttodbdy">
@@ -535,7 +535,7 @@
         <input type="button" value="Close"  onclick="$('#experform').slideUp('fast');" class='showexbtn'>
         </form>
         </div>
-           <button class="btn btn-danger" onclick="window.open('https://mastrowall.com', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');" id="examportalbtn">Online Test</button>
+           <button class="btn btn-danger" onclick="window.open('https://mastrowall.com?onlineTest=true', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');" id="examportalbtn">Online Test</button>
         </div>
     </div>
     <div id="loaderback" align="center"><div id="loader-cp" class="spinner-border text-primary" style="display: block;"></div></div>
