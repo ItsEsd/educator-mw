@@ -158,7 +158,7 @@ function rdreslt(e){
   document.getElementById("avthumb").innerHTML = '<img width="60px" src="' + prepostpre.AVPic + '" style="padding:4px;">';
   document.getElementById("previewPostTitle").innerHTML = prepostpre.TODTitle;
   document.getElementById('preview').scrollTop = 0;
-  document.getElementsByClassName("showsttod")[posofinput].disabled = false;  
+  $(".showsttod").attr('disabled',false);  
 }}
 
 function crcpbitlink(label){
