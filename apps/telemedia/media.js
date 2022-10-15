@@ -213,7 +213,7 @@ function getData(e){
   
   // Med News #1 /////////////////////
   
-  for(var k=1;k<=dnumbmd1;k++){
+  for(var k=dnumbmd1;k>=1;k--){
   var dataset = db+k;
   var data = nwone[dataset];
   var innews = JSON.parse(data[0].InMedia1);
