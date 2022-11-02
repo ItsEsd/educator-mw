@@ -58,7 +58,7 @@ $.getJSON(url, function(json) {
      "</svg></button><button onclick='addstclsrm(this);' class='addstbtn' class='btn btn-light'>"+
        "Approve</button><br>&#9679; "+ json.records[i].Class + " &#9679; "+json.records[i].Board+
        "<br>&#9679; <a href='mailto:"+ json.records[i].Email +"'>"+ json.records[i].Email + "</a>"+
-       " &#9679; <a href=tel:"+json.records[i].CountryCode+json.records[i].PhoneNo+">"+
+       " &#9679; <a href=tel:"+json.records[i].CountryCode+json.records[i].PhoneNo+">+"+
        json.records[i].CountryCode+" "+json.records[i].PhoneNo+
        "</div><input class='staddid' style='display: none;' value='"+
        json.records[i].STid+"'/>";
@@ -200,7 +200,7 @@ function srcstidapprv(stidsrc){
        json.records[i].ProfilePic+"'><button onclick='rmvstclsrm(this);' class='rmvstbtn' class='btn btn-light'>"+
        "Remove</button><br>&#9679; "+ json.records[i].Class + " &#9679; "+json.records[i].Board+
        "<br>&#9679; <a href='mailto:"+ json.records[i].Email +"'>"+ json.records[i].Email + "</a>"+
-       " &#9679; <a href=tel:"+json.records[i].CountryCode+json.records[i].PhoneNo+">"+
+       " &#9679; <a href=tel:"+json.records[i].CountryCode+json.records[i].PhoneNo+">+"+
        json.records[i].CountryCode+" "+json.records[i].PhoneNo+
        "</div><input class='strmvid' style='display: none;' value='"+
        json.records[i].STid+"'/>";
