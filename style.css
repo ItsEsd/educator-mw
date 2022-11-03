@@ -413,12 +413,15 @@ position: fixed;
 width:100%;
 /* max-width:310px; */
 overflow-x: hidden;
-overflow-y: scroll;
+overflow-y: auto;
 height: 100%;
 z-index: 1;
-background-color: #000000;
+background-image: linear-gradient(75deg, #d8d8d8, #a5a5a5);
 }
-
+#showServiceEdu::-webkit-scrollbar {
+    height: 16px;
+    width:8px;
+    }
 #leftnav{
 margin-top:50px;
 }
@@ -548,11 +551,10 @@ cursor:pointer;
 
 .dashicon{
 display:inline-block;
-margin:10px;
 height:160px;
-width:270px;
+width:250px;
 border:1px solid #aaa9a9;
-margin:6px;
+margin:10px;
 cursor: pointer;
 background-color: white;
 color:black;
