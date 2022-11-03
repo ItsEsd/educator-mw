@@ -1638,7 +1638,7 @@ color:black;
 
 #calendar {
 padding:10px;
-padding-top:20px;
+padding-top:10px;
 top:0px;
 left:310px;
 position: fixed;
@@ -1746,6 +1746,7 @@ top:45px;
 left:0px;
 max-width:100%;
 }
+
 #showServiceEdu{
 display: none;
 }
@@ -2122,3 +2123,23 @@ background-color: #2449f0ea;
 padding:0px 10px;
 float: right;
 }
+#lgoutacnt{
+   bottom:0px;
+   left:0px;
+   position: relative;
+    background-color: #747474;
+    color:#dbdada;
+    padding:2px 10px;
+    cursor: pointer;
+    width:100%;
+    text-align: right;
+    border-bottom: 4px solid #0c29cd9a;
+    margin:0px;
+  }
+
+  #lgoutacnt:hover{
+    
+    background-color: #dbdada;
+    color:#a7a7a7;
+    transition:0.2s;
+  }
