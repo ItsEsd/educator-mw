@@ -147,7 +147,7 @@ if(res!="ID not found!"){
   onstartswitch();
   document.getElementById("signInEdu").style.display = "none";
   document.getElementById("EduDashboard").style.display = "block";
-  document.getElementById("showprofileInfoEdu").innerHTML = '<div align="center"><img id="propic" src="' + res[0].ProfilePic + '"><div id="name" style="padding-top:14px;"><h5 style="margin:0px;">' + res[0].Subject + ' </h5></div><p style="font-size:18px;margin:0px;">' + res[0].Class + ' (' + res[0].Board + ') </p><h4 style="margin:0px;color:#48485c;">' + res[0].FName + ' ' + res[0].LName + ' </h4><span class="geninfoid">&#8226; ID: '+res[0].CardId+' '+'&#8226; Email: '+res[0].Email+'</span></div>';
+  document.getElementById("showprofileInfoEdu").innerHTML = '<div align="center"><img id="propic" src="' + res[0].ProfilePic + '"><div id="name" style="padding-top:14px;"><h5 style="margin:0px;">' + res[0].Subject + ' </h5></div><p style="font-size:18px;margin:0px;">' + res[0].Class + ' (' + res[0].Board + ') </p><h4 style="margin:0px;color:#48485c;" id="mednam">' + res[0].FName + ' ' + res[0].LName + ' </h4><span class="geninfoid">&#8226; ID: '+res[0].CardId+' '+'&#8226; Email: '+res[0].Email+'</span></div>';
   if(res[0].ExternalNoteId !=0){
   document.getElementById("notes").innerHTML = '<a style="color:black;text-decoration:none;"target="_blank" href="' + res[0].ExternalNoteId + '"><div><img class="dashiconimg" src="images/nlimg.png"><svg xmlns="http://www.w3.org/2000/svg" class="svgicondash" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16"> <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/> <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/></svg> Notes</div></a>';
  }
@@ -191,7 +191,7 @@ if(res[0].TOD!=""){
      w= w+3;
   }
 }
-
+rfshcmnt();
 var preevn = res[0].CalendarTODO;
 document.getElementById('allsvevnt').value =preevn;
 getcalendar();
