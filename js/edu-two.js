@@ -104,9 +104,9 @@ function switchprof(){
     var d = new Date();
     d.setTime(d.getTime() + (14 * 24 * 60 * 60 * 1000));
     var expires = "expires=" + d.toUTCString();
-    document.cookie = "mwallced=true; expires=" + expires + ";path=/;doman=mastrowall.com";
-    document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;doman=mastrowall.com";
-    document.cookie = "mwallpswedud="+btoa(newpr)+"; expires=" + expires + ";path=/;doman=mastrowall.com";
+    document.cookie = "mwallced=true; expires=" + expires + ";path=/;domain=mastrowall.com";
+    document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
+    document.cookie = "mwallpswedud="+btoa(newpr)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
     getCookie();
 }
 
