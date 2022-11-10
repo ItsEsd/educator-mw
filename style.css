@@ -1976,10 +1976,12 @@
     #clsecrd{
     padding:6px 10px;
     font-size: 14px;
-    display: inline-block;
+    /* display: inline-block; */
+    float: right;
     background-color: red;
     color: white;
     cursor: pointer;
+    width:15%;
     }
     #clsecrd:hover{
     background-color: #fa4d4d;
@@ -2000,6 +2002,10 @@
     margin-top:10%;
     padding:5px;
     }
+    #prevcard span{
+        margin:2px;
+    }
+
     #prevcard p {
     margin-top:10px;
     }
@@ -2016,9 +2022,10 @@
     }
     #downecrd{
     font-size: 14px;
-    display: inline-block;
+    /* display: inline-block; */
     width:100%;
-    max-width: 88%;
+    max-width: 80%;
+    float:left;
     }
 
     /* Ecard */
