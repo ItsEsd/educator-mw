@@ -108,7 +108,7 @@
               <option value="yellow">Yellow</option>
               <option value="black">Black</option>
               <option value="white">White</option>
-            </select> </div>
+            </select><button id="sktchpd" type="button" class="btn btn-dark" onclick="window.open('https://sketch.mastrowall.com', '_blank', 'location=center,height=670,width=1200,left=80,top=100,scrollbars=yes,status=yes');">Sketch Pad</button> </div>
           <div style="display:none;">
             <p id="editMode"> <input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Show HTML</label> </p>
           </div>
@@ -191,7 +191,7 @@
           <div id="previewPost"></div>
         </div>
         <div id="preFoot"><span id="previewPostTime" class="tx"></span> <span id="previewPostId" class="tx" style="float:right;"></span></div>
-      </div><br><br><button class="btn btn-primary" id="backtotdbrd">Close</button><br>
+        <br><br><button class="btn btn-primary" id="backtotdbrd">Close</button><br></div>
     </div>
     <!----------Pre End----------->
     <footer>
@@ -216,8 +216,8 @@
     $("#avatarBrd").slideUp('fast');
   });
   $('#backtotdbrd').click(function(){
-  $('#preview').slideUp('fast');
-  document.getElementById('dashboard').style.display='block'
+  $('#preview').slideUp();
+  $('#dashboard').slideDown();
 });
 </script>
     <script>
@@ -357,11 +357,11 @@
         if (imgS != '' && imgS != 'http://') {
           if (document.getElementById('rd1').checked) {
             document.getElementById("btnOkImg").disabled = false;
-            formatDoc('insertHTML', '<img class="ForTypeP" src="' + imgS + '" width="32%" style="float:left; padding: 6px;background:transparent;margin:4px;">');
+            formatDoc('insertHTML', '<img class="ForTypePs" src="' + imgS + '">');
           }
           if (document.getElementById('rd2').checked) {
             document.getElementById("btnOkImg").disabled = false;
-            formatDoc('insertHTML', '<img class="ForTypeP" src="' + imgS + '" width="50%" style="float:right;display:flex;flex-wrap: wrap;background:transparent; padding: 6px;margin:4px;">');
+            formatDoc('insertHTML', '<img class="ForTypePm" src="' + imgS + '" >');
           }
           if (document.getElementById('rd3').checked) {
             document.getElementById("btnOkImg").disabled = false;
