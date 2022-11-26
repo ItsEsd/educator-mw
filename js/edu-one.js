@@ -685,7 +685,7 @@ else{
   var eventsup =[];
 for(var i=0;i<elemev.length-1;i+=3){
 var entry = {};
-entry.title = JSON.parse(elemev[i]);
+entry.title = JSON.parse(unescape(elemev[i]));
 entry.start = JSON.parse(elemev[i+1]);
 entry.end= JSON.parse(elemev[i+2]);
 eventsup.push(entry);
@@ -724,7 +724,7 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
           allDay: arg.allDay
         })
       // console.log(title,arg.start,arg.allDay);
-   var t = JSON.stringify(title);
+   var t = JSON.stringify(escape(title));
    var s = JSON.stringify(arg.start.toISOString());
    var e = JSON.stringify(arg.end.toISOString());
    var k = "{e},";
@@ -746,7 +746,7 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
     eventClick: function(arg) {
       if (confirm('Are you sure you want to delete this event?')) {
         arg.event.remove();
-var tt = JSON.stringify(arg.event.title);
+var tt = JSON.stringify(escape(arg.event.title));
 var st = JSON.stringify(arg.event.start.toISOString());
 var et = JSON.stringify(arg.event.end.toISOString());
 var kt = "{e},";
