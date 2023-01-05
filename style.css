@@ -1132,9 +1132,10 @@
     background-size: 6px 6px;
     }
     #examportalbtn{
-    bottom:20px;
-    right:20px;
+    bottom:10px;
+    right:0px;
     position: fixed;
+    border-radius: 0px;
     }
     .showexbtn{
     margin-top:4px;
@@ -1200,6 +1201,7 @@
     }
     #sttodedu{
     width:80px;
+    border-radius: 0px;
     }
     .storetdbtn:focus,.storetdbtn:active{
     -webkit-transform: scale(1.04);
@@ -1213,8 +1215,8 @@
     }
 
     .functodelem-one{
-    bottom:20px;
-    right:10px;
+    bottom:10px;
+    right:0px;
     position: fixed;
     }
 
