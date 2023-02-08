@@ -701,7 +701,7 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
-    initialView: 'dayGridMonth',
+    initialView: 'listWeek',
     initialDate: flcaldate,
     navLinks: true, 
     weekNumbers: true,
