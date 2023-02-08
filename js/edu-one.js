@@ -695,7 +695,7 @@ var date = new Date();
 var tois = date.toISOString();
 var flcaldate = tois.substring(0, 10);
 var calendar = new FullCalendar.Calendar(calendarEl, {
-  initialView: 'dayGridMonth',
+  initialView: 'listWeek',
     headerToolbar: {
       left: 'prev,next',
       center: 'title',
