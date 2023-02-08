@@ -701,6 +701,7 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
+    initialView: 'dayGridMonth',
     initialDate: flcaldate,
     navLinks: true, 
     weekNumbers: true,
@@ -765,7 +766,7 @@ var delitm = tt+kt+st+kt+et+kt;
       }
     },
 
-   // editable: true,
+    // editable: true,
     dayMaxEvents: true, 
     events:eventsup
     
