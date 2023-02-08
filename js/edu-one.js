@@ -699,7 +699,7 @@ var calendar = new FullCalendar.Calendar(calendarEl, {
     headerToolbar: {
       left: 'prev,next',
       center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listYear'
+      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
     initialDate: flcaldate,
     navLinks: true, 
