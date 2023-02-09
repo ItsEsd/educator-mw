@@ -104,19 +104,19 @@
     }
 
     #logEdu {
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
     border: none;
     padding: 10px 40px;
     max-width: 600px;
     width: 98%;
-    border: 1px solid #0c29cd;
+    border: 1px solid #1a2ca5;
     border-radius: 0px;
     }
 
     #logEdu:hover {
     background-color: white;
-    color: #0c29cd;
-    border: 1px solid #0c29cd;
+    color: #1a2ca5;
+    border: 1px solid #1a2ca5;
     }
 
     label {
@@ -166,7 +166,7 @@
     .tod {
     margin-top:20px;
     padding-left:20px;
-    /* border: 1px dashed #0c29cd; */
+    /* border: 1px dashed #1a2ca5; */
     }
     #ttdtitle{
     background-color: #0a06f034;
@@ -202,13 +202,13 @@
     max-height:290px;
     border: none;
     border-radius: 5px;
-    border-top: 4px solid #0c29cd;
-    border-left:4px solid #0c29cd;
+    border-top: 4px solid #1a2ca5;
+    border-left:4px solid #1a2ca5;
     }
 
     #propic {
     border-radius: 100%;
-    box-shadow: 0 2px 10px 0 #0c29cd;
+    box-shadow: 0 2px 10px 0 #1a2ca5;
     border:4px solid white;
     background-color:white;
     height:170px;
@@ -309,7 +309,7 @@
     }
 
     #updatePro {
-    /* background-image: linear-gradient(to bottom right, #0c29cd, #d6cfcf); */
+    /* background-image: linear-gradient(to bottom right, #1a2ca5, #d6cfcf); */
     background-color: #000000;
     display:none;
     width:100%;
@@ -348,13 +348,13 @@
     width: 100%;
     max-width: 600px;
     padding: 10px;
-    background-image: linear-gradient(to bottom right, #0c29cd, white);
+    background-image: linear-gradient(to bottom right, #1a2ca5, white);
     }
 
     #avBtn {
     color: white;
     font-size: 18px;
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
     margin: 10px;
     margin-bottom: 20px;
     border: none;
@@ -440,16 +440,16 @@
     color:white;
     font-size: 20;
     position: fixed;
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
     z-index: 1;
     }
     .card-body {
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
     color: white;
     }
 
     .card {
-    border: 1px solid #0c29cd;
+    border: 1px solid #1a2ca5;
     border-radius: 0px;
     }
 
@@ -466,7 +466,7 @@
     cursor: pointer;
     color:white;
     padding:2px;
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
     opacity:0.96;
     border-radius: 50%;
     }
@@ -687,8 +687,8 @@
 
     #clsroomfoot:hover{
     cursor: pointer;
-    border-bottom:1px solid #0c29cd;
-    color:#0c29cd;
+    border-bottom:1px solid #1a2ca5;
+    color:#1a2ca5;
     }
     .clsroomfootfh:hover{
     color:#4d4e4d;
@@ -816,7 +816,7 @@
 
     .clsroomelem:hover{
     cursor: pointer;
-    color:#0c29cd;
+    color:#1a2ca5;
     }
 
     .closefwtwo{
@@ -918,7 +918,7 @@
     margin: 10px;
     max-width:560px;
     display: inline-block;
-    box-shadow: 0px 2px 6px 0px #0c29cd;
+    box-shadow: 0px 2px 6px 0px #1a2ca5;
     background-color: white;
     }
     #clsrmalst{
@@ -984,16 +984,16 @@
     float: right;
     font-size: 12px;
     padding:4px 14px;
-    border:1px solid #0c29cd;
+    border:1px solid #1a2ca5;
     cursor: pointer;
-    color:#0c29cd;
+    color:#1a2ca5;
     background-color: white;
     }
     .refreshlist:hover{
     border:1px solid #ffffff;
     cursor: pointer;
     color:#ffffff;
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
     }
     .nocontentallst{
     padding:40px;
@@ -1024,7 +1024,7 @@
     #noexiddiv{
     padding:20px;
     max-width: 300px;
-    background-color: #0c29cd;
+    background-color: #1a2ca5;
     color:white;
     }
     @keyframes MoveUpDown {
@@ -2154,7 +2154,7 @@
     cursor: pointer;
     width:100%;
     text-align: right;
-    border-bottom: 4px solid #0c29cd9a;
+    border-bottom: 4px solid #1a2ca59a;
     margin:0px;
     }
 
