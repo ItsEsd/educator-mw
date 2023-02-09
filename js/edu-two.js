@@ -32,7 +32,7 @@
                 var currentTime = days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate() + ' - ' + d.getFullYear();
                 var dtime = currentTime;
                 var edid = "ED-"+ Math.random().toString(26).substring(2, 6) + Math.random().toString(26).substring(2, 6)+"/2";
-                var TPic = "https://mastrowall.com/images/mwalllogo.png";
+                var TPic = "https://mastrowall.com/images/logoCircleBW.png";
                 var asedureg1 = "https://script.google.com/macros/s/";
                 var asedureg2 ="AKfycbxcb9RAuFYAyYt471GV9Jb3cLJGwI2D3HvrnzOO5Gv8-NSKcJm-eSa35-pjwF_-sEYJ1g";
                 var asedureg = asedureg1 + asedureg2 + "/exec";
