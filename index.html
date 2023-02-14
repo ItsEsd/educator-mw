@@ -750,6 +750,11 @@ navigator.serviceWorker.register('service-worker.js');
 } else {
 console.log("Service worker is not supported");
 }
+
+$(document).ready(function() {
+  $(window).bind('resize', function() {
+    $('#calendar,#upDash,#showServiceEdu').show();
+});});
 </script>
 </body>
 
