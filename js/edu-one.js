@@ -843,7 +843,7 @@ var optionsS = {
   "amount": "240000",
   "currency": "INR",
   "name": "M A S T R O W A L L",
-  "image": "https://cdn.razorpay.com/logos/KEwE9wPPBouRjf_original.png",
+  "image": "https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@77f1e6b1852364b586c8c3eca51ef492fbc259c6/images/favicon-logos/logoRecBW.png",
   "handler": function(response) {
       var rzres = JSON.stringify(response);
       var exid = $('#email').val();
