@@ -1,8 +1,8 @@
        /* M A S T R O W A L L */
        function checkexisting(){
           var ur1 = "https://script.google.com/macros/s/";
-          var ur2 ="AKfycbwjMWsL9y0rYd4141KhIs33KdRyR26AlDPlwfKq_4BhRaI6ZxRgxdsP73cWbvU_FVPK0Q";
-          var url = ur1+ ur2+"/exec"+"?action=read";
+          var ur2 ="AKfycby3RhmKbS-aQdwN0Q2sc-Uz7cEn4w58_Lssq01Zh2NhwysDTUS2D4FBbPpEnVCyIu-9FQ";
+          var url = ur1+ ur2+"/exec"+"?act=d";
           var emailch = $("#email").val();
           var flag =0;
           $.getJSON(url, function(json) {
@@ -20,6 +20,7 @@
                var Subject = elemin.Subject;
                var Resume = elemin.Resume;
                var Storage = elemin.Storage;
+               var ActvST = elemin.SubValue;
                }
             }
             if(flag == 1){
@@ -34,13 +35,13 @@
                 var edid = "ED-"+ Math.random().toString(26).substring(2, 6) + Math.random().toString(26).substring(2, 6)+"/2";
                 var TPic = "https://mastrowall.com/images/logoCircleBW.png";
                 var asedureg1 = "https://script.google.com/macros/s/";
-                var asedureg2 ="AKfycbxcb9RAuFYAyYt471GV9Jb3cLJGwI2D3HvrnzOO5Gv8-NSKcJm-eSa35-pjwF_-sEYJ1g";
+                var asedureg2 ="AKfycby3RhmKbS-aQdwN0Q2sc-Uz7cEn4w58_Lssq01Zh2NhwysDTUS2D4FBbPpEnVCyIu-9FQ";
                 var asedureg = asedureg1 + asedureg2 + "/exec";
                 var url = asedureg + "?callback=ctrlqnacnt&email=" + email + "&fname=" + fname + "&lname=" 
                 + lname + "&dob=" + dob + "&countrycode=" + countryCode + "&phoneno=" + phoneNo + "&class_=" 
                 + Class + "&board_=" + Board + "&subject_=" + Subject + "&resume=" + Resume + "&storage=" 
                 + Storage + "&proPicT=" + TPic + "&eduregtime=" + dtime + "&eduregid=" + edid 
-                + "&confirmpasswrd=" + edpa   + "&action=insert";
+                + "&confirmpasswrd=" + edpa   +"&actvst=" + ActvST   + "&act=n";
                 createnewaccnt(url);
                 document.getElementById('crtnewadjacnt').style.display ="none";
     
@@ -63,8 +64,8 @@ function ctrlqnacnt(e){
 function onstartswitch(){
     document.getElementById('switchclsrm').style.pointerEvents ="none";
     var ur1 = "https://script.google.com/macros/s/";
-    var ur2 ="AKfycbwjMWsL9y0rYd4141KhIs33KdRyR26AlDPlwfKq_4BhRaI6ZxRgxdsP73cWbvU_FVPK0Q";
-    var url = ur1+ ur2+"/exec"+"?action=read";
+    var ur2 ="AKfycby3RhmKbS-aQdwN0Q2sc-Uz7cEn4w58_Lssq01Zh2NhwysDTUS2D4FBbPpEnVCyIu-9FQ";
+    var url = ur1+ ur2+"/exec"+"?act=d";
     var emailch = $("#email").val();
     var pascd = $("#pcodeEdu").val();
     var flag =0;
