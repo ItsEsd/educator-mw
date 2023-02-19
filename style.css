@@ -1965,7 +1965,6 @@
     #swtchnwact button{
     padding:4px 10px;
     margin:5px;
-
     }
 
     .cardd{
@@ -1975,10 +1974,10 @@
     #switchnoti{
     bottom:0px;
     position: absolute;
-    background-color: #389108;
+    background-color: #2bb80f;
     color: white;
     z-index: 10000;
-    padding:10px;
+    padding:4px;
     width:100%;
     display: none;
     }
