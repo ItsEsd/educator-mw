@@ -82,9 +82,10 @@ function onstartswitch(){
     "<path fill-rule='evenodd' d='M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z'/></svg>"
     +" | <span class='cardd'>"+json.records[i].CardId+"<input id='andpass' value='"+json.records[i].Passcode+"'></span></div>";
     document.getElementById('switchclsrm').style.pointerEvents ="auto";
-} flag = flag + 1; }}
+  } flag = flag + 1; }}
         if(flag == 1){document.getElementById('crtnewadjacnt').style.display ="block";}
         else{document.getElementById('crtnewadjacnt').style.display ="none";}
+
     });
 }
 
@@ -163,14 +164,11 @@ clsrmcmntfm.reset();
     if(cmntlen>6){
       $('#divcmntbx').empty();
       for(var k=0;k<=cmntlen-1;k+=6){
-        
         comlem.innerHTML+='<center><div class="edcmnt"><span class="delcmnted" onclick="deletecmnted(this)">Delete</span><input class="cmntidval" style="display:none;"value="'+cmelm[k]+'"><div class="cmntinfo"><p class="cmmntor"><span class="cmntrimg"><img src="'+cmelm[k+4]+'"></span><span class="cmnttrnm">'+cmelm[k+3]+'</span></p><p class="cmnttim">'+cmelm[k+2]+'</p></div>'
   +'<div class="cmntcon">'+JSON.parse(cmelm[k+5])+'</div>'+'</div><hr><center>';
-  console.log(nmF);
   if(cmelm[k+3]!=nmF){
     document.getElementsByClassName('edcmnt')[k/6].classList.add('stcmnt');
   } 
-  
       }
     }
     else{
