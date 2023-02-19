@@ -262,6 +262,9 @@ function ckeckactvst(dy,mn,yr){
         }
     }
   }
+  else if(tyr>yr){
+    deleteAllCookies(); $('#notifypay').fadeIn();
+  }
 }
 function live_tod() {
 document.getElementById("updateTOD").style.pointerEvents ="auto";
