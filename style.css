@@ -606,13 +606,14 @@
     display: none;
     overflow-y: hidden;
     background-color: #161616cc;
-    padding:10px;
+    padding:5px;
     }
     #edconnectdiv{
     bottom:120px;
     width:100%;
-    height:100%;
-    max-height: 76%;
+    max-width:380px;
+    height: 76%;
+    max-height:450px;
     overflow-y: hidden;
     right:10px;
     position: fixed;
@@ -621,9 +622,8 @@
     background-image: -webkit-linear-gradient(0deg, rgba(0, 0, 0, .2) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .2) 50%, rgba(0, 0, 0, .2) 75%, transparent 75%, transparent);
     -moz-background-size: 4px 4px;
     background-size: 6px 6px;
-    width:100%;
-    max-width:380px;
     border-radius: 10px;
+    margin:0px;
     }
     #goconnect{
     margin-top: 20px;
@@ -631,14 +631,14 @@
     max-width:340px;
     display:none;
     border:1px solid #000000;
-    margin-bottom:36px;
     background-color:white;
     }
     #editConnect{
-    max-height:200px;
+    max-height:135px;
     overflow-y: auto;
     overflow-x: hidden;
     }
+    #editConnect::-webkit-scrollbar{width:6px;}
     #scrollEdit{
     top: 0px;
     left:0px;
@@ -1455,6 +1455,7 @@
     #loadconnectdiv{
     padding:10px;
     background-color: #1b1b1b;
+    min-height:90px;
     }
     .delsttod,.showsttod{
     display: inline-block;
@@ -1642,8 +1643,9 @@
     }
 
     #connect1{
+      line-height: 60px;
     color:#d1d1d1;
-    font-size: 14px;
+    font-size: 16px;
     }
 
     .veremfalse{
