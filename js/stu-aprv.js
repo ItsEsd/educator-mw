@@ -128,11 +128,11 @@ function rmvstuwait(label){
        document.getElementById('stuid').value= stadid;
        document.getElementById('posof').value= posofinput;
        list[posofinput].disabled = true;
-       list2[posofinput].innerHTML= "Deleting..";
+       list2[posofinput].innerHTML= "Removing..";
        var eduid =$("#eduid").val();
        var studid =$("#stuid").val();
        var ur1= "https://script.google.com/macros/s/";
-       var ur2="AKfycbziqCoxM3UiL1B2o_cZNwHX_tx-Yzr-mzAKOryWI_BNq-HoLAz4LuAIB_HA4LCXGQBXPQ";
+       var ur2="AKfycbxIgeGnJjN6wApKPv2r-UeZq6DcLtus9-CiRGcQY14HLo7I0Gl9L94Z2oD-4cecyj2Y";
        var urledside = ur1+ur2+"/exec" + "?callback=ctrlqrmvwaitst&eduid=" + eduid + "&stuid=" + studid + "&action=rmvstwait";
        var request = jQuery.ajax({
          crossDomain: true,
