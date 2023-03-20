@@ -34,3 +34,8 @@ function deleteAllCookies() {
        document.cookie = name + "=true;"+"expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/;domain=mastrowall.com";
              }
      }     
+
+   function signagn(){
+      deleteAllCookies();
+      setTimeout(function(){window.open('../','_self');},1000);
+   }
