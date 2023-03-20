@@ -117,7 +117,7 @@ function enableSave() {
 }
 document.getElementById('df').addEventListener('submit',inwallEdu);
 function inwallEdu() {
-  document.body.style.pointerEvents ="none";
+  $('#walllogin').slideDown('fast');
   var email1 = $("#email").val();
   var pass = $("#pcodeEdu").val();
   allstudwait(); allstudapprv();readsaveexm();
@@ -194,8 +194,7 @@ if(res[0].TOD!=""){
 rfshcmnt();
 var preevn = res[0].CalendarTODO;
 document.getElementById('allsvevnt').value =preevn;
-getcalendar();
-document.body.style.pointerEvents ="auto";
+getcalendar();$('#walllogin').slideUp('slow');
   document.getElementById("loader").style.visibility = "hidden";
   document.getElementById("loader").style.display = "none";
 var fname = res[0].FName;
@@ -241,7 +240,7 @@ var acstr = res[0].SubValue;
  }
 }
 else{
-  document.body.style.pointerEvents ="auto";
+  $('#walllogin').slideUp('slow');
   document.getElementById("checkP").innerHTML = "User email and password not found.";
   document.getElementById("loader").style.visibility = "hidden";
   document.getElementById("loader").style.display = "none";
