@@ -1870,7 +1870,7 @@
     }
     }
     @media screen and (min-width: 1066px) {
-    #showServiceEdu{
+    /* #showServiceEdu{
     display: none;
     }
     #upDash{
@@ -1898,7 +1898,55 @@
     #leftnav{
     padding-top:40px;
     max-width:600px;
-    }
+    } */
+
+    /* ////////////NEW////////// */
+    #showServiceEdu{
+      display: block;
+      max-width: 24%;
+      }
+      #titleleft{
+        max-width: 24%;
+      }
+      #calendar{
+      top:0px;
+      left:24%;
+      max-width: 45%; 
+      }
+  
+      #upDash{
+      width:100%;
+      max-width: 31%;
+      padding: 10px;
+      }
+      #footDash{
+      max-width: 31%;
+      }
+      #propic {
+      width:120px;
+      height:120px;
+      pointer-events: none;
+      cursor: none;
+      }
+  
+  
+      #opcal{
+      display:none;
+      }
+      #edservice{
+      display: none;
+      }
+      #hidenavl{
+      display: none;
+      }
+      #leftnav{
+      padding-top:0px;
+      max-width:310px;
+      }
+      .dashicon{
+        width: 240px;
+        height:160px;
+      }
     }
 
     @media screen and (min-width: 1200px) {
