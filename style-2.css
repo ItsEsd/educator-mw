@@ -1257,7 +1257,7 @@
         margin:4px;
         width:50%;
       }
-    @media screen and (max-width: 400px) {
+    @media only screen and (max-width: 400px) {
         .ForTypePs,.ForTypePm{
           width:100% !important;
         }
@@ -1265,7 +1265,7 @@
         height:300px !important;
         }
       }
-      @media screen and (max-width: 1000px) {
+      @media only screen and (max-width: 1000px) {
         ul.icons li {
             padding: 0 0.75em 0 0;
             }
@@ -1308,7 +1308,7 @@
         }
         }
     
-    @media screen and (min-width: 1010px) {
+    @media only screen and (min-width: 1010px) {
        
         #showServiceEdu{
           display: block;
@@ -1358,7 +1358,7 @@
           }
         }
     
-        @media screen and (min-width: 1200px) {
+        @media only screen and (min-width: 1200px) {
         #showServiceEdu{
         display: block;
         max-width: 24%;
