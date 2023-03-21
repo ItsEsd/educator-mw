@@ -799,15 +799,15 @@ $('#skpad').click(function(){
     $('#showServiceEdu').hide();
    });
 
-  //  window.addEventListener("resize", displayWindowSize);
-  //  function displayWindowSize(){
-    // var w = document.documentElement.clientWidth;
-    // var h = document.documentElement.clientHeight;
-    //    if(w>1010){
-    //     $('#showServiceEdu').show();
-    //      $('#calendar').show();
-    //    }
-    // }
+   window.addEventListener("resize", displayWindowSize);
+   function displayWindowSize(){
+    var w = document.documentElement.clientWidth;
+    var h = document.documentElement.clientHeight;
+       if(w>1010){
+        $('#showServiceEdu').show();
+         $('#calendar').show();
+       }
+    }
 
     $('#loaderTOD').click(function(){
       $('#loaderTOD').hide();});
