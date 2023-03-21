@@ -1912,6 +1912,7 @@
       top:0px;
       left:24%;
       max-width: 45%; 
+      display: block;
       }
   
       #upDash{
@@ -1928,8 +1929,6 @@
       pointer-events: none;
       cursor: none;
       }
-  
-  
       #opcal{
       display:none;
       }
@@ -1944,8 +1943,9 @@
       max-width:310px;
       }
       .dashicon{
-        width: 240px;
+        width: 225px;
         height:160px;
+        margin:6px;
       }
     }
 
@@ -1961,6 +1961,7 @@
     top:0px;
     left:24%;
     max-width: 45%; 
+    display: block;
     }
 
     #upDash{
@@ -1977,8 +1978,6 @@
     pointer-events: none;
     cursor: none;
     }
-
-
     #opcal{
     display:none;
     }
@@ -1991,6 +1990,11 @@
     #leftnav{
     padding-top:0px;
     max-width:310px;
+    }
+    .dashicon{
+      width: 250px;
+      height:160px;
+      margin:10px;
     }
     }
 
