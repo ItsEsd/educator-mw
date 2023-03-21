@@ -728,14 +728,6 @@
     padding-right: 0;
     }
 
-    @media screen and (max-width: 736px) {
-
-    ul.icons li {
-    padding: 0 0.75em 0 0;
-    }
-
-    }
-
     .icon {
     text-decoration: none;
     border-bottom: none;
@@ -794,209 +786,8 @@
     #hidenavl:hover{
     color:#c0bff8;
     }
-    @media screen and (max-width: 600px) {
-      #calendar{
-      top:45px;
-      left:0px;
-      max-width:100%;
-      display: none;
-      }
-    }
-    @media screen and (max-width: 900px) {
-    #calendar{
-    top:45px;
-    left:0px;
-    max-width:100%;
-    }
-
-    #showServiceEdu{
-    display: none;
-    }
-
-    #upDash{
-    height:100%;
-    width:100%;
-    max-width: 1400px;
-    padding: 10px;
-    overflow-y:scroll;
-    }
-
-    #footDash{
-    max-width: 100%;
-    }
-    #telefrm{
-    height:600px;
-    margin-bottom:90px;  
-    padding-bottom:0px;
-    }
-    #telefrm iframe{
-    max-height:600px;
-    }
-    #edservice{
-    display: block;
-    }
-    #leftnav{
-    padding-top:0px;
-    max-width:600px;
-    }
-    }
-/* 
-    @media screen and (min-width: 993px) {
-    #showServiceEdu{
-    display: none;
-    }
-    #upDash{
-    height:100%;
-    width:100%;
-    max-width: 1400px;
-    padding: 10px;
-    overflow-y:scroll;
-    }
-    #footDash{
-    max-width: 100%;
-    }
-
-    #edservice{
-    display: block;
-    }
-    #calendar{
-    top:45px;
-    left:0px;
-    max-width:100%;
-    }
-    #leftnav{
-    padding-top:40px;
-    max-width:600px;
-    }
-    } */
-    @media screen and (min-width: 900px) {
-    /* #showServiceEdu{
-    display: none;
-    }
-    #upDash{
-    height:100%;
-    width:100%;
-    max-width: 1400px;
-    padding: 10px;
-    overflow-y:scroll;
-    }
-    #footDash{
-    max-width: 100%;
-    }
-    #upDash::-webkit-scrollbar{
-    width:4px;
-    }
-
-    #edservice{
-    display: block;
-    }
-    #calendar{
-    top:45px;
-    left:0px;
-    max-width:100%;
-    }
-    #leftnav{
-    padding-top:40px;
-    max-width:600px;
-    } */
-
-    /* ////////////NEW////////// */
-    #showServiceEdu{
-      display: block;
-      max-width: 24%;
-      }
-      #titleleft{
-        max-width: 24%;
-      }
-      #calendar{
-      top:0px;
-      left:24%;
-      max-width: 45%; 
-      display: block;
-      }
   
-      #upDash{
-      width:100%;
-      max-width: 31%;
-      padding: 10px;
-      }
-      #footDash{
-      max-width: 31%;
-      }
-      #propic {
-      width:120px;
-      height:120px;
-      pointer-events: none;
-      cursor: none;
-      }
-      #opcal{
-      display:none;
-      }
-      #edservice{
-      display: none;
-      }
-      #hidenavl{
-      display: none;
-      }
-      #leftnav{
-      padding-top:0px;
-      max-width:310px;
-      }
-      .dashicon{
-        width: 225px;
-        height:160px;
-        margin:6px;
-      }
-    }
-
-    @media screen and (min-width: 1200px) {
-    #showServiceEdu{
-    display: block;
-    max-width: 24%;
-    }
-    #titleleft{
-      max-width: 24%;
-    }
-    #calendar{
-    top:0px;
-    left:24%;
-    max-width: 45%; 
-    display: block;
-    }
-
-    #upDash{
-    width:100%;
-    max-width: 31%;
-    padding: 10px;
-    }
-    #footDash{
-    max-width: 31%;
-    }
-    #propic {
-    width:120px;
-    height:120px;
-    pointer-events: none;
-    cursor: none;
-    }
-    #opcal{
-    display:none;
-    }
-    #edservice{
-    display: none;
-    }
-    #hidenavl{
-    display: none;
-    }
-    #leftnav{
-    padding-top:0px;
-    max-width:310px;
-    }
-    .dashicon{
-      width: 250px;
-      height:160px;
-      margin:10px;
-    }
-    }
+  
 
     #crtnewadjacnt{
     color:#e7e9eb;
@@ -1474,3 +1265,144 @@
         height:300px !important;
         }
       }
+      @media screen and (max-width: 1000px) {
+        ul.icons li {
+            padding: 0 0.75em 0 0;
+            }
+        #calendar{
+        top:45px;
+        left:0px;
+        max-width:100%;
+        display: none;
+        }
+    
+        #showServiceEdu{
+        display: none;
+        }
+    
+        #upDash{
+        height:100%;
+        width:100%;
+        max-width: 1400px;
+        padding: 10px;
+        overflow-y:scroll;
+        }
+    
+        #footDash{
+        max-width: 100%;
+        }
+        #telefrm{
+        height:600px;
+        margin-bottom:90px;  
+        padding-bottom:0px;
+        }
+        #telefrm iframe{
+        max-height:600px;
+        }
+        #edservice{
+        display: block;
+        }
+        #leftnav{
+        padding-top:0px;
+        max-width:600px;
+        }
+        }
+    
+    @media screen and (min-width: 1010px) {
+       
+        #showServiceEdu{
+          display: block;
+          max-width: 24%;
+          }
+          #titleleft{
+            max-width: 24%;
+          }
+          #calendar{
+          top:0px;
+          left:24%;
+          max-width: 45%; 
+          display: block;
+          }
+      
+          #upDash{
+          width:100%;
+          max-width: 31%;
+          padding: 10px;
+          }
+          #footDash{
+          max-width: 31%;
+          }
+          #propic {
+          width:120px;
+          height:120px;
+          pointer-events: none;
+          cursor: none;
+          }
+          #opcal{
+          display:none;
+          }
+          #edservice{
+          display: none;
+          }
+          #hidenavl{
+          display: none;
+          }
+          #leftnav{
+          padding-top:0px;
+          max-width:310px;
+          }
+          .dashicon{
+            width: 225px;
+            height:160px;
+            margin:6px;
+          }
+        }
+    
+        @media screen and (min-width: 1200px) {
+        #showServiceEdu{
+        display: block;
+        max-width: 24%;
+        }
+        #titleleft{
+          max-width: 24%;
+        }
+        #calendar{
+        top:0px;
+        left:24%;
+        max-width: 45%; 
+        display: block;
+        }
+    
+        #upDash{
+        width:100%;
+        max-width: 31%;
+        padding: 10px;
+        }
+        #footDash{
+        max-width: 31%;
+        }
+        #propic {
+        width:120px;
+        height:120px;
+        pointer-events: none;
+        cursor: none;
+        }
+        #opcal{
+        display:none;
+        }
+        #edservice{
+        display: none;
+        }
+        #hidenavl{
+        display: none;
+        }
+        #leftnav{
+        padding-top:0px;
+        max-width:310px;
+        }
+        .dashicon{
+          width: 250px;
+          height:160px;
+          margin:10px;
+        }
+        }
