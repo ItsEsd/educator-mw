@@ -801,8 +801,7 @@ $('#skpad').click(function(){
 
    window.addEventListener("resize", displayWindowSize);
    function displayWindowSize(){
-    var w = document.documentElement.clientWidth;
-    var h = document.documentElement.clientHeight;
+    var w = window.innerWidth;
        if(w>1010){
         $('#showServiceEdu').show();
          $('#calendar').show();
