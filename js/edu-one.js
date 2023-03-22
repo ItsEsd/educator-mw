@@ -788,12 +788,12 @@ $('#skpad').click(function(){
 
   $('#opcal').click(function(){
     $('#showServiceEdu').show();
-    $('#calendar').show();
+    $('#calcontain').show();
    });
 
    $('#opensrvc').click(function(){
     $('#showServiceEdu').show();
-    $('#calendar').hide();
+    $('#calcontain').hide();
    });
    $('#hidenavl').click(function(){
     $('#showServiceEdu').hide();
