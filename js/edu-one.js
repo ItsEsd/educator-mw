@@ -799,22 +799,7 @@ $('#skpad').click(function(){
     $('#showServiceEdu').hide();
    });
 
-    
-$(document).ready(function() {
-  window.desktopcheck = function() {
-    var check = false;
-    if(window.innerWidth>1010){
-        check=true;
-    }
-    return check;
-  }
-  if(!window.desktopcheck()){
-      $('#showServiceEdu').show();
-      $('#calcontain').show();
-  }
-  });
-   
-    $('#loaderTOD').click(function(){
+   $('#loaderTOD').click(function(){
       $('#loaderTOD').hide();});
   
  $('#opecrd').click(function(){
@@ -899,3 +884,18 @@ if(e.result=="active"){
   window.location.reload();
 }
 }
+    
+$(document).ready(function() {
+  window.desktopcheck = function() {
+    var check = false;
+    if(window.innerWidth>1010){
+        check=true;
+    }
+    return check;
+  }
+  if(window.desktopcheck()){
+      $('#showServiceEdu').show();
+      $('#calcontain').show();
+  }
+  });
+   
