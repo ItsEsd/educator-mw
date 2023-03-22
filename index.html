@@ -50,7 +50,7 @@
     <div id="walllogin"><center><div class="decorsec"><img src="images/logoSVG.svg"><br>Loading.. </div><div class="funcsec"><button class="btn btn-primary" id="signagn" onclick="signagn();">Sign In</button><a  target="_self" href="https://e-reset.mastrowall.com"><button class="btn btn-primary">E-reset</button></a></div></center></div>
     <div align="center">
       <div id="signInEdu" style="padding-top:85px;"><img src="images/educator.webp" style="pointer-events:none;width: 140px;">
-        <form id="df" target="hdnfrm">
+        <form id="df" onsubmit="return false;">
           <div class="form-group"><label for="inputEmail">Email address:</label> <input type="email" class="form-control" id="email" placeholder="Enter email" required /> </div>
           <div class="from-group"><label for="inputPass">Password:</label> <input type="password" class="form-control" id="pcodeEdu" placeholder="Enter password" required /> </div> <br>
           <div align="center"> <input type="submit" class="btn btn-primary" id="logEdu" value="Sign In" /> </div>
@@ -173,7 +173,7 @@
            <div id="previewTOD" align="center" style="width:100%; max-width:600px;"></div> </div>
           <!---TOD Edit------>
           <div align="center" class="allHide" id="updateTOD">
-            <form id="text_editor" target="hdnfrm" name="tod_editor">
+            <form id="text_editor" onsubmit="return false;" name="tod_editor">
               <div class="input_fields_wrap">
                 <div class="container tod"> 
                   <input type="text" id="ttdtitle" oninput="ProTOD();" class="form-control border-hide todtitle" name="title" placeholder="Title of the topic" autocomplete="off" required>
@@ -229,7 +229,7 @@
             <div align="left" id="loadconnectdiv"><div align="center"><div id="loaderCON" class="spinner-border text-primary"></div></div>
             <span id="connect1"></span><span id="connect2"></span></div>
             <div id="editConnect" style="background-color:#f0f0f0;" align="center">
-              <form name="eduProConnect" target="hdnfrm" id="connectup">
+              <form name="eduProConnect" onsubmit="return false;" id="connectup">
                 <div style="width:100%;float:left; margin:10px;" class="form-group">
                   <div class="row " style="margin-top:10px;">
                     <div class="form-group col2 "> <input class="form-control editProFormCss addconnect" type="text" style="width:120px; height:40px;margin-left:15px;" id="gconnect" name="idConnect" placeholder="Phone No." maxlength="10" required></div>
@@ -421,7 +421,7 @@
       <div id="resetp" align="center">
       <div id="resetp_one" class="repass">
         <h5 style="text-align: left;">Reset Password</h5><hr>
-      <form id="repassone" target="hdnfrm">
+      <form id="repassone" onsubmit="return false;">
         <input type="email" class="form-control" placeholder="Enter registered email" id="mailrepass" required/><br/>
         <input type="submit" class="btn btn-outline-dark" value="Continue >>"/>
         <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').slideUp('fast');">
@@ -430,7 +430,7 @@
       </div>
       <div id="resetp_two"class="repass">
         <h5 style="text-align: left;">Reset Password</h5><hr>
-        <form id="repasstwo" target="hdnfrm">
+        <form id="repasstwo" onsubmit="return false;">
           <input type="text" class="form-control" placeholder="Verification Code" id="vercode" oninput="verfycode();" required/><br/>
           <input type="submit" class="btn btn-outline-dark" id="verconfirm" value="Continue >>" onclick="$('#resetp_two').slideUp('fast');$('#resetp_three').slideDown('fast');" disabled/>
           <input type="button" class="btn btn-secondary" value="Close"  onclick="$('#resetp').slideUp('fast');">
@@ -439,7 +439,7 @@
       </div>
       <div id="resetp_three"class="repass">
         <h5 style="text-align: left;">Reset Password</h5><hr>
-        <form id="repassthree" target="hdnfrm">
+        <form id="repassthree" onsubmit="return false;">
           <input type="password" class="form-control" placeholder="New Password" id="passwordnew" required/><br/>
           <span id="messagenew" style="float:right;margin-right:10px; color:red;"></span>
           <input type="password" class="form-control" placeholder="Confirm Password Code" id="confirm_passwordnew" required/><br/>
@@ -506,7 +506,7 @@
   </div></div>
   
   <div id="formsttod">
-  <form target="hdnfrm" id="strtodedu">
+  <form onsubmit="return false;" id="strtodedu">
   <input type="text" placeholder="TOD Id" id="todid" class="form-control sectodinput" required/>
   <input type="text" placeholder="Key" id="todpass"  class="form-control sectodinput" required/><br>
   <textarea placeholder="Remarks"  id="todcmnt" class="form-control todcomm" rows="4" required></textarea><br>
@@ -548,7 +548,7 @@
         </div>
         
         <div class="clroomdivbd-two">
-          <form target="hdnfrm" id="srcandsvex" autocomplete="off">
+          <form onsubmit="return false;" id="srcandsvex" autocomplete="off">
             <input type="text" placeholder="Exam ID" class="form-control sectodinput" id="cpexid" required/>
             <input type="password" placeholder="Exam Pass" class="form-control sectodinput" id="cppass" required/><br>
             <input type="submit" value="Search" class="showexbtn" id="srcexambtn"/>    
