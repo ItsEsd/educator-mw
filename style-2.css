@@ -707,7 +707,6 @@
       display: block;
       background-color: #000000cb;
       z-index: 10000;
-      display:none; 
       }
 
     #allsvevnt{
@@ -1281,7 +1280,6 @@
         top:45px;
         left:0px;
         max-width:100%;
-        display: none;
         }
     
         #showServiceEdu{
@@ -1316,7 +1314,7 @@
         }
         }
     
-    @media only screen and (min-width: 1010px) {
+    @media only screen and (min-width: 1000px) {
        
         #showServiceEdu{
           display: block;
@@ -1329,7 +1327,6 @@
           top:0px;
           left:24%;
           max-width: 45%; 
-          display: block;
           }
       
           #upDash{
@@ -1367,47 +1364,6 @@
         }
     
         @media only screen and (min-width: 1200px) {
-        #showServiceEdu{
-        display: block;
-        max-width: 24%;
-        }
-        #titleleft{
-          max-width: 24%;
-        }
-        #calcontain{
-        top:0px;
-        left:24%;
-        max-width: 45%; 
-        display: block;
-        }
-    
-        #upDash{
-        width:100%;
-        max-width: 31%;
-        padding: 10px;
-        }
-        #footDash{
-        max-width: 31%;
-        }
-        #propic {
-        width:120px;
-        height:120px;
-        pointer-events: none;
-        cursor: none;
-        }
-        #opcal{
-        display:none;
-        }
-        #edservice{
-        display: none;
-        }
-        #hidenavl{
-        display: none;
-        }
-        #leftnav{
-        padding-top:0px;
-        max-width:310px;
-        }
         .dashicon{
           width: 250px;
           height:160px;
