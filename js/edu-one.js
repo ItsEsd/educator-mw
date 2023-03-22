@@ -799,14 +799,13 @@ $('#skpad').click(function(){
     $('#showServiceEdu').hide();
    });
 
-    // setInterval(function(
-    // ){
+    
     //   var w = window.innerWidth;
     //    if(w>1010){
     //     $('#showServiceEdu').show();
     //      $('#calcontain').show();
     //    }
-    // },500);
+    
 
     $('#loaderTOD').click(function(){
       $('#loaderTOD').hide();});
