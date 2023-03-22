@@ -31,7 +31,7 @@
       </div>------->
 
       <div align="center" id="editorBoard" style="display:block;background-color: white;">
-        <form name="compForm" method="post" target="hdnfrm" id="texteditform"> <input type="hidden" name="myDoc">
+        <form name="compForm" onsubmit="return false;" id="texteditform"> <input type="hidden" name="myDoc">
           <div id="toolBar2"><img class="tb1" title="Add picture" data-toggle="modal" data-target="#crimg" src="https://www.svgrepo.com/show/32379/picture.svg" onclick="document.getElementById('btnOkImg').disabled='true';" /> <img class="tb1" title="Add video" data-toggle="modal" data-target="#crvid" src="https://www.svgrepo.com/show/102295/video-play.svg" /><img class="tb1" title="Remove formatting" onclick="formatDoc('removeFormat')" src="https://www.svgrepo.com/show/314541/remove-format-solid.svg"> <img class="tb1" title="Hyperlink" data-toggle="modal" data-target="#crlnk" src="https://www.svgrepo.com/show/67898/link.svg" />  <img class="tb1" title="Undo" onclick="formatDoc('undo');" src="https://www.svgrepo.com/show/314826/undo-alt-solid.svg" /> <img class="tb1" title="Redo" onclick="formatDoc('redo');" src="https://www.svgrepo.com/show/314537/redo-alt-solid.svg" /> 
             <img class="intLink" title="Bold" onclick="formatDoc('bold');" src="https://www.svgrepo.com/show/82766/bold-button.svg" /> <img class="intLink" title="Italic" onclick="formatDoc('italic');" src="https://www.svgrepo.com/show/133204/italic-button.svg" /> <img class="intLink" title="Underline" onclick="formatDoc('underline');" src="https://www.svgrepo.com/show/136837/underline-text.svg" /> 
             <div class="modal" id="crlnk" role="dialog">
@@ -142,7 +142,7 @@
                                   <a class="proThumb" onclick="document.getElementById('ppic').value= 'https://i.imgur.com/WZsjtn3.png';">
                                     <img class="avatarPro" src="https://i.imgur.com/WZsjtn3.png"></a> </div>
             
-            <form id="postTODT" target="hdnfrm">
+            <form id="postTODT" onsubmit="return false;">
               <div id="postT"> <input type="text" class="form-control" name="TODTitle" id="todTitle" placeholder="TOD Title" required /> <input type="text" class="form-control" name="TODCreator" id="creatorN" placeholder="Creator Name" required /> <span id="passstrength" style="float:right;display:none;"></span><input type="password" class="form-control" id="genK" placeholder="Generate Key" required /><span id="message" style="float:right;"></span> 
                 <input type="password" class="form-control" id="confirmK" placeholder="Confirm Key" required /> </div>
               <div style="display:none;"> <input id="ppic" placeholder="Change avatar" name="AVPic" value="https://i.imgur.com/laYI1ji.png" required> <input type="text" id="genId" style="display:block;" name="TODId" /> <input type="text" id="inHtml" style="display:block;" name="TODContent" oninput="limitChar()" /></div>
@@ -157,7 +157,7 @@
           </div>
           <div align="center" id="p2" style="display:none;">
             <div style="box-shadow:0 1px 6px 0 grey;margin-top:20px;width:100%;max-width:400px;padding:10px;height:300px;"><br>
-              <form id="previewTODT" target="hdnfrm">
+              <form id="previewTODT" onsubmit="return false;">
                 <div id="previewT"> <input class="form-control" type="text" id="preId" placeholder="TOD Id" required /> <input class="form-control" id="preK" type="password" placeholder="Enter Key" required /> <span style="display:none;" id="notfound"></span>
                   <span id="loaderTD" class="spinner-border text-primary"></span></div><button type="submit" class="sub" value="Preview" id="preTOD">View</button><button type="button" class="sub" onclick="document.getElementById('p2').style.display='none';document.getElementById('prepost').style.display='block';">Close</button>
               </form> <br>
