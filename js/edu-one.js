@@ -801,7 +801,7 @@ $('#skpad').click(function(){
 
     setInterval(function(
     ){
-      var w = document.documentElement.clientWidth;
+      var w = window.innerWidth;
        if(w>1010){
         $('#showServiceEdu').show();
          $('#calendar').show();
