@@ -696,7 +696,7 @@ eventsup.push(entry);
 var date = new Date();
 var tois = date.toISOString();
 var flcaldate = tois.substring(0, 10);
-var calendar = new FullCalendar.Calendar(calendarEl, {
+var calendar = new FullCalendar.Calendar(calendarEl, { aspectRatio: 1,
   initialView: 'listWeek',
     headerToolbar: {
       left: 'prev,next',
@@ -799,14 +799,14 @@ $('#skpad').click(function(){
     $('#showServiceEdu').hide();
    });
 
-  //  window.addEventListener("resize", displayWindowSize);
-  //  function displayWindowSize(){
-  //   var w = window.innerWidth;
-  //      if(w>1010){
-  //       $('#showServiceEdu').show();
-  //        $('#calendar').show();
-  //      }
-  //   }
+    setInterval(function(
+    ){
+      var w = document.documentElement.clientWidth;
+       if(w>1010){
+        $('#showServiceEdu').show();
+         $('#calendar').show();
+       }
+    },500);
 
     $('#loaderTOD').click(function(){
       $('#loaderTOD').hide();});
