@@ -800,13 +800,20 @@ $('#skpad').click(function(){
    });
 
     
-    //   var w = window.innerWidth;
-    //    if(w>1010){
-    //     $('#showServiceEdu').show();
-    //      $('#calcontain').show();
-    //    }
-    
-
+$(document).ready(function() {
+  window.desktopcheck = function() {
+    var check = false;
+    if(window.innerWidth>1010){
+        check=true;
+    }
+    return check;
+  }
+  if(!window.desktopcheck()){
+      $('#showServiceEdu').show();
+      $('#calcontain').show();
+  }
+  });
+   
     $('#loaderTOD').click(function(){
       $('#loaderTOD').hide();});
   
