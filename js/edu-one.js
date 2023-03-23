@@ -796,7 +796,8 @@ $('#skpad').click(function(){
     $('#calcontain').hide();
    });
    $('#hidenavl').click(function(){
-    $('#showServiceEdu').hide();
+    $('#showServiceEdu').hide(); 
+    $('#calcontain').hide();
    });
 
    $('#loaderTOD').click(function(){
@@ -884,18 +885,8 @@ if(e.result=="active"){
   window.location.reload();
 }
 }
-    
-$(document).ready(function() {
-  window.desktopcheck = function() {
-    var check = false;
-    if(window.innerWidth>1010){
-        check=true;
-    }
-    return check;
-  }
-  if(window.desktopcheck()){
-      $('#showServiceEdu').show();
-      $('#calcontain').show();
-  }
-  });
    
+$(document).ready(function() {
+  $(window).bind('resize', function() {
+    $('#calcontain,#upDash,#showServiceEdu').show();
+});});
