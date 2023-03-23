@@ -143,9 +143,9 @@
               End : <span id="accntend"></span><br><p id="lgoutacnt"onclick="deleteAllCookies();location.reload();">Sign Out</p>
             </div></div>
           </div>
-          <div id="calcontain">
-            <div id='calendar'></div>
-          </div>
+       </div>
+       <div id="calcontain">
+         <div id='calendar'></div>
        </div>
       </div>
       <div class="modal" id="insthttp">
@@ -755,10 +755,6 @@ navigator.serviceWorker.register('service-worker.js');
 console.log("Service worker is not supported");
 }
 
-$(document).ready(function() {
-  $(window).bind('resize', function() {
-    $('#calcontain,#calendar,#upDash,#showServiceEdu').show();
-});});
 setInterval(function(){console.clear();},500);
 </script>
 </body>
