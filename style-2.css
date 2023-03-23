@@ -706,7 +706,7 @@
       max-width: 45%; 
       display: block;
       background-color: #ffffff;
-      z-index: 10000;
+      z-index: 1;
       }
 
     #allsvevnt{
@@ -865,7 +865,7 @@
     position: absolute;
     background-color: #2bb80f;
     color: white;
-    z-index: 10000;
+    z-index: 100000;
     padding:4px;
     width:100%;
     display: none;
@@ -880,7 +880,6 @@
     #clsecrd{
     padding:6px 10px;
     font-size: 14px;
-    /* display: inline-block; */
     float: right;
     background-color: red;
     color: white;
@@ -1277,6 +1276,7 @@
             padding: 0 0.75em 0 0;
             }
         #calcontain{
+        display: none;
         top:45px;
         left:0px;
         max-width:100%;
@@ -1323,7 +1323,8 @@
           #titleleft{
             max-width: 24%;
           }
-          #calcontain{
+          #calcontain{ 
+          display: block;
           top:0px;
           left:24%;
           max-width: 45%; 
@@ -1381,6 +1382,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     padding: 0 0.75em 0 0;
     }
 #calcontain{
+  display: none;
 top:45px;
 left:0px;
 max-width:100%;
@@ -1431,6 +1433,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
       max-width: 24%;
     }
     #calcontain{
+    display: block;
     top:0px;
     left:24%;
     max-width: 45%; 
