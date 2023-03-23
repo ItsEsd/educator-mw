@@ -1370,3 +1370,104 @@
           margin:10px;
         }
         }
+
+        
+/* iPad Portrait */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait) 
+and (-webkit-min-device-pixel-ratio: 1) {
+  ul.icons li {
+    padding: 0 0.75em 0 0;
+    }
+#calcontain{
+top:45px;
+left:0px;
+max-width:100%;
+}
+
+#showServiceEdu{
+display: none;
+}
+
+#upDash{
+height:100%;
+width:100%;
+max-width: 1400px;
+padding: 10px;
+overflow-y:scroll;
+}
+
+#footDash{
+max-width: 100%;
+}
+#telefrm{
+height:600px;
+margin-bottom:90px;  
+padding-bottom:0px;
+}
+#telefrm iframe{
+max-height:600px;
+}
+#edservice{
+display: block;
+}
+#leftnav{
+padding-top:0px;
+max-width:600px;
+}
+}
+
+/* iPad Landscape */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: landscape) 
+and (-webkit-min-device-pixel-ratio: 1) {
+  #showServiceEdu{
+    display: block;
+    max-width: 24%;
+    }
+    #titleleft{
+      max-width: 24%;
+    }
+    #calcontain{
+    top:0px;
+    left:24%;
+    max-width: 45%; 
+    }
+
+    #upDash{
+    width:100%;
+    max-width: 31%;
+    padding: 10px;
+    }
+    #footDash{
+    max-width: 31%;
+    }
+    #propic {
+    width:120px;
+    height:120px;
+    pointer-events: none;
+    cursor: none;
+    }
+    #opcal{
+    display:none;
+    }
+    #edservice{
+    display: none;
+    }
+    #hidenavl{
+    display: none;
+    }
+    #leftnav{
+    padding-top:0px;
+    max-width:310px;
+    }
+    .dashicon{
+      width: 225px;
+      height:160px;
+      margin:6px;
+    }
+}
