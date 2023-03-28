@@ -552,7 +552,8 @@
     width:100%;
     max-width: 900px;
     display:block;
-    padding-bottom:20px;
+    padding-bottom:10px;
+    margin-bottom:40px;
     border:1px solid #0c09c9;
     }
     #educlassroom{
