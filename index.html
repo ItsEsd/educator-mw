@@ -40,8 +40,7 @@
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@3aced4316baea1e932f87af78236a6ff9c1ef464/images/favicon-logos/logoSVG.svg" type="image/png" sizes="16x16">
     <link rel='manifest' href='/manifest.json'>
     <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <script src="js/wallcook.js"></script> <base target="_blank">
+    <meta name="apple-mobile-web-app-capable" content="yes"><base target="_blank">
     <link href='apps/calender/main.css' rel='stylesheet' />
     <script src='apps/calender/main.js'></script>
     <script src="js/html2canvas.js"></script>
@@ -413,7 +412,7 @@
   <section>
     <div id="fmcontainert" class="fullwidth" align="center">
     <span class="closefw">X</span> <span id="fmtitle" style="float:right;padding-right:6px;font-size:20px;">LinkIns and Update</span>
-      <div class="frameholder" style="height:100%;"><iframe class="sandtframe" height="100%" src="https://mastrowall.com/linkins" frameborder="0"></iframe>
+      <div class="frameholder" style="height:100%;"><iframe class="sandtframe" height="100%" src="#" frameborder="0" id="linkinfrm"></iframe>
 </div>
   </section>  
     </div>
@@ -633,6 +632,7 @@
   </div>
 </section>
 <input style="display: none;" id="allsvevnt"/>
+<script src="js/wallcook.js"></script> 
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="js/edu-one.js"></script><script src="js/edu-two.js"></script>
 <script src="js/re-pass.js"></script><script src="js/stu-aprv.js"></script>
