@@ -1,5 +1,5 @@
 /* M A S T R O W A L L */
-var ewfSetCookie = function(exdays) {
+var ewfSetCookie = function(exdays,name) {
   var psmed = $("#email").val();
   var pswed = $("#pcodeEdu").val();
   var d = new Date();
@@ -8,6 +8,7 @@ var ewfSetCookie = function(exdays) {
   document.cookie = "mwallced=true; expires=" + expires + ";path=/;domain=mastrowall.com";
   document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
   document.cookie = "mwallpswedud="+btoa(pswed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
+  document.getElementById('linkinfrm').src="https://mastrowall.com/linkins/"+name;
 };
 function getCookie() {
     var decodedCookie = decodeURIComponent(document.cookie); 
