@@ -206,7 +206,8 @@ let stateObj = { id: "0" };
  window.history.replaceState(stateObj,
        "", shname);
 document.title = res[0].FName + ' ' + res[0].LName +" | MASTROWALL";
-ewfSetCookie(14);
+var tkn = "#t/"+btoa(cardn);
+ewfSetCookie(14,tkn);
 $('#canved').empty();
 document.getElementById('canved').innerHTML = "<div class='edcrdinf'><div class='infone'>"+
 "<img src='"+res[0].ProfilePic+"'/><div><h4>EDUCATOR</h4><hr><p class='pinone'>"+fname+" "+lname+"</p><p class='pintwo'>"+res[0].Subject+" | "+res[0].Class+" | "+res[0].Board+
