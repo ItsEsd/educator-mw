@@ -9,6 +9,8 @@ var ewfSetCookie = function(exdays,name) {
   document.cookie = "mwallpswedus="+btoa(psmed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
   document.cookie = "mwallpswedud="+btoa(pswed)+"; expires=" + expires + ";path=/;domain=mastrowall.com";
   document.getElementById('linkinfrm').src="https://mastrowall.com/linkins/"+name;
+  document.getElementById('tlfrm').src="../apps/telemedia/";
+  document.getElementById('srchfrm').src="https://mastrowall.com/search";
 };
 function getCookie() {
     var decodedCookie = decodeURIComponent(document.cookie); 
