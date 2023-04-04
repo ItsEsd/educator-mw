@@ -241,8 +241,46 @@ body {
     height:36px;
     border-radius: 0px;
     margin-top:-2px;
-    margin-left:4px;
+    margin-left:0px;
       }
+
+      
+#matheqn{
+  height:36px;
+border-radius: 0px;
+margin-top:-2px;
+}
+body {
+  --keyboard-zindex: 3000;
+}
+math-field,math-field:focus,math-field:active{
+  border:0px;outline: none;
+}
+@media not (pointer: coarse) {
+  math-field::part(virtual-keyboard-toggle) {
+    display: block;
+  }
+}
+#creqn math-field{
+  padding:10px; 
+width:100%;
+}
+#eqntst{
+  top:0;
+  left:0;
+  position: fixed;
+  display: none;
+}
+.mftd,.mftd div{
+  pointer-events:none;
+  cursor:not-allowed;
+}
+
+@media not (pointer: coarse) {
+  .mftd::part(virtual-keyboard-toggle) {
+    display: none;
+  }
+}
   .form-control {
     margin-bottom: 6px;
     width: 100%;
