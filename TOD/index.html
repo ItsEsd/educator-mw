@@ -30,10 +30,10 @@
         <hr style="border-color:#0c09c9;width:99%;">
       </div>------->
 
-      <div align="center" id="editorBoard" style="display:block;background-color: white;padding:5px;">
+      <div align="center" id="editorBoard" style="display:block;padding:5px;">
         <form name="compForm" onsubmit="return false;" id="texteditform"> <input type="hidden" name="myDoc">
           <div id="toolBar2"><img class="tb1" title="Add picture" data-toggle="modal" data-target="#crimg" src="https://www.svgrepo.com/show/32379/picture.svg" onclick="document.getElementById('btnOkImg').disabled='true';" /> <img class="tb1" title="Add video" data-toggle="modal" data-target="#crvid" src="https://www.svgrepo.com/show/102295/video-play.svg" /><img class="tb1" title="Remove formatting" onclick="formatDoc('removeFormat')" src="https://www.svgrepo.com/show/314541/remove-format-solid.svg"> <img class="tb1" title="Hyperlink" data-toggle="modal" data-target="#crlnk" src="https://www.svgrepo.com/show/67898/link.svg" />  <img class="tb1" title="Undo" onclick="formatDoc('undo');" src="https://www.svgrepo.com/show/314826/undo-alt-solid.svg" /> <img class="tb1" title="Redo" onclick="formatDoc('redo');" src="https://www.svgrepo.com/show/314537/redo-alt-solid.svg" /> 
-            <img class="intLink" title="Bold" onclick="formatDoc('bold');" src="https://www.svgrepo.com/show/82766/bold-button.svg" /> <img class="intLink" title="Italic" onclick="formatDoc('italic');" src="https://www.svgrepo.com/show/133204/italic-button.svg" /> <img class="intLink" title="Underline" onclick="formatDoc('underline');" src="https://www.svgrepo.com/show/136837/underline-text.svg" /> 
+            <img class="intLink" title="Bold" onclick="formatDoc('bold');" src="https://www.svgrepo.com/show/82766/bold-button.svg" /> <img class="intLink" title="Italic" onclick="formatDoc('italic');" src="https://www.svgrepo.com/show/133204/italic-button.svg" /> <img class="intLink" title="Underline" onclick="formatDoc('underline');" src="https://www.svgrepo.com/show/136837/underline-text.svg" />  <img class="intLink" title="Left align" onclick="formatDoc('justifyleft');" src="https://www.svgrepo.com/show/28745/left-alignment.svg" /> <img class="intLink" title="Center align" onclick="formatDoc('justifycenter');" src="https://www.svgrepo.com/show/28746/center-alignment.svg" /> <img class="intLink" title="Right align" onclick="formatDoc('justifyright');" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDMwMCAzMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwMCAzMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMTUwLjAwNCwwQzY3LjE2NSwwLDAuMDAxLDY3LjE2MSwwLjAwMSwxNDkuOTk3UzY3LjE2NSwzMDAsMTUwLjAwNCwzMDBzMTQ5Ljk5NS02Ny4xNjMsMTQ5Ljk5NS0xNTAuMDAzDQoJCQlTMjMyLjg0MywwLDE1MC4wMDQsMHogTTYzLjkyOCwxNDEuODkyaDE3Mi4xNDR2MTUuNTYySDYzLjkyOFYxNDEuODkyeiBNMjM2LjA3MiwxMjEuNjM5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTIxLjYzOXoNCgkJCSBNMjM2LjA3MiwxOTMuMjY5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTkzLjI2OXogTTYzLjkyOCwyMjkuMDgxdi0xNS41NjJoMTcyLjE0NHYxNS41NjJINjMuOTI4eiBNNjMuOTI4LDg1LjgyN1Y3MC4yNjUNCgkJCWgxNzIuMTQ0djE1LjU2MmMwLDAsMC4wMDMsMCwwLjAwMywwSDYzLjkyOHoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" /> <img class="intLink" title="Numbered list" onclick="formatDoc('insertorderedlist');" src="https://www.svgrepo.com/show/46732/list.svg" /> <img class="intLink" title="Dotted list" onclick="formatDoc('insertunorderedlist');" src="https://www.svgrepo.com/show/20687/list.svg" /> <img class="intLink" title="Add indentation" onclick="formatDoc('indent');" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_format_indent_increase_48px-512.png" /><img class="intLink" title="Delete indentation" onclick="formatDoc('outdent');" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_format_indent_decrease_48px-512.png" /> 
             <div class="modal" id="crlnk" role="dialog">
               <div class="modal-dialog">
                 <div class="modal-content">
@@ -68,10 +68,10 @@
           </div>
           
           <input id="dateQ" style="display:none;" />
-          <div id="textBox" contenteditable="true" align="left">
-            <p onclick="document.getElementById('textBox').innerHTML='';" style="height:200px;">Start with a topic..</p>
-          </div>
-          <div id="toolBar1"> <img class="intLink" title="Left align" onclick="formatDoc('justifyleft');" src="https://www.svgrepo.com/show/28745/left-alignment.svg" /> <img class="intLink" title="Center align" onclick="formatDoc('justifycenter');" src="https://www.svgrepo.com/show/28746/center-alignment.svg" /> <img class="intLink" title="Right align" onclick="formatDoc('justifyright');" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDMwMCAzMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwMCAzMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMTUwLjAwNCwwQzY3LjE2NSwwLDAuMDAxLDY3LjE2MSwwLjAwMSwxNDkuOTk3UzY3LjE2NSwzMDAsMTUwLjAwNCwzMDBzMTQ5Ljk5NS02Ny4xNjMsMTQ5Ljk5NS0xNTAuMDAzDQoJCQlTMjMyLjg0MywwLDE1MC4wMDQsMHogTTYzLjkyOCwxNDEuODkyaDE3Mi4xNDR2MTUuNTYySDYzLjkyOFYxNDEuODkyeiBNMjM2LjA3MiwxMjEuNjM5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTIxLjYzOXoNCgkJCSBNMjM2LjA3MiwxOTMuMjY5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTkzLjI2OXogTTYzLjkyOCwyMjkuMDgxdi0xNS41NjJoMTcyLjE0NHYxNS41NjJINjMuOTI4eiBNNjMuOTI4LDg1LjgyN1Y3MC4yNjUNCgkJCWgxNzIuMTQ0djE1LjU2MmMwLDAsMC4wMDMsMCwwLjAwMywwSDYzLjkyOHoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" /> <img class="intLink" title="Numbered list" onclick="formatDoc('insertorderedlist');" src="https://www.svgrepo.com/show/46732/list.svg" /> <img class="intLink" title="Dotted list" onclick="formatDoc('insertunorderedlist');" src="https://www.svgrepo.com/show/20687/list.svg" /> <img class="intLink" title="Add indentation" onclick="formatDoc('indent');" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_format_indent_increase_48px-512.png" /><img class="intLink" title="Delete indentation" onclick="formatDoc('outdent');" src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_format_indent_decrease_48px-512.png" /> <img class="intLink" title="Print/ Save as PDF" onclick="printDoc();" src="https://www.svgrepo.com/show/38190/print-button.svg" /> <img style="display:none;" class="intLink" title="Download Text" id="export" onclick="saveasDoc();" src="https://www.svgrepo.com/show/120995/download.svg" />
+          <div id="tbxcontn"><div id="textBox" contenteditable="true" align="left">
+            <p onclick="document.getElementById('textBox').innerHTML='';document.getElementById('topictod').style.display = 'none';" style="height:500px;width:100%;">Start with a topic..</p>
+          </div></div>
+          <div id="toolBar1"><img class="intLink" title="Print/ Save as PDF" onclick="printDoc();" src="https://www.svgrepo.com/show/38190/print-button.svg" /> <img style="display:none;" class="intLink" title="Download Text" id="export" onclick="saveasDoc();" src="https://www.svgrepo.com/show/120995/download.svg" />
             <select onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;">
               <option class="heading" selected>Font</option>
               <option>Arial</option>
@@ -109,7 +109,12 @@
               <option value="black">Black</option>
               <option value="white">White</option>
             </select> <button id="matheqn" type="button" class="btn btn-warning" title="Insert Equation" data-toggle="modal" data-target="#creqn">&#8721;</button>
-            <button id="sktchpd" type="button" class="btn btn-dark" onclick="window.open('https://sketch.mastrowall.com', '_blank', 'location=center,height=670,width=1200,left=80,top=100,scrollbars=yes,status=yes');">Sketch Pad</button> </div>
+            <button id="sktchpd" type="button" class="btn btn-dark" onclick="window.open('https://sketch.mastrowall.com', '_blank', 'location=center,height=670,width=1200,left=80,top=100,scrollbars=yes,status=yes');">Sketch Pad</button><button type="button" id="postTD" onclick="document.getElementById('postT').style.display='block';document.getElementById('p1').style.display='block';document.getElementById('prepost').style.display='none'; dateUp();"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-symlink-fill" viewBox="0 0 16 16">
+              <path d="M13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3zM2.19 3c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.586 3H2.19zm9.608 5.271l-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z" /></svg> Post TOD</button> <button type="button" id="previewTD" onclick="document.getElementById('p2').style.display='block';document.getElementById('prepost').style.display='none';"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
+              <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+              <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
+              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
+              <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" /></svg> View TOD </button> </div>
           <div style="display:none;">
             <p id="editMode"> <input type="checkbox" name="switchMode" id="switchBox" onchange="setDocMode(this.checked);" /> <label for="switchBox">Show HTML</label> </p>
           </div>
@@ -155,6 +160,10 @@
                  <button type="submit" class="sub" value="Post" id="poTOD" disabled="disabled">Post</button>
                  <button type="button" class="sub" onclick="document.getElementById('p1').style.display='none';document.getElementById('prepost').style.display='block'; document.getElementById('copied').innerHTML = 'Copy to Clipboard'">Close</button></div>
             </form> <br>
+            <div style="width:100%;text-align: center;font-size: 12px;margin-top:25px;margin-bottom:10px;color:#00000085;">
+              <a target="_blank" href="../privacy-policy.html" style="color:#00000085;">Privacy Policy</a> | 
+              <a target="_blank" href="../terms-and-conditions.html" style="color:#00000085;">Terms & Conditions</a> | 
+              © 2022 by <a href="../"style="color:#00000085;">MASTROWALL</a></div>
           </div>
           <div align="center" id="p2" style="display:none;">
             <div><br>
@@ -163,18 +172,14 @@
                   <span id="loaderTD" class="spinner-border text-primary"></span></div><button type="submit" class="sub" value="Preview" id="preTOD">View</button><button type="button" class="sub" onclick="document.getElementById('p2').style.display='none';document.getElementById('prepost').style.display='block';">Close</button>
               </form> <br>
             </div>
+            <div style="width:100%;text-align: center;font-size: 12px;margin-top:25px;margin-bottom:10px;color:#00000085;">
+              <a target="_blank" href="../privacy-policy.html" style="color:#00000085;">Privacy Policy</a> | 
+              <a target="_blank" href="../terms-and-conditions.html" style="color:#00000085;">Terms & Conditions</a> | 
+              © 2022 by <a href="../"style="color:#00000085;">MASTROWALL</a></div>
           </div>
-          <div id="prepost" style="width:100%;"><span id="topictod" style="color:#0c09c9;margin-bottom:10px;"></span>
-            <p> <button type="button" id="postTD" onclick="document.getElementById('postT').style.display='block';document.getElementById('p1').style.display='block';document.getElementById('prepost').style.display='none'; dateUp();"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-folder-symlink-fill" viewBox="0 0 16 16">
-                  <path d="M13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3zM2.19 3c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.586 3H2.19zm9.608 5.271l-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z" /></svg> Post TOD</button> <button type="button" id="previewTD" onclick="document.getElementById('p2').style.display='block';document.getElementById('prepost').style.display='none';"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
-                  <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z" />
-                  <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z" />
-                  <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" /></svg> View TOD </button>
-                
-                </p> 
-                <!-- <p style="margin-top:10px;padding-bottom: 18px;font-size:11px;">** Desktop Use <a target="_blank" href="https://sites.google.com/new" style="color:#0c09c9;">Build Google Sites</a></p>-->  <input id="toddoc" style="display:none;" />
-          </div>
+          <center><div id="prepost"><span id="topictod" style="color:#0c09c9;margin-bottom:10px;"></span>
+            <input id="toddoc" style="display:none;" />
+          </div></center>
         </form>
        </div>
     </div>
@@ -204,12 +209,12 @@
         <br><br><button class="btn btn-primary" id="backtotdbrd">Close</button><br></div>
     </div>
     <!----------Pre End----------->
-    <footer>
+    <!-- <footer>
       <div style="width:100%;text-align: center;font-size: 12px;margin-top:10px;margin-bottom:10px;color:#00000085;">
         <a target="_blank" href="https://mastrowall.com/privacy-policy.html" style="color:#00000085;">Privacy Policy</a> | 
         <a target="_blank" href="https://mastrowall.com/terms-and-conditions.html" style="color:#00000085;">Terms & Conditions</a> | 
         © 2022 by <a href="../"style="color:#00000085;">MASTROWALL</a>
-    </footer>
+    </footer> -->
 <script>
   $("#previewTD").click(function(){
     // $("#textBox,#toolBar1,#toolBar2").slideUp('fast');
