@@ -748,6 +748,20 @@ $('input[type=file]').on('change', function () {
 });
 });
 </script>
+<script src="TOD/dist/mathlive.min.js"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', 
+    () => MathLive.renderMathInDocument()
+  );
+mf.addEventListener("focus", () =>  mathVirtualKeyboard.show());
+body.addEventListener("click", () =>  mathVirtualKeyboard.hide());
+  </script>
+<script type="module">
+  import { ComputeEngine } from 
+    'https://unpkg.com/@cortex-js/compute-engine?module';
+  const ce = new ComputeEngine();
+  document.getElementsByClassName('mftd').disabled =true;
+</script>
 <script>
 if('serviceWorker' in navigator){
 navigator.serviceWorker.register('service-worker.js');
