@@ -813,7 +813,7 @@
           () => MathLive.renderMathInDocument()
         );
         mf.addEventListener("focus", () =>  mathVirtualKeyboard.show());
-        mf.addEventListener("blur", () =>  mathVirtualKeyboard.hide());
+        document.body.addEventListener("click", () =>  mathVirtualKeyboard.hide());
         </script>
         <script type="module">
           import { ComputeEngine } from 
