@@ -76,18 +76,32 @@ body {
   img.tb1:hover {
     background-color: #f0f0f0;
   }
-
+  #tbxcontn{
+    top:0px;
+    right:0px;
+    position: fixed;
+    width:100%;
+    height:100%;
+    padding:5px;
+    margin:auto;
+    margin-left:-50px;
+    overflow-y: auto;
+    padding-bottom:100px;
+  }
   
   #textBox {
-    margin-top: 0px;
-    margin-left: 50px;
-    height: 450px;
+    height:100%;
+    max-height: 500px;
+    width:90%;
     max-width: 1000px;
     border: none;
-    padding: 0px;
+    padding: 10px;
     overflow-y: scroll;
     outline: none;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    margin-top:2.5%;
+    margin-left:50px;
   }
   #textBox::-webkit-scrollbar{width:6px;}
   #textBox::-webkit-scrollbar-thumb{background-color:#202020;border-radius: 10px;border:2px solid #ebe8e8;}
@@ -124,31 +138,57 @@ body {
     display: inline-block;
   }
 
+  
   #toolBar2 {
-    display: inline-block;
+    top:0px;
+    left:0px;
+    position: fixed;
     width: 45px;
-    float: left;
-    border: 1px solid #515251;
-    margin-top: 0px;
+    margin:auto;
     padding-bottom:2px;
     padding:2px;
-    border-radius: 5px;
     background-color: #e2e2e2; 
+    height:100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 2000;
   }
-
+  #toolBar2::-webkit-scrollbar{width:6px;}
+#toolBar2::-webkit-scrollbar-thumb{background-color:#202020;border-radius: 10px;border:2px solid #ebe8e8;}
+#toolBar2::-webkit-scrollbar-thumb:hover{background-color:#696969;color:#202020;padding:2px;}
+#toolBar2::-webkit-scrollbar-track{background-color:#ebe8e8;}
+  #loaderTD {
+    display: absolute;
+    width: 27px;
+    height: 27px;
+    visibility: hidden;
+    display: none;
+  }
   #toolBar1 {
-    max-width:1000px;
-    margin-top: 10px;
-    border:1px solid #414141;
+    bottom:0px;
+    right:0px;
+    position: fixed;
+    width:100%;
     padding:7px;
     background-color: #e2e2e2; 
     text-align: right;
-    border-radius: 5px;
+    padding-left:45px;
   }
 
+  #prepost{
+    top:40%;
+    right:0px;
+    width:100%;
+    position: fixed;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: transparent;
+    z-index: 5000;
+  }
   .modal {
     height: 100%;
     width: 100%;
+    z-index:4000;
   }
 
   .modal-content {
@@ -214,7 +254,6 @@ body {
   #texteditform {
     padding: 4px;
     margin: 10px;
-    background-color: white;
     color: black;
   }
 
@@ -241,7 +280,7 @@ body {
     height:36px;
     border-radius: 0px;
     margin-top:-2px;
-    margin-left:0px;
+    margin-right:4px;
       }
 
       
@@ -294,27 +333,24 @@ width:100%;height:60px;
   input:valid {
     background-color: #e6e6e6;
   }
-  #topictod{
-    font-size: 14px;
-  }
+
   #postTD,
   #previewTD {
-    width:100%;
-    max-width:45%;
-    margin:5px;
+    height:36px;
     border: 1px solid white;
     padding: 6px 16px;
-    border-radius: 4px;
-    background-color: #202020;
+    background-color: #686868;
     color: white;
+    margin-left:0px;
   }
-
+  #topictod{
+    font-size: 16px;
+  }
   #postTD:focus,
-  #previewTD:focus {
+  #previewTD:focus, #postTD:hover,
+  #previewTD:hover{
     outline: none;
-    -webkit-transform: scale(1.04);
-    transform: scale(1.04);
-    opacity: 0.8;
+    background-color: #353535;
   }
 
   #preTD {
@@ -489,9 +525,9 @@ width:100%;height:60px;
   }
 
   @media screen and (max-width: 700px) {
-    #postTD,
+    /* #postTD,
     #previewTD {
       width:100%;
       min-width:100%;
-  }
+  } */
 }
