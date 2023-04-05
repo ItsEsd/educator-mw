@@ -811,7 +811,10 @@
       <script>
         window.addEventListener('DOMContentLoaded', 
           () => MathLive.renderMathInDocument()
-        );</script>
+        );
+        mf.addEventListener("focus", () =>  mathVirtualKeyboard.show());
+        mf.addEventListener("blur", () =>  mathVirtualKeyboard.hide());
+        </script>
         <script type="module">
           import { ComputeEngine } from 
             'https://unpkg.com/@cortex-js/compute-engine?module';
