@@ -754,7 +754,7 @@ $('input[type=file]').on('change', function () {
     () => MathLive.renderMathInDocument()
   );
 mf.addEventListener("focus", () =>  mathVirtualKeyboard.show());
-body.addEventListener("click", () =>  mathVirtualKeyboard.hide());
+document.body.addEventListener("click", () =>  mathVirtualKeyboard.hide());
   </script>
 <script type="module">
   import { ComputeEngine } from 
