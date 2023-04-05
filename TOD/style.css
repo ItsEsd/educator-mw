@@ -258,7 +258,7 @@ math-field,math-field:focus,math-field:active{
 }
 @media not (pointer: coarse) {
   math-field::part(virtual-keyboard-toggle) {
-    display: none;
+    display: block;
   }
 }
 #creqn math-field{
