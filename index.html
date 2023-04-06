@@ -100,7 +100,7 @@
               </svg>
           </span></div>
             <div id="leftnav">
-            <div class="dashicon" onclick="$('#TODdash').slideDown('fast');$('#updateTOD').slideDown();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/sttod.png">
+            <div class="dashicon" onclick="$('#TODdash,#tdtpone,#tdtptwo').slideDown('fast');$('#updateTOD').slideDown();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/sttod.png">
               <div id="tod" ></div>
              </div>
               <div class="dashicon" onclick="showclroom();$('#connectivityedu').slideUp('fast');"><img class="dashiconimg" src="images/educonn.jpg">
@@ -162,42 +162,49 @@
         <div id="TODdash" align="center">
          <div class="contentheader">
           <span class="tpdayhead">Topic of The Day</span>
-          <span class="closedashfull" onclick="$('#TODdash').slideUp('fast');">X</span>
+          <span class="closedashfull" onclick="$('#TODdash,#tdtpone,#tdtptwo').slideUp('fast');">X</span>
         </div>
           <div id="loaderTOD"><center><div id="loaderldtd" class="spinner-border text-primary"></div></center></div>
-          <div align="center" class="allHide" id="LiveTOD"></div>
           
          <div id="pviewcontain" align="center"> 
           <span onclick="$('#pviewcontain').slideUp('fast');" class="closepview">X</span>
            <div id="previewTOD" align="center" style="width:100%; max-width:600px;"></div> </div>
-          <!---TOD Edit------>
-          <div align="center" class="allHide" id="updateTOD">
-            <form id="text_editor" onsubmit="return false;" name="tod_editor">
-              <div class="input_fields_wrap">
-                <div class="container tod"> 
-                  <input type="text" id="ttdtitle" oninput="ProTOD();" class="form-control border-hide todtitle" name="title" placeholder="Title of the topic" autocomplete="off" required>
-                  <div contenteditable="true" id="todconedit" align="left">
-                    <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>
-                  </div>
-                  <textarea class="form-control todbrief" oninput="ProTOD();" rows="10" name="brief_topic" placeholder="Topic briefing" id="tbrief" required></textarea>
-                  <div style="width:100%;">
-                    <div class="row">
-                      <div class="col-md-6">
-                      <input type="button" data-target="#insthttp" data-toggle="modal" id="addvideoed" Value="Add Video (YouTube / Vimeo)" />
-                      </div>
-                      <div class="col-md-6">
-                        <input type="url" name="thumb_ref" oninput="ProTOD();" id="tthumb" class="form-control border-hide thumbref" placeholder="&#10010; Add thumbnail link " autocomplete="off" required>
-                        <span><input type="file" accept="image/png, image/gif, image/jpeg" id="upload" class="topicidfile"/></span></div>
-                     
-                      </div></div><hr>
-                  <input id="resetuptopic" type="button" value="Reset" class="btn btn-dark"> <input id="uptday" type="submit" value="Update" class="btn btn-outline-primary">
-                  <button type="button" onclick="$('#pviewcontain').slideDown('fast');ProTOD();" id="previewt" class="btn btn-success" style="background-color:#008000;border:none;margin-right:5px;float:left;" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
-                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
-                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" /> </svg> Preview</button><br></div>
-              </div>
-            </form><input id="posinthumb" style="display:none;"><input id="tdtopicidrmv" style="display:none;"><br>
-            <div id="nocontent"></div>
-            <input id="json_tod" style="display:none;height:100px;" />
+          <div class="row" id="topictdcon">
+            <div class="col-md-6" id="tdtpone">
+              <div align="center" class="allHide" id="LiveTOD"></div>
+
+            </div>
+            <div class="col-md-6" id="tdtptwo">
+                        <!---TOD Edit------>
+                        <div align="center" class="allHide" id="updateTOD">
+                          <form id="text_editor" onsubmit="return false;" name="tod_editor">
+                            <div class="input_fields_wrap">
+                              <div class="container tod"> 
+                                <input type="text" id="ttdtitle" oninput="ProTOD();" class="form-control border-hide todtitle" name="title" placeholder="Title of the topic" autocomplete="off" required>
+                                <div contenteditable="true" id="todconedit" align="left">
+                                  <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>
+                                </div>
+                                <textarea class="form-control todbrief" oninput="ProTOD();" rows="10" name="brief_topic" placeholder="Topic briefing" id="tbrief" required></textarea>
+                                <div id="edtrfnone">
+                                    <input type="button" data-target="#insthttp" data-toggle="modal" id="addvideoed" Value="Add Video" />
+                                    <input type="file" accept="image/png, image/gif, image/jpeg" id="upload" class="topicidfile"/>
+                                      <input type="url" name="thumb_ref" oninput="ProTOD();" id="tthumb" class="form-control border-hide thumbref" placeholder="&#10010; Add thumbnail link " autocomplete="off" required>
+                                   
+                                    </div>
+                                <div id="edtrfntwo">    
+                                  <button type="button" onclick="$('#pviewcontain').slideDown('fast');ProTOD();" id="previewt" class="btn btn-success" disabled><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                                    <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z" />
+                                    <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z" /> </svg> Preview</button>
+                                  <input id="resetuptopic" type="button" value="Reset" class="btn btn-dark"> <input id="uptday" type="submit" value="Update" class="btn btn-outline-primary">
+                                </div>
+
+                                </div>
+                            </div>
+                          </form><input id="posinthumb" style="display:none;"><input id="tdtopicidrmv" style="display:none;">
+                          <div id="nocontent"></div>
+                          <input id="json_tod" style="display:none;height:100px;" />
+                        </div>
+            </div>
           </div>
         </div>
     </section>
