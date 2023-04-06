@@ -1264,6 +1264,11 @@
         width:50%;
       }
       
+
+
+/* ///////////// Media Screen */
+
+      
     @media only screen and (max-width: 400px) {
         .ForTypePs,.ForTypePm{
           width:100% !important;
