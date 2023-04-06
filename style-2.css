@@ -81,18 +81,12 @@
     display: none;
     }
 
-    .topicidfile{
-    margin-top:10px;
-    font-size: 14px;
-    float:right;
-    width:90px;
-    }
-    #addvideoed{
-    margin-top:10px;
-    font-size: 14px;
-    border:1px solid grey;
-    float:left;
-    }
+   
+   
+    #uploadpropiced{
+      margin:10px;
+      }
+      
     #pviewcontain{
     top:0px;
     left:0px;
@@ -402,7 +396,7 @@
     padding-left:10px;
     position:fixed;
     height:36px;
-    background-color: #ecececd8;
+    background-color: #ececec;
     z-index: 1;
     }
     .contentheader .tpdayhead{
@@ -412,20 +406,9 @@
     }
 
 
-    #uptday{
-    float:right;
-    width:80px;
-    margin-right:5px;
-    margin-top:4px;
-    }
-    #resetuptopic{
-    float:right;
-    width:80px;
-    margin-right:5px;
-    margin-top:4px;
-    }
+   
     #nocontent{
-    top:100px;
+    top:180px;
     right:10px;
     position: fixed;
     max-width: 300px;
@@ -435,13 +418,9 @@
     background-color: #000000;
     color:white;
     border:0px;
-
     }
 
-    #uploadpropiced{
-    margin:10px;
-    }
-
+   
     .proedimgup{
     width:140px;
     height:140px;
