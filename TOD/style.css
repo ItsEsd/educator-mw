@@ -281,8 +281,20 @@ body {
     border-radius: 0px;
     margin-top:-2px;
     margin-right:4px;
+    background-color: #1f1f1f;
       }
-
+      #chrtlepd{
+        height:36px;
+        border-radius: 0px;
+        margin-top:-2px;
+        margin-right:0px;
+        background-color: #1f1f1f;
+          }
+#chrtlepd img{
+  width:20px;
+  margin-top:-4px;
+  margin-right:4px;
+}
       
 #matheqn{
   height:36px;
@@ -530,4 +542,30 @@ width:100%;height:60px;
       width:100%;
       min-width:100%;
   } */
+}
+#skcpcon,#chrtlpd{
+  display:none;
+  top:0px;
+  left:45px;
+  position:fixed;
+  width:100%;
+  max-width:1200px;
+  height:85%;
+  box-shadow:40px 5px 60px 10px #1f1f1f58;
+  background-color: #848484;
+  z-index:900000 !important;
+  cursor: auto;
+}
+#skcpcon object{
+  width:100%;
+  height:100%;
+  max-width:1200px;
+  z-index:900000 !important;
+}
+#chrtlpd iframe{
+  width:100%;
+  height:100%;
+  max-width:1200px;
+  padding:0px;
+  z-index:900000 !important;
 }
