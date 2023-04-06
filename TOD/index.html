@@ -272,14 +272,6 @@ window.addEventListener('click', function(e){
     document.getElementById('sktchpd').style.backgroundColor = "#1f1f1f";
   }
 });
-window.addEventListener('click', function(e){   
-  if (document.getElementById('previewTD').contains(e.target)){
-    $('#p2').show();
-  }
-  else{
-    $('#p2').hide();
-  }
-});
 </script>
     <script>
       function myFunction() {
@@ -306,7 +298,7 @@ window.addEventListener('click', function(e){
         var z = document.getElementById("ppic").value;
         document.getElementById("profilePic").innerHTML = '<img width="140px" src="' + z + '">';
         var valHTM = document.getElementById('inHtml').value;
-        if (valHTM != 0) {
+        if (valHTM != "") {
           var postedTOD = JSON.stringify(document.getElementById("inHtml").value);
           var posts = JSON.parse(postedTOD);
           document.getElementById("genId").value = "ed/"+Math.random().toString(26).substring(2, 5) + Math.random().toString(26).substring(2, 5);
@@ -315,16 +307,15 @@ window.addEventListener('click', function(e){
           }, 1000);
         
         } else {
-         
           document.getElementById('p1').style.display = "none";
           document.getElementById('prepost').style.display = "block";
           document.getElementById('topictod').style.display = "block";
           document.getElementById('topictod').innerHTML = "Please start with a topic";
-          return false;
-        }
-        setTimeout(function() {
+          setTimeout(function() {
           $('#topictod').fadeOut('fast');
         }, 1000);
+          return false;
+        }
       }
       document.getElementById("textBox").addEventListener("input", limitChar);
 
