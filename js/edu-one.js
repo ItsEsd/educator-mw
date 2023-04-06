@@ -269,7 +269,7 @@ function ckeckactvst(dy,mn,yr){
 function live_tod() {
 document.getElementById("updateTOD").style.pointerEvents ="auto";
 document.getElementById("LiveTOD").style.pointerEvents ="auto";
-  $('#TODdash').slideDown('fast');
+  $('#TODdash,#tdtpone,#tdtptwo').slideDown('fast');
   $('#LiveTOD').empty();
   document.getElementById("loaderTOD").style.display = "block";
   document.getElementById("updatePro").style.display = "none";
@@ -321,7 +321,7 @@ function ProTOD() {
   var tdtitle = $("#ttdtitle").val();
   var tdbrief = $("#tbrief").val();
   var tdthumb = $("#tthumb").val();
-  if(tdthumb != 0 && tdbrief != 0 && tdthumb != 0){
+  if(tdtitle != "" && tdbrief != "" && tdthumb != ""){
   document.getElementById("previewTOD").innerHTML = '<div class="wrapTODPre"><div class="card" style="border:1px solid black;"> <img class="card-img-top" src="' + tdthumb + '"><div class="card-body"><h4>' + tdtitle + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + tdbrief+ '</p></div> </div></div>';
   document.getElementById('previewt').disabled = false;limitchar();
   }
@@ -434,7 +434,7 @@ $('.remove_field').prop('disabled',true);
 });
 
 function openConnect() {
-  $('#TODdash').slideUp('fast');
+  $('#TODdash,#tdtpone,#tdtptwo').slideUp('fast');
   $('#connectivityedu').slideDown('fast');
   document.getElementById("goconnect").style.display = "block";
   document.getElementById("nxt").style.display = "block";
