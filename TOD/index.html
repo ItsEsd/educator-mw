@@ -18,6 +18,29 @@
     <script src="../vendor/js/jquery-ui-1.11.2.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <base target="_blank">
+    <script>
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for (var i = 0; i < ca.length; i++) {
+  var c = ca[i];
+  while (c.charAt(0) == ' ') {
+  c = c.substring(1);
+  }
+  if (c.indexOf(name) == 0) {
+  return c.substring(name.length, c.length);
+  }
+  }
+  return "";
+} 
+// var usered = getCookie('mwallced');
+// if(usered != "true"){
+// window.open('/','_self');
+// }
+if ( window.location == window.parent.location ) {
+  window.open('../','_self');} 
+    </script>
   </head>
   <body onload="initDoc(); pasteFun();">
     <!--- Create TOD Text Editor---->
