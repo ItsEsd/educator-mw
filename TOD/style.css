@@ -391,8 +391,8 @@ width:100%;height:60px;
   }
 .newtdc{
   border:0px;
-  height:36px;
-  margin:5px;
+  height:34px;
+  padding:0px 7px;
   outline:none;
   background-color: #bbbbbb;
 }
@@ -402,6 +402,7 @@ outline:none;
 }
 .newtdc svg{
   width: 20px;
+  margin-top:-2px;
   height:20px;
 }
 /* CHATGPT */
