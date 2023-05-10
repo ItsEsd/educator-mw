@@ -261,35 +261,33 @@ if ( window.location == window.parent.location ) {
   $('#dashboard').slideDown();
 });
 function opnskpd(){
-  var elem = document.getElementById('skcpcon');
-  if(elem.style.display!="block"){
-    $('#skcpcon').toggle();$('#chrtlpd').hide();
-    document.getElementById('chrtlepd').style.backgroundColor = "#1f1f1f";
-    document.getElementById('sktchpd').style.backgroundColor = "#dd1d16";
+  var elem1 = document.getElementById('skcpcon');
+  if(elem1.style.display =="none"){
+    $('#skcpcon').show();$('#chrtlpd').hide();
   }
-  else{
-    $('#skcpcon').toggle();$('#chrtlpd').hide();
-    document.getElementById('sktchpd').style.backgroundColor = "#1f1f1f";
+  else if(elem1.style.display =="block"){
+    $('#skcpcon').hide();$('#chrtlpd').hide();
   }
 }
 function opnchrtl(){
- var elem = document.getElementById('chrtlpd');
-  if(elem.style.display!="block"){
-    $('#chrtlpd').toggle();$('#skcpcon').hide();
-    document.getElementById('sktchpd').style.backgroundColor = "#1f1f1f";
-    document.getElementById('chrtlepd').style.backgroundColor = "#dd1d16";
+ var elem2 = document.getElementById('chrtlpd');
+  if(elem2.style.display=="none"){
+    $('#chrtlpd').show();$('#skcpcon').hide();
   }
-  else{
+  else if(elem2.style.display =="block"){
     $('#chrtlpd').toggle();$('#skcpcon').hide();
-    document.getElementById('chrtlepd').style.backgroundColor = "#1f1f1f";
   }
 }
 window.addEventListener('click', function(e){   
   if (document.getElementById('sktchpd').contains(e.target)){
     $('#skcpcon').show();
+    document.getElementById('chrtlepd').style.backgroundColor = "#1f1f1f";
+    document.getElementById('sktchpd').style.backgroundColor = "#dd1d16";
   }
   else if (document.getElementById('chrtlepd').contains(e.target)){
     $('#chrtlpd').show();
+    document.getElementById('sktchpd').style.backgroundColor = "#1f1f1f";
+    document.getElementById('chrtlepd').style.backgroundColor = "#dd1d16";
   }
   else{
     $('#skcpcon,#chrtlpd').hide();
