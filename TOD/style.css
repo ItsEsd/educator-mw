@@ -307,11 +307,7 @@ body {
 math-field,math-field:focus,math-field:active{
   border:0px;outline: none;
 }
-@media not (pointer: coarse) {
-  math-field::part(virtual-keyboard-toggle) {
-    display: block;
-  }
-}
+
 #creqn math-field{
   padding:10px; 
 width:100%;height:60px;
@@ -332,6 +328,7 @@ width:100%;height:60px;
     display: none;
   }
 }
+
   .form-control {
     margin-bottom: 6px;
     width: 100%;
