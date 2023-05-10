@@ -308,7 +308,7 @@ function ldlivetd(e){
         document.getElementById("loaderTOD").style.display = "none";
       }
     }
-    else if(reslt[0].TOD == "" ||reslt[0].TOD == null){
+    else if(reslt[0].TOD == ""){
       document.getElementById("updateTOD").style.display = "block";
       document.getElementById("LiveTOD").style.display = "block";
       document.getElementById("LiveTOD").innerHTML ='<div class="nocontenttod"><svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">'+
