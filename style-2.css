@@ -296,6 +296,35 @@
     overflow-y: auto;
     padding-bottom:20px;
     }
+
+    #previewPost iframe {
+      height:400px;
+    }
+
+    @media not (pointer: coarse) {
+      .mftd::part(virtual-keyboard-toggle) {
+        display: none;
+      }
+    }
+    math-field,math-field:focus,math-field:active{
+      border:0px;outline: none;
+    }
+    
+    #creqn math-field{
+      padding:10px; 
+    width:100%;height:60px;
+    }
+    #eqntst{
+      top:0;
+      left:0;
+      position: fixed;
+      display: none;
+    }
+    .mftd,.mftd div{
+      pointer-events:none;
+      cursor:not-allowed;
+    }
+
     /* #backtotdbrd{
     padding: 6px 14px;
     bottom:10px;
