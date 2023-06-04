@@ -263,8 +263,52 @@
                <span style="color:black" id="connectUp"></span> 
                <input id="connectivity" style="display:none;" />
             </div>
-          </div>
+          </div><button onclick="openModal()" id="strmapps"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-broadcast" viewBox="0 0 16 16">
+            <path d="M3.05 3.05a7 7 0 0 0 0 9.9.5.5 0 0 1-.707.707 8 8 0 0 1 0-11.314.5.5 0 0 1 .707.707zm2.122 2.122a4 4 0 0 0 0 5.656.5.5 0 1 1-.708.708 5 5 0 0 1 0-7.072.5.5 0 0 1 .708.708zm5.656-.708a.5.5 0 0 1 .708 0 5 5 0 0 1 0 7.072.5.5 0 1 1-.708-.708 4 4 0 0 0 0-5.656.5.5 0 0 1 0-.708zm2.122-2.12a.5.5 0 0 1 .707 0 8 8 0 0 1 0 11.313.5.5 0 0 1-.707-.707 7 7 0 0 0 0-9.9.5.5 0 0 1 0-.707zM10 8a2 2 0 1 1-4 0 2 2 0 0 1 4 0z"/>
+          </svg> Live Streaming Services</button>
         </div></div></section>
+        <section id="strmliveapp">
+          <div id="stmmdl" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span class="closemdl" onclick="closeModal()">&times;</span>
+              <p class="hdngone">Choose a live streaming service:</p>
+              <a class="service-link" href="https://meet.google.com/" target="_blank">
+                <img class="service-icon" src="/images/edconnect/gmeet.webp" alt="Google Meet">
+                Google Meet
+              </a>
+              <a class="service-link" href="https://zoom.us/" target="_blank">
+                <img class="service-icon" src="/images/edconnect/zoom.webp" alt="Zoom">
+                Zoom
+              </a>
+              <a class="service-link" href="https://teams.microsoft.com/" target="_blank">
+                <img class="service-icon" src="/images/edconnect/teams.webp" alt="Microsoft Teams">
+                Microsoft Teams
+              </a>
+                <a class="service-link" href="https://studio.youtube.com/" target="_blank">
+                <img class="service-icon" src="/images/edconnect/ytube.webp" alt="YouTube">
+                YouTube
+              </a>
+                <a class="service-link" href="https://vimeo.com/" target="_blank">
+                <img class="service-icon" src="/images/edconnect/vimeo.webp" alt="Vimeo">
+                Vimeo
+              </a>
+                <a class="service-link" href="https://skype.com/" target="_blank">
+                <img class="service-icon" src="/images/edconnect/skype.webp" alt="Skype">
+                Skype
+              </a>
+                <a class="service-link" href="https://www.facebook.com/live/producer/" target="_blank">
+                <img class="service-icon" src="/images/edconnect/facebook.webp" alt="Facebook">
+                Facebook
+              </a>
+                <a class="service-link" href="https://linkedin.com/">
+                <img class="service-icon" src="/images/edconnect/linkedin.webp" alt="LinkedIn" target="_blank">
+                LinkedIn
+              </a>
+              <hr><p class="hdngtwo">N.B: Add links to Connectivity/ Topic of The Day/ Classroom</p>
+            </div>
+          </div>
+        </section>
         <!-- ECard Design and Download -->
         <section>
           <div id="myerded" align="center">
@@ -775,9 +819,7 @@ navigator.serviceWorker.register('service-worker.js');
 } else {
 console.log("Service worker is not supported");
 }
-
-setInterval(function(){console.clear();},500);
+setInterval(function(){console.clear();},100);
 </script>
 </body>
-
 </html>
