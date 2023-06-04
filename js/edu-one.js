@@ -898,3 +898,12 @@ $(document).ready(function() {
   $(window).bind('resize', function() {
     $('#calcontain,#upDash,#showServiceEdu').show();
 });});
+
+  // JavaScript functions to open and close the modal
+  function openModal() {
+    document.getElementById("stmmdl").style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById("stmmdl").style.display = "none";
+  }
