@@ -12,7 +12,7 @@ document.getElementById('varvrdigit').value = click;
        var todkey = JSON.stringify(y[posofinput].value);
        var eduid =$('#eduid').val();
        var ur1 = "https://script.google.com/macros/s/";
-       var ur2 = "AKfycbzdo5abHFtSSXazxfC8HAfo4dCQ-NsAl21DHCGJT-TQfhoBHTBcf07AMZ_rFIEWvkjZaA";
+       var ur2 = "AKfycbygqnfRauECR-vPi39Nsy7ymyUYSwfsrbFBSNxjtV1W43ZE4bzX0glwsy7eeiIwU8Z-DA";
        var urlrmv = ur1+ur2+"/exec" + "?callback=removefrmlst&tdid="+todid+"&eduid="+eduid+"&action=rmvtod";
        document.getElementById('varvrdigit').value = urlrmv;
 }
@@ -288,7 +288,7 @@ var enridst1 = $('#cppass').val();
 var examdtls = document.getElementById('examdescpin').innerHTML;
 var enridst = enridst1+'{ex},'+ examdtls +'{ex}';
 var ur1 = "https://script.google.com/macros/s/";
-var ur2 = "AKfycbw6SaFivVhk016J_zM3mqrGleSc6WxhokhwhfkSw47PnxW-tXIAlVz23p9--mYXMov0UQ";
+var ur2 = "AKfycbzpGUMvFkrhPfpPnhpQXXrCT02Rt0sKU31unMuN6ZnPZj-D4QjqpkJMhnkA5KTce6jMWw";
 var url = ur1+ur2+"/exec"+ "?callback=ctrlqsvex&email="+edemid+"&checkexamid="+examidst+"&chechenid="+enridst+"&action=edsvexm";
 var request = jQuery.ajax({
   crossDomain: true,
