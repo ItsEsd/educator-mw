@@ -346,7 +346,7 @@ window.addEventListener('click', function(e){
         var valuee = $('#inHtml').val();
         var str = String(valuee);
         var len = str.length;
-        if (len >= 7000) {
+        if (len >= 20000) {
           document.getElementById("CharExcd").style.display = "block";
           document.getElementById("poTOD").disabled = true;
           document.getElementById('postTD').disabled = true;
@@ -541,7 +541,7 @@ window.addEventListener('click', function(e){
         var valuee = $('#inHtml').val();
         var str = String(valuee);
         var len = str.length;
-        if ($('#genK').val() == $('#confirmK').val() && len <= 7000) {
+        if ($('#genK').val() == $('#confirmK').val() && len <= 20000) {
           $('#message').html('Matching').css('font-size', '12px');
           document.getElementById('poTOD').disabled = false;
         } else {
@@ -553,7 +553,7 @@ window.addEventListener('click', function(e){
         var valuee = $('#inHtml').val();
         var str = String(valuee);
         var len = str.length;
-        if ($('#genK').val() == $('#confirmK').val() && len <= 7000) {
+        if ($('#genK').val() == $('#confirmK').val() && len <= 20000) {
           $('#message').html('Matching').css('font-size', '12px');
           document.getElementById('poTOD').disabled = false;
         } else {
@@ -597,31 +597,84 @@ window.addEventListener('click', function(e){
         document.getElementById('dateQ').value = currentTime;
       }
       document.getElementById("poTOD").addEventListener("click", insertgenTOD);
-
       function insertgenTOD() {
-        var TOD_script_url = "https://script.google.com/macros/s/AKfycbxKgEl5Vx1nmxDWiG590cMBZAnbj8jdA-Zqb_A75Xy5ryJsiHXK015deQzER4DQSDZs5g/exec";
+        var TOD_script_url = "https://script.google.com/macros/s/AKfycbyWEr6h0j11fjP2hudAJ-2P_21jRbSd8DC4pxqL_YiskIok_wnURI6lEcu_nyGIzlAbZQ/exec";
         var title = escape(JSON.stringify($("#todTitle").val()));
         var creator = escape(JSON.stringify($("#creatorN").val()));
         var food = escape(JSON.stringify($("#genK").val()));
         var itemno = escape(JSON.stringify($("#genId").val()));
         var recip = escape(JSON.stringify($("#toddoc").val()));
         var currentTime = jQuery("#dateQ").val();
+        var splitString =splitStringByLength(recip,4500);
+        var clln = splitString.length;   var urlmd = [];var urmi;
         var ti = $("#todTitle").val();
         var cre = $("#creatorN").val();
         var fo = $("#genK").val();
         var itemn = $("#genId").val();
         var reci = $("#toddoc").val();
         if (ti != 0 && cre != 0 && fo != 0 && itemn != 0 && reci != 0) {
-          var url = TOD_script_url + "?callback=ctrlqinst&genId=" + itemno + "&todTitle=" + title + "&creatorN=" + creator + "&toddoc=" + recip + "&genK=" + food + "&dateQ=" + currentTime + "&action=insertTD";
+          for(var k=0;k<clln;k++){
+            var urrl = urmi+k;
+            urrl = TOD_script_url + "?callback=ctrlqinst&genId=" + itemno + "&todTitle=" + title + "&creatorN=" + creator + "&toddoc=" + (splitString[k])  +"&ptno=" + k + "&genK=" + food + "&dateQ=" + currentTime + "&action=insertTD";
+            urlmd[k] = urrl;
+           }
+           makeAjaxRequest(urlmd,0);
+           var element = document.getElementById('genstrngary');
+            if (element !== null) {
+              element.value= JSON.stringify(urlmd);
+            }
+            else{
+              var elem = document.createElement('input');
+              elem.id='genstrngary';elem.value="";
+              elem.value = JSON.stringify(urlmd);
+              elem.style.display = 'none';
+            }
+           $('body').append(elem);
+           console.log(urlmd);
           document.getElementById("loader-potd").style.display ="block";
-          var request = jQuery.ajax({
-            crossDomain: true,
-            url: url,
-            method: "GET",
-            dataType: "jsonp"
-          });
           document.getElementById("poTOD").disabled = true;
-          var title = escape(JSON.stringify($("#todTitle").val()));
+        } else {
+          return false;
+        }
+      }
+
+      function splitStringByLength(str, length) {
+          var nwaary = [];
+          for (var i = 0; i < str.length; i += length) {
+            nwaary.push(str.substring(i, i + length));
+          }
+          return nwaary;
+        }
+        function makeAjaxRequest(urlmi,ptn) {
+            var request = $.ajax({
+              crossDomain: true,
+              url: urlmi[ptn],
+              method: "GET",
+              dataType: "jsonp"
+            }); 
+            request.fail(function(textStatus) {
+              if (textStatus.status === 404) {
+                request.abort();alert('Request aborted');
+              }
+            });
+      }
+      
+      function ctrlqinst(e) {
+        var upsts = e.result.split('/');
+          var arrystng = [];
+          arrystng = JSON.parse(document.getElementById('genstrngary').value);
+          var flln= arrystng.length; console.log(e.result,arrystng);
+          if(upsts[0]==='updated'){
+            var upvl = parseInt(upsts[1]); 
+            var nxtcl = upvl+1;
+            if(nxtcl<flln){
+              makeAjaxRequest(arrystng,nxtcl)
+            }
+            else if(nxtcl=flln){
+              document.getElementById("loader-potd").style.display ="none";
+              document.getElementById("loader-potd").style.display ="none";
+              document.getElementById('genstrngary').value="";
+              var title = escape(JSON.stringify($("#todTitle").val()));
         var creator = escape(JSON.stringify($("#creatorN").val()));
         var food = escape(JSON.stringify($("#genK").val()));
         var itemno = escape(JSON.stringify($("#genId").val()));
@@ -650,16 +703,11 @@ window.addEventListener('click', function(e){
         }, 5000);
         document.getElementById("genK").value ="";
         document.getElementById("confirmK").value ="";
-        document.getElementById("loader-potd").style.display ="none";
-        } else {
-          return false;
+            }
+            else{
+              return;
+            }
         }
-      }
-
-      function ctrlqinst(e) {
-        var res= e.result;
-        if(res=="Insertion successful!"){
-        document.getElementById("loader-potd").style.display ="none";}
       }
 
     </script>
@@ -809,10 +857,7 @@ window.addEventListener('click', function(e){
         $('document').ready(function () {
           $('input[type=file]').on('change', function () {
             var $files = $(this).get(0).files;
-              
                readImage( this );
-              
-              
             if ($files.length) {
               // Reject big files
               if ($files[0].size > $(this).data('max-size') * 1024) {
@@ -820,7 +865,6 @@ window.addEventListener('click', function(e){
               }
               var apiUrl = 'https://api.imgur.com/3/image';
               var apiKey = 'f1fb111ea7f4e5b';
-        
               var settings = {
                 async: false,
                 crossDomain: true,
@@ -834,7 +878,6 @@ window.addEventListener('click', function(e){
                 },
                 mimeType: 'multipart/form-data',
               };
-        
               var formData = new FormData();
               formData.append('image', $files[0]);
               settings.data = formData;
@@ -907,9 +950,6 @@ $('body').append(elem);
 function hident(){
   $('#notfynew').hide();
 }
-
-
         </script>
   </body>
-
 </html>
