@@ -630,7 +630,6 @@ window.addEventListener('click', function(e){
               elem.style.display = 'none';
             }
            $('body').append(elem);
-           console.log(urlmd);
           document.getElementById("loader-potd").style.display ="block";
           document.getElementById("poTOD").disabled = true;
         } else {
@@ -660,10 +659,11 @@ window.addEventListener('click', function(e){
       }
       
       function ctrlqinst(e) {
-        var upsts = e.result.split('/');
+          var upsts = e.result.split('/');
           var arrystng = [];
           arrystng = JSON.parse(document.getElementById('genstrngary').value);
-          var flln= arrystng.length; console.log(e.result,arrystng);
+          var flln= arrystng.length;
+          //  console.log(e.result,arrystng);
           if(upsts[0]==='updated'){
             var upvl = parseInt(upsts[1]); 
             var nxtcl = upvl+1;
@@ -671,7 +671,6 @@ window.addEventListener('click', function(e){
               makeAjaxRequest(arrystng,nxtcl)
             }
             else if(nxtcl=flln){
-              document.getElementById("loader-potd").style.display ="none";
               document.getElementById("loader-potd").style.display ="none";
               document.getElementById('genstrngary').value="";
               var title = escape(JSON.stringify($("#todTitle").val()));
