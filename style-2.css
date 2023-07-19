@@ -1271,11 +1271,8 @@
         margin:4px;
         width:50%;
       }
-      
-
 
 /* ///////////// Media Screen */
-
       
     @media only screen and (max-width: 500px) {
         .ForTypePs,.ForTypePm{
@@ -1485,101 +1482,4 @@ and (-webkit-min-device-pixel-ratio: 1) {
       height:160px;
       margin:6px;
     }
-}
-
-#strmapps{
-  border:0px;
-  margin-top:10px;
-  outline: none;
-  width:89%;
-}
-#strmapps svg{
-  width:16px;
-  height:16px;
-  margin-top:-4px;
-  color:red;
-}
-
- /* Styling for modal */
- .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black background with opacity */
-  z-index:10000;
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  margin-top:10%; 
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* 80% width */
-  max-width:500px;
-  text-align: left;
-  display: inline-block;
-}
-
-/* Close button */
-.closemdl {
-  color: #aaa;
-  top:15px;
-  right:15px;
-  position: absolute;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.closemdl:hover,
-.closemdl:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-.modal-content img{
-  border-radius: 10px;
-  box-shadow: 0px 0px 5px 0px #808080d6;
-}
-/* Icon styling */
-.service-icon {
-  width: 40px;
-  height: 40px;
-  margin:5px;
-  margin-top:15px;
-  margin-bottom:15px;
-}
-.service-icon:hover{
-transform: scale(1.2);
-}
-/* Anchor styling */
-.service-link {
-  align-items: center;
-  color: #000;
-  text-decoration: none;
-}
-.hdngone{
-  background-image: linear-gradient(90deg,red,white);
-  padding:10px;
-  color:white;
-}
-.hdngtwo{
-  text-align: center;
-  font-size:14px;
-  padding-top: 10px;
-}
-
-/* RC-Widget */
-
-#rc-widget{
-cursor: pointer;
-width:100%;
-bottom:0px;
-left:0px;
-position: fixed;
 }
