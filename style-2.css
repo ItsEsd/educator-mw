@@ -1573,3 +1573,13 @@ transform: scale(1.2);
   font-size:14px;
   padding-top: 10px;
 }
+
+/* RC-Widget */
+
+#rc-widget{
+cursor: pointer;
+width:100%;
+bottom:0px;
+left:0px;
+position: fixed;
+}
