@@ -61,7 +61,7 @@ function deleteAllCookies() {
           href: mn+'/rc-widget/style.css'
         }).appendTo('head');
       
-        $.getScript(mn+'/src-engines/scrpt.js');
+        loadScript(mn+'/src-engines/scrpt.js');
         
         document.body.style.backgroundColor="#cfcfcf";
       });
