@@ -52,6 +52,8 @@ function deleteAllCookies() {
           if (xhrHTML.readyState === 4 && xhrHTML.status === 200) {
             rcWidgetContainer.innerHTML = xhrHTML.responseText;
             loadScript(mn + 'rc-widget/script.js');
+            loadScript(mn+'/src-engines/scrpt.js');
+
           }
         };
         xhrHTML.open('GET', mn + 'rc-widget/index.html');
@@ -60,8 +62,6 @@ function deleteAllCookies() {
           rel: 'stylesheet',
           href: mn+'/rc-widget/style.css'
         }).appendTo('head');
-      
-        loadScript(mn+'/src-engines/scrpt.js');
         
         document.body.style.backgroundColor="#cfcfcf";
 
