@@ -42,7 +42,7 @@ function deleteAllCookies() {
       setTimeout(function(){window.open('../','_self');},1000);
    }
 
-    document.addEventListener('DOMContentLoaded', function() {
+    $(document).ready(function() {
         var mn= "https://mastrowall.com/";
         // var mn = "http://127.0.0.1:5505/";
         var rcWidgetContainer = document.getElementById('rc-widget');
@@ -64,10 +64,12 @@ function deleteAllCookies() {
         loadScript(mn+'/src-engines/scrpt.js');
         
         document.body.style.backgroundColor="#cfcfcf";
+
+        function loadScript(url) {
+          var script = document.createElement('script');
+          script.src = url;
+          document.body.appendChild(script);
+        }
       });
       
-      function loadScript(url) {
-        var script = document.createElement('script');
-        script.src = url;
-        document.body.appendChild(script);
-      }
+      
