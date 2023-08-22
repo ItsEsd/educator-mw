@@ -31,6 +31,21 @@
     color:#ffffff;
     background-color: #1a2ca5;
     }
+
+    #crVideo{
+      height:40px; width:67%; outline:none;border:1px solid #0c09c9;border-radius:0px;
+    }
+    #btnOkVid{
+      border:none;
+      height:40px;
+      width:30%;
+      background-color:black;
+      border-radius:0px;
+      margin-bottom:1px;
+      margin-left:4px;
+      margin-top:-4px;
+      display: inline-block;
+    }
     .nocontentallst{
     padding:40px;
     font-size: 20px;
@@ -81,8 +96,6 @@
     display: none;
     }
 
-   
-   
     #uploadpropiced{
       margin:10px;
       }
@@ -162,10 +175,15 @@
     background-size: 6px 6px;
     }
     #examportalbtn{
-    bottom:10px;
+      width:100%;
+    bottom:0px;
     right:0px;
     position: fixed;
     border-radius: 0px;
+    background-color: #46b346;
+    }
+    #examportalbtn svg{
+      margin-top:-4px;
     }
     .showexbtn{
     margin-top:4px;
@@ -174,8 +192,7 @@
     border:1px solid #aaa8a8;
     color:black
     }
-
-
+    
     .showexbtn:focus,.showexbtn:active{
     -webkit-transform: scale(1.04);
     transform: scale(1.04);
@@ -433,8 +450,17 @@
     margin-right: 50px;
     font-size: 20px;
     }
+.tpdayhead svg{
+  width:24px;
+  height:24px;
+  padding:4px;
+  background-color: black;
+  color:white;
+}
 
-
+#TODdash input{
+  border-radius: 0px;
+}
    
     #nocontent{
     top:180px;
