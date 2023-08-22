@@ -150,8 +150,8 @@
       <div class="modal" id="insthttp">
         <div class="modal-dialog">
           <div class="modal-content">
-            <div class="modal-body"><input id="crVideo" type="url" style="height:40px; width:60%; outline:none;border:1px solid #0c09c9;border-radius:0px;" placeholder=" YouTube / Vimeo Video Link" />
-              <button class="btn btn-dark" id="btnOkVid" data-dismiss="modal" onclick="insert_vid()" style="border:none;height:38px;width:80px;background-color:black;border-radius:0px;margin-bottom:1px;margin-left:4px;">Insert</button>
+            <div class="modal-body"><input id="crVideo" type="url" placeholder=" YouTube / Vimeo Video Link" />
+              <button class="btn btn-dark" id="btnOkVid" data-dismiss="modal" onclick="insert_vid()">Insert</button>
               <div id="previewvid" style="padding-top:10px;display:none;"></div>
             </div>
           </div>
@@ -161,7 +161,7 @@
         <section>
         <div id="TODdash" align="center">
          <div class="contentheader">
-          <span class="tpdayhead">Topic of The Day</span>
+          <span class="tpdayhead"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-journal-bookmark-fill" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M6 1h6v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8V1z"/> <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"/> <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"/> </svg> Topic of The Day</span>
           <span class="closedashfull" onclick="$('#TODdash,#tdtpone,#tdtptwo').slideUp('fast');">X</span>
         </div>
           <div id="loaderTOD"><center><div id="loaderldtd" class="spinner-border text-primary"></div></center></div>
@@ -187,8 +187,8 @@
                                 <textarea class="form-control todbrief" oninput="ProTOD();" rows="10" name="brief_topic" placeholder="Topic briefing" id="tbrief" required></textarea>
                                 <div id="edtrfnone">
                                     <input type="button" data-target="#insthttp" data-toggle="modal" id="addvideoed" Value="Add Video" />
-                                    <input type="file" accept="image/png, image/gif, image/jpeg" id="upload" class="topicidfile"/>
                                       <input type="url" name="thumb_ref" oninput="ProTOD();" id="tthumb" class="form-control border-hide thumbref" placeholder="&#10010; Add thumbnail link " autocomplete="off" required>
+                                      <input type="file" accept="image/png, image/gif, image/jpeg" id="upload" class="topicidfile"/>
                                    
                                     </div>
                                 <div id="edtrfntwo">    
@@ -457,13 +457,18 @@
       </section>
   <section>
     <div id="fmcontainers" class="fullwidth" align="center">
-    <span class="closefw">X</span> <span id="fmtitle" style="float:right;padding-right:6px;font-size:20px;">Topic Search</span>
+    <span class="closefw">X</span> <span class="clsroomelemtitle"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-binoculars" viewBox="0 0 16 16">
+      <path d="M3 2.5A1.5 1.5 0 0 1 4.5 1h1A1.5 1.5 0 0 1 7 2.5V5h2V2.5A1.5 1.5 0 0 1 10.5 1h1A1.5 1.5 0 0 1 13 2.5v2.382a.5.5 0 0 0 .276.447l.895.447A1.5 1.5 0 0 1 15 7.118V14.5a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 14.5v-3a.5.5 0 0 1 .146-.354l.854-.853V9.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v.793l.854.853A.5.5 0 0 1 7 11.5v3A1.5 1.5 0 0 1 5.5 16h-3A1.5 1.5 0 0 1 1 14.5V7.118a1.5 1.5 0 0 1 .83-1.342l.894-.447A.5.5 0 0 0 3 4.882V2.5zM4.5 2a.5.5 0 0 0-.5.5V3h2v-.5a.5.5 0 0 0-.5-.5h-1zM6 4H4v.882a1.5 1.5 0 0 1-.83 1.342l-.894.447A.5.5 0 0 0 2 7.118V13h4v-1.293l-.854-.853A.5.5 0 0 1 5 10.5v-1A1.5 1.5 0 0 1 6.5 8h3A1.5 1.5 0 0 1 11 9.5v1a.5.5 0 0 1-.146.354l-.854.853V13h4V7.118a.5.5 0 0 0-.276-.447l-.895-.447A1.5 1.5 0 0 1 12 4.882V4h-2v1.5a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V4zm4-1h2v-.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5V3zm4 11h-4v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14zm-8 0H2v.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5V14z"/>
+    </svg> Topic Search</span>
       <div style="height:100%;"><iframe class="sandtframe" height="100%" id="srchfrm" frameborder="0"></iframe>
 </div>
   </section>  
   <section>
     <div id="fmcontainert" class="fullwidth" align="center">
-    <span class="closefw">X</span> <span id="fmtitle" style="float:right;padding-right:6px;font-size:20px;">LinkIns and Update</span>
+    <span class="closefw">X</span> <span id="fmtitle" class="clsroomelemtitle"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+      <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+      <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+    </svg> LinkIns and Update</span>
       <div class="frameholder" style="height:100%;"><iframe class="sandtframe" height="100%" frameborder="0" id="linkinfrm"></iframe>
 </div>
   </section>  
@@ -513,7 +518,9 @@
         </section>   
 <section>
   <div id="allstud" class="fwidthtwo" align="center">
-<div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle">All Students</span> </div> 
+<div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people-fill" viewBox="0 0 16 16">
+  <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7Zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm-5.784 6A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216ZM4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5Z"/>
+</svg> All Students</span> </div> 
 <input id="eduid" style="display:none;"/>
 <input id="stuid" style="display:none;"/>
 <input id="posof" style="display:none;"/>
@@ -542,7 +549,9 @@
 </section>
 <section>
   <div id="crtod" class="fwidthtwo" align="center">
-    <div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle">Create TOD</span> </div>
+    <div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-folder-symlink-fill" viewBox="0 0 16 16">
+      <path d="M13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3zM2.19 3c-.24 0-.47.042-.683.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.586 3H2.19zm9.608 5.271-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z"/>
+    </svg> Create/ Store TOD</span> </div>
     <div class="functodelem-one" >
       <button class='btn btn-danger' id="sttodedu" onclick="$('#storetd').slideDown('fast');">S T O R E</button>
     </div>
@@ -588,7 +597,10 @@
 </section>
 <section>
   <div id="experform" class="fwidthtwo" align="center">
-    <div class="clsrmheader"><span class="closefwtwo">X</span>  <span class="clsroomelemtitle">Exams & Performance</span> </div> 
+    <div class="clsrmheader"><span class="closefwtwo">X</span><span class="clsroomelemtitle"><svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-clipboard-data-fill" viewBox="0 0 16 16">
+      <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1ZM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0V8Zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0v-1Zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1Z"/>
+    </svg> Exams & Performance</span> </div> 
     <div style="height:100%;margin-top:36px;">
       <div class="clroomdivbd">
         <div id="prevexperform" class="clroomdivbd-one">
@@ -606,7 +618,10 @@
         <input type="button" value="Close"  onclick="$('#experform').slideUp('fast');" class='showexbtn'>
         </form>
         </div>
-           <button class="btn btn-danger" onclick="window.open('https://mastrowall.com?onlineTest=true', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');" id="examportalbtn">Online Test</button>
+           <button class="btn btn-success" onclick="window.open('https://mastrowall.com?onlineTest=true', '_blank', 'location=center,height=570,width=1200,left=80,top=100,scrollbars=yes,status=yes');" id="examportalbtn"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-question-octagon" viewBox="0 0 16 16">
+            <path d="M4.54.146A.5.5 0 0 1 4.893 0h6.214a.5.5 0 0 1 .353.146l4.394 4.394a.5.5 0 0 1 .146.353v6.214a.5.5 0 0 1-.146.353l-4.394 4.394a.5.5 0 0 1-.353.146H4.893a.5.5 0 0 1-.353-.146L.146 11.46A.5.5 0 0 1 0 11.107V4.893a.5.5 0 0 1 .146-.353L4.54.146zM5.1 1 1 5.1v5.8L5.1 15h5.8l4.1-4.1V5.1L10.9 1H5.1z"/>
+            <path d="M5.255 5.786a.237.237 0 0 0 .241.247h.825c.138 0 .248-.113.266-.25.09-.656.54-1.134 1.342-1.134.686 0 1.314.343 1.314 1.168 0 .635-.374.927-.965 1.371-.673.489-1.206 1.06-1.168 1.987l.003.217a.25.25 0 0 0 .25.246h.811a.25.25 0 0 0 .25-.25v-.105c0-.718.273-.927 1.01-1.486.609-.463 1.244-.977 1.244-2.056 0-1.511-1.276-2.241-2.673-2.241-1.267 0-2.655.59-2.75 2.286zm1.557 5.763c0 .533.425.927 1.01.927.609 0 1.028-.394 1.028-.927 0-.552-.42-.94-1.029-.94-.584 0-1.009.388-1.009.94z"/>
+          </svg> Online Test</button>
         </div>
     </div>
     <div id="loaderback" align="center"><div id="loader-cp" class="spinner-border text-primary" style="display: block;"></div></div>
