@@ -1,4 +1,5 @@
 /* M A S T R O W A L L */
+'use strict';
 document.getElementById("svconnect").addEventListener("click", upConnect);
 var script_eduProCon1 = "https://script.google.com/macros/s/";
 var script_eduProCon2 ="AKfycbzzs9VY3btS5x_fN13iyKrf7ClYGzOwZorkXu-bGrY3WZzTiRdFW-dIANlpwImr9kZroA";
@@ -585,7 +586,7 @@ var pt_url = pt_url11 + pt_url22 +"/exec";
 }
 
 function ctrlqaddtod(e){
-  var res = e.result;
+  var res = e.result; 
 if(res =="Value updated successfully!"){ 
 document.getElementById("uptday").disabled = false;
 document.getElementById('previewt').disabled = true;
