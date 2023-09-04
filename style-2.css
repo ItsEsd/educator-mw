@@ -110,17 +110,20 @@
     display: none;
     z-index:100;
     overflow-y: auto;
+    padding-bottom:40px;
     }
     .closepview{
-    top: 0px;
-    right:0px;
-    position: fixed;
-    padding:6px 16px;
-    background-color: #db2417;
-    color: #ffffff;
-    cursor: pointer;
-    z-index:100;
-    font-weight: 600;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      position: fixed;
+      padding: 6px 16px;
+      background-color: #db2417;
+      color: #ffffff;
+      cursor: pointer;
+      z-index: 100;
+      width:100%;
+      max-width:600px;
     }
 
     .rmvtopictd{
