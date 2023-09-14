@@ -1072,10 +1072,11 @@
     overflow-y: auto;
     max-height: 535px;
     width:100%;
-    background-color: #c6cbf8;
-    background-size: 100% 100%;
+    background-color: #d7d7d7;
+    background-size: 35%;
     background-repeat: no-repeat;
-
+    background-position-x: center;
+    background-position-y: center;
     }
     #allstud-one a,#allstud-two a{
     color:#0c09c9;
