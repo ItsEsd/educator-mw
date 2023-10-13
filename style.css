@@ -1175,7 +1175,11 @@
   font-size:14px;
   padding-top: 10px;
   }
-
+  
+  #examdescpin b{
+    font-weight: 500;
+    font-style: italic;
+  }
   /* RC-Widget */
 
   #rc-widget{

@@ -267,8 +267,8 @@
   document.getElementById('backcp').style.display = "block";
   }
 
-  document.getElementById('examdescpin').innerHTML ="<div><p style='text-align:left;'>Educator: "+json.records[i].EducatorName+
-  "<br>Exam Title: "+json.records[i].ExamTitle+"<br>Description: "+json.records[i].ExamDescp+"<br>Duration: "+json.records[i].TDuration+"</p></div>" ;
+  document.getElementById('examdescpin').innerHTML ="<div><p style='text-align:left;'>Educator: <b>"+json.records[i].EducatorName+
+  "</b><br>Exam Title: <b>"+json.records[i].ExamTitle+"</b><br>Description: <b>"+json.records[i].ExamDescp+"</b><br>Duration: <b>"+json.records[i].TDuration+"</b></p></div>" ;
   document.getElementById('srcexambtn').disabled = false;
   }
   else{
@@ -282,9 +282,10 @@
   function examresultpdf() {
   var elem = document.getElementById("stresultall");
   var elemtw = document.getElementById("examdescpin");
+  var pdfbbdy = "<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"vendor/style/bootstrap4.5.2.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body style=\"width:100%;padding:10px;background-color:white;\" onload=\"print();\"><center><div style=\"padding:10px;border:2px solid #e5e5e5;\" align=\"center\"><div class=\"row\" style=\"width:100%;\"><div class=\"col-md-6\">" + elemtw.innerHTML +"<\/div><div class=\"col-md-6\"><a target=\"_blank\" href=\"https://mastrowall.com\"><img src=\"/images/logopng.png\" style=\"width:60px;float:right;\"><\/a><\/div><\/div><hr>"+elem.innerHTML + "<hr><a target=\"_blank\" href=\"https://mastrowall.com\" style=\"text-decoration:none;color:#0c29cd;\"><h3>M A S T R O W A L L<\/h3><\/a><\/div><\/center><\/body><\/html>"
   var oPrntWin = window.open("", "_blank", "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
   oPrntWin.document.open();
-  oPrntWin.document.write("<!doctype html><html><head><title>M A S T R O W A L L - Test Result<\/title><link rel=\"stylesheet\" href=\"vendor/style/bootstrap4.5.2.min.css\"><link rel=\"stylesheet\" href=\"style.css\"><\/head><body style=\"width:100%;padding:10px;background-color:white;\" onload=\"print();\"><div align=\"center\"><div style=\"max-width:800px;padding:10px;border:2px solid grey;\">" + elemtw.innerHTML +"<hr>"+elem.innerHTML + "<\/div><\/div><\/body><\/html>");
+  oPrntWin.document.write(pdfbbdy);
   oPrntWin.document.close();
   }
 
@@ -404,8 +405,8 @@
   document.getElementById('stresultall').innerHTML += "<p style='font-size:14px;color:black;text-align:left;'>("+(k+2)/2+") Enrollment ID: "+JSON.parse(sprestr[k])+"</p><br><p style='font-size:14px;color:black;'><span style='float:left;'>Name: <span style='text-transform:uppercase;color:blue;'>"+JSON.parse(stname)+"</span></span><span <span style='float:right;color:green;'>Correct Answer: <span style='font-weight:bold;'>"+ count+"</span></span></p><br><hr>"  ;   
   document.getElementById('backcp').style.display = "block";}
 
-  document.getElementById('examdescpin').innerHTML ="<div><p style='text-align:left;'>Educator: "+json.records[i].EducatorName+
-  "<br>Exam Title: "+json.records[i].ExamTitle+"<br>Description: "+json.records[i].ExamDescp+"<br>Duration: "+json.records[i].TDuration+"</p></div>" ;
+  document.getElementById('examdescpin').innerHTML ="<div><p style='text-align:left;'>Educator: <b>"+json.records[i].EducatorName+
+  "</b><br>Exam Title: <b>"+json.records[i].ExamTitle+"</b><br>Description: <b>"+json.records[i].ExamDescp+"</b><br>Duration: <b>"+json.records[i].TDuration+"</b></p></div>" ;
   document.getElementById('svexminfo').disabled = true;
   }
   else{document.getElementById('loaderback').style.display = "none";}} }); }
