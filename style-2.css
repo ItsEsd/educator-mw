@@ -661,9 +661,59 @@
     #examdescpin{
     background-color:#e0e0e0;
     padding:10px;
-    overflow-y: hidden;
+    overflow-y: auto;
     max-width:600px;
+    height:130px;
     }
+
+    #examdescpin::-webkit-scrollbar {
+      width: 8px;
+      }
+    
+      #examdescpin::-webkit-scrollbar-track {
+      background: #1a2ca5;
+      border:3px solid #ffffff;
+      }
+    
+      #examdescpin::-webkit-scrollbar-thumb {
+      background: #cccccc;
+      }
+    
+      #examdescpin::-webkit-scrollbar-thumb:hover {
+      background: #1a2ca5;
+      }
+      #stresultall::-webkit-scrollbar {
+        width: 8px;
+        }
+      
+        #stresultall::-webkit-scrollbar-track {
+        background: #1a2ca5;
+        border:3px solid #ffffff;
+        }
+      
+        #stresultall::-webkit-scrollbar-thumb {
+        background: #cccccc;
+        }
+      
+        #stresultall::-webkit-scrollbar-thumb:hover {
+        background: #1a2ca5;
+        }
+
+#exmprfmfn{
+  height:40px;
+  width:100%;
+  max-width:600px;
+  margin-top:10px;
+  height:42px;
+  background-color: #0575ff71;
+}
+#exmprfmfn span{
+display: inline-block;
+}
+#exmprfmfn span button{
+margin:4px;
+font-size:14px;
+}
     #loadercp{
     display: none;
     width: 100%;
@@ -676,15 +726,7 @@
     background-color: #000000da;
 
     }
-
-    #svexminfo{
-    margin-top:10px;
-    padding:4px 35px;
-    margin-bottom:20px;
-    }
-    #backcp{
-    margin-left:4px;font-size:14px;padding:4px 10px;
-    }
+    
     #loaderback{
     width:100%;
     height:100%;
@@ -1512,3 +1554,30 @@ and (-webkit-min-device-pixel-ratio: 1) {
       margin:6px;
     }
 }
+ #showServiceEdu::-webkit-scrollbar {
+  width: 8px;
+  }
+
+  #showServiceEdu::-webkit-scrollbar-track {
+  background: #1a2ca5;
+  border:3px solid #ffffff;
+  }
+
+  #showServiceEdu::-webkit-scrollbar-thumb {
+  background: #cccccc;
+  }
+
+  #showServiceEdu::-webkit-scrollbar-thumb:hover {
+  background: #1a2ca5;
+  }
+
+  #notfycl {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #efb60c;
+    padding: 10px 40px;
+    text-align: center;
+    z-index:200000;
+  }

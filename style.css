@@ -47,23 +47,20 @@
     #signagn{
    border-right: 1px solid white;
     }
-    /* width */
+  
     ::-webkit-scrollbar {
     height: 0px;
     width: 0px;
     }
 
-    /* Track */
     ::-webkit-scrollbar-track {
     background: white;
     }
 
-    /* Handle */
     ::-webkit-scrollbar-thumb {
     background: #cccccc;
     }
 
-    /* Handle on hover */
     ::-webkit-scrollbar-thumb:hover {
     background: #cccccc;
     }
@@ -614,8 +611,8 @@
     background-size: 6px 6px;
     z-index: 1;
     display:none;
-    /* overflow: hidden; */
     }
+      
     #updateTOD{
     margin-top:40px;
     background-color: white;
@@ -1187,4 +1184,4 @@
     left:0px;
     position: fixed;
     }
-    
+  

@@ -44,21 +44,34 @@ strtodedu.addEventListener('submit', (event) =>{
   $('#renotitod').show();
   $('#renotitod').empty();
   document.getElementById('storetdbtnfin').disabled = true;
+  var allsttd = document.getElementsByClassName("tdcid");
 var tdid =JSON.stringify($('#todid').val());
 var tdpass =JSON.stringify($('#todpass').val());
 var tdcomnt =escape(JSON.stringify($('#todcmnt').val()));
-var eduid =$('#eduid').val();
-var ur1= "https://script.google.com/macros/s/";
- var ur3 ="AKfycbxg7rXgSOFW9q0OCYH3wqviTxNMAf1KPOsDyDkdC-URdZ2myYoUx18s6okzyVu2LCmu";
- var url = ur1+ur3+"/exec" + "?callback=ctrlqsttd&todid=" + tdid + "&todpass=" + tdpass + 
- "&todcmnt=" + tdcomnt + "&eduid=" + eduid + "&action=rdtod";
- var request = jQuery.ajax({
-   crossDomain: true,
-   url: url,
-   method: "GET",
-   dataType: "jsonp"
- });
-
+var eduid =$('#eduid').val();var flag =0;
+for(var ln=0;ln<allsttd.length;ln++){
+ if(tdid === JSON.stringify(allsttd[ln].value)){
+   flag =1;
+ }}if(flag===0){
+  var ur1= "https://script.google.com/macros/s/";
+  var ur3 ="AKfycbxg7rXgSOFW9q0OCYH3wqviTxNMAf1KPOsDyDkdC-URdZ2myYoUx18s6okzyVu2LCmu";
+  var url = ur1+ur3+"/exec" + "?callback=ctrlqsttd&todid=" + tdid + "&todpass=" + tdpass + 
+  "&todcmnt=" + tdcomnt + "&eduid=" + eduid + "&action=rdtod";
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url: url,
+    method: "GET",
+    dataType: "jsonp"
+  });
+ }
+ else{
+          const div = document.createElement('div');
+          div.id = 'notfycl';
+          div.innerHTML = 'TOD already stored!';
+          document.body.appendChild(div);
+          setTimeout(function(){$(div).slideUp();},2000)
+          $('#storetdbtnfin').attr('disabled',false);
+ }
 });
 
 function ctrlqsttd(e){
@@ -209,14 +222,20 @@ $('#avthumb').click(function(){
 
 
 srcandsvex.addEventListener('submit', (event) => { 
-  $('#stresultall').empty();
- var exid=$("#cpexid").val();
- var expass=JSON.stringify($("#cppass").val());
+$('#stresultall').empty();
+var exid=$("#cpexid").val();
+var expass=JSON.stringify($("#cppass").val());
 var url1 = "https://script.google.com/macros/s/";
 var url2 = "AKfycbxYC7rpKpnZmgpNVsmgoCu-Wi9Bt604MjkH9LaH0Gd9LA5QLtH1bjgUfvRlQGyIKCiQ";
 var url = url1+url2+"/exec"+ "?action=gentestrd";
 document.getElementById('loaderback').style.display = "block";
 document.getElementById('srcexambtn').disabled = true;
+var exmprevstr = document.getElementsByClassName("svdexmsed");var nsvexm = 0;
+for(var exl=0;exl<exmprevstr.length;exl++){
+var exprvid= exmprevstr[exl].innerText.split('Exam ID: ')[1];
+if(exid===exprvid){nsvexm = 1;}}
+if(nsvexm===1){document.getElementById('svexminfo').disabled = true;}
+else{document.getElementById('svexminfo').disabled = false;}
 $.getJSON(url, function(json) { 
 for (var i = 0; i < json.records.length - 1; i++) {
  if (exid === json.records[i].ExamID && expass === json.records[i].ExamPass) {
@@ -333,7 +352,7 @@ if(res!="ID not found!"){
    for(st;st<lenstr-1;st+=3){
         document.getElementById("prevexperform").innerHTML += '<div align="left" class="savevexmdiv"><div style="text-align:left"><span style="float:left">No. '+srno+'</span>'+
         '<span style="float:right;"><button class="btn btn-primary svshowexres" onclick="shoeprevexresult(this);">Check Performance</button></span></div><br>'+
-        '<p style="font-size:14px;"><span style="float:left;">Exam ID: '+singlessvexm[st]+'</span><br><span style="float:left;">Exam Pass: '+singlessvexm[st+1]+'</span></p><div class="exdtlsst">'+singlessvexm[st+2]+'</div>'+
+        '<p style="font-size:14px;"><span style="float:left;" class="svdexmsed">Exam ID: '+singlessvexm[st]+'</span><br><span style="float:left;">Exam Pass: '+singlessvexm[st+1]+'</span></p><div class="exdtlsst">'+singlessvexm[st+2]+'</div>'+
         '<input class="exidsv" style="display:none;" value="'+singlessvexm[st]+'"><input class="enidsv" value="'+singlessvexm[st+1]+'" style="display:none;"><br><hr>';
         srno = srno + 1;
    }
@@ -387,7 +406,7 @@ function shoeprevexresult(label){
            
             document.getElementById('examdescpin').innerHTML ="<div><p style='text-align:left;'>Educator: "+json.records[i].EducatorName+
             "<br>Exam Title: "+json.records[i].ExamTitle+"<br>Description: "+json.records[i].ExamDescp+"<br>Duration: "+json.records[i].TDuration+"</p></div>" ;
-            document.getElementById('svexminfo').style.display = "none";
+            document.getElementById('svexminfo').disabled = true;
           }
           else{
             document.getElementById('loaderback').style.display = "none";
