@@ -252,6 +252,39 @@
   overflow-y: auto;
   max-height: 240px;
   }
+
+  #prevsttod::-webkit-scrollbar {
+  width: 8px;
+  }
+
+  #prevsttod::-webkit-scrollbar-track {
+  background: #1a2ca5;
+  border:3px solid #ffffff;
+  }
+
+  #prevsttod::-webkit-scrollbar-thumb {
+  background: #a6a5fd;
+  }
+
+  #prevsttod::-webkit-scrollbar-thumb:hover {
+  background: #1a2ca5;
+  }
+  #prevexperform::-webkit-scrollbar {
+  width: 8px;
+  }
+
+  #prevexperform::-webkit-scrollbar-track {
+  background: #1a2ca5;
+  border:3px solid #ffffff;
+  }
+
+  #prevexperform::-webkit-scrollbar-thumb {
+  background: #a6a5fd;
+  }
+
+  #prevexperform::-webkit-scrollbar-thumb:hover {
+  background: #1a2ca5;
+  }
   #formsttod{
   width:98%;
   max-width: 600px;
