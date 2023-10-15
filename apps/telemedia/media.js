@@ -1,5 +1,4 @@
 // M A S T R O W A L L /////////////////////
-
 var rB = "https://script.google.com/macros/s/";
 var rShow = "AKfycbz9XUzdTUILZDwU_hy1_JdRyjvA7zgLYZl1smOuUw4WmwDL9BOrkLnIQqn5XybdGEpm/exec";
 
@@ -39,28 +38,29 @@ function getData(e){
   
   // Med News #1 /////////////////////
   
-  
   var maxMedia = dnumbmd1; 
-    for (var a=[],i=0;i<maxMedia;++i) a[i]=i;
+  for (var a = [], i = 0; i < maxMedia; ++i) a[i] = i;
     function shuffle(array) {
       var tmp, current, top = array.length;
-      if(top) while(--top) {
-        current = Math.floor(Math.random() * (top + 1));
-        tmp = array[current];
-        array[current] = array[top];
-        array[top] = tmp;
+      if (top) {
+        while (--top) {
+          current = Math.floor(Math.random() * (top + 1)) + 1; 
+          tmp = array[current];
+          array[current] = array[top];
+          array[top] = tmp;
+        }
       }
       return array;
     }
-    a = shuffle(a); 
-    a[0]=0;
+
+    a = shuffle(a);
     var dataset = db+1;
     var data = nwone[dataset];
     var innews = JSON.parse(data[0].InMedia1);
     document.getElementById("inm1").innerHTML = '<div class="inm1con"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
     var fin;
     for(var d=0;d<a.length;d++){
-      fin = a[d];
+      fin = a[d]+1;
       if(fin!=0 && fin!=1){
         var dataset = db+fin;
         var data = nwone[dataset];
