@@ -900,7 +900,6 @@
   $('#calcontain,#upDash,#showServiceEdu').show();
   });});
 
-  // JavaScript functions to open and close the modal
   function openModal() {
   document.getElementById("stmmdl").style.display = "block";
   }
@@ -908,3 +907,72 @@
   function closeModal() {
   document.getElementById("stmmdl").style.display = "none";
   }
+  const subButton = document.getElementById("crtsub");
+  const supButton = document.getElementById("crtsup");
+  const bldButton = document.getElementById("crtbld");
+  const itlcButton = document.getElementById("crtitlc");
+  const undrlnButton = document.getElementById("crtundrln");
+
+  subButton.addEventListener("click", function() {
+      document.execCommand("subscript", false, null);
+  });
+
+  supButton.addEventListener("click", function() {
+      document.execCommand("superscript", false, null);
+  });
+
+  bldButton.addEventListener("click", function() {
+  document.execCommand("bold", false, null);
+  });
+  itlcButton.addEventListener("click", function() {
+  document.execCommand("italic", false, null);
+  });
+  undrlnButton.addEventListener("click", function() {
+  document.execCommand("underline", false, null);
+  });
+  const editor = document.getElementById("todconedit");
+  const openDialogButton = document.getElementById("openDialog");
+  const dialog = document.createElement("div");
+  dialog.classList.add("math-operator-dialog");
+  dialog.id = "dialog";
+  document.body.appendChild(dialog);
+  const operators = ['∀', '∁', '∂', '∃', '∄', '∅', '∆', '∇', '∈', '∉', '∊', '∋', '∌', '∍', '∎', '∏', '∐', '∑', '−', '∓', '∔', '∕', '∖', '∗', '∘', '∙', '√', '∛', '∜', '∝', '∞', '∟', '∠', '∡', '∢', '∣', '∤', '∥', '∦', '∧', '∨', '∩', '∪', '∫', '∬', '∭', '∮', '∯', '∰', '∱', '∲', '∳', '∴', '∵', '∶', '∷', '∸', '∹', '∺', '∻', '∼', '∽', '∾', '∿', '≀', '≁', '≂', '≃', '≄', '≅', '≆', '≇', '≈', '≉', '≊', '≋', '≌', '≍', '≎', '≏', '≐', '≑', '≒', '≓', '≔', '≕', '≖', '≗', '≘', '≙', '≚', '≛', '≜', '≝', '≞', '≟', '≠', '≡', '≢', '≣', '≤', '≥', '≦', '≧', '≨', '≩', '≪', '≫', '≬', '≭', '≮', '≯', '≰', '≱', '≲', '≳', '≴', '≵', '≶', '≷', '≸', '≹', '≺', '≻', '≼', '≽', '≾', '≿', '⊀', '⊁', '⊂', '⊃', '⊄', '⊅', '⊆', '⊇', '⊈', '⊉', '⊊', '⊋', '⊌', '⊍', '⊎', '⊏', '⊐', '⊑', '⊒', '⊓', '⊔', '⊕', '⊖', '⊗', '⊘', '⊙', '⊚', '⊛', '⊜', '⊝', '⊞', '⊟', '⊠', '⊡', '⊢', '⊣', '⊤', '⊥', '⊦', '⊧', '⊨', '⊩', '⊪', '⊫', '⊬', '⊭', '⊮', '⊯', '⊰', '⊱', '⊲', '⊳', '⊴', '⊵', '⊶', '⊷', '⊸', '⊹', '⊺', '⊻', '⊼', '⊽', '⊾', '⊿', '⋀', '⋁', '⋂', '⋃', '⋄', '⋅', '⋆', '⋇', '⋈', '⋉', '⋊', '⋋', '⋌', '⋍', '⋎', '⋏', '⋐', '⋑', '⋒', '⋓', '⋔', '⋕', '⋖', '⋗', '⋘', '⋙', '⋚', '⋛', '⋜', '⋝', '⋞', '⋟', '⋠', '⋡', '⋢', '⋣', '⋤', '⋥', '⋦', '⋧', '⋨', '⋩', '⋪', '⋫', '⋬', '⋭', '⋮', '⋯', '⋰', '⋱', '⋲', '⋳', '⋴', '⋵', '⋶', '⋷', '⋸', '⋹', '⋺', '⋻', '⋼', '⋽', '⋾', '⋿', 'α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π', 'ρ', 'ς', 'σ', 'τ', 'υ', 'φ', 'χ', 'ψ', 'ω', 'ϕ'];
+
+  function createDialog() {
+      dialog.innerHTML = "";
+      operators.forEach((operator) => {
+          const operatorButton = document.createElement("button");
+          operatorButton.textContent = operator;
+          operatorButton.addEventListener("click", () => {
+              insertOperator(operator);
+              dialog.style.display = "none";
+          });
+          dialog.appendChild(operatorButton);
+      });
+  }
+
+  openDialogButton.addEventListener("click", (e) => {
+      createDialog();
+      dialog.style.display = "block";
+      e.stopPropagation();
+  });
+
+  function insertOperator(operator) {
+    const selection = window.getSelection();
+    if (editor.contains(selection.anchorNode)) {
+        const range = selection.getRangeAt(0);
+        const operatorNode = document.createTextNode(operator);
+        range.insertNode(operatorNode);
+        range.collapse();
+        selection.removeAllRanges();
+        selection.addRange(range);
+        editor.focus();
+    }
+    dialog.style.display = "none";
+}
+
+  window.addEventListener("click", (event) => {
+    if (event.target !== openDialogButton && event.target !== dialog) {
+        dialog.style.display = "none";
+    }
+});
