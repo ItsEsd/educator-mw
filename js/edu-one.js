@@ -181,7 +181,7 @@
   }}
 
   if(res[0].TOD!=""){
-  var TOD = unescape(res[0].TOD);
+  var TOD = decodeURIComponent(res[0].TOD);
   var singlest = TOD.split("{td},");
   var lenstr = singlest.length;
   document.getElementById("LiveTOD").style.display = "block";
@@ -297,7 +297,7 @@
   var reslt= e.records;
   if(reslt!="ID not found!"){
   if (reslt[0].TOD != "") {
-  var TOD = unescape(reslt[0].TOD);
+  var TOD = decodeURIComponent(reslt[0].TOD);
   var singlest = TOD.split("{td},");
   var lenstr = singlest.length;
   document.getElementById("LiveTOD").style.display = "block";
@@ -431,7 +431,7 @@
   };
   $(function() {
   $('form[name="eduProConnect"]').submit(function() {
-  document.getElementById("connectivity").value = escape(JSON.stringify($('form[name="eduProConnect"]').serializeObject()));
+  document.getElementById("connectivity").value = encodeURIComponent(JSON.stringify($('form[name="eduProConnect"]').serializeObject()));
   return false;
   });
   });
@@ -475,7 +475,7 @@
   var reslt= e.records;
   if(reslt!="ID not found!"){
   if (reslt[0].Connectivity != "" ) {
-  var Go = JSON.parse(unescape(reslt[0].Connectivity));
+  var Go = JSON.parse(decodeURIComponent(reslt[0].Connectivity));
   for (var prop in Go.idConnect) {
   var j = 0;
   var totalConnect = Go.idConnect.length;
@@ -544,7 +544,7 @@
   var tdthumb = $("#tthumb").val();
   var randno = Math.random().toString(26).substring(2, 5) + Math.random().toString(26).substring(2, 5);
   var valuee =randno+"{td},"+ tdtitle+"{td},"+tdbrief+"{td},"+tdthumb;
-  document.getElementById("json_tod").value = escape(valuee);
+  document.getElementById("json_tod").value = encodeURIComponent(valuee);
   var str = String(valuee);
   var len = str.length;
   if (len >= 5000) {
@@ -696,7 +696,7 @@
   var eventsup =[];
   for(var i=0;i<elemev.length-1;i+=3){
   var entry = {};
-  entry.title = JSON.parse(unescape(elemev[i]));
+  entry.title = JSON.parse(decodeURIComponent(elemev[i]));
   entry.start = JSON.parse(elemev[i+1]);
   entry.end= JSON.parse(elemev[i+2]);
   eventsup.push(entry);
@@ -735,7 +735,7 @@
   allDay: arg.allDay
   })
   // console.log(title,arg.start,arg.allDay);
-  var t = JSON.stringify(escape(title));
+  var t = JSON.stringify(encodeURIComponent(title));
   var s = JSON.stringify(arg.start.toISOString());
   var e = JSON.stringify(arg.end.toISOString());
   var k = "{e},";
@@ -757,7 +757,7 @@
   eventClick: function(arg) {
   if (confirm('Are you sure you want to delete this event?')) {
   arg.event.remove();
-  var tt = JSON.stringify(escape(arg.event.title));
+  var tt = JSON.stringify(encodeURIComponent(arg.event.title));
   var st = JSON.stringify(arg.event.start.toISOString());
   var et = JSON.stringify(arg.event.end.toISOString());
   var kt = "{e},";

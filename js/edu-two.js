@@ -130,7 +130,7 @@ $('#clscmntbx').click(function(){
     $('#subcmntbx').attr('disabled',true);
 var nmF = document.getElementById('mednam').innerText;
 var primg =  document.getElementById('propic').src;
-var cmcon = escape(JSON.stringify($('#medcmmnt').val()));var edid =window.btoa($("#eduid").val());
+var cmcon = encodeURIComponent(JSON.stringify($('#medcmmnt').val()));var edid =window.btoa($("#eduid").val());
 var d = new Date();
 var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];

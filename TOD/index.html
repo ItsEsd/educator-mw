@@ -311,7 +311,7 @@ window.addEventListener('click', function(e){
 
       function showInHtml() {
         var HTMin = document.getElementById("textBox").innerHTML;
-        var htmTD = btoa(escape(HTMin));
+        var htmTD = btoa(encodeURIComponent(HTMin));
         document.getElementById("inHtml").value = htmTD;
       }
       document.getElementById("postTD").addEventListener("click", postTOD);
@@ -599,11 +599,11 @@ window.addEventListener('click', function(e){
       document.getElementById("poTOD").addEventListener("click", insertgenTOD);
       function insertgenTOD() {
         var TOD_script_url = "https://script.google.com/macros/s/AKfycbyWEr6h0j11fjP2hudAJ-2P_21jRbSd8DC4pxqL_YiskIok_wnURI6lEcu_nyGIzlAbZQ/exec";
-        var title = escape(JSON.stringify($("#todTitle").val()));
-        var creator = escape(JSON.stringify($("#creatorN").val()));
-        var food = escape(JSON.stringify($("#genK").val()));
-        var itemno = escape(JSON.stringify($("#genId").val()));
-        var recip = escape(JSON.stringify($("#toddoc").val()));
+        var title = encodeURIComponent(JSON.stringify($("#todTitle").val()));
+        var creator = encodeURIComponent(JSON.stringify($("#creatorN").val()));
+        var food = encodeURIComponent(JSON.stringify($("#genK").val()));
+        var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
+        var recip = encodeURIComponent(JSON.stringify($("#toddoc").val()));
         var currentTime = jQuery("#dateQ").val();
         var splitString =splitStringByLength(recip,4500);
         var clln = splitString.length;   var urlmd = [];var urmi;
@@ -672,25 +672,25 @@ window.addEventListener('click', function(e){
             else if(nxtcl=flln){
               document.getElementById("loader-potd").style.display ="none";
               document.getElementById('genstrngary').value="";
-              var title = escape(JSON.stringify($("#todTitle").val()));
-        var creator = escape(JSON.stringify($("#creatorN").val()));
-        var food = escape(JSON.stringify($("#genK").val()));
-        var itemno = escape(JSON.stringify($("#genId").val()));
-        var recip = escape(JSON.stringify($("#toddoc").val()));
+              var title = encodeURIComponent(JSON.stringify($("#todTitle").val()));
+        var creator = encodeURIComponent(JSON.stringify($("#creatorN").val()));
+        var food = encodeURIComponent(JSON.stringify($("#genK").val()));
+        var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
+        var recip = encodeURIComponent(JSON.stringify($("#toddoc").val()));
         var currentTime = jQuery("#dateQ").val();
         var ti = $("#todTitle").val();
         var cre = $("#creatorN").val();
         var fo = $("#genK").val();
         var itemn = $("#genId").val();
         var reci = $("#toddoc").val();
-        document.getElementById("preId").value=JSON.parse(unescape(itemno));
-        document.getElementById("preK").value=JSON.parse(unescape(food));
+        document.getElementById("preId").value=JSON.parse(decodeURIComponent(itemno));
+        document.getElementById("preK").value=JSON.parse(decodeURIComponent(food));
         document.getElementById("topictod").style.display = "block";
           document.getElementById("AppShare").style.display = "block";
           document.getElementById("copytoC").style.display = "block";
           document.getElementById("topictod").innerHTML = "Topic Posted.";
-          var itemno1 = escape(JSON.stringify($("#genId").val()));
-          var food1 = escape(JSON.stringify($("#genK").val()));
+          var itemno1 = encodeURIComponent(JSON.stringify($("#genId").val()));
+          var food1 = encodeURIComponent(JSON.stringify($("#genK").val()));
           var item = JSON.stringify($("#genId").val());
           var foodF = JSON.stringify($("#genK").val());
           document.getElementById("postT").style.display="none";
@@ -745,7 +745,7 @@ window.addEventListener('click', function(e){
                 document.getElementById('notfound').style.display = "none";
                 var prepostpre = JSON.parse(JSON.parse(reslt[0].TODhtm));
                 var inHTML = atob(prepostpre.TODContent);
-                document.getElementById("previewPost").innerHTML = unescape(inHTML);
+                document.getElementById("previewPost").innerHTML = decodeURIComponent(inHTML);
                 document.getElementById("previewPostTime").innerHTML = reslt[0].TimeStamp;
                 document.getElementById("previewPostId").innerHTML = "ID: " + JSON.parse(reslt[0].TODidd);
                 document.getElementById("previewPostCreator").innerHTML = JSON.parse(reslt[0].TODAddmin);

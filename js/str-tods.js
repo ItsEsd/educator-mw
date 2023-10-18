@@ -47,7 +47,7 @@
   var allsttd = document.getElementsByClassName("tdcid");
   var tdid =JSON.stringify($('#todid').val());
   var tdpass =JSON.stringify($('#todpass').val());
-  var tdcomnt =escape(JSON.stringify($('#todcmnt').val()));
+  var tdcomnt =encodeURIComponent(JSON.stringify($('#todcmnt').val()));
   var eduid =$('#eduid').val();var flag =0;
   for(var ln=0;ln<allsttd.length;ln++){
   if(tdid === JSON.stringify(allsttd[ln].value)){
@@ -164,7 +164,7 @@
   document.getElementById("preview").style.display = "block";
   var prepostpre = JSON.parse(JSON.parse(reslt[0].TODhtm));
   var inHTML = atob(prepostpre.TODContent);
-  document.getElementById("previewPost").innerHTML = unescape(inHTML);
+  document.getElementById("previewPost").innerHTML = decodeURIComponent(inHTML);
   document.getElementById("previewPostTime").innerHTML = reslt[0].TimeStamp;
   document.getElementById("previewPostId").innerHTML = "ID: " + JSON.parse(reslt[0].TODidd);
   document.getElementById("previewPostCreator").innerHTML = JSON.parse(reslt[0].TODAddmin);
