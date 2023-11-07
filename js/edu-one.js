@@ -633,7 +633,7 @@
   var link = document.getElementById("crVideo").value;
   var myId = getId(link);
   if (link != '' && link != 'http://') {
-  document.getElementById("previewvid").innerHTML = '<iframe class="youvidF" src="' + myId + '" frameborder="0" allowfullscreen="true"></iframe>';
+  document.getElementById("previewvid").innerHTML = '<div class="yvtd if-resp"><iframe src="' + myId + '" frameborder="0" allowfullscreen="true"></iframe></div>';
   } else {
   return false;
   }
@@ -659,7 +659,7 @@
   var tbriefmod = document.getElementById('tbrief').value;
   var link = document.getElementById("crVideo").value;
   var myId = getId(link);
-  var tbrf = tbriefmod + '<iframe class="youvidF" src="' + myId + '" frameborder="0" allowfullscreen="true"></iframe>'
+  var tbrf = tbriefmod + '<br/><div class="yvtd if-resp"><iframe src="' + myId + '" frameborder="0" allowfullscreen="true"></iframe></div><br/>'
   document.getElementById("tbrief").value = tbrf;
   document.getElementById("todconedit").innerHTML = tbrf;
   }
