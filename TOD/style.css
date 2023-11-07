@@ -220,6 +220,7 @@ body {
     overflow-x: auto;
     margin-bottom: 10px;
     text-align: left;
+    word-wrap: break-word;
   }
 
   a:hover {
@@ -572,7 +573,7 @@ outline:none;
     padding: 10px;
     width: 100%;
     max-width: 1000px;
-    height: 460px;
+    height: 350px;
     cursor: pointer;
     text-align: center;
   }
@@ -648,4 +649,18 @@ outline:none;
   max-width:1200px;
   padding:0px;
   z-index:900000 !important;
+}
+
+.embed-responsive {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; 
+}
+
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
