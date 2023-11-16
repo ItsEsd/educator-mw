@@ -58,6 +58,29 @@ function getData(e){
     var data = nwone[dataset];
     var innews = JSON.parse(data[0].InMedia1);
     document.getElementById("inm1").innerHTML = '<div class="inm1con"><p style="color:black;" class="telenewsblock">' + innews.conTitle1 + '<a target="_blank" class="readmore" href="' + innews.conLink1 + '">' + innews.conSiteName1 + '</a> </p><hr></div>';
+    document.getElementById("inm1").innerHTML += '<div class="inm1confrm"><p class="telenewsblock"><iframe class="frmdcon" src="https://telemedia.mastrowall.com/qrcontent/index.html"></iframe></p></div>';
+    var styles = {
+     frmdcon: {
+       border: '0px',
+       width: '100%',
+       height: '485px'
+     },
+     inm1confrm: {
+       width: '100%',
+       backgroundColor: 'white',
+       borderRadius: '5px',
+       overflow: 'hidden',
+       display: 'block',
+       marginBottom: '40px',
+       maxHeight: '498px'
+     }
+   };
+
+   Object.keys(styles).forEach(function(elementClass) {
+     var element = document.querySelector('.' + elementClass);
+     Object.assign(element.style, styles[elementClass]);
+   });
+
     var fin;
     for(var d=0;d<a.length;d++){
       fin = a[d]+1;
