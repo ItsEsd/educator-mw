@@ -3910,7 +3910,7 @@ Painterro = function() {
             r = n[1],
             o = n[3];
           if ("function" == typeof btoa) {
-            var i = btoa(decodeURIComponent(encodeURIComponent(JSON.stringify(o)))),
+            var i = btoa(unescape(encodeURIComponent(JSON.stringify(o)))),
               a = "sourceMappingURL=data:application/json;charset=utf-8;base64,".concat(i),
               l = "/*# ".concat(a, " */"),
               A = o.sources.map((function(t) {
@@ -4584,7 +4584,7 @@ Painterro = function() {
           var r = n.css,
             o = n.media,
             i = n.sourceMap;
-          if (o ? t.setAttribute("media", o) : t.removeAttribute("media"), i && "undefined" != typeof btoa && (r += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(decodeURIComponent(encodeURIComponent(JSON.stringify(i)))), " */")), t.styleSheet) t.styleSheet.cssText = r;
+          if (o ? t.setAttribute("media", o) : t.removeAttribute("media"), i && "undefined" != typeof btoa && (r += "\n/*# sourceMappingURL=data:application/json;base64,".concat(btoa(unescape(encodeURIComponent(JSON.stringify(i)))), " */")), t.styleSheet) t.styleSheet.cssText = r;
           else {
             for (; t.firstChild;) t.removeChild(t.firstChild);
             t.appendChild(document.createTextNode(r))
