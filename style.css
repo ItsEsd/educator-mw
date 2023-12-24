@@ -547,6 +547,13 @@
   background-color: #1a2ca5;
   color: white;
   }
+  .card-footer{
+    width:100%;
+    word-wrap: break-word;
+  }
+  .card-footer img,#todconedit img{
+    width:100%;
+  }
 
   .card {
   border: 1px solid #1a2ca5;
