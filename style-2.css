@@ -1729,14 +1729,13 @@ width:50.5%;
         position: absolute;
         width: 100%;
         z-index: 1000;
-        display: block;
       }
       #tdtptwo{
+        background-color: #cecece;
         top:0px;
         left:0px;
         position: absolute;
         width: 100%;
-        display: none;
         z-index: 1000;
       }
       .edborard{
