@@ -17,8 +17,29 @@
   });
   document.getElementById("svconnect").disabled=true;
   }
+$('#edborard').click(function(){
+    var elemnt1 = document.getElementById('tdtpone');
+    var elemnt2 = document.getElementById('tdtptwo');
+    var elemnt3 = document.getElementById('edborard');
+    if(elemnt2.style.display=="none"){
+        elemnt2.style.display ="block";
+        elemnt1.style.display ="none";
+        elemnt3.innerText ="Live Board";
+        elemnt3.style.background="#ed3535";
+    }
+    else{
+        elemnt2.style.display ="none";
+        elemnt1.style.display ="block";
+        elemnt3.innerText ="Board Editor";
+        elemnt3.style.background="#585858";
+    }
+});
 
-  function ctrlqcon(){
+window.addEventListener('resize', () => {
+    $("#tdtpone,#tdtptwo").css('display','block')
+  });
+
+function ctrlqcon(){
   document.getElementById("connectUp").innerHTML = "Connectivity Updated.<br><br>";
   document.getElementById("loaderCON").style.display = "none";
   document.getElementById("svconnect").disabled=false;
