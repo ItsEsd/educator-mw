@@ -547,6 +547,7 @@
   #LiveTOD{
   display:none;
   margin-top:30px;
+  word-wrap: break-word !important;
   }
   #editEduPro svg{
   height:22px;
