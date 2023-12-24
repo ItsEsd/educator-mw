@@ -351,6 +351,7 @@ function ctrlqcon(){
   var tdbrief = $("#tbrief").val();
   var tdthumb = $("#tthumb").val();
   if(tdtitle != "" && tdbrief != "" && tdthumb != ""){
+    $('#pviewcontain').animate({scrollTop: 0});
   document.getElementById("previewTOD").innerHTML = '<div class="wrapTODPre"><div class="card" style="border:1px solid black;"> <img class="card-img-top" src="' + tdthumb + '"><div class="card-body"><h4>' + tdtitle + '</h4></div> <div class="card-footer" style="text-align:left;"><p>' + tdbrief+ '</p></div> </div></div>';
   document.getElementById('previewt').disabled = false;limitchar();
   }
@@ -620,34 +621,59 @@ function ctrlqcon(){
   document.getElementById('previewt').disabled = true;
   document.getElementById("updateTOD").style.pointerEvents ="auto";}}
 
-  function notifyrmvtd(label){
-  document.getElementById("LiveTOD").style.pointerEvents ="none";
-  var list=document.getElementsByClassName("rmvtopictd");
-  list = [].slice.call(list); 
-  var posoftd = list.indexOf(label);
-  var x = document.getElementsByClassName('topictdid');
-  var rmtdid = x[posoftd].value;
-  document.getElementById('tdtopicidrmv').value= rmtdid;
-  document.getElementById('posinthumb').value= posoftd;
-
-  var eduid =$("#eduid").val();
-  var pass = $("#pcodeEdu").val();
-  var tdrmvid =$("#tdtopicidrmv").val();
-  var ur1= "https://script.google.com/macros/s/";
-  var ur3 ="AKfycbwsg7R9ZKP-Xw5E95ZReGDtt7hm-vmVq1R-5nO0BGojEBqAbcm70RWV54fDnLAx3H6O1Q";
-  var urlstside = ur1+ur3+"/exec" + "?callback=ctrlqtdrmvd&eduid=" + eduid +"&pcodeEdu=" + pass + "&tdtopicidrmv=" + tdrmvid + "&action=rmvtopicid";
-  var request = jQuery.ajax({
-  crossDomain: true,
-  url: urlstside,
-  method: "GET",
-  dataType: "jsonp"
-  });}
-
-  function ctrlqtdrmvd(e){
-  document.getElementById("LiveTOD").style.pointerEvents ="auto";
-  live_tod();}
 
 
+    function notifyrmvtd(label){
+    document.getElementById("LiveTOD").style.pointerEvents="none";
+    const centeredDiv = document.createElement('div');
+    centeredDiv.id = 'centeredDiv';
+    if(centeredDiv.style.display=="none"){
+    centeredDiv.style.display=="block";
+    }
+    const closeButton = document.createElement('button');
+    closeButton.innerHTML = 'Close';
+    closeButton.className = 'button';
+    const removeButton = document.createElement('button');
+    removeButton.innerHTML = 'Remove';
+    removeButton.className = 'button';
+    centeredDiv.appendChild(closeButton);
+    centeredDiv.appendChild(removeButton);
+    document.body.appendChild(centeredDiv);
+    closeButton.addEventListener('click', () => {
+    document.getElementById("LiveTOD").style.pointerEvents="auto";
+    centeredDiv.style.display = 'none'; 
+    });
+
+    removeButton.addEventListener('click', () => {
+    var list=document.getElementsByClassName("rmvtopictd");
+    list = [].slice.call(list); 
+    var posoftd = list.indexOf(label);
+    var x = document.getElementsByClassName('topictdid');
+    var rmtdid = x[posoftd].value;
+    document.getElementById('tdtopicidrmv').value= rmtdid;
+    document.getElementById('posinthumb').value= posoftd;
+    var eduid =$("#eduid").val();
+    var pass = $("#pcodeEdu").val();
+    var tdrmvid =$("#tdtopicidrmv").val();
+    var ur1= "https://script.google.com/macros/s/";
+    var ur3 ="AKfycbwsg7R9ZKP-Xw5E95ZReGDtt7hm-vmVq1R-5nO0BGojEBqAbcm70RWV54fDnLAx3H6O1Q";
+    var urlstside = ur1+ur3+"/exec" + "?callback=ctrlqtdrmvd&eduid=" + eduid +"&pcodeEdu=" + pass + "&tdtopicidrmv=" + tdrmvid + "&action=rmvtopicid";
+    var request = jQuery.ajax({
+    crossDomain: true,
+    url: urlstside,
+    method: "GET",
+    dataType: "jsonp"
+    });
+    centeredDiv.style.display = 'none'; 
+    });
+    }
+    function ctrlqtdrmvd(e){
+        var res = e.result; 
+        if(res =="Value updated successfully!"){ 
+            document.getElementById("LiveTOD").style.pointerEvents ="auto";
+            live_tod();
+        }
+    }
   document.getElementById("insthttp").addEventListener("input", embed_vid);
   function embed_vid() {
   document.getElementById("previewvid").style.display = "block";
