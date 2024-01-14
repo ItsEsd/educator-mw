@@ -1,14 +1,22 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en-IN">
-
-  <head><meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Telemedia | MASTROWALL</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@3aced4316baea1e932f87af78236a6ff9c1ef464/images/favicon-logos/logoSVG.svg" type="image/png" sizes="16x16">
-    <link rel="stylesheet" href="../../vendor/style/bootstrap4.5.2.min.css">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="icon"
+      href="https://cdn.jsdelivr.net/gh/ItsEsd/mastrowall-com@3aced4316baea1e932f87af78236a6ff9c1ef464/images/favicon-logos/logoSVG.svg"
+      type="image/png"
+      sizes="16x16"
+    />
+    <link rel="stylesheet" href="../../vendor/style/bootstrap4.5.2.min.css" />
     <script src="../../vendor/js/jquery3.5.1.min.js"></script>
     <script src="../../vendor/js/popper.1.16.0.min.js"></script>
     <script src="../../vendor/js/bootstrap.4.5.2.min.js"></script>
@@ -16,102 +24,155 @@
     <script src="../../vendor/js/jquery.validate.1.19.0.min.js"></script>
     <script src="../../vendor/js/jquery.2.1.3.min.js"></script>
     <script src="../../vendor/js/jquery-ui-1.11.2.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-  </head>  <body onload="myFunction(); telemed();" style="margin:0;">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body onload="myFunction(); telemed();" style="margin: 0">
     <div id="loader2" class="spinner-border text-light"></div>
-    <div style="display:none;" id="myDiv">
+    <div style="display: none" id="myDiv">
       <div class="telemhead">
         <div class="collapsible">
-          <a target="_blank" href="https://telemedia.mastrowall.com"><h4 style="display:inline-block;padding-top:5px;padding-left:2px;color:white;"> Tele Media</h4>
-            <svg xmlns="http://www.w3.org/2000/svg"  width="2.5em" height="2.5em" fill="currentColor" class="bi bi-pip-fill" viewBox="0 0 16 16" style="color:white;float:left;padding:5px;">
-              <path d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm7 6h5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+          <a target="_blank" href="https://telemedia.mastrowall.com"
+            ><h5
+              style="
+                display: inline-block;
+                padding-top: 5px;
+                padding-left: 2px;
+                color: white;
+              "
+            >
+              Tele Media
+            </h5>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="2.25em"
+              height="2.25em"
+              fill="currentColor"
+              class="bi bi-pip-fill"
+              viewBox="0 0 16 16"
+              style="color: white; float: left; padding: 5px"
+            >
+              <path
+                d="M1.5 2A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13zm7 6h5a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-5a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5z"
+              />
             </svg>
           </a>
-            <span style="cursor:pointer;float:right;margin-right:0px;">
-              <button id="showfeed"><img id="feedicon" src="../../images/newsfeedicon.png"></button>
-            </span>
-          
+          <span style="cursor: pointer; float: right; margin-right: 0px">
+            <button id="showfeed">
+              <img id="feedicon" src="../../images/newsfeedicon.png" />
+            </button>
+          </span>
         </div>
         <div id="loader" class="spinner-border text-light"></div>
       </div>
-      <div align="center" id="showhtml" style="display:none;">
-        <div class="tboard animback" align="center"><br>
-          <div align="center" style="background-color:#d4d4d4;color:black;width:96%; max-width:1100px;padding:20px;box-shadow:0 2px 10px 0px white;">
+      <div align="center" id="showhtml" style="display: none">
+        <div class="tboard animback" align="center">
+          <br />
+          <div
+            align="center"
+            style="
+              background-color: #d4d4d4;
+              color: black;
+              width: 96%;
+              max-width: 1100px;
+              padding: 20px;
+              box-shadow: 0 2px 10px 0px white;
+            "
+          >
             <div id="inm1"></div>
-          </div><br><br>
+          </div>
+          <br /><br />
           <div id="loader_in" class="spinner-border text-light"></div>
           <div align="center" id="vidcontainer">
             <div class="box">
-              <div id="vid" style="width:100%;"></div>
+              <div id="vid" style="width: 100%"></div>
             </div>
-          </div> <br><br>
-          <div align="center">
-            <div align="center" style="background-color:#d4d4d4;color:black; width:96%; max-width:1100px;padding:20px;box-shadow:0 2px 10px 0px white;">
-              <div id="inm2"></div>
-            </div> <br> <br>
-            <div align="center">
-              <div id="dquote" style="width:96%; max-width:800px;"><p style="color:#666666">Loading..</p></div>
-            </div> <br><br>
           </div>
-
+          <br /><br />
+          <div align="center">
+            <div
+              align="center"
+              style="
+                background-color: #d4d4d4;
+                color: black;
+                width: 96%;
+                max-width: 1100px;
+                padding: 20px;
+                box-shadow: 0 2px 10px 0px white;
+              "
+            >
+              <div id="inm2"></div>
+            </div>
+            <br />
+            <br />
+            <div align="center">
+              <div id="dquote" style="width: 96%; max-width: 800px">
+                <p style="color: #666666">Loading..</p>
+              </div>
+            </div>
+            <br /><br />
+          </div>
         </div>
       </div>
       <!-- <div id="newsfeed"> -->
-        <!-- <button id="showfeed"><img id="feedicon" src="../../images/newsfeedicon.png"><br>News RSS</button> -->
-           <!-- </div> -->
-         <div id="feedholder" align="center">
-           <div id="feedholder-two">
-             <iframe src="https://mastrowall.com/news-widget/">
-               </iframe>
-             </div>
-           </div> 
-</div>
+      <!-- <button id="showfeed"><img id="feedicon" src="../../images/newsfeedicon.png"><br>News RSS</button> -->
+      <!-- </div> -->
+      <div id="feedholder" align="center">
+        <div id="feedholder-two">
+          <iframe src="https://mastrowall.com/news-widget/"> </iframe>
+        </div>
+      </div>
+    </div>
     <script src="media.js"></script>
-   <script>
-    var myVar;
+    <script>
+      var myVar;
 
-function myFunction() {
-  myVar = setTimeout(showPage, 2000);
-}
-
-function showPage() {
-  document.getElementById("loader2").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-
-$(document).ready(function() {
-    $(".show").click(function() {
-      $(".collap").toggle();
-    });
-  });
-
-  jQuery(function($) {
-    $.fn.hScroll = function(amount) {
-      amount = amount || 120;
-      $(this).bind("DOMMouseScroll mousewheel", function(event) {
-        var oEvent = event.originalEvent,
-          direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta,
-          position = $(this).scrollLeft();
-        position += direction > 0 ? -amount : amount;
-        $(this).scrollLeft(position);
-        event.preventDefault();
-      })
-    };
-  });
-  $(document).ready(function() {
-    $('.box').hScroll(40);
-    $('#showfeed').on('click',function(){
-      var elem = document.getElementById('feedholder');
-      if(elem.style.display != "block"){
-        $('#feedholder').slideDown('slow');
+      function myFunction() {
+        myVar = setTimeout(showPage, 2000);
       }
-        else{$('#feedholder').slideUp('slow');}
-    });
-    $('#feedholder').on('click',function(){
-        $('#feedholder').slideUp('fast');
-    });
-  });
-      document.addEventListener('contextmenu', event => event.preventDefault());
+
+      function showPage() {
+        document.getElementById("loader2").style.display = "none";
+        document.getElementById("myDiv").style.display = "block";
+      }
+
+      $(document).ready(function () {
+        $(".show").click(function () {
+          $(".collap").toggle();
+        });
+      });
+
+      jQuery(function ($) {
+        $.fn.hScroll = function (amount) {
+          amount = amount || 120;
+          $(this).bind("DOMMouseScroll mousewheel", function (event) {
+            var oEvent = event.originalEvent,
+              direction = oEvent.detail
+                ? oEvent.detail * -amount
+                : oEvent.wheelDelta,
+              position = $(this).scrollLeft();
+            position += direction > 0 ? -amount : amount;
+            $(this).scrollLeft(position);
+            event.preventDefault();
+          });
+        };
+      });
+      $(document).ready(function () {
+        $(".box").hScroll(40);
+        $("#showfeed").on("click", function () {
+          var elem = document.getElementById("feedholder");
+          if (elem.style.display != "block") {
+            $("#feedholder").slideDown("slow");
+          } else {
+            $("#feedholder").slideUp("slow");
+          }
+        });
+        $("#feedholder").on("click", function () {
+          $("#feedholder").slideUp("fast");
+        });
+      });
+      document.addEventListener("contextmenu", (event) =>
+        event.preventDefault()
+      );
     </script>
   </body>
 </html>
