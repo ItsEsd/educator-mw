@@ -236,7 +236,7 @@ function ctrlqeduin(e) {
       res[0].Class +
       " (" +
       res[0].Board +
-      ') </p><h4 style="margin:0px;color:#48485c;" id="mednam">' +
+      ') </p><h4 style="margin:0px;color:#48485c; font-weight: bold;opacity: 0.9;" id="mednam">' +
       res[0].FName +
       " " +
       res[0].LName +

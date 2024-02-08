@@ -566,6 +566,8 @@ math-field:active {
   padding: 4px;
   background-color: black;
   color: white;
+  border-radius: 2px;
+  margin-top: -2px;
 }
 
 #TODdash input {
@@ -982,6 +984,7 @@ ul.icons li:last-child {
   background-color: #0c09c9;
   cursor: pointer;
   color: white;
+  border-radius: 5px;
 }
 #edservice span:hover {
   background-color: white;
@@ -1783,6 +1786,7 @@ ul.icons li:last-child {
   display: none;
   height: 35px;
 }
+
 @media only screen and (max-width: 800px) {
   #tdtpone {
     top: 0px;
@@ -1843,5 +1847,40 @@ ul.icons li:last-child {
   }
   #nocontent {
     right: 50px;
+  }
+  .contentheader .tpdayhead {
+    margin-right: 50px;
+    font-size: 16px;
+    margin-top: 3px;
+  }
+  .tpdayhead svg {
+    width: 18px;
+    height: 18px;
+    padding: 4px;
+  }
+
+  .clsroomelemtitle {
+    padding-left: 5px;
+    margin-top: 5px;
+    font-size: 16px;
+  }
+  .clsroomelemtitle svg {
+    background: black;
+    color: white;
+    width: 18px;
+    height: 18px;
+    padding: 2px;
+    margin-top: -2px;
+    border-radius: 2px;
+  }
+  #clsrmalst h5 {
+    padding-top: 5px;
+    font-size: 16px;
+  }
+  #propic {
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    cursor: none;
   }
 }
