@@ -433,6 +433,7 @@ select:focus {
   width: 100%;
   max-width: 720px;
   margin-top: -20px;
+  padding-top: 20px;
 }
 #edprttl {
   background-color: #262626;
