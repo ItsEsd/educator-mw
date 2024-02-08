@@ -1674,7 +1674,7 @@ ul.icons li:last-child {
 }
 
 #showServiceEdu::-webkit-scrollbar-track {
-  background: #6e6e6e;
+  background: #919191;
   border: 3px solid #ffffff;
 }
 
@@ -1683,7 +1683,7 @@ ul.icons li:last-child {
 }
 
 #showServiceEdu::-webkit-scrollbar-thumb:hover {
-  background: #6e6e6e;
+  background: #919191;
 }
 
 #notfycl {
