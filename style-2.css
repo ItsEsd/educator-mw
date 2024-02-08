@@ -985,6 +985,7 @@ ul.icons li:last-child {
   cursor: pointer;
   color: white;
   border-radius: 5px;
+  border: 2px solid white;
 }
 #edservice span:hover {
   background-color: white;
