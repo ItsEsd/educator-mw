@@ -1115,7 +1115,7 @@ $("#skpad").click(function () {
   window.open(
     "https://sketch.mastrowall.com",
     "_blank",
-    "location=center,height=670,width=1200,left=80,top=0,scrollbars=yes,status=yes"
+    "location=center,height=670,width=1600,left=0,top=0,scrollbars=yes,status=yes"
   );
 });
 
