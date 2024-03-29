@@ -235,6 +235,7 @@ label {
   width: 50%;
   height: 100%;
   overflow-y: scroll;
+  font-size: 14px;
 }
 #edtrfnone {
   width: 100%;
@@ -281,13 +282,16 @@ label {
   margin-top: 5px;
 }
 #ttdtitle {
-  background-color: #0a06f034;
+  background-color: #cdd2ff;
+  color: #212121;
 }
+
 #ttdtitle:focus,
 #ttdtitle:active,
 #ttdtitle:valid {
-  background-color: #0c09c9;
-  color: white;
+  background-color: #e2e2e2;
+  box-shadow: 0px 0px 0px 0px white;
+  border: 2px solid #c6cbf8;
 }
 .input_fields_wrap {
   max-width: 800px;

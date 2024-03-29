@@ -84,11 +84,15 @@
   z-index: 400;
   padding: 5px;
   outline: none;
+  background-color: #b6b6b6;
+  font-size: 12px;
 }
+
 #rfrsh:hover,
 #rfrsh:active,
 #rfrsh:focus {
-  background-color: #e5e5e5;
+  background-color: #c0c0c0;
+  transition: 0.2s;
 }
 .nocontenttod {
   margin: 20px;
@@ -1713,12 +1717,12 @@ ul.icons li:last-child {
 .funcbtntd:active,
 .funcbtntd:hover {
   outline: none;
-  font-weight: 500;
-  opacity: 0.8;
+  color: #0505c1;
 }
 #functlbr {
   width: 100%;
   background-color: #cdd2ff;
+  border-bottom: 1px solid #4a4a4a;
 }
 #dialog {
   bottom: 0;
@@ -1785,7 +1789,8 @@ ul.icons li:last-child {
   cursor: pointer;
   z-index: 10000;
   display: none;
-  height: 35px;
+  height: 30px;
+  font-size: 14px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -1808,11 +1813,10 @@ ul.icons li:last-child {
     display: block;
   }
   #rfrsh {
-    bottom: 35px;
+    bottom: 30px;
     left: 0px;
     width: 100vw;
     position: fixed;
-    opacity: 0.8;
     font-size: 14px;
   }
   #edtrfntwo button,
@@ -1821,6 +1825,7 @@ ul.icons li:last-child {
     margin: 5px;
     max-width: 1800px;
     font-size: 12px;
+    height: 35px;
   }
   #edtrfntwo svg {
     width: 20px;
