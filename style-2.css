@@ -78,21 +78,23 @@
   bottom: 0px;
   left: 0px;
   width: 50vw;
+  float: center;
   position: fixed;
   display: block;
   border: none;
   z-index: 400;
   padding: 5px;
   outline: none;
-  background-color: #b6b6b6;
+  background-color: #a4a5ef;
   font-size: 12px;
+  border-top: 2px solid #eaeaea;
+  box-shadow: 0px -3px 5px 0px #80808095 !important;
 }
 
 #rfrsh:hover,
 #rfrsh:active,
 #rfrsh:focus {
-  background-color: #c0c0c0;
-  transition: 0.2s;
+  background-color: #4fad54;
 }
 .nocontenttod {
   margin: 20px;
@@ -168,6 +170,7 @@
   z-index: 100;
   width: 100%;
   max-width: 600px;
+  font-size: 14px;
 }
 
 .rmvtopictd {
@@ -177,6 +180,9 @@
   color: white;
   cursor: pointer;
   margin-bottom: 4px;
+  margin-top: 4px;
+  border-radius: 4px !important;
+  font-size: 14px !important;
 }
 .rmvtopictd:hover {
   opacity: 0.9;
