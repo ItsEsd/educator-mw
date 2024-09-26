@@ -1,4 +1,5 @@
 /* M A S T R O W A L L */
+"use strict";
 function checkexisting() {
   var ur1 = "https://script.google.com/macros/s/";
   var ur2 =
@@ -205,8 +206,6 @@ function switchprof() {
     ";path=/;domain=mastrowall.com";
   getCookie();
 }
-
-/////////////////Add Comments /////////////////
 
 $("#clsrmcmts").click(function () {
   $("#clsrmcmntbox").slideDown("fast");

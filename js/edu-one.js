@@ -236,7 +236,7 @@ function ctrlqeduin(e) {
       res[0].Class +
       " (" +
       res[0].Board +
-      ') </p><h4 style="margin:0px;color:#48485c; font-weight: bold;opacity: 0.9;" id="mednam">' +
+      ') </p><h4 id="mednam">' +
       res[0].FName +
       " " +
       res[0].LName +
@@ -339,12 +339,12 @@ function ctrlqeduin(e) {
     var lname = res[0].LName;
     var cardn = res[0].CardId;
     var name =
+      "#/account/" +
       fname.toLowerCase() +
       "-" +
       lname.toLowerCase() +
-      "?ed=" +
-      btoa(cardn) +
-      "#true";
+      "&ed=" +
+      btoa(cardn);
     var shname = name.split(" ").join("-");
     let stateObj = { id: "0" };
     window.history.replaceState(stateObj, "", shname);
@@ -366,7 +366,7 @@ function ctrlqeduin(e) {
       res[0].Class +
       " | " +
       res[0].Board +
-      "</p></div><span class='spincrd'>mastrowall.com</span></div><div class='inftwo'>Contact: +" +
+      "</p></div><span class='spincrd'>www.mastrowall.com | AMRIT EdTech</span></div><div class='inftwo'>Contact: +" +
       res[0].CountryCode +
       " " +
       res[0].PhoneNo +
@@ -663,9 +663,9 @@ function openConnect() {
   document.getElementById("goconnect").style.display = "block";
   document.getElementById("nxt").style.display = "block";
   document.getElementById("sv").style.display = "none";
-  document.getElementById("updatePro").style.display = "none";
-  document.getElementById("LiveTOD").style.display = "none";
-  document.getElementById("updateTOD").style.display = "none";
+  document.getElementById("scrollEdit").style.display = "none";
+  // document.getElementById("LiveTOD").style.display = "none";
+  // document.getElementById("updateTOD").style.display = "none";
   showconnect();
 }
 
@@ -1121,15 +1121,18 @@ $("#skpad").click(function () {
 
 $("#opcal").click(function () {
   $("#showServiceEdu").show();
+  $("#showServiceEdu").css("overflow-y", "hidden");
   $("#calcontain").show();
 });
 
 $("#opensrvc").click(function () {
   $("#showServiceEdu").show();
+
   $("#calcontain").hide();
 });
 $("#hidenavl").click(function () {
   $("#showServiceEdu").hide();
+  $("#showServiceEdu").css("overflow-y", "auto");
   $("#calcontain").hide();
 });
 
@@ -1151,9 +1154,11 @@ $(document).ready(function () {
       allowTaint: true,
       useCORS: true,
     }).then(function (canvas) {
+      var date = new Date();
       var anchorTag = document.createElement("a");
       document.body.appendChild(anchorTag);
-      anchorTag.download = "myEcard.png";
+      anchorTag.download =
+        "ecard_educator_mastrowall" + date.toISOString() + ".png";
       anchorTag.href = canvas.toDataURL();
       anchorTag.target = "_blank";
       anchorTag.click();
@@ -1275,7 +1280,13 @@ function ctrlqpcheck(e) {
 
 $(document).ready(function () {
   $(window).bind("resize", function () {
-    $("#calcontain,#upDash,#showServiceEdu").show();
+    $("#upDash,#showServiceEdu,#calcontain").show();
+
+    if ($(window).width() < 1024) {
+      $("#showServiceEdu").css("overflow-y", "hidden");
+    } else {
+      $("#showServiceEdu").css("overflow-y", "auto");
+    }
   });
 });
 
@@ -1731,6 +1742,12 @@ function createDialog() {
   });
 }
 
+$(document).ready(function () {
+  $("#crtnewadjacnt").click(function () {
+    $("#newpassfacnt").show();
+    $("#scrollEdit").animate({ scrollTop: scrollHeight }, "slow");
+  });
+});
 openDialogButton.addEventListener("click", (e) => {
   createDialog();
   dialog.style.display = "block";

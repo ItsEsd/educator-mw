@@ -66,7 +66,7 @@
   display: inline-block;
 }
 .nocontentallst {
-  padding: 40px;
+  padding: 10px;
   font-size: 20px;
   padding-top: 190px;
   display: block;
@@ -79,27 +79,29 @@
   left: 0px;
   width: 50vw;
   float: center;
-  position: fixed;
+  position: fixed !important;
   display: block;
   border: none;
   z-index: 400;
   padding: 5px;
   outline: none;
-  background-color: #a4a5ef;
+  background-image: linear-gradient(-360deg, #fae7e2, #0e18ac93);
   font-size: 12px;
-  border-top: 2px solid #eaeaea;
+  border-top: 1px solid #eaeaea;
   box-shadow: 0px -3px 5px 0px #80808095 !important;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
 }
 
 #rfrsh:hover,
 #rfrsh:active,
 #rfrsh:focus {
-  background-color: #4fad54;
+  background-color: #b4b4b4;
 }
 .nocontenttod {
   margin: 20px;
   margin-top: 60px;
-  background-color: #f2f2f2;
+  background-color: #f2f2f280;
   padding: 20px;
   font-size: 20px;
   padding-top: 200px;
@@ -113,8 +115,11 @@
   position: fixed;
   display: none;
   width: 100%;
-  bottom: 100px;
   z-index: 40;
+  position: absolute;
+  left: 50%;
+  top: 80% !important;
+  transform: translate(-50%, -50%);
 }
 
 #noexiddiv {
@@ -201,7 +206,10 @@
   max-width: 300px;
   margin: 6px;
 }
-
+#srcandsvex .sectodinput {
+  width: 45%;
+  display: inline-block;
+}
 .clroomdivbd-one {
   width: 98%;
   height: 100%;
@@ -211,38 +219,19 @@
 }
 
 #prevexperform {
-  max-height: 300px;
+  max-height: 45vh;
   margin-top: 100px;
   padding: 20px;
   box-shadow: 0px 2px 4px 0px #a8a8a8;
   max-width: 600px;
   background-color: #ffffff;
   overflow-y: auto;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(255, 255, 255, 0.454);
 }
 #experform {
   background-color: #fff;
-  background-image: -moz-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.2) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.2) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-image: -webkit-linear-gradient(
-    0deg,
-    rgba(0, 0, 0, 0.2) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(0, 0, 0, 0.2) 50%,
-    rgba(0, 0, 0, 0.2) 75%,
-    transparent 75%,
-    transparent
-  );
-  -moz-background-size: 4px 4px;
-  background-size: 6px 6px;
+  background-image: linear-gradient(-180deg, #070e40, #1f267d);
 }
 #examportalbtn {
   width: 100%;
@@ -256,11 +245,13 @@
   margin-top: -4px;
 }
 .showexbtn {
-  margin-top: 4px;
+  margin-top: 10px;
   margin-right: 4px;
-  padding: 4px 20px;
-  border: 1px solid #aaa8a8;
+  padding: 5px 20px;
+  border: 2px solid #50b4f3;
+  width: 46%;
   color: black;
+  border-radius: 5px;
 }
 
 .showexbtn:focus,
@@ -280,7 +271,7 @@
   height: 100%;
   top: 0px;
   left: 0px;
-  background-color: #ced2d3c9;
+  background-color: #a8a8a89b;
   position: fixed;
   display: none;
 }
@@ -289,17 +280,18 @@
   height: 100%;
   padding: 10px;
   max-width: 960px;
-  background-color: #4b4b4b;
+  background-image: linear-gradient(-360deg, #4b0482e8, #171718);
   overflow-y: auto;
 }
 
 #prevsttod {
   margin-top: 40px;
-  box-shadow: 0px 2px 4px 0px #a8a8a8;
+  box-shadow: 0px 2px 6px 0px #a8a8a8cc;
   max-width: 600px;
   background-color: #ffffff;
   overflow-y: auto;
   max-height: 240px;
+  border-radius: 10px;
 }
 
 #prevsttod::-webkit-scrollbar {
@@ -342,9 +334,10 @@
 .storetdbtn {
   margin-top: 4px;
   margin-right: 4px;
-  padding: 4px 20px;
-  border: 1px solid #aaa8a8;
+  padding: 5px 40px;
+  border: 2px solid #d71e099e;
   color: black;
+  border-radius: 5px;
 }
 #sttodedu {
   width: 30px;
@@ -376,6 +369,7 @@
   margin-top: 10px;
   margin-bottom: 10px;
   background-color: #9abaf7;
+  border-radius: 10px;
 }
 .todcommnt {
   font-size: 18px;
@@ -502,8 +496,9 @@ math-field:active {
   word-wrap: break-word;
 }
 #todconedit {
+  margin-top: 5px !important;
   width: 100%;
-  height: 56vh;
+  height: 60vh;
   border: 1px solid grey;
   padding: 10px;
   overflow-y: scroll;
@@ -647,7 +642,7 @@ math-field:active {
   position: absolute;
 }
 #connectnxtbtn {
-  padding: 4px 40px;
+  padding: 5px 40px;
   border-radius: 0px;
   margin: 4px;
   background-color: #03b803;
@@ -767,16 +762,16 @@ math-field:active {
 }
 
 #lkcopied {
-  bottom: 20px;
+  bottom: 0px;
   position: fixed;
   width: 100%;
   z-index: 10000;
   display: none;
 }
 #lkcopied div {
-  max-width: 240px;
-  font-size: 16px;
-  padding: 10px;
+  max-width: 100%;
+  font-size: 14px;
+  padding: 5px;
   background-color: #e9b405;
   border-radius: 0px;
 }
@@ -842,6 +837,7 @@ math-field:active {
   margin-top: 10px;
   height: 42px;
   background-color: #0575ff71;
+  border-radius: 5px;
 }
 #exmprfmfn span {
   display: inline-block;
@@ -886,11 +882,11 @@ math-field:active {
   border-radius: 4px;
 }
 .exdtlsst p {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
 }
 .svshowexres {
-  font-size: 12px;
+  font-size: 14px !important;
 }
 
 #connect1 {
@@ -991,7 +987,7 @@ ul.icons li:last-child {
 #edservice span {
   margin: 4px;
   padding: 14px 20px;
-  background-color: #0c09c9;
+  background-color: #1a2ca5;
   cursor: pointer;
   color: white;
   border-radius: 5px;
@@ -999,7 +995,7 @@ ul.icons li:last-child {
 }
 #edservice span:hover {
   background-color: white;
-  color: #0c09c9;
+  color: #1a2ca5;
 }
 #hidenavl {
   width: 30px;
@@ -1046,25 +1042,26 @@ ul.icons li:last-child {
   background-color: #012da8;
 }
 #newpassfacnt {
-  display: none;
   top: 0px;
   left: 0px;
+  display: none;
   width: 100%;
   height: 100%;
-  position: fixed;
-  background-color: #000000b7;
+  background-image: linear-gradient(-180deg, #020f3d88, #040a5245, #0000000b);
   padding: 6px;
+  padding: 20px !important;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #swtchnwact {
-  margin-top: 140px;
-  padding: 10px;
   max-width: 500px;
-  background-color: #0c08e2;
+  border-radius: 10px;
 }
 
 #swtchnwact .form-control {
-  margin: 5px;
+  padding: 5px;
+  margin-bottom: 5px !important;
 }
 
 #swtchnwact button {
@@ -1077,14 +1074,15 @@ ul.icons li:last-child {
 }
 
 #switchnoti {
-  bottom: 0px;
-  position: absolute;
   background-color: #2bb80f;
   color: white;
   z-index: 100000;
   padding: 4px;
   width: 100%;
   display: none;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
 }
 
 #getecard {
@@ -1098,13 +1096,16 @@ ul.icons li:last-child {
   padding: 6px 10px;
   font-size: 14px;
   float: right;
-  background-color: red;
+  background-color: rgb(48, 153, 6);
   color: white;
   cursor: pointer;
   width: 15%;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.532);
+  text-align: center;
 }
 #clsecrd:hover {
-  background-color: #fa4d4d;
+  background-color: #1dad1d;
 }
 #myerded {
   top: 0px;
@@ -1112,7 +1113,7 @@ ul.icons li:last-child {
   width: 100%;
   height: 100%;
   position: fixed;
-  background-color: #041768b4;
+  background-image: linear-gradient(-180deg, #4926259d, #0f23109d, #010135);
   z-index: 20000;
   display: none;
 }
@@ -1122,12 +1123,16 @@ ul.icons li:last-child {
   margin-top: 10%;
   padding: 5px;
 }
-#prevcard span {
+#prevcard p span {
   margin: 2px;
+  display: inline-block;
 }
 
 #prevcard p {
   margin-top: 10px;
+  width: 100%;
+  padding: 0px;
+  text-align: left;
 }
 #canved {
   background-color: transparent;
@@ -1138,14 +1143,18 @@ ul.icons li:last-child {
   max-width: 540px;
   height: 290px;
   padding-top: 14px;
-  border-radius: 10px;
+  border-radius: 0px;
+  padding: 4px;
+  border: 2px solid rgb(212, 212, 212);
 }
 #downecrd {
   font-size: 14px;
-  /* display: inline-block; */
   width: 100%;
-  max-width: 80%;
+  min-width: 440px;
   float: left;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
 }
 
 /* Ecard */
@@ -1159,7 +1168,7 @@ ul.icons li:last-child {
 
 .infone img {
   width: 100%;
-  max-width: 20%;
+  max-width: 25%;
   float: right;
   padding: 6px;
 }
@@ -1168,7 +1177,7 @@ ul.icons li:last-child {
   float: left;
   text-align: left;
   width: 100%;
-  max-width: 80%;
+  max-width: 75%;
 }
 .infone h4 {
   color: #082c8f;
@@ -1185,9 +1194,8 @@ ul.icons li:last-child {
 .spincrd {
   color: #0251b9;
   float: right;
-  width: 200px;
   margin-top: 20px;
-  margin-right: 10px;
+  padding-right: 6px;
   text-align: right;
 }
 .inftwo {
@@ -1303,21 +1311,28 @@ ul.icons li:last-child {
   position: fixed;
   width: 100%;
   height: 100%;
-  max-width: 500px;
-  background-color: #e7e7e7;
+  max-width: 600px;
+  background-image: linear-gradient(-180deg, #ea5151, #5a61ab, #abccf5);
   text-align: left;
   padding: 5px;
   display: none;
   z-index: 20000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 10px 20px 2px rgba(117, 117, 120, 0.758);
 }
 
 #cmntbxtitle {
   font-size: 18px;
   font-weight: 600;
-  color: #2c2c2c;
+  color: #2c2c2cb1;
   width: 100%;
+  min-width: 350px;
   background-color: #c5c5c5;
   padding: 10px;
+  border-radius: 5px;
 }
 #rfshcmntbx {
   font-size: 14px;
@@ -1326,6 +1341,7 @@ ul.icons li:last-child {
   cursor: pointer;
   padding: 2px 10px;
   background-color: #e7e7e7;
+  display: inline-block;
 }
 #rfshcmntbx:hover {
   background-color: #dddddd;
@@ -1334,29 +1350,45 @@ ul.icons li:last-child {
 #clscmntbx {
   float: right;
   padding: 2px 8px;
-  background-color: #f72525;
+  background-color: #505050;
   color: white;
   cursor: pointer;
   font-size: 14px;
 }
 #clscmntbx:hover {
-  background-color: #fd3f3f;
+  background-color: #5b5b5b;
 }
 
 #divcmntbx {
   min-height: 200px;
-  background-color: #242424;
+  background-color: #24242459;
   height: 65%;
   font-size: 14px;
-  padding: 5px;
+  padding: 10px;
   overflow-y: auto;
+  border-radius: 10px;
 }
 
 #divcmntbx::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+}
+
+#divcmntbx::-webkit-scrollbar-track {
+  background: #ffffff63;
+  border: 3px solid #24242459;
+  border-radius: 10px;
+}
+
+#divcmntbx::-webkit-scrollbar-thumb {
+  background: #24242459;
+  border-radius: 10px;
+}
+
+#divcmntbx::-webkit-scrollbar-thumb:hover {
+  background: #a7a8ae50;
 }
 #divcmntbx hr {
-  border-color: #464646a6;
+  border-color: #898989a6;
 }
 #cmnttoclss {
   width: 100%;
@@ -1397,6 +1429,7 @@ ul.icons li:last-child {
 .edcmnt img,
 .edcmnt iframe {
   width: 100%;
+  border-radius: 5px;
 }
 .stcmnt {
   background-color: #fcf5bf;
@@ -1477,208 +1510,6 @@ ul.icons li:last-child {
   width: 50%;
 }
 
-/* ///////////// Media Screen */
-
-@media only screen and (max-width: 500px) {
-  .ForTypePs,
-  .ForTypePm {
-    width: 100% !important;
-  }
-  .youvidF {
-    height: 300px !important;
-  }
-}
-@media only screen and (max-width: 1000px) {
-  ul.icons li {
-    padding: 0 0.75em 0 0;
-  }
-  #calcontain {
-    display: none;
-    top: 45px;
-    left: 0px;
-    max-width: 100%;
-  }
-
-  #showServiceEdu {
-    display: none;
-  }
-
-  #upDash {
-    height: 100%;
-    width: 100%;
-    max-width: 1400px;
-    padding: 10px;
-    overflow-y: scroll;
-  }
-
-  #footDash {
-    max-width: 100%;
-  }
-  #telefrm {
-    height: 600px;
-    margin-bottom: 90px;
-    padding-bottom: 0px;
-  }
-  #telefrm iframe {
-    max-height: 600px;
-  }
-  #edservice {
-    display: block;
-  }
-  #leftnav {
-    padding-top: 0px;
-    max-width: 600px;
-  }
-}
-
-@media only screen and (min-width: 1000px) {
-  #showServiceEdu {
-    display: block;
-    max-width: 24%;
-  }
-  #titleleft {
-    max-width: 24%;
-  }
-  #calcontain {
-    display: block;
-    top: 0px;
-    left: 24%;
-    max-width: 45%;
-  }
-
-  #upDash {
-    width: 100%;
-    max-width: 31%;
-    padding: 10px;
-  }
-  #footDash {
-    max-width: 31%;
-  }
-  #propic {
-    width: 120px;
-    height: 120px;
-    pointer-events: none;
-    cursor: none;
-  }
-  #opcal {
-    display: none;
-  }
-  #edservice {
-    display: none;
-  }
-  #hidenavl {
-    display: none;
-  }
-  #leftnav {
-    padding-top: 0px;
-    max-width: 310px;
-  }
-  .dashicon {
-    width: 225px;
-    height: 160px;
-    margin: 6px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .dashicon {
-    width: 250px;
-    height: 160px;
-    margin: 10px;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
-  ul.icons li {
-    padding: 0 0.75em 0 0;
-  }
-  #calcontain {
-    display: none;
-    top: 45px;
-    left: 0px;
-    max-width: 100%;
-  }
-
-  #showServiceEdu {
-    display: none;
-  }
-
-  #upDash {
-    height: 100%;
-    width: 100%;
-    max-width: 1400px;
-    padding: 10px;
-    overflow-y: scroll;
-  }
-
-  #footDash {
-    max-width: 100%;
-  }
-  #telefrm {
-    height: 600px;
-    margin-bottom: 90px;
-    padding-bottom: 0px;
-  }
-  #telefrm iframe {
-    max-height: 600px;
-  }
-  #edservice {
-    display: block;
-  }
-  #leftnav {
-    padding-top: 0px;
-    max-width: 600px;
-  }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1) {
-  #showServiceEdu {
-    display: block;
-    max-width: 24%;
-  }
-  #titleleft {
-    max-width: 24%;
-  }
-  #calcontain {
-    display: block;
-    top: 0px;
-    left: 24%;
-    max-width: 45%;
-  }
-
-  #upDash {
-    width: 100%;
-    max-width: 31%;
-    padding: 10px;
-  }
-  #footDash {
-    max-width: 31%;
-  }
-  #propic {
-    width: 120px;
-    height: 120px;
-    pointer-events: none;
-    cursor: none;
-  }
-  #opcal {
-    display: none;
-  }
-  #edservice {
-    display: none;
-  }
-  #hidenavl {
-    display: none;
-  }
-  #leftnav {
-    padding-top: 0px;
-    max-width: 310px;
-  }
-  .dashicon {
-    width: 225px;
-    height: 160px;
-    margin: 6px;
-  }
-}
 #showServiceEdu::-webkit-scrollbar {
   width: 8px;
 }
@@ -1729,6 +1560,8 @@ ul.icons li:last-child {
   width: 100%;
   background-color: #cdd2ff;
   border-bottom: 1px solid #4a4a4a;
+  padding: 0px;
+  margin: 0px;
 }
 #dialog {
   bottom: 0;
@@ -1795,35 +1628,70 @@ ul.icons li:last-child {
   cursor: pointer;
   z-index: 10000;
   display: none;
-  height: 30px;
   font-size: 14px;
 }
 
-@media only screen and (max-width: 800px) {
+#sketchpd {
+  top: 0px;
+  left: 0px;
+  width: 100% !important;
+  height: 100% !important;
+  position: fixed;
+  z-index: 9999999 !important;
+}
+#sketchpd iframe {
+  width: 100%;
+  height: 100vh;
+}
+
+#clsbtn {
+  top: 0px;
+  right: 0px;
+  position: fixed;
+  border: none;
+  outline: none;
+}
+
+/* ///////////// Media Screen */
+
+/* Mobile devices (up to 600px wide) */
+@media (max-width: 1000px) {
+  #clsrmcmntbox {
+    width: 100%;
+    max-width: 500px;
+  }
   #tdtpone {
     top: 0px;
     left: 0px;
     position: absolute;
-    width: 100%;
+    width: 100% !important;
+    max-width: 100%;
     z-index: 1000;
+    padding-bottom: 40px;
   }
   #tdtptwo {
     background-color: #cecece;
     top: 0px;
     left: 0px;
     position: absolute;
-    width: 100%;
+    width: 100% !important;
     z-index: 1000;
+    max-width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
   .edborard {
     display: block;
   }
   #rfrsh {
-    bottom: 30px;
+    bottom: 30px !important;
     left: 0px;
     width: 100vw;
-    position: fixed;
+    position: fixed !important;
     font-size: 14px;
+    display: block;
   }
   #edtrfntwo button,
   #edtrfntwo input {
@@ -1838,20 +1706,15 @@ ul.icons li:last-child {
   }
 
   #edtrfntwo {
-    bottom: 35px;
-    left: 0px;
-    position: fixed;
+    padding-bottom: 10px;
     background-color: white;
   }
   #edtrfnone {
-    bottom: 60px;
-    left: 0px;
-    position: fixed;
     background-color: white;
   }
   #todconedit {
     width: 100%;
-    height: 360px;
+    height: 51vh;
   }
   .tod {
     margin-top: 10px;
@@ -1895,31 +1758,209 @@ ul.icons li:last-child {
     pointer-events: none;
     cursor: none;
   }
-}
+  ul.icons li {
+    padding: 0 0.75em 0 0;
+  }
+  #calcontain {
+    display: none;
+    top: 45px;
+    left: 0px;
+    max-width: 100%;
+  }
 
-/* Styles for iPads in portrait mode */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  #showServiceEdu {
+    display: none;
+  }
+
+  #upDash {
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+    padding: 10px;
+    overflow-y: scroll;
+  }
+
+  #footDash {
+    max-width: 100%;
+  }
+  #telefrm {
+    height: 88vh;
+    padding-bottom: 0px;
+  }
+  #telefrm iframe {
+    max-height: 88vh;
+  }
+  #edservice {
+    display: block;
+  }
   #leftnav {
-    max-width: 500px;
+    padding-top: 0px;
+    max-width: 600px;
+  }
+  .ForTypePs,
+  .ForTypePm {
+    width: 100% !important;
+  }
+  .youvidF {
+    height: 300px !important;
+  }
+
+  #showServiceEdu {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #titleleft {
+    width: 100%;
+    max-width: 600px;
+  }
+  #calcontain {
+    display: none;
+    margin-top: 45px;
+    left: 0%;
+    width: 100%;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  #upDash {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    max-width: 600px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #footDash {
+    max-width: 100%;
+    max-width: 600px;
+    display: none;
+  }
+  #leftnav {
+    max-width: 80%;
+  }
+
+  #classrm {
+    bottom: 3.5vh;
+    right: 5vw;
+  }
+  #classrm svg {
+    width: 40px;
+    height: 40px;
   }
 }
-#sketchpd {
-  top: 0px;
-  left: 0px;
-  width: 100% !important;
-  height: 100% !important;
-  position: fixed;
-  z-index: 9999999 !important;
-}
-#sketchpd iframe {
-  width: 100%;
-  height: 100vh;
+
+/* Tablets (600px to 1024px wide) */
+@media (min-width: 1001px) and (max-width: 1024px) {
+  #showServiceEdu {
+    display: block;
+    max-width: 24%;
+  }
+  #titleleft {
+    max-width: 24%;
+  }
+  #calcontain {
+    display: block;
+    top: 0px;
+    left: 24%;
+    max-width: 45%;
+  }
+
+  #upDash {
+    width: 100%;
+    max-width: 31%;
+    padding: 10px;
+  }
+  #footDash {
+    max-width: 31%;
+  }
+  #propic {
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    cursor: none;
+  }
+  #opcal {
+    display: none;
+  }
+  #edservice {
+    display: none;
+  }
+  #hidenavl {
+    display: none;
+  }
+  #leftnav {
+    padding-top: 0px;
+    max-width: 310px;
+  }
+  .dashicon {
+    width: 225px;
+    height: 160px;
+    margin: 6px;
+  }
 }
 
-#clsbtn {
-  top: 0px;
-  right: 0px;
-  position: fixed;
-  border: none;
-  outline: none;
+/* Desktop (1025px and up) */
+@media (min-width: 1025px) {
+  .dashicon {
+    width: 250px;
+    height: 160px;
+    margin: 10px;
+  }
+
+  #showServiceEdu {
+    display: block;
+    max-width: 24%;
+  }
+  #titleleft {
+    max-width: 24%;
+  }
+  #calcontain {
+    display: block;
+    top: 0px;
+    left: 24%;
+    max-width: 45%;
+  }
+
+  #upDash {
+    width: 100%;
+    max-width: 31%;
+    padding: 10px;
+  }
+  #footDash {
+    max-width: 31%;
+  }
+  #propic {
+    width: 120px;
+    height: 120px;
+    pointer-events: none;
+    cursor: none;
+  }
+  #opcal {
+    display: none;
+  }
+  #edservice {
+    display: none;
+  }
+  #hidenavl {
+    display: none;
+  }
+  #leftnav {
+    padding-top: 0px;
+    max-width: 310px;
+  }
+  .dashicon {
+    width: 225px;
+    height: 160px;
+    margin: 6px;
+  }
 }
