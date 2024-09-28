@@ -1816,7 +1816,10 @@ ul.icons li:last-child {
   }
   #titleleft {
     width: 100%;
+    top: 0px !important;
     max-width: 600px;
+    position: sticky !important;
+    margin-top: -1px;
   }
   #calcontain {
     display: none;
