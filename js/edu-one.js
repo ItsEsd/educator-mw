@@ -1071,10 +1071,8 @@ function getcalendar() {
         alert("Please wait, a request is already in progress.");
         return;
       }
-
       if (confirm("Are you sure you want to delete this event?")) {
         isRequestInProgress = true;
-
         var waitingDiv = $(
           '<div id="waitingMessageCL">Please wait, processing...</div>'
         );
