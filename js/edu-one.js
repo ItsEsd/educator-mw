@@ -1010,6 +1010,9 @@ function getcalendar() {
       center: "title",
       right: "dayGridYear,dayGridMonth,timeGridWeek,listYear",
     },
+    views: {
+      listYear: { buttonText: "all events" },
+    },
     initialDate: flcaldate,
     navLinks: true,
     weekNumbers: true,
