@@ -984,6 +984,7 @@ $("#todconedit").on("input", function (event) {
 });
 
 /////////////////Calender////////////////
+var isRequestInProgress = false;
 
 function getcalendar() {
   var calendarEl = document.getElementById("calendar");
@@ -1007,7 +1008,7 @@ function getcalendar() {
     headerToolbar: {
       left: "prev,next",
       center: "title",
-      right: "dayGridYear,dayGridMonth,timeGridWeek,timeGridDay",
+      right: "dayGridYear,dayGridMonth,timeGridWeek,listYear",
     },
     initialDate: flcaldate,
     navLinks: true,
@@ -1063,7 +1064,18 @@ function getcalendar() {
       calendar.unselect();
     },
     eventClick: function (arg) {
+      if (isRequestInProgress) {
+        alert("Please wait, a request is already in progress.");
+        return;
+      }
+
       if (confirm("Are you sure you want to delete this event?")) {
+        isRequestInProgress = true;
+
+        var waitingDiv = $(
+          '<div id="waitingMessageCL">Please wait, processing...</div>'
+        );
+        $("#calendar").append(waitingDiv);
         arg.event.remove();
         var tt = JSON.stringify(encodeURIComponent(arg.event.title));
         var st = JSON.stringify(arg.event.start.toISOString());
@@ -1091,6 +1103,10 @@ function getcalendar() {
           url: url,
           method: "GET",
           dataType: "jsonp",
+          complete: function () {
+            isRequestInProgress = false;
+            $("#waitingMessageCL").remove();
+          },
         });
       }
     },
@@ -1108,6 +1124,8 @@ function ctrlqevsv(e) {
 }
 
 function ctrlqevrmv(e) {
+  isRequestInProgress = false;
+  $("#waitingMessageCL").remove();
   inwallEdu();
 }
 

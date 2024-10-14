@@ -906,6 +906,16 @@ math-field:active {
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
   background-color: #ffffff;
+  position: relative;
+}
+#waitingMessageCL {
+  color: #252525;
+  font-size: 12px;
+  margin-top: 2px;
+  padding: 0px;
+  top: 35px;
+  right: 2px;
+  position: absolute !important;
 }
 #calcontain {
   padding: 10px;
