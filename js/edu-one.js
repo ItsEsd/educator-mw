@@ -304,6 +304,7 @@ function ctrlqeduin(e) {
       var TOD = decodeURIComponent(res[0].TOD);
       var singlest = TOD.split("{td},");
       var lenstr = singlest.length;
+      $("#LiveTOD").empty();
       document.getElementById("LiveTOD").style.display = "block";
       for (var w = 0; w < lenstr - 1; w++) {
         document.getElementById("LiveTOD").innerHTML +=
