@@ -75,7 +75,16 @@
               data-toggle="modal"
               data-target="#crvid"
               src="https://www.svgrepo.com/show/102295/video-play.svg"
-            /><img
+            />
+            <button
+              id="chrtlepd"
+              type="button"
+              title="Chartle"
+              class="btn btn-dark"
+              onclick="opnchrtl();"
+            >
+              <img src="../images/icon-pie-chart.png" /></button
+            ><img
               class="tb1"
               title="Remove formatting"
               onclick="formatDoc('removeFormat')"
@@ -158,6 +167,12 @@
               title="Delete indentation"
               onclick="formatDoc('outdent');"
               src="https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_format_indent_decrease_48px-512.png"
+            />
+            <img
+              class="intLink"
+              title="Print/ Save as PDF"
+              onclick="printDoc();"
+              src="https://www.svgrepo.com/show/38190/print-button.svg"
             />
             <div class="modal" id="crlnk" role="dialog">
               <div class="modal-dialog">
@@ -347,12 +362,6 @@
           </div>
           <div id="toolBar1">
             <img
-              class="intLink"
-              title="Print/ Save as PDF"
-              onclick="printDoc();"
-              src="https://www.svgrepo.com/show/38190/print-button.svg"
-            />
-            <img
               style="display: none"
               class="intLink"
               title="Download Text"
@@ -419,21 +428,14 @@
               &#8721;
             </button>
             <button
-              id="chrtlepd"
-              type="button"
-              class="btn btn-dark"
-              onclick="opnchrtl();"
-            >
-              <img src="../images/icon-pie-chart.png" />Chartle
-            </button>
-            <button
               id="sktchpd"
               type="button"
               class="btn btn-dark"
               onclick="opnskpd();"
             >
-              Sketch Pad</button
-            ><button
+              Sketch Pad
+            </button>
+            <button
               type="button"
               id="postTD"
               onclick="document.getElementById('postT').style.display='block';document.getElementById('p1').style.display='block';document.getElementById('prepost').style.display='none'; dateUp();"
