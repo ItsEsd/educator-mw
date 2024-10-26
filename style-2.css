@@ -1830,6 +1830,7 @@ ul.icons li:last-child {
     max-width: 600px;
     position: sticky !important;
     margin-top: -1px;
+    background-color: #1f50e5;
   }
   #calcontain {
     display: none;
