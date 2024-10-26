@@ -968,14 +968,18 @@ ul.icons li:last-child {
   float: right;
 }
 #titleleft svg {
-  width: 24px;
-  height: 24px;
+  width: 21px;
+  height: 21px;
 }
 
 #titleleft img {
   width: 30px !important;
-  padding: 2px;
   pointer-events: none;
+  margin-top: -4px;
+  margin-right: 4px;
+}
+#titleleft {
+  font-size: 14px;
 }
 #skpad {
   margin-right: 4px;
