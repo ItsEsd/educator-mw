@@ -975,6 +975,7 @@ ul.icons li:last-child {
 #titleleft img {
   width: 30px !important;
   padding: 2px;
+  pointer-events: none;
 }
 #skpad {
   margin-right: 4px;
