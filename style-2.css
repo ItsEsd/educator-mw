@@ -970,13 +970,14 @@ ul.icons li:last-child {
 #titleleft svg {
   width: 21px;
   height: 21px;
+  opacity: 0.8;
 }
 
 #titleleft img {
-  width: 30px !important;
+  width: 28px !important;
   pointer-events: none;
-  margin-top: -4px;
-  margin-right: 4px;
+  margin-top: -2px;
+  margin-right: 2px;
 }
 #titleleft {
   font-size: 14px;
