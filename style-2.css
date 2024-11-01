@@ -1346,10 +1346,10 @@ ul.icons li:last-child {
 #cmntbxtitle {
   font-size: 18px;
   font-weight: 600;
-  color: #2c2c2cb1;
+  color: #2c2c2c;
   width: 100%;
   min-width: 350px;
-  background-color: #c5c5c5;
+  background-color: #cfcfcf;
   padding: 10px;
   border-radius: 5px;
 }
@@ -1359,11 +1359,17 @@ ul.icons li:last-child {
   margin-left: 10px;
   cursor: pointer;
   padding: 2px 10px;
-  background-color: #e7e7e7;
+  background-color: #ebebeb;
   display: inline-block;
+  float: right;
 }
 #rfshcmntbx:hover {
   background-color: #dddddd;
+}
+#rfshcmntbx svg {
+  width: 14px !important;
+  height: 14px !important;
+  margin-left: 5px;
 }
 
 #clscmntbx {
@@ -1478,6 +1484,7 @@ ul.icons li:last-child {
   padding: 5px;
   border-radius: 5px;
   font-size: 16px;
+  word-wrap: break-word;
 }
 
 .delcmnted {
