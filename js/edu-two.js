@@ -260,7 +260,7 @@ clsrmcmntfm.addEventListener("submit", (event) => {
     Math.random().toString(26).substring(2, 6) +
     Math.random().toString(26).substring(2, 6);
   var strlen = cmcon.length;
-  if (strlen < 400) {
+  if (strlen <= 400) {
     var ur1 = "https://script.google.com/macros/s/";
     var ur2 =
       "AKfycbz0Okd0T9pMS-Q4nLUstxONTlswNXbKu4qUud4tfge6_ToM0uQZQxda5SrpcRPNUsCKrA";
@@ -296,9 +296,9 @@ clsrmcmntfm.addEventListener("submit", (event) => {
 });
 document.getElementById("medcmmnt").addEventListener("input", checkchlimit);
 function checkchlimit() {
-  var textarea = document.getElementById("medcmmnt");
   var subcmntbx = document.getElementById("subcmntbx");
-  var length = textarea.value.length;
+  var strmn = encodeURIComponent(JSON.stringify($("#medcmmnt").val()));
+  var length = strmn.length;
   if (length > 400) {
     subcmntbx.value = "Character limit exceeded!";
     subcmntbx.disabled = true;
