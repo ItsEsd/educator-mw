@@ -1202,7 +1202,7 @@ a:hover {
 #allstud-two {
   min-height: 70vh;
   overflow-y: auto;
-  max-height: 70vh;
+  max-height: 60vh;
   width: 100%;
   background-color: #d7d7d7;
   background-size: 35%;

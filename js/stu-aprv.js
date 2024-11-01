@@ -5,6 +5,10 @@ var pt_url22 =
 var wtst = pt_url11 + pt_url22 + "/exec";
 function allstudwait() {
   $("#allstud-one").empty();
+  document.getElementsByClassName("refreshlist")[0].disabled = true;
+  document.getElementsByClassName("refreshlist")[0].style.opacity = "0.5";
+  document.getElementsByClassName("refreshlist")[0].style.pointerEvents =
+    "none";
   document.getElementById("allstud-one").style.backgroundImage =
     "url('images/clsrm-loader.gif')";
   var email1 = $("#email").val();
@@ -92,6 +96,10 @@ function srcstid(stidsrc) {
       }
     }
     document.getElementById("allstud-one").style.backgroundImage = "none";
+    document.getElementsByClassName("refreshlist")[0].disabled = false;
+    document.getElementsByClassName("refreshlist")[0].style.opacity = "1";
+    document.getElementsByClassName("refreshlist")[0].style.pointerEvents =
+      "auto";
   });
 }
 
@@ -208,6 +216,10 @@ var pt_url222 =
 var staprv = pt_url111 + pt_url222 + "/exec";
 function allstudapprv() {
   $("#allstud-two").empty();
+  document.getElementsByClassName("refreshlist")[1].disabled = true;
+  document.getElementsByClassName("refreshlist")[1].style.opacity = "0.5";
+  document.getElementsByClassName("refreshlist")[1].style.pointerEvents =
+    "none";
   document.getElementById("allstud-two").style.backgroundImage =
     "url('images/clsrm-loader.gif')";
   var email1 = $("#email").val();
@@ -293,6 +305,10 @@ function srcstidapprv(stidsrc) {
       }
     }
     document.getElementById("allstud-two").style.backgroundImage = "none";
+    document.getElementsByClassName("refreshlist")[1].disabled = false;
+    document.getElementsByClassName("refreshlist")[1].style.opacity = "1";
+    document.getElementsByClassName("refreshlist")[1].style.pointerEvents =
+      "auto";
   });
 }
 
