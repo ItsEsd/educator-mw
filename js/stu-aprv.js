@@ -5,10 +5,6 @@ var pt_url22 =
 var wtst = pt_url11 + pt_url22 + "/exec";
 function allstudwait() {
   $("#allstud-one").empty();
-  document.getElementsByClassName("refreshlist")[0].disabled = true;
-  document.getElementsByClassName("refreshlist")[0].style.opacity = "0.5";
-  document.getElementsByClassName("refreshlist")[0].style.pointerEvents =
-    "none";
   document.getElementById("allstud-one").style.backgroundImage =
     "url('images/clsrm-loader.gif')";
   var email1 = $("#email").val();
@@ -96,10 +92,6 @@ function srcstid(stidsrc) {
       }
     }
     document.getElementById("allstud-one").style.backgroundImage = "none";
-    document.getElementsByClassName("refreshlist")[0].disabled = false;
-    document.getElementsByClassName("refreshlist")[0].style.opacity = "1";
-    document.getElementsByClassName("refreshlist")[0].style.pointerEvents =
-      "auto";
   });
 }
 
