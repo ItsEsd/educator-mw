@@ -776,8 +776,8 @@ function noextlink() {
 }
 
 function limitchar() {
-  var tdtitle = $("#ttdtitle").val();
-  var tdbrief = $("#tbrief").val();
+  var tdtitle = $("#ttdtitle").val().replace(/%/g, "&#37;");
+  var tdbrief = $("#tbrief").val().replace(/%/g, "&#37;");
   var tdthumb = $("#tthumb").val();
   var randno =
     Math.random().toString(26).substring(2, 5) +
@@ -930,6 +930,16 @@ function embed_vid() {
     return false;
   }
 }
+document.getElementById("embedtd").addEventListener("input", embedCon);
+function embedCon() {
+  document.getElementById("previewembd").style.display = "block";
+  var contnt = document.getElementById("crEmbed").value;
+  if (contnt != "") {
+    document.getElementById("previewembd").innerHTML = contnt;
+  } else {
+    return false;
+  }
+}
 
 function getId(url) {
   var regExpYT =
@@ -955,6 +965,14 @@ function insert_vid() {
     '<br/><div class="yvtd if-resp"><iframe src="' +
     myId +
     '" frameborder="0" allowfullscreen="true"></iframe></div><br/>';
+  document.getElementById("tbrief").value = tbrf;
+  document.getElementById("todconedit").innerHTML = tbrf;
+}
+
+function insert_Embed() {
+  var tbriefmod = document.getElementById("tbrief").value;
+  var contnt = document.getElementById("crEmbed").value;
+  var tbrf = tbriefmod + "<br/>" + contnt + "<br/>";
   document.getElementById("tbrief").value = tbrf;
   document.getElementById("todconedit").innerHTML = tbrf;
 }
