@@ -1682,6 +1682,9 @@ ul.icons li:last-child {
 
 /* Mobile devices (up to 600px wide) */
 @media (max-width: 1000px) {
+  #calendar {
+    font-size: 12px;
+  }
   #clsrmcmntbox {
     width: 100%;
     max-width: 500px;

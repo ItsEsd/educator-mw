@@ -1007,12 +1007,16 @@ function getcalendar() {
     aspectRatio: 1,
     initialView: "dayGridMonth",
     headerToolbar: {
-      left: "prev,next",
       center: "title",
-      right: "dayGridYear,dayGridMonth,timeGridWeek,listYear",
+      right: "dayGridYear,dayGridMonth,timeGridDay,timeGridWeek,listYear",
+      left: "prev,next",
     },
     views: {
       listYear: { buttonText: "📃" },
+      dayGridYear: { buttonText: "YY" },
+      dayGridMonth: { buttonText: "MM" },
+      timeGridDay: { buttonText: "DD" },
+      timeGridWeek: { buttonText: "W" },
     },
     initialDate: flcaldate,
     navLinks: true,
