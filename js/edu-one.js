@@ -535,7 +535,8 @@ function ProTOD() {
   var tdtitle = $("#ttdtitle").val();
   var tdbrief = $("#tbrief").val();
   var tdthumb = $("#tthumb").val();
-  if (tdtitle != "" && tdbrief != "" && tdthumb != "") {
+  limitchar();
+  if (tdtitle != "" && tdbrief != "") {
     $("#pviewcontain").animate({ scrollTop: 0 });
     document.getElementById("previewTOD").innerHTML =
       '<div class="wrapTODPre"><div class="card" style="border:1px solid black;"> <img class="card-img-top" src="' +
@@ -546,7 +547,6 @@ function ProTOD() {
       tdbrief +
       "</p></div> </div></div>";
     document.getElementById("previewt").disabled = false;
-    limitchar();
   } else {
     document.getElementById("previewt").disabled = true;
   }
