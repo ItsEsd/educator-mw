@@ -54,10 +54,37 @@
   border: 1px solid #0c09c9;
   border-radius: 0px;
 }
+#crEmbed {
+  min-height: 200px;
+  max-height: 200px;
+  width: 100%;
+  outline: none;
+  border: 1px solid #0c09c9;
+  border-radius: 0px;
+}
+#previewembd {
+  width: 100%;
+  overflow: auto;
+}
+#previewembd::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
 #btnOkVid {
   border: none;
   height: 40px;
   width: 30%;
+  background-color: black;
+  border-radius: 0px;
+  margin-bottom: 1px;
+  margin-left: 4px;
+  margin-top: -4px;
+  display: inline-block;
+}
+#btnOkEmbd {
+  border: none;
+  height: 40px;
+  width: 100%;
   background-color: black;
   border-radius: 0px;
   margin-bottom: 1px;
@@ -1682,6 +1709,9 @@ ul.icons li:last-child {
 
 /* Mobile devices (up to 600px wide) */
 @media (max-width: 1000px) {
+  #dialog {
+    width: 100%;
+  }
   #calendar {
     font-size: 12px;
   }
