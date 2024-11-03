@@ -228,11 +228,6 @@
   margin-left: 4px;
 }
 
-.sectodinput {
-  display: inline-block;
-  max-width: 300px;
-  margin: 6px;
-}
 #srcandsvex .sectodinput {
   width: 45%;
   display: inline-block;
@@ -318,7 +313,7 @@
   max-width: 600px;
   background-color: #ffffff;
   overflow-y: auto;
-  max-height: 240px;
+  max-height: 65vh;
   border-radius: 10px;
 }
 
@@ -377,10 +372,19 @@
   -webkit-transform: scale(1.04);
   transform: scale(1.04);
 }
-
+#strtodedu .form-control {
+  display: inline-block;
+  margin: 4px;
+  margin-bottom: 6px;
+  max-width: 47%;
+}
+.todcomm {
+  max-width: 96% !important;
+  height: 40px !important;
+}
 .sectodinput {
   display: inline-block;
-  max-width: 300px;
+  max-width: 48%;
   margin: 6px;
 }
 
