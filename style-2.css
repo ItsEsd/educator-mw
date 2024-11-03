@@ -267,6 +267,7 @@
   position: fixed;
   border-radius: 0px;
   background-color: #46b346;
+  font-size: 16px;
 }
 #examportalbtn svg {
   margin-top: -4px;
@@ -1709,6 +1710,9 @@ ul.icons li:last-child {
 
 /* Mobile devices (up to 600px wide) */
 @media (max-width: 1000px) {
+  #examportalbtn {
+    font-size: 14px;
+  }
   #dialog {
     width: 100%;
   }
