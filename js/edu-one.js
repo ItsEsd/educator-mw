@@ -119,8 +119,8 @@ function update_pro() {
   var g = $("#class_").val();
   var h = $("#board_").val();
   var i = $("#subject_").val();
-  var j = $("#exidnote").val();
-  var k = $("#exidlec").val();
+  var j = encodeURIComponent($("#exidnote").val());
+  var k = encodeURIComponent($("#exidlec").val());
   var m = $("#pCodeEduPro").val();
   var o = $("#ppic").val();
   var email1 = $("#email").val();
