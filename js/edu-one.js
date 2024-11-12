@@ -350,6 +350,14 @@ function ctrlqeduin(e) {
     let stateObj = { id: "0" };
     window.history.replaceState(stateObj, "", shname);
     document.title = res[0].FName + " " + res[0].LName + " | MASTROWALL";
+    const webliv =
+      "https://webchat.amrit-corp.com/room.html?room=" +
+      btoa(cardn) +
+      "&user=" +
+      res[0].FName +
+      " " +
+      res[0].LName;
+    applywebchat(webliv);
     var tkn = "#t/" + btoa(cardn);
     ewfSetCookie(14, tkn);
     $("#canved").empty();
@@ -1815,3 +1823,13 @@ window.addEventListener("click", (event) => {
     dialog.style.display = "none";
   }
 });
+
+function applywebchat(link) {
+  document.getElementById("ggliveed").addEventListener("click", (event) => {
+    window.open(
+      link,
+      "_blank",
+      "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes"
+    );
+  });
+}

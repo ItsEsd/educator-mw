@@ -1710,6 +1710,22 @@ ul.icons li:last-child {
   border: none;
   outline: none;
 }
+.edlive {
+  margin-top: 15px !important;
+}
+.edlive svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 5px;
+}
+.edlive span {
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+.edlive span:hover {
+  opacity: 0.8;
+}
 
 /* ///////////// Media Screen */
 
