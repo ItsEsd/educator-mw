@@ -357,7 +357,9 @@ function ctrlqeduin(e) {
       res[0].FName +
       " " +
       res[0].LName;
-    applywebchat(webliv);
+    const masliv =
+      "https://live.mastrowall.com/webchat.amrit/?id=" + btoa(webliv);
+    applywebchat(masliv);
     var tkn = "#t/" + btoa(cardn);
     ewfSetCookie(14, tkn);
     $("#canved").empty();
