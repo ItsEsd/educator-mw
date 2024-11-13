@@ -1712,6 +1712,7 @@ ul.icons li:last-child {
 }
 .edlive {
   margin-top: 15px !important;
+  padding-bottom: 15px;
 }
 .edlive svg {
   width: 30px;
