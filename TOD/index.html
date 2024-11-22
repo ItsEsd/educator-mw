@@ -25,6 +25,7 @@
     <script src="/vendor/js/jquery.2.1.3.min.js"></script>
     <script src="/vendor/js/jquery-ui-1.11.2.min.js"></script>
     <link rel="stylesheet" href="style.css" />
+    <script src="/vendor/js/html2pdf.js"></script>
     <base target="_blank" />
     <script>
       function getCookie(cname) {
@@ -1055,11 +1056,7 @@
         if (!validateMode()) {
           return;
         }
-        var oPrntWin = window.open(
-          "",
-          "_blank",
-          "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
-        );
+
         var timestp = new Date().toLocaleString();
         var toprint =
           "<!doctype html><html><head><title>TOD - MASTROWALL /_" +
@@ -1067,9 +1064,36 @@
           '<\/title><link rel="stylesheet" href="../css/assets/bootstrap.4.5.2.min.css"><link rel="stylesheet" href="style.css"><\/head><body onload="print();"><div align="center"><div style="width:100%;max-width:1000px;text-align:justify;">' +
           oDoc.innerHTML +
           '<\/div><\/div><script src="dist/mathlive.min.js"><\/script><\/body><\/html>';
-        oPrntWin.document.open();
-        oPrntWin.document.write(toprint);
-        oPrntWin.document.close();
+
+        if (window.innerWidth < 800) {
+          var pdfrndrd = document.createElement("div");
+          pdfrndrd.style.display = "block";
+          pdfrndrd.innerHTML = toprint;
+          document.body.appendChild(pdfrndrd);
+          setTimeout(() => {
+            html2pdf()
+              .from(pdfrndrd)
+              .set({
+                margin: 0.5,
+                filename: `TOD - MASTROWALL /_${timestp}.pdf`,
+                html2canvas: { scale: 3, useCORS: true },
+                jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+              })
+              .save()
+              .then(() => {
+                document.body.removeChild(pdfrndrd);
+              });
+          }, 500);
+        } else {
+          var oPrntWin = window.open(
+            "",
+            "_blank",
+            "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
+          );
+          oPrntWin.document.open();
+          oPrntWin.document.write(toprint);
+          oPrntWin.document.close();
+        }
       }
       document.getElementById("crImage").addEventListener("input", selectImg);
       document.getElementById("rd1").addEventListener("click", selectImg);
