@@ -360,9 +360,9 @@ function ctrlqeduin(e) {
       " " +
       res[0].LName;
     const masliv =
-      "https://live.mastrowall.com/webchat.amrit/?id=" + btoa(webliv);
+      "https://live.mastrowall.com/webchat.amrit/?mlive=" + window.btoa(webliv);
     applywebchat(masliv);
-    var tkn = "#t/" + btoa(cardn);
+    var tkn = "#t/" + window.btoa(cardn);
     ewfSetCookie(14, tkn);
     $("#canved").empty();
     document.getElementById("canved").innerHTML =
