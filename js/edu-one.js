@@ -225,6 +225,8 @@ function ctrlqeduin(e) {
   var res = e.records;
   if (res != "ID not found!") {
     onstartswitch();
+    document.getElementById("tlfrm").src = "../apps/telemedia/";
+    document.querySelector(".todframe").src = "TOD/index.html";
     document.getElementById("signInEdu").style.display = "none";
     document.getElementById("EduDashboard").style.display = "block";
     document.getElementById("showprofileInfoEdu").innerHTML =
@@ -1835,3 +1837,14 @@ function applywebchat(link) {
     );
   });
 }
+
+function preloadAllImages() {
+  const images = document.querySelectorAll("img");
+
+  images.forEach((image) => {
+    const img = new Image();
+    img.src = image.src;
+  });
+}
+
+preloadAllImages();
