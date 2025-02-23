@@ -981,8 +981,18 @@
       }
       document.getElementById("textBox").addEventListener("input", limitChar);
 
+      function getEdValue() {
+        var url = window.parent.location.href;
+        console.log(url);
+        var value = url.split("&ed=")[1];
+        console.log("Extracted ed value from parent window:", value);
+        return value;
+      }
+
       function limitChar() {
         var valuee = $("#inHtml").val();
+        var edvalue = getEdValue();
+        localStorage.setItem("tddraft_" + edvalue, valuee);
         var str = String(valuee);
         var len = str.length;
         if (len >= 35000) {
@@ -1477,6 +1487,8 @@
             }, 5000);
             document.getElementById("genK").value = "";
             document.getElementById("confirmK").value = "";
+            var edvalue = getEdValue();
+            localStorage.removeItem("tddraft_" + edvalue);
             var ndate = new Date().toDateString();
             var txtdn = "M A S T R O W A L L || An Art of Learning\n";
             txtdn += `
@@ -1757,17 +1769,38 @@
         var elem = document.createElement("div");
         elem.id = "notfynew";
         elem.innerHTML = `<div class="notification-dialog">
-	<h2>🔔 Notification</h2>
-	<p>Do you want to create a new TOD?</p>
-	<button class="create-new"onclick="location.reload();">Create New</button>
-	<button class="cancel" onclick="hident()">Cancel</button>
-</div>`;
+                <h2>🔔 Notification</h2>
+                <p>Do you want to create a new TOD?</p>
+                <button class="create-new"onclick="location.reload();">Create New</button>
+                <button class="cancel" onclick="hident()">Cancel</button>
+                </div>`;
         $("body").append(elem);
         $("#notfynew").show();
       });
       function hident() {
         $("#notfynew").hide();
       }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        var edvalue = getEdValue();
+        var tddraft = localStorage.getItem("tddraft_" + edvalue);
+        if (tddraft) {
+          try {
+            if (tddraft == "" || tddraft == "<br>") {
+              document.getElementById(
+                "textBox"
+              ).innerHTML = `<p onclick=" document.getElementById('textBox').innerHTML='' ;" style="height:200px;">Start with a topic....</p>`;
+            } else {
+              document.getElementById("textBox").innerHTML = "";
+              document.getElementById("textBox").innerHTML = unescape(
+                atob(tddraft)
+              );
+            }
+          } catch (error) {
+            console.error("Error decoding saved input:", error);
+          }
+        }
+      });
     </script>
   </body>
 </html>
