@@ -440,7 +440,7 @@ input:valid {
 
 .notification-dialog {
   position: fixed;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
@@ -453,13 +453,13 @@ input:valid {
 
 .notification-dialog h2 {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: normal;
 }
 
 .notification-dialog p {
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
 }
 #notfynew {
@@ -470,7 +470,7 @@ input:valid {
   display: inline-block;
   margin: 10px;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 14px;
   color: #fff;
   background-color: #0055cc;
   border: none;
@@ -679,7 +679,11 @@ a.ApShare:hover,
   width: 100%;
   height: 100%;
 }
-
+@media screen and (max-width: 800px) {
+  .notification-dialog button {
+    width: 90%;
+  }
+}
 @media screen and (max-width: 600px) {
   #toolBar2 {
     text-align: justify;
