@@ -1771,7 +1771,7 @@
         elem.innerHTML = `<div class="notification-dialog">
                 <h2>🔔 Notification</h2>
                 <p>Do you want to create a new TOD?</p>
-                <button class="create-new"onclick="location.reload();">Create New</button>
+                <button class="create-new"onclick="location.reload();var edvalue = getEdValue();localStorage.removeItem('tddraft_' + edvalue);">Create New</button>
                 <button class="cancel" onclick="hident()">Cancel</button>
                 </div>`;
         $("body").append(elem);
@@ -1786,7 +1786,7 @@
         var tddraft = localStorage.getItem("tddraft_" + edvalue);
         if (tddraft) {
           try {
-            if (tddraft == "" || tddraft == "<br>") {
+            if (tddraft == "" || tddraft == "JTNDYnIlM0U=") {
               document.getElementById(
                 "textBox"
               ).innerHTML = `<p onclick=" document.getElementById('textBox').innerHTML='' ;" style="height:200px;">Start with a topic....</p>`;
