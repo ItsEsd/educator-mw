@@ -1683,42 +1683,44 @@
       });
     </script>
     <script>
-      $("document").ready(function () {
-        $("input[type=file]").on("change", function () {
-          var $files = $(this).get(0).files;
+      $(document).ready(function () {
+        $("input[type=file]").on("change", async function () {
+          const files = this.files;
           readImage(this);
-          if ($files.length) {
+          if (files.length) {
             // Reject big files
-            if ($files[0].size > $(this).data("max-size") * 1024) {
+            if (files[0].size > $(this).data("max-size") * 1024) {
+              console.log("Please select a smaller file");
               return false;
             }
-            var apiUrl = "https://api.imgur.com/3/image";
-            var apiKey = "f1fb111ea7f4e5b";
-            var settings = {
-              async: false,
-              crossDomain: true,
-              processData: false,
-              contentType: false,
-              type: "POST",
-              url: apiUrl,
-              headers: {
-                Authorization: "Client-ID " + apiKey,
-                Accept: "application/json",
-              },
-              mimeType: "multipart/form-data",
-            };
-            var formData = new FormData();
-            formData.append("image", $files[0]);
-            settings.data = formData;
-            $.ajax(settings).done(function (response) {
-              var k = response;
-              var url = JSON.parse(response);
-              document.getElementById("crImage").value = url.data.link;
-              document.getElementById("previewImg").style.display = "block";
-              document.getElementById("radioS").style.display = "block";
-              document.getElementById("previewImg").innerHTML =
-                '<img src="' + url.data.link + '" width="100%" height="240px">';
-            });
+
+            document.getElementById("crImage").value = "uploading image...";
+            const formData = new FormData();
+            formData.append("image", files[0]);
+            const apiUrl = "https://api.mastrowall.in/_file/image";
+            try {
+              const response = await fetch(apiUrl, {
+                method: "POST",
+                body: formData,
+              });
+              const result = await response.json();
+              if (result.success) {
+                var imageUrl = result.url;
+                imageUrl = "https://api.mastrowall.in/_img/v/" + btoa(imageUrl);
+                document.getElementById("crImage").value = imageUrl;
+                document.getElementById("previewImg").style.display = "block";
+                document.getElementById("radioS").style.display = "block";
+                $("#previewImg")
+                  .show()
+                  .html(`<img src="${imageUrl}" width="100%" height="240px">`);
+              } else {
+                console.error("Upload failed:", result.message || result);
+              }
+            } catch (error) {
+              document.getElementById("crImage").value =
+                "Error uploading image";
+              console.error("Error uploading image:", error);
+            }
           }
         });
       });
