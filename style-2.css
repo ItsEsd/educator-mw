@@ -1076,7 +1076,7 @@ ul.icons li:last-child {
   top: 0px;
   right: 10px;
   z-index: 10000;
-  position: absolute;
+  position: fixed !important;
   color: #000000;
   cursor: pointer;
 }
@@ -2000,6 +2000,9 @@ ul.icons li:last-child {
     width: 225px;
     height: 160px;
     margin: 6px;
+  }
+  #switchclsrm {
+    position: fixed !important;
   }
 }
 
