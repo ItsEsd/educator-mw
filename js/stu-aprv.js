@@ -55,44 +55,48 @@ function ldallstwait(e) {
 function srcstid(stidsrc) {
   var ur1 = "https://script.google.com/macros/s/";
   var ur2 =
-    "AKfycbyEI27cuOCoOGf-hTzLpKjFDFgWCw8DHXrhfZuDYQ-Vdv32VvRxeZWzjvHOCZwy-yY9EQ";
+    "AKfycbwUXXLNfbjlRQxPPe2sT2MIqZUyLnVO26YSa9GM9DDiQGQiqtsoDRLz5NMkyYso1xkKFA";
   var url = ur1 + ur2 + "/exec" + "?action=read";
-  $.getJSON(url, function (json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (stidsrc == json.records[i].STid) {
-        document.getElementById("allstud-one").innerHTML +=
-          "<div class='stproclroom'><span class='stnametitle'>" +
-          json.records[i].FName +
-          " " +
-          json.records[i].LName +
-          "</span><img class='stpropic' src='" +
-          json.records[i].ProfilePic +
-          "'><button class='rmvwait' onclick='rmvstuwait(this);'><svg xmlns='http://www.w3.org/2000/svg' class='bi bi-trash-fill'  viewBox='0 0 16 16'>" +
-          "<path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>" +
-          "</svg></button><button onclick='addstclsrm(this);' class='addstbtn' class='btn btn-light'>" +
-          "Approve</button><br>&#8226; " +
-          json.records[i].Class +
-          " &#8226; " +
-          json.records[i].Board +
-          "<br>&#8226; <a href='mailto:" +
-          json.records[i].Email +
-          "'>" +
-          json.records[i].Email +
-          "</a>" +
-          " &#8226; <a href=tel:" +
-          json.records[i].CountryCode +
-          json.records[i].PhoneNo +
-          ">+" +
-          json.records[i].CountryCode +
-          " " +
-          json.records[i].PhoneNo +
-          "</div><input class='staddid' style='display: none;' value='" +
-          json.records[i].STid +
-          "'/>";
+  $.getJSON(
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
+    function (json) {
+      for (var i = 0; i < json.records.length - 1; i++) {
+        if (stidsrc == json.records[i].STid) {
+          document.getElementById("allstud-one").innerHTML +=
+            "<div class='stproclroom'><span class='stnametitle'>" +
+            json.records[i].FName +
+            " " +
+            json.records[i].LName +
+            "</span><img class='stpropic' src='" +
+            json.records[i].ProfilePic +
+            "'><button class='rmvwait' onclick='rmvstuwait(this);'><svg xmlns='http://www.w3.org/2000/svg' class='bi bi-trash-fill'  viewBox='0 0 16 16'>" +
+            "<path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>" +
+            "</svg></button><button onclick='addstclsrm(this);' class='addstbtn' class='btn btn-light'>" +
+            "Approve</button><br>&#8226; " +
+            json.records[i].Class +
+            " &#8226; " +
+            json.records[i].Board +
+            "<br>&#8226; <a href='mailto:" +
+            json.records[i].Email +
+            "'>" +
+            json.records[i].Email +
+            "</a>" +
+            " &#8226; <a href=tel:" +
+            json.records[i].CountryCode +
+            json.records[i].PhoneNo +
+            ">+" +
+            json.records[i].CountryCode +
+            " " +
+            json.records[i].PhoneNo +
+            "</div><input class='staddid' style='display: none;' value='" +
+            json.records[i].STid +
+            "'/>";
+        }
       }
+      document.getElementById("allstud-one").style.backgroundImage = "none";
     }
-    document.getElementById("allstud-one").style.backgroundImage = "none";
-  });
+  );
 }
 
 function addstclsrm(label) {
@@ -262,46 +266,50 @@ function ldallstaprv(e) {
 function srcstidapprv(stidsrc) {
   var ur1 = "https://script.google.com/macros/s/";
   var ur2 =
-    "AKfycbyEI27cuOCoOGf-hTzLpKjFDFgWCw8DHXrhfZuDYQ-Vdv32VvRxeZWzjvHOCZwy-yY9EQ";
+    "AKfycbwUXXLNfbjlRQxPPe2sT2MIqZUyLnVO26YSa9GM9DDiQGQiqtsoDRLz5NMkyYso1xkKFA";
   var url = ur1 + ur2 + "/exec" + "?action=read";
-  $.getJSON(url, function (json) {
-    for (var i = 0; i < json.records.length - 1; i++) {
-      if (stidsrc == json.records[i].STid) {
-        document.getElementById("allstud-two").innerHTML +=
-          "<div class='stproclroom'><span class='stnametitle'>" +
-          json.records[i].FName +
-          " " +
-          json.records[i].LName +
-          "</span><img class='stpropic' src='" +
-          json.records[i].ProfilePic +
-          "'><button onclick='rmvstclsrm(this);' class='rmvstbtn' class='btn btn-light'>" +
-          "Remove</button><br>&#8226; " +
-          json.records[i].Class +
-          " &#8226; " +
-          json.records[i].Board +
-          "<br>&#8226; <a href='mailto:" +
-          json.records[i].Email +
-          "'>" +
-          json.records[i].Email +
-          "</a>" +
-          " &#8226; <a href=tel:" +
-          json.records[i].CountryCode +
-          json.records[i].PhoneNo +
-          ">+" +
-          json.records[i].CountryCode +
-          " " +
-          json.records[i].PhoneNo +
-          "</div><input class='strmvid' style='display: none;' value='" +
-          json.records[i].STid +
-          "'/>";
+  $.getJSON(
+    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
+    function (json) {
+      for (var i = 0; i < json.records.length - 1; i++) {
+        if (stidsrc == json.records[i].STid) {
+          document.getElementById("allstud-two").innerHTML +=
+            "<div class='stproclroom'><span class='stnametitle'>" +
+            json.records[i].FName +
+            " " +
+            json.records[i].LName +
+            "</span><img class='stpropic' src='" +
+            json.records[i].ProfilePic +
+            "'><button onclick='rmvstclsrm(this);' class='rmvstbtn' class='btn btn-light'>" +
+            "Remove</button><br>&#8226; " +
+            json.records[i].Class +
+            " &#8226; " +
+            json.records[i].Board +
+            "<br>&#8226; <a href='mailto:" +
+            json.records[i].Email +
+            "'>" +
+            json.records[i].Email +
+            "</a>" +
+            " &#8226; <a href=tel:" +
+            json.records[i].CountryCode +
+            json.records[i].PhoneNo +
+            ">+" +
+            json.records[i].CountryCode +
+            " " +
+            json.records[i].PhoneNo +
+            "</div><input class='strmvid' style='display: none;' value='" +
+            json.records[i].STid +
+            "'/>";
+        }
       }
+      document.getElementById("allstud-two").style.backgroundImage = "none";
+      document.getElementsByClassName("refreshlist")[1].disabled = false;
+      document.getElementsByClassName("refreshlist")[1].style.opacity = "1";
+      document.getElementsByClassName("refreshlist")[1].style.pointerEvents =
+        "auto";
     }
-    document.getElementById("allstud-two").style.backgroundImage = "none";
-    document.getElementsByClassName("refreshlist")[1].disabled = false;
-    document.getElementsByClassName("refreshlist")[1].style.opacity = "1";
-    document.getElementsByClassName("refreshlist")[1].style.pointerEvents =
-      "auto";
-  });
+  );
 }
 
 function rmvstclsrm(label) {
