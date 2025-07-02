@@ -1902,11 +1902,10 @@ ul.icons li:last-child {
   }
   #titleleft {
     width: 100%;
-    top: 0px !important;
+    top: 0;
     max-width: 600px;
     position: sticky !important;
-    margin-top: -1px;
-    /* background-color: #1f50e5; */
+    margin-top: -2px !important;
   }
   #calcontain {
     display: none;
