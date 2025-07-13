@@ -408,3 +408,79 @@ function totlcmnt(nof) {
   document.getElementById("allcmntsnm").innerHTML =
     "All Comments " + "(" + nof + ")";
 }
+
+function loadegames() {
+  if (window.innerWidth < 1000) return;
+  if (document.getElementById("egames") || document.getElementById("megame"))
+    return;
+  const egamesButton = document.createElement("div");
+  egamesButton.className = "btn btn-primary";
+  egamesButton.style.cssText = "width:95%;margin-top:10px;max-width:225px;";
+
+  const egamesDiv = document.createElement("div");
+  egamesDiv.id = "egames";
+  egamesDiv.textContent = "E-Games 🎮";
+  egamesDiv.onclick = () => {
+    document.getElementById("megame").style.display = "block";
+    $("#megame").slideDown("fast");
+  };
+
+  egamesButton.appendChild(egamesDiv);
+
+  const dashicons = document.querySelectorAll(".dashicon");
+  if (dashicons.length > 0) {
+    const lastDashicon = dashicons[dashicons.length - 1];
+    lastDashicon.parentNode.insertBefore(
+      egamesButton,
+      lastDashicon.nextSibling
+    );
+  }
+
+  const megameSection = document.createElement("section");
+  megameSection.id = "megame";
+  megameSection.style.cssText =
+    "display:none;top:0px;left:0px;width:100%;height:100vh;position:fixed;z-index:9999999999 !important;margin:0px;padding:0px;";
+
+  const iframe = document.createElement("iframe");
+  iframe.src = "https://mastrowall.com/e-games/";
+  iframe.style.cssText = "height:96vh;border:none;width:100%;";
+  iframe.allowFullscreen = true;
+
+  const closeBar = document.createElement("div");
+  closeBar.style.cssText = `
+  width: 100%;
+  bottom: 0;
+  position: fixed;
+  height: 4vh;
+  padding: 0 10px;
+  background-color: black;
+  cursor: pointer;
+  color: #eee;
+  display: flex;
+  font-size:12px;
+  justify-content: space-between;
+  align-items: center;
+  font-family: sans-serif;
+`;
+
+  const leftLabel = document.createElement("span");
+  leftLabel.textContent = "E-Game | MASTROWALL";
+
+  const closeText = document.createElement("span");
+  closeText.textContent = "Close";
+  closeText.onclick = () => {
+    $("#megame").slideUp("fast");
+  };
+
+  closeBar.appendChild(leftLabel);
+  closeBar.appendChild(closeText);
+
+  closeBar.onclick = () => {
+    $("#megame").slideUp("fast");
+  };
+
+  megameSection.appendChild(iframe);
+  megameSection.appendChild(closeBar);
+
+  document.body.appendChild(megameSection);
+}
