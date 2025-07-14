@@ -378,7 +378,7 @@ function examresultpdf() {
   var elem = document.getElementById("stresultall");
   var elemtw = document.getElementById("examdescpin");
   var pdfbbdy =
-    '<!doctype html><html><head><title>M A S T R O W A L L - Test Result</title><link rel="stylesheet" href="vendor/style/bootstrap4.5.2.min.css"><link rel="stylesheet" href="style.css"></head><body style="width:100%;padding:10px;background-color:white;" onload="print();"><center><div style="padding:10px;border:2px solid #e5e5e5;" align="center"><div class="row" style="width:100%;"><div class="col-md-6">' +
+    '<!doctype html><html><head><title>M A S T R O W A L L - Test Result</title><link rel="stylesheet" href="vendor/style/bootstrap4.5.2.min.css"><link rel="stylesheet" href="style.css"><style> @media print { body { margin: 0; padding: 20px; background: white; } img { max-width: 100% !important; height: auto; } .row { display: flex; flex-wrap: wrap; } * { overflow: visible !important; max-height: none !important; } } </style></head><body style="width:100%;padding:10px;background-color:white;" onload="print();"><center><div style="padding:10px;border:2px solid #e5e5e5;" align="center"><div class="row" style="width:100%;"><div class="col-md-6">' +
     elemtw.innerHTML +
     '</div><div class="col-md-6"><a target="_blank" href="https://mastrowall.com"><img src="/images/logopng.png" style="width:60px;float:right;"></a></div></div><hr>' +
     elem.innerHTML +
