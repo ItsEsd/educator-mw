@@ -375,31 +375,35 @@ srcandsvex.addEventListener("submit", (event) => {
 });
 
 function examresultpdf() {
-  var elem = document.getElementById("stresultall");
-  var elemtw = document.getElementById("examdescpin");
-  var pdfbbdy =
-    "<!doctype html><html><head><title>M A S T R O W A L L - Test Result</title>" +
-    '<link rel="stylesheet" href="vendor/style/bootstrap4.5.2.min.css">' +
-    '<link rel="stylesheet" href="style.css">' +
-    "<style>@media print { body{margin:0;padding:20px;background:white;} img{max-width:100%!important;height:auto;} *{overflow:visible!important;} }</style>" +
-    '</head><body style="width:100%;padding:10px;background-color:white;">' +
-    '<center><div style="padding:10px;border:2px solid #e5e5e5;" align="center">' +
-    '<div class="row" style="width:100%;"><div class="col-md-6">' +
-    elemtw.innerHTML +
-    '</div><div class="col-md-6"><a target="_blank" href="https://mastrowall.com"><img src="/images/logopng.png" style="width:60px;float:right;"></a></div></div><hr>' +
-    elem.innerHTML +
-    '<hr><a target="_blank" href="https://mastrowall.com" style="text-decoration:none;color:#0c29cd;"><h3>M A S T R O W A L L</h3></a></div></center>' +
-    "<script>window.onload = function(){ setTimeout(function(){ window.print(); }, 500); }</script>" +
-    "</body></html>";
-  var oPrntWin = window.open(
-    "",
-    "_blank",
-    "width=1200,height=1000,scrollbars=yes"
-  );
+  // Select the container with all exam result content
+  const resultContainer = document.createElement("div");
+  const elem = document.getElementById("stresultall");
+  const elemtw = document.getElementById("examdescpin");
 
-  oPrntWin.document.open();
-  oPrntWin.document.write(pdfbbdy);
-  oPrntWin.document.close();
+  resultContainer.innerHTML =
+    '<div style="padding:10px;border:2px solid #e5e5e5;width:100%;">' +
+    '<div style="display:flex;justify-content:space-between;align-items:center;">' +
+    "<div>" +
+    elemtw.innerHTML +
+    "</div>" +
+    '<div><a href="https://mastrowall.com" target="_blank">' +
+    '<img src="/images/logopng.png" style="width:60px;"></a></div>' +
+    "</div><hr>" +
+    elem.innerHTML +
+    '<hr><div style="text-align:center;">' +
+    '<a target="_blank" href="https://mastrowall.com" style="text-decoration:none;color:#0c29cd;">' +
+    "<h3>M A S T R O W A L L</h3></a></div></div>";
+
+  // Use html2pdf to generate and download PDF
+  const opt = {
+    margin: 0.5,
+    filename: "exam_result_mastrowall.pdf",
+    image: { type: "jpeg", quality: 0.98 },
+    html2canvas: { scale: 2, useCORS: true },
+    jsPDF: { unit: "in", format: "a4", orientation: "portrait" },
+  };
+
+  html2pdf().from(resultContainer).set(opt).save();
 }
 
 $("#backcp").click(function () {
