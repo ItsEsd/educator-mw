@@ -374,7 +374,7 @@ function ctrlqeduin(e) {
       "<div class='edcrdinf'><div class='infone'>" +
       "<img src='" +
       res[0].ProfilePic +
-      "'/><div><h4>EDUCATOR</h4><hr><p class='pinone'>" +
+      "'crossorigin='anonymous'/><div><h4>EDUCATOR</h4><hr><p class='pinone'>" +
       fname +
       " " +
       lname +
