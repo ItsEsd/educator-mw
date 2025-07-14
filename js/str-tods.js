@@ -386,8 +386,9 @@ function examresultpdf() {
   var oPrntWin = window.open(
     "",
     "_blank",
-    "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
+    "width=1200,height=1000,scrollbars=yes"
   );
+
   oPrntWin.document.open();
   oPrntWin.document.write(pdfbbdy);
   oPrntWin.document.close();
