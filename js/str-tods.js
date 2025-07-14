@@ -375,24 +375,65 @@ srcandsvex.addEventListener("submit", (event) => {
 });
 
 function examresultpdf() {
-  // Select the container with all exam result content
   const resultContainer = document.createElement("div");
   const elem = document.getElementById("stresultall");
   const elemtw = document.getElementById("examdescpin");
 
+  // CSS styles as a string
+  const styleBlock = `
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: white;
+        color: black;
+      }
+      .mastrowall-container {
+        padding: 10px;
+        border: 2px solid #e5e5e5;
+        width: 100%;
+      }
+      .mastrowall-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .mastrowall-header img {
+        width: 60px;
+      }
+      .mastrowall-footer {
+        text-align: center;
+        margin-top: 20px;
+      }
+      #stresultall {
+        background-color: white;
+        padding: 10px;
+        overflow: visible;
+        max-height: none;
+        max-width: none;
+        width: 100%;
+      }
+      hr {
+        border: 0;
+        border-top: 1px solid #ddd;
+        margin: 10px 0;
+      }
+    </style>
+  `;
+
   resultContainer.innerHTML =
-    '<div style="padding:10px;border:2px solid #e5e5e5;width:100%;">' +
-    '<div style="display:flex;justify-content:space-between;align-items:center;">' +
+    styleBlock +
+    '<div class="mastrowall-container">' +
+    '<div class="mastrowall-header">' +
     "<div>" +
     elemtw.innerHTML +
     "</div>" +
     '<div><a href="https://mastrowall.com" target="_blank">' +
-    '<img src="/images/logopng.png" style="width:60px;"></a></div>' +
+    '<img src="/images/logopng.png"></a></div>' +
     "</div><hr>" +
     elem.innerHTML +
-    '<hr><div style="text-align:center;">' +
+    '<hr><div class="mastrowall-footer">' +
     '<a target="_blank" href="https://mastrowall.com" style="text-decoration:none;color:#0c29cd;">' +
-    "<h3>M A S T R O W A L L</h3></a></div></div>";
+    "<h5>M A S T R O W A L L - An Art of Learning | AMRIT EdTech</h5></a></div></div>";
 
   // Use html2pdf to generate and download PDF
   const opt = {
