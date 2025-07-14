@@ -391,6 +391,11 @@ function examresultpdf() {
     '<hr><a target="_blank" href="https://mastrowall.com" style="text-decoration:none;color:#0c29cd;"><h3>M A S T R O W A L L</h3></a></div></center>' +
     "<script>window.onload = function(){ setTimeout(function(){ window.print(); }, 500); }</script>" +
     "</body></html>";
+  var oPrntWin = window.open(
+    "",
+    "_blank",
+    "width=1200,height=1000,scrollbars=yes"
+  );
 
   oPrntWin.document.open();
   oPrntWin.document.write(pdfbbdy);
