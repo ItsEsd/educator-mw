@@ -1308,12 +1308,15 @@ ul.icons li:last-child {
   font-size: 14px;
   padding: 5px;
   margin-top: 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 #accntstat {
   background-color: #2449f0ea;
   padding: 0px 10px;
   float: right;
+  border-radius: 5px;
 }
 #lgoutacnt {
   bottom: 0px;
@@ -1327,6 +1330,8 @@ ul.icons li:last-child {
   text-align: right;
   border-bottom: 4px solid #1a2ca59a;
   margin: 0px;
+  border-radius: 5px;
+  transition: all 0.2s ease;
 }
 
 #lgoutacnt:hover {
