@@ -351,8 +351,9 @@ function ctrlqeduin(e) {
       fname.toLowerCase() +
       "-" +
       lname.toLowerCase() +
-      "&ed=" +
-      btoa(cardn);
+      "?ed=" +
+      btoa(cardn) +
+      "#true";
     var shname = name.split(" ").join("-");
     let stateObj = { id: "0" };
     window.history.replaceState(stateObj, "", shname);
