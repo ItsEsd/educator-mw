@@ -76,7 +76,7 @@ function getData(e) {
     inm1confrm: {
       width: "100%",
       backgroundColor: "white",
-      borderRadius: "5px",
+      borderRadius: "10px",
       overflow: "hidden",
       display: "block",
       marginBottom: "40px",

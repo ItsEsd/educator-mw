@@ -310,11 +310,12 @@ a:hover {
   min-height: 120px;
 }
 .inm1con {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
   padding-bottom: 0px;
   border: 1px solid #bebebe;
-  border-radius: 20px;
+  border-radius: 15px;
   margin-bottom: 40px;
   background-color: white;
   box-shadow: 0px 2px 10px 2px #a1a1a162;
@@ -336,6 +337,7 @@ a.readmoren:hover {
 }
 .telenewsblock {
   margin: 10px;
+  text-align: justify !important;
 }
 
 .modal-backdrop {
