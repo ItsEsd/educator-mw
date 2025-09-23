@@ -450,6 +450,9 @@
   .mftd::part(virtual-keyboard-toggle) {
     display: none;
   }
+  .mftd::part(menu-toggle) {
+    display: none;
+  }
 }
 math-field,
 math-field:focus,

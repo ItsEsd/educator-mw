@@ -353,9 +353,17 @@ math-field:active {
   pointer-events: none;
   cursor: not-allowed;
 }
+#formula {
+  height: auto;
+  overflow-y: auto;
+  min-height: 20vh;
+}
 
 @media not (pointer: coarse) {
   .mftd::part(virtual-keyboard-toggle) {
+    display: none;
+  }
+  .mftd::part(menu-toggle) {
     display: none;
   }
 }
