@@ -355,13 +355,13 @@ srcandsvex.addEventListener("submit", (event) => {
           }
 
           document.getElementById("examdescpin").innerHTML =
-            "<div><p style='text-align:left;'><i>Educator:</i>" +
+            "<div><p style='text-align:left;'><i>Educator:</i> " +
             json.records[i].EducatorName +
-            "<br><i>Exam Title:</i>" +
+            "<br><i>Exam Title:</i> " +
             json.records[i].ExamTitle +
-            "<br><i>Description:</i>" +
+            "<br><i>Description:</i> " +
             json.records[i].ExamDescp +
-            "<br><i>Duration:</i>" +
+            "<br><i>Duration:</i> " +
             json.records[i].TDuration +
             "</p></div>";
           document.getElementById("srcexambtn").disabled = false;
@@ -618,13 +618,13 @@ function shoeprevexresult(label) {
           }
 
           document.getElementById("examdescpin").innerHTML =
-            "<div><p style='text-align:left;'><i>Educator:</i>" +
+            "<div><p style='text-align:left;'><i>Educator:</i> " +
             json.records[i].EducatorName +
-            "<br><i>Exam Title:</i>" +
+            "<br><i>Exam Title:</i> " +
             json.records[i].ExamTitle +
-            "<br><i>Description:</i>" +
+            "<br><i>Description:</i> " +
             json.records[i].ExamDescp +
-            "<br><i>Duration:</i>" +
+            "<br><i>Duration: </i>" +
             json.records[i].TDuration +
             "</p></div>";
           document.getElementById("svexminfo").disabled = true;
