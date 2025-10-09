@@ -456,11 +456,45 @@ $("#loaderback").click(function () {
   $("#loaderback").slideUp("fast");
 });
 
+function deletesavedexam(eid) {
+  if (
+    !confirm("Are you sure you want to delete this saved exam for Students? ")
+  ) {
+    return;
+  }
+
+  $("#loadercp").slideUp("fast");
+  $("#loaderback").slideDown("fast");
+
+  var edemid = $("#eduid").val();
+  var examidst = eid;
+  var ur1 = "https://script.google.com/macros/s/";
+  var ur2 =
+    "AKfycbzpGUMvFkrhPfpPnhpQXXrCT02Rt0sKU31unMuN6ZnPZj-D4QjqpkJMhnkA5KTce6jMWw";
+
+  var url =
+    ur1 +
+    ur2 +
+    "/exec" +
+    "?callback=ctrlqsvex&email=" +
+    edemid +
+    "&checkexamid=" +
+    examidst +
+    "&action=delsvexm";
+
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url: url,
+    method: "GET",
+    dataType: "jsonp",
+  });
+}
+
 document.getElementById("svexminfo").addEventListener("click", saveexaminfo);
 function saveexaminfo() {
   $("#loadercp").slideUp("fast");
   $("#loaderback").slideDown("fast");
-  var edemid = $("#email").val();
+  var edemid = $("#eduid").val();
   var examidst = $("#cpexid").val();
   var enridst1 = $("#cppass").val();
   var examdtls = document.getElementById("examdescpin").innerHTML;
@@ -529,30 +563,45 @@ function rdsvexm(e) {
       var srno = 1;
       for (st; st < lenstr - 1; st += 3) {
         document.getElementById("prevexperform").innerHTML +=
-          '<div align="left" class="savevexmdiv"><div style="text-align:left"><span style="float:left">No. ' +
+          '<div align="left" class="savevexmdiv">' +
+          '<div style="text-align:left">' +
+          '<span style="float:left">No. ' +
           srno +
           "</span>" +
-          '<span style="float:right;"><button class="btn btn-primary svshowexres" onclick="shoeprevexresult(this);">Check Performance</button></span></div><br>' +
-          '<p style="font-size:14px;"><span style="float:left;" class="svdexmsed">Exam ID: ' +
+          '<span style="float:right;">' +
+          '<button class="btn btn-primary svshowexres" onclick="shoeprevexresult(this);">Check Performance</button>' +
+          '<button class="btn btn-danger svshowexres" onclick="deletesavedexam(\'' +
           singlessvexm[st] +
-          '</span><br><span style="float:left;">Exam Pass: ' +
+          "');\">Delete</button>" +
+          "</span>" +
+          "</div><br>" +
+          '<p style="font-size:14px;">' +
+          '<span style="float:left;" class="svdexmsed">Exam ID: ' +
+          singlessvexm[st] +
+          "</span><br>" +
+          '<span style="float:left;">Exam Pass: ' +
           singlessvexm[st + 1] +
-          '</span></p><div class="exdtlsst">' +
+          "</span>" +
+          "</p>" +
+          '<div class="exdtlsst">' +
           singlessvexm[st + 2] +
           "</div>" +
           '<input class="exidsv" style="display:none;" value="' +
           singlessvexm[st] +
-          '"><input class="enidsv" value="' +
+          '">' +
+          '<input class="enidsv" style="display:none;" value="' +
           singlessvexm[st + 1] +
-          '" style="display:none;"><br><hr>';
-        srno = srno + 1;
+          '">' +
+          "<br><hr>" +
+          "</div>";
+
+        srno++;
       }
     }
   }
 }
 
 function shoeprevexresult(label) {
-  $("#stresultall").empty();
   var list = document.getElementsByClassName("svshowexres");
   list = [].slice.call(list);
   var posofinput = list.indexOf(label);
@@ -560,6 +609,13 @@ function shoeprevexresult(label) {
   var y = document.getElementsByClassName("enidsv");
   var examid = x[posofinput].value;
   var enpass = JSON.stringify(y[posofinput].value);
+  performancecheckexam(examid, enpass);
+}
+
+function performancecheckexam(examid, enpass) {
+  $(".otserviceinfo").hide();
+  console.log(examid, enpass);
+  $("#stresultall").empty();
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
     "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";

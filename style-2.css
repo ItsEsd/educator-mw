@@ -261,8 +261,19 @@
   right: 0px;
   position: fixed;
   border-radius: 0px;
-  background-color: #46b346;
+  background-color: #d42c2cea;
+  color: white;
+  padding: 5px 0;
   font-size: 16px;
+  border: none;
+  border-top: 2px solid #ffffffd8;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#examportalbtn span:hover {
+  opacity: 0.6;
+  cursor: pointer;
 }
 #examportalbtn svg {
   margin-top: -4px;
@@ -271,7 +282,7 @@
   margin-top: 10px;
   margin-right: 4px;
   padding: 5px 20px;
-  border: 2px solid #50b4f3;
+  border: 2px solid #0a0af0;
   width: 46%;
   color: black;
   border-radius: 5px;
@@ -365,7 +376,11 @@
 #sttodedu {
   width: 30px;
   border-radius: 0px;
-  text-orientation: upright;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 6px;
+  border-top-left-radius: 6px;
 }
 .storetdbtn:focus,
 .storetdbtn:active {
@@ -923,6 +938,7 @@ math-field:active {
 }
 .svshowexres {
   font-size: 14px !important;
+  margin-left: 5px;
 }
 
 #connect1 {

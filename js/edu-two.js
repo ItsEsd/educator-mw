@@ -329,6 +329,16 @@ function ctrlqcmnt(e) {
   if (cmntlen > 6) {
     $("#divcmntbx").empty();
     for (var k = 0; k <= cmntlen - 1; k += 6) {
+      let content = cmelm[k + 5];
+      try {
+        if (content && content !== "undefined") {
+          content = JSON.parse(content);
+        } else {
+          return;
+        }
+      } catch (err) {
+        content = "[broken comment]";
+      }
       comlem.innerHTML +=
         '<center><div class="edcmnt"><span class="delcmnted" onclick="deletecmnted(this)">Delete</span><input class="cmntidval" style="display:none;"value="' +
         cmelm[k] +
@@ -340,7 +350,7 @@ function ctrlqcmnt(e) {
         cmelm[k + 2] +
         "</p></div>" +
         '<div class="cmntcon">' +
-        JSON.parse(cmelm[k + 5]) +
+        content +
         "</div>" +
         "</div><hr><center>";
       if (cmelm[k + 3] != nmF) {

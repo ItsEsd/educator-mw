@@ -234,6 +234,9 @@ function ctrlqeduin(e) {
     document.querySelector(".todframe").src = "TOD/index.html";
     document.getElementById("signInEdu").style.display = "none";
     document.getElementById("EduDashboard").style.display = "block";
+    document.getElementById("eduname").value =
+      res[0].FName + " " + res[0].LName;
+    document.getElementById("edueid").value = res[0].Email;
     document.getElementById("showprofileInfoEdu").innerHTML =
       '<div align="center"><img id="propic" src="' +
       res[0].ProfilePic +

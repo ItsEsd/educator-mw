@@ -37,6 +37,7 @@ html {
   margin-top: 35vh;
   pointer-events: none;
 }
+
 .decorsec img {
   width: 100%;
   max-width: 100px;
@@ -45,12 +46,17 @@ html {
   width: 100%;
   bottom: 0px;
   position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.funcsec button {
+.funcsec button,
+.funcsec a {
   border-radius: 0px;
-  width: 50%;
+  width: 100%;
   background-color: #1a2ca5;
-  border: 1px solid #1a2ca5;
+  border: none;
+  cursor: pointer;
 }
 
 #signagn {
