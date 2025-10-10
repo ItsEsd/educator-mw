@@ -197,7 +197,10 @@ function switchprof() {
   document.getElementById("switchclsrm").style.pointerEvents = "none";
   var newpr = document.getElementById("andpass").value;
   var psmed = $("#email").val();
-
+  const container = document.getElementById("examContainer");
+  const loading = document.getElementById("loading");
+  loading.style.display = "block";
+  container.innerHTML = "";
   $("#prevsttod").empty();
   $("#prevexperform").empty();
   $("#prevsttod").html(`<div style="padding: 40px">
