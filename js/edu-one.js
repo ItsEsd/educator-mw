@@ -124,6 +124,7 @@ function update_pro() {
   var m = $("#pCodeEduPro").val();
   var o = $("#ppic").val();
   var email1 = $("#email").val();
+  var did = $("#eduid").val();
   var url =
     script_eduPro +
     "?callback=ctrlqup&email=" +
@@ -152,6 +153,8 @@ function update_pro() {
     k +
     "&pCodeEdu=" +
     m +
+    "&edid=" +
+    did +
     "&ppic=" +
     o +
     "&action=update";
@@ -167,15 +170,23 @@ function update_pro() {
 function ctrlqup(e) {
   document.getElementById("loaderPro").style.visibility = "hidden";
   document.getElementById("eduProUpdate").disabled = true;
-  document.getElementById("updateNotice").innerHTML =
-    "<br>Information updated successfully<br>";
-  let stateObj = { id: "0" };
-  window.history.replaceState(stateObj, "", "/");
-  document.title = "Educator | MASTROWALL";
-  deleteAllCookies();
-  setTimeout(function () {
-    location.reload();
-  }, 2000);
+  if (e.result === "Duplicate Pass!") {
+    document.getElementById("updateNotice").innerHTML =
+      "<br>Update aborted! Duplicate Pass.<br>";
+    setTimeout(function () {
+      $("#updateNotice").empty();
+    }, 6000);
+  } else if (e.result === "Value update successfully!") {
+    document.getElementById("updateNotice").innerHTML =
+      "<br>Information updated successfully<br>";
+    let stateObj = { id: "0" };
+    window.history.replaceState(stateObj, "", "/");
+    document.title = "Educator | MASTROWALL";
+    deleteAllCookies();
+    setTimeout(function () {
+      location.reload();
+    }, 2000);
+  }
 }
 document.getElementById("confirmPcode").addEventListener("input", enableSave);
 
