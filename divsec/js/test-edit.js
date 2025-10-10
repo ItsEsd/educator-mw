@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
     );
     var url1 = "https://script.google.com/macros/s/";
     var url2 =
-      "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
+      "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
     var url =
       url1 +
       url2 +
@@ -354,7 +354,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var time = $("#dateQ").val();
     var url1 = "https://script.google.com/macros/s/";
     var url2 =
-      "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
+      "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
     var url3 = url1 + url2 + "/exec";
     if (
       name != 0 &&
@@ -1046,15 +1046,16 @@ function deleteExam(examId) {
 
   window[callbackName] = function (res) {
     alert(res.result);
-    if (res.deleted) fetchExams();
+    var eid = btoa(document.getElementById("eduid").value);
+    if (res.deleted) fetchExams(eid);
     delete window[callbackName];
   };
 
   const delURL = `${scriptURL}?action=remove&examid=${encodeURIComponent(
     examId
-  )}&email=${encodeURIComponent(email)}&pkey=${encodeURIComponent(
+  )}&email=${encodeURIComponent(email)}&pkey="${encodeURIComponent(
     pkey
-  )}&callback=${callbackName}`;
+  )}"&callback=${callbackName}`;
   var request = jQuery.ajax({
     crossDomain: true,
     url:
@@ -1172,7 +1173,7 @@ function createnewexid() {
   var timecrtex = $("#dateQ").val();
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
+    "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
   var url3 =
     "AKfycbwhAhuet3qAdjJcXFkMcUmvqcW5tBtc5SdKjpl1xycysG4DjbjN2j76deSClGyZ4Tgi";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
@@ -1312,7 +1313,7 @@ function examresultpdf() {
   );
   oPrntWin.document.open();
   oPrntWin.document.write(
-    '<!doctype html><html><head><title>M A S T R O W A L L - Test Result</title><link rel="stylesheet" href="css/bootstrap.min.css"><link rel="stylesheet" href="/css/main.css"></head><body style="width:100%;background-color:white;" onload="print();"><div align="center"><div style="max-width:800px;padding:10px;border:1px solid #e2e2e2;text-align:left;">' +
+    '<!doctype html><html><head><title>M A S T R O W A L L - Test Result</title><link rel="stylesheet" href="vendor/style/bootstrap4.5.2.min.css"><link rel="stylesheet" href="/css/main.css"></head><body style="width:100%;background-color:white;" onload="print();"><div align="center"><div style="max-width:800px;padding:10px;border:1px solid #e2e2e2;text-align:left;">' +
       elem.innerHTML +
       '<h4 style="width:100%;text-align:center;color:#0c29cd;"><a style="text-decoration:none;color:#0c29cd;" target="_blank" href="https://mastrowall.com">M A S T R O W A L L</a></h4></div></div></body></html>'
   );
@@ -1673,7 +1674,7 @@ function previewqset() {
   var ekey = JSON.stringify($("#chkey").val());
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
+    "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
   document.getElementById("loaderCon").style.display = "block";
   $.getJSON(

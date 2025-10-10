@@ -901,7 +901,6 @@
   background-color: white;
   padding: 20px;
   overflow-y: scroll;
-  max-height: 300px;
   max-width: 600px;
 }
 

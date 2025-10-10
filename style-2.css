@@ -837,7 +837,7 @@ math-field:active {
   background-color: white;
   padding: 20px;
   overflow-y: scroll;
-  max-height: 380px;
+  max-height: calc(100vh - 235px);
   max-width: 600px;
 }
 #examdescpin {
@@ -845,9 +845,20 @@ math-field:active {
   padding: 10px;
   overflow-y: auto;
   max-width: 600px;
-  height: 130px;
+  height: auto;
+  border-bottom: 2px solid #555;
+  text-align: left;
 }
-
+#examdescpin .row p {
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.65;
+}
+#examdescpin hr {
+  padding: 0px;
+  margin: 0px;
+  margin-top: 5px;
+}
 #examdescpin::-webkit-scrollbar {
   width: 8px;
 }

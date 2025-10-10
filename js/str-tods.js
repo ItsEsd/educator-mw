@@ -285,7 +285,7 @@ srcandsvex.addEventListener("submit", (event) => {
   var expass = JSON.stringify($("#cppass").val());
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
+    "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
   document.getElementById("loaderback").style.display = "block";
   document.getElementById("srcexambtn").disabled = true;
@@ -602,14 +602,10 @@ function rdsvexm(e) {
 }
 
 function shoeprevexresult(label) {
-  var list = document.getElementsByClassName("svshowexres");
-  list = [].slice.call(list);
-  var posofinput = list.indexOf(label);
-  var x = document.getElementsByClassName("exidsv");
-  var y = document.getElementsByClassName("enidsv");
-  var examid = x[posofinput].value;
-  var enpass = JSON.stringify(y[posofinput].value);
-  performancecheckexam(examid, enpass);
+  var parent = label.closest(".savevexmdiv");
+  var examid = parent.querySelector(".exidsv").value;
+  var enpass = parent.querySelector(".enidsv").value;
+  performancecheckexam(examid, JSON.stringify(enpass));
 }
 
 function performancecheckexam(examid, enpass) {
@@ -617,7 +613,7 @@ function performancecheckexam(examid, enpass) {
   $("#stresultall").empty();
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
+    "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
   $("#loaderback").slideDown();
   $.getJSON(
@@ -671,17 +667,21 @@ function performancecheckexam(examid, enpass) {
               "</span></span></p><br><hr>";
             document.getElementById("backcp").style.display = "block";
           }
-
-          document.getElementById("examdescpin").innerHTML =
-            "<div><p style='text-align:left;'><i>Educator:</i> " +
+          var exmhd =
+            '<div class="row"><div class="col-sm-8"><p>Educator Name: <b><span class="exeduinfoid">' +
             json.records[i].EducatorName +
-            "<br><i>Exam Title:</i> " +
+            '</span></b></p><p>Exam Title: <b><span class="exeduinfoid">' +
             json.records[i].ExamTitle +
-            "<br><i>Description:</i> " +
+            '</span></b></p><p>Description: <b><span class="exeduinfoid">' +
             json.records[i].ExamDescp +
-            "<br><i>Duration: </i>" +
+            '</span></b></p><p>Test Duration: <b><span class="exeduinfoid">' +
             json.records[i].TDuration +
-            "</p></div>";
+            '</span></b></p><p><span class="exdcrtedt">Exam ID: <b><span class="exeduinfoid">' +
+            json.records[i].ExamID +
+            '</span></b></span><span class="exdcrtedt"> Exam Pass: <b><span class="exeduinfoid">' +
+            JSON.parse(json.records[i].ExamPass) +
+            '</span></b></span></p></div><div class="col-sm-4"><img src="https://mastrowall.com/images/logoRecBWsvg.svg" style="width:80px;top:0px;right:15px;position:absolute;"></div></div><hr>';
+          document.getElementById("examdescpin").innerHTML = exmhd;
           document.getElementById("svexminfo").disabled = true;
         } else {
           document.getElementById("loaderback").style.display = "none";
