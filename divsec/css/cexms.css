@@ -261,8 +261,11 @@
 .exidbtn {
   font-size: 14px;
   margin-top: 10px;
-  width: 49%;
+  width: 48%;
   padding: 4px 10px;
+  float: center;
+  border-radius: 5px;
+  border: none;
 }
 .exidbtn:hover {
   opacity: 0.9;
@@ -288,14 +291,14 @@
 #previewr {
   color: #212121;
   text-align: left;
-  height: 300px;
+  height: 45vh;
   overflow-y: auto;
   border-bottom: 1px solid #555;
   /*resize: vertical;*/
 }
 
 #previews {
-  height: 325px;
+  height: calc(55vh - 30px);
   overflow-y: auto;
   /*resize: vertical;*/
 }
@@ -542,7 +545,7 @@
   max-width: 650px;
   margin-top: 25vh;
   padding: 20px;
-  text-align: left;
+  text-align: center;
   border-radius: 10px;
   background-image: linear-gradient(-45deg, #2222f0, #d716e9);
   border: 2px solid white;
@@ -587,19 +590,6 @@
   width: 100%;
   max-width: 40%;
   overflow-y: auto;
-}
-
-#previewr {
-  height: 340px;
-  overflow-y: auto;
-  border-bottom: 1px solid #555;
-  /*resize: vertical;*/
-}
-
-#previews {
-  height: 380px;
-  overflow-y: auto;
-  /*resize: vertical;*/
 }
 
 #previewr::-webkit-scrollbar {
@@ -1207,6 +1197,9 @@
 }
 
 @media screen and (max-width: 1090px) {
+  #examportalbtn {
+    font-size: 12px !important;
+  }
   #dialog {
     width: 100%;
   }

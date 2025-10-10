@@ -239,10 +239,13 @@
   max-width: 960px;
   background-color: #4b4b4b;
 }
-
+.nosvdexm {
+  padding-top: 13vh;
+  min-height: 300px;
+}
 #prevexperform {
-  max-height: 45vh;
-  margin-top: 100px;
+  max-height: calc(100vh - 280px);
+  margin-top: 10vh;
   padding: 20px;
   box-shadow: 0px 2px 4px 0px #a8a8a8;
   max-width: 600px;
@@ -317,14 +320,18 @@
   background-image: linear-gradient(-360deg, #4b0482e8, #171718);
   overflow-y: auto;
 }
-
+#renotitod {
+  display: none;
+  margin-top: 20px;
+  color: #ffffff;
+}
 #prevsttod {
   margin-top: 40px;
   box-shadow: 0px 2px 6px 0px #a8a8a8cc;
   max-width: 600px;
   background-color: #ffffff;
   overflow-y: auto;
-  max-height: 65vh;
+  max-height: 63vh;
   border-radius: 10px;
 }
 
@@ -950,6 +957,7 @@ math-field:active {
 .svshowexres {
   font-size: 14px !important;
   margin-left: 5px;
+  margin-bottom: 10px;
 }
 
 #connect1 {

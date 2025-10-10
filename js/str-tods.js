@@ -49,8 +49,6 @@ function removefrmlst(e) {
 }
 
 strtodedu.addEventListener("submit", (event) => {
-  $("#renotitod").show();
-  $("#renotitod").empty();
   document.getElementById("storetdbtnfin").disabled = true;
   var allsttd = document.getElementsByClassName("tdcid");
   var tdid = JSON.stringify($("#todid").val());
@@ -99,6 +97,8 @@ strtodedu.addEventListener("submit", (event) => {
 });
 
 function ctrlqsttd(e) {
+  $("#renotitod").show();
+  $("#renotitod").empty();
   document.getElementById("storetdbtnfin").disabled = false;
   storedtods();
   strtodedu.reset();
@@ -565,9 +565,9 @@ function rdsvexm(e) {
         document.getElementById("prevexperform").innerHTML +=
           '<div align="left" class="savevexmdiv">' +
           '<div style="text-align:left">' +
-          '<span style="float:left">No. ' +
+          '<span style="float:left"><b>Exam No. ' +
           srno +
-          "</span>" +
+          "</b></span>" +
           '<span style="float:right;">' +
           '<button class="btn btn-primary svshowexres" onclick="shoeprevexresult(this);">Check Performance</button>' +
           '<button class="btn btn-danger svshowexres" onclick="deletesavedexam(\'' +
