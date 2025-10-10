@@ -56,10 +56,13 @@ function deleteAllCookies() {
 }
 
 function signagn() {
+  let stateObj = { id: "0" };
+  window.history.replaceState(stateObj, "", "/");
+  document.title = "Educator | MASTROWALL";
   deleteAllCookies();
   setTimeout(function () {
-    window.open("../", "_self");
-  }, 1000);
+    location.reload();
+  }, 2000);
 }
 
 $(document).ready(function () {
