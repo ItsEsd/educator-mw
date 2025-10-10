@@ -406,7 +406,6 @@ document.addEventListener("DOMContentLoaded", function () {
     event.preventDefault();
     var exid = $("#chexid").val();
     var pkey = JSON.stringify($("#chkey").val());
-    console.log(exid, pkey);
     var url1 = "https://script.google.com/macros/s/";
     var url2 =
       "AKfycbyk5-v8saRtU7SACQGMem9tV-msnLr1eiHqxYNpsjTQuCS5UA2bzwhazxMeiN46cxL3";
@@ -892,7 +891,6 @@ document.addEventListener("DOMContentLoaded", function () {
       "&valid=true";
     var tempTextArea = document.createElement("textarea");
     tempTextArea.value = aslnk;
-    console.log(aslnk);
     document.body.appendChild(tempTextArea);
     tempTextArea.select();
     try {
@@ -923,13 +921,10 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 const scriptURL =
-  "https://script.google.com/macros/s/AKfycbxp1vlmNPwCDOr-4bMOps4vVwaKLR5m9G9NvmA9jIMRF1KmAKidtGa8C8abx_T6jsd68Q/exec"; // your Apps Script URL
+  "https://script.google.com/macros/s/AKfycbyS0F3HsY53fy9UPee3MUmEsCitf21p_jnuFaKUdxaZ-utbYhTGTgm7kxHi8kjBeyLoCA/exec";
 
-// Fetch exam list
 function fetchExams(did) {
   const url = `${scriptURL}?action=list&id=${did}&callback=displayExams`;
-  console.log(url);
-
   var request = jQuery.ajax({
     crossDomain: true,
     url:
@@ -939,7 +934,6 @@ function fetchExams(did) {
     dataType: "jsonp",
   });
 }
-// Display fetched exams
 function displayExams(response) {
   const container = document.getElementById("examContainer");
   const loading = document.getElementById("loading");
@@ -951,7 +945,7 @@ function displayExams(response) {
     response.records.length === 0 ||
     response.records[0].result === "No Record Found"
   ) {
-    container.innerHTML = "<p style='text-align:center;'>No exams found.</p>";
+    container.innerHTML = "<p>No exams found.</p>";
     return;
   }
 
@@ -959,7 +953,6 @@ function displayExams(response) {
     const card = document.createElement("div");
     card.className = "exam-card";
 
-    // Safely handle possible JSON or undefined exam.ExamPass
     let passValue = "";
     try {
       passValue = JSON.stringify(JSON.parse(exam.ExamPass));
@@ -972,7 +965,6 @@ function displayExams(response) {
     } catch (e) {
       passkey = exam.Reference || "";
     }
-    // Escape quotes to prevent breaking onclick
     const safeExamID = exam.ExamID?.replace(/"/g, "&quot;") || "";
     const safeExamPass = passValue?.replace(/"/g, "&quot;") || "";
     const safePasskey = passkey?.replace(/"/g, "&quot;") || "";
@@ -1040,11 +1032,9 @@ function saveforstudnt(id, pid, edname, title, descp, duration) {
     $(".otserviceinfo").hide();
   }
 }
-// Delete exam
 function deleteExam(examId) {
   if (!confirm("Are you sure you want to delete this exam?")) return;
 
-  // Prompt user for email and key
   const email = prompt("Please enter your email:");
   if (!email) return alert("Email is required to delete the exam.");
 
@@ -1186,7 +1176,6 @@ function createnewexid() {
   var url3 =
     "AKfycbwhAhuet3qAdjJcXFkMcUmvqcW5tBtc5SdKjpl1xycysG4DjbjN2j76deSClGyZ4Tgi";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
-  //document.getElementById('loaderCon').style.display = "block";
   $.getJSON(
     "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
       encodeURIComponent(url),

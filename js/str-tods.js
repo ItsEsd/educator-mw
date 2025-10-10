@@ -614,7 +614,6 @@ function shoeprevexresult(label) {
 
 function performancecheckexam(examid, enpass) {
   $(".otserviceinfo").hide();
-  console.log(examid, enpass);
   $("#stresultall").empty();
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
