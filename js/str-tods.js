@@ -285,7 +285,7 @@ srcandsvex.addEventListener("submit", (event) => {
   var expass = JSON.stringify($("#cppass").val());
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
+    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
   document.getElementById("loaderback").style.display = "block";
   document.getElementById("srcexambtn").disabled = true;
@@ -613,7 +613,7 @@ function performancecheckexam(examid, enpass) {
   $("#stresultall").empty();
   var url1 = "https://script.google.com/macros/s/";
   var url2 =
-    "AKfycbzlAil7TfN2-zfhCS0D_DbVJ5OJWAGoNh0CDlx4OCfAY4wbfFI7jc5tqu4_rWcoxIvq";
+    "AKfycbyjZr_GlLG5IEBabVp79cQHSwIDovEoZc5KHEBFI2vpI5cb2H14qkqkdPI-quXuIKtn";
   var url = url1 + url2 + "/exec" + "?action=gentestrd";
   $("#loaderback").slideDown();
   $.getJSON(
