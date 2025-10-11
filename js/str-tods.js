@@ -482,9 +482,11 @@ function deletesavedexam(eid) {
     examidst +
     "&action=delsvexm";
 
-  var request = jQuery.ajax({
+  jQuery.ajax({
     crossDomain: true,
-    url: url,
+    url:
+      "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
     method: "GET",
     dataType: "jsonp",
   });
@@ -513,9 +515,11 @@ function saveexaminfo() {
     "&chechenid=" +
     enridst +
     "&action=edsvexm";
-  var request = jQuery.ajax({
+  jQuery.ajax({
     crossDomain: true,
-    url: url,
+    url:
+      "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
     method: "GET",
     dataType: "jsonp",
   });
