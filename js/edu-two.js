@@ -1,183 +1,135 @@
 /* M A S T R O W A L L */
 "use strict";
+
 function checkexisting() {
   var ur1 = "https://script.google.com/macros/s/";
   var ur2 =
     "AKfycbwcmeadv7TnuLDzwgEeh2KH7XFlJ3ui-NiRLn7z3yBhDIwr0-gW1yFSKwb706n10OplQQ";
-  var url = ur1 + ur2 + "/exec" + "?act=d";
-  var emailch = $("#email").val();
-  var flag = 0;
-  $.getJSON(
-    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
-      encodeURIComponent(url),
-    function (json) {
-      for (var i = 0; i < json.records.length - 1; i++) {
-        if (emailch == json.records[i].Email) {
-          flag = flag + 1;
-          var elemin = json.records[i];
-          var fname = elemin.FName;
-          var lname = elemin.LName;
-          var dob = elemin.DOB;
-          var countryCode = elemin.CountryCode;
-          var phoneNo = elemin.PhoneNo;
-          var Class = elemin.Class + " (2)";
-          var Board = elemin.Board;
-          var Subject = elemin.Subject;
-          var Resume = elemin.Resume;
-          var Storage = elemin.Storage;
-          var ActvST = elemin.SubValue;
-        }
-      }
-      if (flag == 1) {
-        var email = $("#email").val();
-        var edpa = $("#confnwactpass").val();
-        var d = new Date();
-        var day = d.getDate();
-        var months = [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-          "August",
-          "September",
-          "October",
-          "November",
-          "December",
-        ];
-        var days = [
-          "Sunday",
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday",
-          "Saturday",
-        ];
-        var currentTime =
-          days[d.getDay()] +
-          ", " +
-          months[d.getMonth()] +
-          " " +
-          d.getDate() +
-          " - " +
-          d.getFullYear();
-        var dtime = currentTime;
-        var edid =
-          "ED-" +
-          Math.random().toString(26).substring(2, 6) +
-          Math.random().toString(26).substring(2, 6) +
-          "/2";
-        var TPic = "https://mastrowall.com/images/logoCircleBW.png";
-        var asedureg1 = "https://script.google.com/macros/s/";
-        var asedureg2 =
-          "AKfycbwcmeadv7TnuLDzwgEeh2KH7XFlJ3ui-NiRLn7z3yBhDIwr0-gW1yFSKwb706n10OplQQ";
-        var asedureg = asedureg1 + asedureg2 + "/exec";
-        var url =
-          asedureg +
-          "?callback=ctrlqnacnt&email=" +
-          email +
-          "&fname=" +
-          fname +
-          "&lname=" +
-          lname +
-          "&dob=" +
-          dob +
-          "&countrycode=" +
-          countryCode +
-          "&phoneno=" +
-          phoneNo +
-          "&class_=" +
-          Class +
-          "&board_=" +
-          Board +
-          "&subject_=" +
-          Subject +
-          "&resume=" +
-          Resume +
-          "&storage=" +
-          Storage +
-          "&proPicT=" +
-          TPic +
-          "&eduregtime=" +
-          dtime +
-          "&eduregid=" +
-          edid +
-          "&confirmpasswrd=" +
-          edpa +
-          "&actvst=" +
-          ActvST +
-          "&act=n";
-        createnewaccnt(url);
-        document.getElementById("crtnewadjacnt").style.display = "none";
-      } else {
-        document.getElementById("crtnewadjacnt").style.display = "none";
-      }
-    }
-  );
 
-  function createnewaccnt(url) {
-    var request = jQuery.ajax({
-      crossDomain: true,
-      url:
-        "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
-        encodeURIComponent(url),
-      method: "GET",
-      dataType: "jsonp",
-    });
-  }
+  var emailch = $("#email").val();
+
+  var edpa = $("#confnwactpass").val();
+  var d = new Date();
+  var day = d.getDate();
+  var months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  var days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  var currentTime =
+    days[d.getDay()] +
+    ", " +
+    months[d.getMonth()] +
+    " " +
+    d.getDate() +
+    " - " +
+    d.getFullYear();
+  var dtime = currentTime;
+  var edid =
+    "ED-" +
+    Math.random().toString(26).substring(2, 6) +
+    Math.random().toString(26).substring(2, 6) +
+    "/2";
+  var TPic = "https://mastrowall.com/images/logoCircleBW.png";
+
+  var url =
+    ur1 +
+    ur2 +
+    "/exec" +
+    "?act=n&email=" +
+    emailch +
+    "&edps=" +
+    edpa +
+    "&ppic=" +
+    TPic +
+    "&edid=" +
+    edid +
+    "&regtime=" +
+    dtime +
+    "&callback=ctrlqnacnt";
+
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url:
+      "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+      encodeURIComponent(url),
+    method: "GET",
+    dataType: "jsonp",
+  });
 }
+
 function ctrlqnacnt(e) {
   inwallEdu();
 }
 
 function onstartswitch() {
   document.getElementById("switchclsrm").style.pointerEvents = "none";
+  var emailch = $("#email").val();
+  var pascd = $("#pcodeEdu").val();
+
   var ur1 = "https://script.google.com/macros/s/";
   var ur2 =
     "AKfycbwcmeadv7TnuLDzwgEeh2KH7XFlJ3ui-NiRLn7z3yBhDIwr0-gW1yFSKwb706n10OplQQ";
-  var url = ur1 + ur2 + "/exec" + "?act=d";
-  var emailch = $("#email").val();
-  var pascd = $("#pcodeEdu").val();
-  var flag = 0;
-  $.getJSON(
-    "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
+  var url =
+    ur1 +
+    ur2 +
+    "/exec" +
+    "?act=d&email=" +
+    emailch +
+    "&edps=" +
+    pascd +
+    "&callback=prcdswtch";
+
+  var request = jQuery.ajax({
+    crossDomain: true,
+    url:
+      "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
       encodeURIComponent(url),
-    function (json) {
-      for (var i = 0; i < json.records.length - 1; i++) {
-        if (emailch == json.records[i].Email) {
-          if (pascd != json.records[i].Passcode) {
-            $("#switchnoti").slideDown();
-            document.getElementById("switchnoti").innerHTML =
-              "Switch to Class: " +
-              json.records[i].Class +
-              " <svg xmlns='http://www.w3.org/2000/svg fill='currentColor' width='20px' height='20px' style='background-color:white;margin-left:10px;padding:2px;margin-top:-4px;' class='bi bi-arrow-left-right' viewBox='0 0 16 16'>" +
-              "<path fill-rule='evenodd' d='M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z'/></svg>";
-            setTimeout(function () {
-              $("#switchnoti").slideUp();
-            }, 6000);
-            document.getElementById("switchclsrm").innerHTML =
-              "<div class='switchmenu' onclick='switchprof()'><svg xmlns='http://www.w3.org/2000/svg fill='currentColor' class='bi bi-arrow-left-right' viewBox='0 0 16 16'>" +
-              "<path fill-rule='evenodd' d='M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z'/></svg>" +
-              " | <span class='cardd'>" +
-              json.records[i].CardId +
-              "<input id='andpass' value='" +
-              json.records[i].Passcode +
-              "'></span></div>";
-            document.getElementById("switchclsrm").style.pointerEvents = "auto";
-          }
-          flag = flag + 1;
-        }
-      }
-      if (flag == 1) {
-        document.getElementById("crtnewadjacnt").style.display = "block";
-      } else {
-        document.getElementById("crtnewadjacnt").style.display = "none";
-      }
-    }
-  );
+    method: "GET",
+    dataType: "jsonp",
+  });
+}
+
+function prcdswtch(e) {
+  if (e.result === "Second class found") {
+    $("#switchnoti").slideDown();
+    document.getElementById("switchnoti").innerHTML =
+      "Switch to Class: " +
+      e.class +
+      " <svg xmlns='http://www.w3.org/2000/svg fill='currentColor' width='20px' height='20px' style='background-color:white;margin-left:10px;padding:2px;margin-top:-4px;' class='bi bi-arrow-left-right' viewBox='0 0 16 16'>" +
+      "<path fill-rule='evenodd' d='M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z'/></svg>";
+    setTimeout(function () {
+      $("#switchnoti").slideUp();
+    }, 6000);
+    document.getElementById("switchclsrm").innerHTML =
+      "<div class='switchmenu' onclick='switchprof()'><svg xmlns='http://www.w3.org/2000/svg fill='currentColor' class='bi bi-arrow-left-right' viewBox='0 0 16 16'>" +
+      "<path fill-rule='evenodd' d='M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z'/></svg>" +
+      " | <span class='cardd'>" +
+      e.id +
+      "<input id='andpass' value='" +
+      e.pass +
+      "'></span></div>";
+    document.getElementById("switchclsrm").style.pointerEvents = "auto";
+    document.getElementById("crtnewadjacnt").style.display = "none";
+  }
 }
 
 swtchnwact.addEventListener("submit", checkexisting);
