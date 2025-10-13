@@ -36,11 +36,12 @@ function ldallstwait(e) {
     document.getElementById("stuwaitnum").innerHTML = "(" + stwaitnumcout + ")";
 
     if (allst != 0) {
-      var st = 0;
-      for (st; st < lenstr; st++) {
-        var stidsrc = singlest[st];
-        srcstid(stidsrc);
+      var stidArrayW = [];
+      for (var str = 0; str < singlest.length; str++) {
+        var stidsrc = singlest[str].trim();
+        if (stidsrc) stidArrayW.push(stidsrc);
       }
+      srcstid(stidArrayW);
     } else {
       document.getElementById("allstud-one").innerHTML =
         '<div class="nocontentallst"><svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">' +
@@ -53,48 +54,68 @@ function ldallstwait(e) {
 }
 
 function srcstid(stidsrc) {
+  if (!Array.isArray(stidsrc) || stidsrc.length === 0) return;
+
   var ur1 = "https://script.google.com/macros/s/";
   var ur2 =
     "AKfycbwUXXLNfbjlRQxPPe2sT2MIqZUyLnVO26YSa9GM9DDiQGQiqtsoDRLz5NMkyYso1xkKFA";
-  var url = ur1 + ur2 + "/exec" + "?action=read";
+  var url =
+    ur1 +
+    ur2 +
+    "/exec?action=stsrclist&stidArray=" +
+    encodeURIComponent(stidsrc.join(","));
+
   $.getJSON(
     "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
       encodeURIComponent(url),
     function (json) {
-      for (var i = 0; i < json.records.length - 1; i++) {
-        if (stidsrc == json.records[i].STid) {
-          document.getElementById("allstud-one").innerHTML +=
-            "<div class='stproclroom'><span class='stnametitle'>" +
-            json.records[i].FName +
+      if (!json.records || json.records.length === 0) return;
+
+      var container = document.getElementById("allstud-one");
+      container.innerHTML = "";
+
+      json.records.forEach(function (record) {
+        if (stidsrc.includes(record.STid)) {
+          container.innerHTML +=
+            "<div class='stproclroom'>" +
+            "<span class='stnametitle'>" +
+            record.FName +
             " " +
-            json.records[i].LName +
-            "</span><img class='stpropic' src='" +
-            json.records[i].ProfilePic +
-            "'><button class='rmvwait' onclick='rmvstuwait(this);'><svg xmlns='http://www.w3.org/2000/svg' class='bi bi-trash-fill'  viewBox='0 0 16 16'>" +
-            "<path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>" +
-            "</svg></button><button onclick='addstclsrm(this);' class='addstbtn' class='btn btn-light'>" +
-            "Approve</button><br>&#8226; " +
-            json.records[i].Class +
-            " &#8226; " +
-            json.records[i].Board +
-            "<br>&#8226; <a href='mailto:" +
-            json.records[i].Email +
+            record.LName +
+            "</span>" +
+            "<img class='stpropic' src='" +
+            record.ProfilePic +
             "'>" +
-            json.records[i].Email +
+            "<button class='rmvwait' onclick='rmvstuwait(this);'>" +
+            "<svg xmlns='http://www.w3.org/2000/svg' class='bi bi-trash-fill' viewBox='0 0 16 16'>" +
+            "<path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>" +
+            "</svg></button>" +
+            "<button onclick='addstclsrm(this);' class='btn btn-light addstbtn'>Approve</button>" +
+            "<br>&#8226; " +
+            record.Class +
+            " &#8226; " +
+            record.Board +
+            "<br>&#8226; <a href='mailto:" +
+            record.Email +
+            "'>" +
+            record.Email +
             "</a>" +
             " &#8226; <a href=tel:" +
-            json.records[i].CountryCode +
-            json.records[i].PhoneNo +
+            record.CountryCode +
+            record.PhoneNo +
             ">+" +
-            json.records[i].CountryCode +
+            record.CountryCode +
             " " +
-            json.records[i].PhoneNo +
-            "</div><input class='staddid' style='display: none;' value='" +
-            json.records[i].STid +
+            record.PhoneNo +
+            "</a>" +
+            "</div>" +
+            "<input class='staddid' style='display:none;' value='" +
+            record.STid +
             "'/>";
         }
-      }
-      document.getElementById("allstud-one").style.backgroundImage = "none";
+      });
+
+      container.style.backgroundImage = "none";
     }
   );
 }
@@ -210,6 +231,7 @@ var pt_url111 = "https://script.google.com/macros/s/";
 var pt_url222 =
   "AKfycbwdJsH-RYY4k-w4M2bcXjtDS39OpC2qymDs_uxy1pyKpI_XQFSbJ21GVemavhcQTLazvQ";
 var staprv = pt_url111 + pt_url222 + "/exec";
+
 function allstudapprv() {
   $("#allstud-two").empty();
   document.getElementsByClassName("refreshlist")[1].disabled = true;
@@ -247,11 +269,12 @@ function ldallstaprv(e) {
     document.getElementById("stuapprvnum").innerHTML =
       "(" + staprvtnumcout + ")";
     if (allst != 0) {
-      var st = 0;
-      for (st; st < lenstr; st++) {
-        var stidsrc = singlest[st];
-        srcstidapprv(stidsrc);
+      var stidArrayWAp = [];
+      for (var str = 0; str < singlest.length; str++) {
+        var stidsrc = singlest[str].trim();
+        if (stidsrc) stidArrayWAp.push(stidsrc);
       }
+      srcstidapprv(stidArrayWAp);
     } else {
       document.getElementById("allstud-two").innerHTML =
         '<div class="nocontentallst"><svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="60" height="60" fill="currentColor" class="bi bi-info-circle" viewBox="0 0 16 16">' +
@@ -264,52 +287,53 @@ function ldallstaprv(e) {
 }
 
 function srcstidapprv(stidsrc) {
-  var ur1 = "https://script.google.com/macros/s/";
-  var ur2 =
+  if (!Array.isArray(stidsrc) || stidsrc.length === 0) {
+    console.warn("No approved student IDs provided.");
+    return;
+  }
+
+  const ur1 = "https://script.google.com/macros/s/";
+  const ur2 =
     "AKfycbwUXXLNfbjlRQxPPe2sT2MIqZUyLnVO26YSa9GM9DDiQGQiqtsoDRLz5NMkyYso1xkKFA";
-  var url = ur1 + ur2 + "/exec" + "?action=read";
+  const url = `${ur1}${ur2}/exec?action=stsrclist&stidArray=${encodeURIComponent(
+    stidsrc.join(",")
+  )}`;
+
   $.getJSON(
     "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
       encodeURIComponent(url),
     function (json) {
-      for (var i = 0; i < json.records.length - 1; i++) {
-        if (stidsrc == json.records[i].STid) {
-          document.getElementById("allstud-two").innerHTML +=
-            "<div class='stproclroom'><span class='stnametitle'>" +
-            json.records[i].FName +
-            " " +
-            json.records[i].LName +
-            "</span><img class='stpropic' src='" +
-            json.records[i].ProfilePic +
-            "'><button onclick='rmvstclsrm(this);' class='rmvstbtn' class='btn btn-light'>" +
-            "Remove</button><br>&#8226; " +
-            json.records[i].Class +
-            " &#8226; " +
-            json.records[i].Board +
-            "<br>&#8226; <a href='mailto:" +
-            json.records[i].Email +
-            "'>" +
-            json.records[i].Email +
-            "</a>" +
-            " &#8226; <a href=tel:" +
-            json.records[i].CountryCode +
-            json.records[i].PhoneNo +
-            ">+" +
-            json.records[i].CountryCode +
-            " " +
-            json.records[i].PhoneNo +
-            "</div><input class='strmvid' style='display: none;' value='" +
-            json.records[i].STid +
-            "'/>";
+      const container = document.getElementById("allstud-two");
+      container.innerHTML = "";
+
+      json.records.forEach((record) => {
+        if (stidsrc.includes(record.STid)) {
+          container.innerHTML += `
+            <div class="stproclroom">
+              <span class="stnametitle">${record.FName} ${record.LName}</span>
+              <img class="stpropic" src="${record.ProfilePic}" alt="${record.FName}">
+              <button onclick="rmvstclsrm(this);" class="rmvstbtn btn btn-light">Remove</button>
+              <br>&#8226; ${record.Class} &#8226; ${record.Board}
+              <br>&#8226; <a href="mailto:${record.Email}">${record.Email}</a>
+              &#8226; <a href="tel:${record.CountryCode}${record.PhoneNo}">+${record.CountryCode} ${record.PhoneNo}</a>
+            </div>
+            <input class="strmvid" style="display: none;" value="${record.STid}"/>
+          `;
         }
+      });
+
+      container.style.backgroundImage = "none";
+
+      const refreshBtn = document.getElementsByClassName("refreshlist")[1];
+      if (refreshBtn) {
+        refreshBtn.disabled = false;
+        refreshBtn.style.opacity = "1";
+        refreshBtn.style.pointerEvents = "auto";
       }
-      document.getElementById("allstud-two").style.backgroundImage = "none";
-      document.getElementsByClassName("refreshlist")[1].disabled = false;
-      document.getElementsByClassName("refreshlist")[1].style.opacity = "1";
-      document.getElementsByClassName("refreshlist")[1].style.pointerEvents =
-        "auto";
     }
-  );
+  ).fail(function () {
+    console.error("Failed to load approved student data.");
+  });
 }
 
 function rmvstclsrm(label) {

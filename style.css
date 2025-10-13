@@ -1146,9 +1146,9 @@ a:hover {
 }
 
 .addstbtn {
-  background-color: #4768fc;
-  color: white;
-  font-size: 16px;
+  background-color: #4768fc !important;
+  color: white !important;
+  font-size: 16px !important;
   border: 0px;
   padding: 6px 14px;
   float: right;
@@ -1165,9 +1165,9 @@ a:hover {
   transform: scale(1.04);
 }
 .rmvstbtn {
-  background-color: #fa3636;
-  color: white;
-  font-size: 16px;
+  background-color: #fa3636 !important;
+  color: white !important;
+  font-size: 16px !important;
   border: 0px;
   padding: 6px 14px;
   float: right;
