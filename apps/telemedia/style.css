@@ -43,7 +43,7 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #1a2ca5;
   border-radius: 2px;
-  border: 2px solid #ffffff83;
+  border: 1px solid #ffffff83;
 }
 
 /* Handle on hover */
