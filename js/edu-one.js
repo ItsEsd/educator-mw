@@ -1270,7 +1270,7 @@ $(document).ready(function () {
 
 var optionsS = {
   key: "rzp_live_LTmvi7swL9EliZ",
-  amount: "240000",
+  amount: "360000",
   currency: "INR",
   name: "M A S T R O W A L L",
   image:
