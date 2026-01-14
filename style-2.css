@@ -1039,8 +1039,8 @@ ul.icons li:last-child {
   float: right;
 }
 #titleleft svg {
-  width: 21px;
-  height: 21px;
+  width: 20px;
+  height: 20px;
   opacity: 0.8;
 }
 
@@ -1053,11 +1053,17 @@ ul.icons li:last-child {
 #titleleft {
   font-size: 14px;
 }
+#sciclc {
+  margin-right: 6px;
+  width: 25px !important;
+  height: 25px !important;
+}
 #skpad {
   margin-right: 4px;
 }
 #skpad:hover,
-#opcal:hover {
+#opcal:hover,
+#sciclc:hover {
   color: #c0bff8;
   cursor: pointer;
 }
