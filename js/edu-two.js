@@ -218,6 +218,27 @@ function switchprof() {
   getCookie();
 }
 
+function getCookieValue(name) {
+  const match = document.cookie.match(new RegExp("(^| )" + name + "=([^;]+)"));
+  return match ? match[2] : null;
+}
+
+function extendLoginCookies(days = 14) {
+  const d = new Date();
+  d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);
+  const expires = "expires=" + d.toUTCString();
+  const base = ";path=/;domain=mastrowall.com";
+
+  const cookiesToExtend = ["mwallced", "mwallpswedus", "mwallpswedud"];
+
+  cookiesToExtend.forEach((name) => {
+    const value = getCookieValue(name);
+    if (value !== null) {
+      document.cookie = `${name}=${value};${expires}${base}`;
+    }
+  });
+}
+
 $("#clsrmcmts").click(function () {
   $("#clsrmcmntbox").slideDown("fast");
 });
@@ -443,7 +464,7 @@ function loadegames() {
     const lastDashicon = dashicons[dashicons.length - 1];
     lastDashicon.parentNode.insertBefore(
       egamesButton,
-      lastDashicon.nextSibling
+      lastDashicon.nextSibling,
     );
   }
 

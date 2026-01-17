@@ -384,6 +384,7 @@ function ctrlqeduin(e) {
     applywebchat(masliv);
     var tkn = "#t/" + window.btoa(cardn);
     ewfSetCookie(14, tkn);
+    extendLoginCookies();
     $("#canved").empty();
     document.getElementById("canved").innerHTML =
       "<div class='edcrdinf'><div class='infone'>" +
@@ -640,7 +641,7 @@ $(document).ready(function () {
     if (k < max_fi) {
       k++;
       $(wrap).append(
-        `<div class="golive form-group" style="margin-bottom:16px; width:340px;margin-left:4px;margin-right:12px;"> <input class="form-control addconnect" type="url" style="width:120px; height:40px; display:inline-block;" placeholder="Link url" name="idConnect" required><select id="exidother" name="Connect" style=" display:inline-block;width:140px; height:40px;margin-left:6px;"><option value="../images/edconnect/teams.webp">Microsoft Teams</option><option value="../images/edconnect/gmeet.webp">Google Meet</option> <option value="../images/edconnect/linkedin.webp">Linkedin</option> <option value="../images/edconnect/facebook.webp">Facebook</option> <option value="../images/edconnect/whatsapp.webp">WhatsApp</option> <option value="../images/edconnect/gduo.webp">Google Duo</option> <option value="../images/edconnect/skype.webp">Skype</option> <option value="../images/edconnect/ytube.webp">YouTube</option> <option value="../images/edconnect/vimeo.webp">Vimeo</option><option value="../images/edconnect/zoom.webp">Zoom</option><option value="../images/connectlinks.png">Social & Other</option>  </select> <button class="btn-dark remove_field"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/></svg></button> </div>`
+        `<div class="golive form-group" style="margin-bottom:16px; width:340px;margin-left:4px;margin-right:12px;"> <input class="form-control addconnect" type="url" style="width:120px; height:40px; display:inline-block;" placeholder="Link url" name="idConnect" required><select id="exidother" name="Connect" style=" display:inline-block;width:140px; height:40px;margin-left:6px;"><option value="../images/edconnect/teams.webp">Microsoft Teams</option><option value="../images/edconnect/gmeet.webp">Google Meet</option> <option value="../images/edconnect/linkedin.webp">Linkedin</option> <option value="../images/edconnect/facebook.webp">Facebook</option> <option value="../images/edconnect/whatsapp.webp">WhatsApp</option> <option value="../images/edconnect/gduo.webp">Google Duo</option> <option value="../images/edconnect/skype.webp">Skype</option> <option value="../images/edconnect/ytube.webp">YouTube</option> <option value="../images/edconnect/vimeo.webp">Vimeo</option><option value="../images/edconnect/zoom.webp">Zoom</option><option value="../images/connectlinks.png">Social & Other</option>  </select> <button class="btn-dark remove_field"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16"> <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/><path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z"/></svg></button> </div>`,
       );
     }
   });
@@ -679,7 +680,7 @@ $.fn.serializeObject = function () {
 $(function () {
   $('form[name="eduProConnect"]').submit(function () {
     document.getElementById("connectivity").value = encodeURIComponent(
-      JSON.stringify($('form[name="eduProConnect"]').serializeObject())
+      JSON.stringify($('form[name="eduProConnect"]').serializeObject()),
     );
     return false;
   });
@@ -833,9 +834,8 @@ $("#resetuptopic").click(function () {
   text_editor.reset();
   document.getElementById("previewt").disabled = true;
   document.getElementById("uptday").disabled = false;
-  document.getElementById(
-    "todconedit"
-  ).innerHTML = ` <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>`;
+  document.getElementById("todconedit").innerHTML =
+    ` <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>`;
 });
 
 text_editor.addEventListener("submit", (event) => {
@@ -875,9 +875,8 @@ function ctrlqaddtod(e) {
     document.getElementById("previewt").disabled = true;
     document.getElementById("updateTOD").style.pointerEvents = "auto";
     document.getElementById("text_editor").reset();
-    document.getElementById(
-      "todconedit"
-    ).innerHTML = ` <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>`;
+    document.getElementById("todconedit").innerHTML =
+      ` <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>`;
     live_tod();
   } else {
     document.getElementById("uptday").disabled = false;
@@ -1129,7 +1128,7 @@ function getcalendar() {
       if (confirm("Are you sure you want to delete this event?")) {
         isRequestInProgress = true;
         var waitingDiv = $(
-          '<div id="waitingMessageCL">Please wait, processing...</div>'
+          '<div id="waitingMessageCL">Please wait, processing...</div>',
         );
         $("#calendar").append(waitingDiv);
         arg.event.remove();
@@ -1194,7 +1193,7 @@ $("#skpad").click(function () {
     window.open(
       "https://sketch.mastrowall.com",
       "_blank",
-      "width=400,height=700,scrollbars=yes,status=yes"
+      "width=400,height=700,scrollbars=yes,status=yes",
     );
     return;
   }
@@ -1904,7 +1903,7 @@ function applywebchat(link) {
     window.open(
       link,
       "_blank",
-      "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes"
+      "location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes",
     );
   });
 }
