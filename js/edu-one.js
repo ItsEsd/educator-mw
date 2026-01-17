@@ -384,7 +384,6 @@ function ctrlqeduin(e) {
     applywebchat(masliv);
     var tkn = "#t/" + window.btoa(cardn);
     ewfSetCookie(14, tkn);
-    extendLoginCookies();
     $("#canved").empty();
     document.getElementById("canved").innerHTML =
       "<div class='edcrdinf'><div class='infone'>" +
