@@ -974,7 +974,11 @@ math-field:active {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  font-family:
+    Arial,
+    Helvetica Neue,
+    Helvetica,
+    sans-serif;
   font-size: 14px;
   background-color: #ffffff;
   position: relative;
@@ -2020,7 +2024,9 @@ ul.icons li:last-child {
   }
   #titleleft {
     max-width: 24%;
+    width: auto;
   }
+
   #calcontain {
     display: block;
     top: 0px;

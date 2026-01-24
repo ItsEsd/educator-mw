@@ -605,11 +605,10 @@ input:focus {
 }
 #titleleft {
   width: 100%;
-  /* max-width: 310px; */
+  min-width: 310px;
   text-align: left;
   padding: 10px;
   color: white;
-  font-size: 20;
   position: fixed;
   background-color: #1a2ca5;
   z-index: 1;

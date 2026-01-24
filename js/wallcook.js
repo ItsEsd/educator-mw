@@ -67,7 +67,7 @@ function signagn() {
 
 $(document).ready(function () {
   var mn = "https://mastrowall.com/";
-  // var mn = "http://127.0.0.1:5505/";
+  // var mn = "http://127.0.0.1:5506/";
   var rcWidgetContainer = document.getElementById("rc-widget");
 
   var xhrHTML = new XMLHttpRequest();
