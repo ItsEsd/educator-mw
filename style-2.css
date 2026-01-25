@@ -331,7 +331,7 @@
   max-width: 600px;
   background-color: #ffffff;
   overflow-y: auto;
-  max-height: 63vh;
+  max-height: calc(100vh - 300px);
   border-radius: 10px;
 }
 

@@ -299,9 +299,37 @@ function ctrlqeduin(e) {
       var lenstr = singlesttod.length;
       var st = 0;
       var srno = 1;
+      $("#prevsttod").prepend(`
+  <div id="todSearchWrap" style="
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 10;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  ">
+    <input
+      type="search"
+      id="todSearch"
+      placeholder="Search by ID, Key or Remarks"
+      style="
+        width: 100%;
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+      "
+    />
+  </div>
+`);
       for (st; st < lenstr - 1; st += 3) {
         document.getElementById("prevsttod").innerHTML +=
-          '<div class="storedtd"><div class="sharebiton" title="Copy Link" onclick="crcpbitlink(this)"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"> <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/> <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></div><p>TOD No. ' +
+          '<div class="storedtd" data-id="' +
+          JSON.parse(singlesttod[st]) +
+          '" data-key="' +
+          JSON.parse(singlesttod[st + 1]) +
+          '" data-remark="' +
+          JSON.parse(singlesttod[st + 2]) +
+          '"><div class="sharebiton" title="Copy Link" onclick="crcpbitlink(this)"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16"> <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/> <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/></svg></div><p>TOD No. ' +
           srno +
           '</p><p><span class="todcommnt">' +
           JSON.parse(singlesttod[st + 2]) +
@@ -473,6 +501,40 @@ function ctrlqeduin(e) {
     document.getElementById("loader").style.display = "none";
   }
 }
+$(document).on("keyup search", "#todSearch", function () {
+  var q = $(this).val().toLowerCase();
+  var found = 0;
+
+  if (!q) {
+    $("#prevsttod .storedtd").show().next("hr").show();
+    $("#noTodFound").remove();
+    return;
+  }
+
+  $("#prevsttod .storedtd").each(function () {
+    var id = $(this).data("id").toString().toLowerCase();
+    var key = $(this).data("key").toString().toLowerCase();
+    var remark = $(this).data("remark").toLowerCase();
+
+    if (id.includes(q) || key.includes(q) || remark.includes(q)) {
+      $(this).show().next("hr").show();
+      found++;
+    } else {
+      $(this).hide().next("hr").hide();
+    }
+  });
+
+  if (!found) {
+    if (!$("#noTodFound").length) {
+      $("#prevsttod").append(
+        '<div id="noTodFound" style="text-align:center;padding:20px;color:#777;font-weight:500;">No TOD found</div>',
+      );
+    }
+  } else {
+    $("#noTodFound").remove();
+  }
+});
+
 function ckeckactvst(dy, mn, yr) {
   var d = new Date();
   var tdy = d.getDate();
