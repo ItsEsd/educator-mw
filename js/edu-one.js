@@ -558,7 +558,7 @@ function ckeckactvst(dy, mn, yr) {
 function live_tod() {
   document.getElementById("updateTOD").style.pointerEvents = "auto";
   document.getElementById("LiveTOD").style.pointerEvents = "auto";
-  $("#TODdash,#tdtpone,#tdtptwo").slideDown("fast");
+  $("#TODdash,#tdtpone,#tdtptwo,#rc-widget").slideDown("fast");
   document.getElementById("LiveTOD").innerHTML =
     '<div class="nocontenttod"><svg xmlns="http://www.w3.org/2000/svg" style="color:#8a8a8b;" width="40" height="40" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">' +
     '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
@@ -753,7 +753,7 @@ connectup.addEventListener("submit", (event) => {
 });
 
 function openConnect() {
-  $("#TODdash,#tdtpone,#tdtptwo").slideUp("fast");
+  $("#TODdash,#tdtpone,#tdtptwo,#rc-widget").slideUp("fast");
   $("#connectivityedu").slideDown("fast");
   document.getElementById("goconnect").style.display = "block";
   document.getElementById("nxt").style.display = "block";
@@ -843,7 +843,7 @@ function showavatarBrd() {
 }
 
 function showclroom() {
-  $("#educlassroom").slideDown("fast");
+  $("#educlassroom,#rc-widget").slideDown("fast");
 }
 
 function opensframe() {
