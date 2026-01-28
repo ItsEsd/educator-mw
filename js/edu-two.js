@@ -417,7 +417,7 @@ function rfshcmnt() {
 
 function totlcmnt(nof) {
   document.getElementById("allcmntsnm").innerHTML =
-    "All Comments " + "(" + nof + ")";
+    "Classroom Comments " + "(" + nof + ")";
 }
 
 function loadegames() {

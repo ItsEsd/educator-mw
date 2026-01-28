@@ -1247,7 +1247,7 @@ function ctrlqevrmv(e) {
 
 let sketchLoaded = false;
 let sciclcLoaded = false;
-$("#skpad").click(function () {
+$("#skpad,#sktchsrt").click(function () {
   const isMobile = window.innerWidth <= 768;
 
   if (isMobile) {
@@ -1281,7 +1281,7 @@ $("#skpad").click(function () {
   }
 });
 
-$("#sciclc").click(function () {
+$("#sciclc,#sciclcsrt").click(function () {
   if ($("#sciclcContainer").length === 0) {
     const container = $(`
       <div id="sciclcContainer" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:9999; background:#fff;">
