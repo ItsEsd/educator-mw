@@ -103,6 +103,8 @@ $(document).ready(function () {
     "library.mastrowall.in",
     "blog.mastrowall.in",
     "home.mastrowall.in",
+    "pdf.mastrowall.com",
+    "tods.mastrowall.com",
   ];
 
   function isAllowedDomain(url) {
