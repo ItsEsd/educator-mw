@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title>Educator | MASTROWALL</title>
@@ -44,7 +44,6 @@
     />
     <link rel="stylesheet" href="vendor/style/bootstrap4.5.2.min.css" />
     <link src="vendor/style/bootstrap.min.css.map" />
-
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <link rel="stylesheet" href="/style.css" />
     <link rel="stylesheet" href="/style-2.css" />
@@ -65,30 +64,16 @@
     <script src="/vendor/js/html2pdf.js"></script>
     <link href="divsec/css/cexms.css" rel="stylesheet" />
   </head>
-
   <body>
-    <script>
-      const loca = window.location.hostname;
-      if (loca === "127.0.0.1") {
-        document.body.style.display = "block";
-      } else {
-        document.body.innerHTML = "";
-      }
-    </script>
     <section>
       <div id="walllogin">
         <center>
           <div class="decorsec">
-            <img src="images/logoSVG.svg" />
-            <br />Loading..
+            <img src="images/logoSVG.svg" /> <br />Loading..
           </div>
           <div class="funcsec">
             <a
-              ><button
-                class="btn btn-primary"
-                id="signagn"
-                onclick="signagn();"
-              >
+              ><button class="btn btn-primary" id="signagn" onclick="signagn()">
                 Sign In
               </button></a
             >
@@ -98,14 +83,12 @@
           </div>
         </center>
       </div>
-
       <div align="center">
         <div id="signInEdu" style="padding-top: 15vh">
           <img
             src="images/educator.webp"
             style="pointer-events: none; width: 140px"
           />
-
           <form id="df" onsubmit="return false;">
             <div class="form-group">
               <label for="inputEmail">Email address:</label>
@@ -137,18 +120,18 @@
               />
             </div>
           </form>
-
           <div style="display: block">
             <p style="float: right; padding-left: 10px; padding-top: 6px">
               <span
                 id="frepass"
                 style="cursor: pointer"
-                onclick="window.location.href ='https://e-reset.mastrowall.com'"
+                onclick="
+                  window.location.href = 'https://e-reset.mastrowall.com'
+                "
                 >Forgot Credentials?</span
               >
             </p>
           </div>
-
           <br />
           <div id="loader" class="spinner-border text-primary"></div>
           <br />
@@ -161,11 +144,21 @@
         </div>
       </div>
     </section>
+    <script>
+      const loca = window.location.hostname;
+      if (loca === "127.0.0.1") {
+        document.body.style.display = "block";
+      } else {
+        document.body.innerHTML = window.atob(
+          "PGRpdiBzdHlsZT0nZm9udC1zaXplOjE1cHg7Y29sb3I6IzY2NjtkaXNwbGF5OmZsZXg7YWxpZ24taXRlbXM6Y2VudGVyO2p1c3RpZnktY29udGVudDpjZW50ZXI7aGVpZ2h0OjEwMHZoO2JhY2tncm91bmQ6I2ZmZjtmbGV4LWRpcmVjdGlvbjpjb2x1bW47Jz48aW1nIHNyYz0naHR0cHM6Ly9hbXJpdC1jb3JwLmNvbS9jb3JwLWRyaXZlL2ltZ3NvdXJjZS9wYWdlLW5vdC1hdmFpbGFibGUuc3ZnJyBzdHlsZT0nd2lkdGg6OTAlO21heC13aWR0aDo0MDBweDsnPjxwcmUgc3R5bGU9ImNvbG9yOiM2NjY7Ij4mIzE2OTsgQU1SSVQtY29ycC5jb208L3ByZT48L2Rpdj4=",
+        );
+      }
+    </script>
     <section>
       <div align="center" id="connectandeditpro">
         <div id="EduDashboard">
           <div id="classrm">
-            <span onclick="openConnect();" class="classroominfo">
+            <span onclick="openConnect()" class="classroominfo">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="currentColor"
@@ -215,9 +208,7 @@
                 Calendar
               </span>
             </div>
-            <div id="telefrm">
-              <iframe id="tlfrm" src=""></iframe>
-            </div>
+            <div id="telefrm"><iframe id="tlfrm" src=""></iframe></div>
             <div id="footDash" align="center">
               <div id="footdashcenter">
                 <div id="infoMastrowallEdu">|| An Art of Learning ||</div>
@@ -225,16 +216,20 @@
                   type="button"
                   class="btn btn-light"
                   id="mwallopennew"
-                  onclick="window.open('https://mastrowall.com', '_blank', 'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes');"
+                  onclick="
+                    window.open(
+                      'https://mastrowall.com',
+                      '_blank',
+                      'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes',
+                    )
+                  "
                 >
                   M A S T R O W A L L
                 </button>
               </div>
             </div>
           </div>
-          <center>
-            <div id="switchnoti"></div>
-          </center>
+          <center><div id="switchnoti"></div></center>
           <div id="showServiceEdu">
             <div id="titleleft">
               <img src="/images/logopng.png" alt="Educator | MASTROWALL" />
@@ -278,14 +273,22 @@
             <div id="leftnav">
               <div
                 class="dashicon"
-                onclick="$('#TODdash,#tdtpone,#tdtptwo').slideDown('fast');$('#updateTOD').slideDown();$('#connectivityedu').slideUp('fast');"
+                onclick="
+                  $('#TODdash,#tdtpone,#tdtptwo').slideDown('fast');
+                  $('#updateTOD').slideDown();
+                  $('#rc-widget').show();
+                  $('#connectivityedu').slideUp('fast');
+                "
               >
                 <img class="dashiconimg" src="images/sttod.svg" />
                 <div id="tod"></div>
               </div>
               <div
                 class="dashicon"
-                onclick="showclroom();$('#connectivityedu').slideUp('fast');"
+                onclick="
+                  showclroom();
+                  $('#connectivityedu').slideUp('fast');
+                "
               >
                 <img class="dashiconimg" src="images/educonn.svg" />
                 <div id="golive"></div>
@@ -331,22 +334,6 @@
                       >
                         <path
                           d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                        />
-                      </svg>
-                    </a>
-                  </li>
-                  <li>
-                    <a target="_blank" href="https://twitter.com/mastrowallE">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="16"
-                        height="16"
-                        fill="currentColor"
-                        class="bi bi-twitter"
-                        viewBox="0 0 16 16"
-                      >
-                        <path
-                          d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"
                         />
                       </svg>
                     </a>
@@ -411,16 +398,14 @@
                 <div>Account Status : <span id="accntstat"></span></div>
                 <div id="activetime">
                   Start : <span id="accntstart"></span> <br />
-                  End : <span id="accntend"></span>
-                  <br />
+                  End : <span id="accntend"></span> <br />
                   <p id="lgoutacnt" onclick="signagn()">Sign Out</p>
                 </div>
               </div>
             </div>
           </div>
-          <div id="calcontain">
-            <div id="calendar"></div>
-          </div>
+          <div id="calcontain"><div id="calendar"></div></div>
+          <div id="rc-widget"></div>
         </div>
         <div class="modal" id="insthttp">
           <div class="modal-dialog">
@@ -474,7 +459,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="TODdash" align="center">
         <div class="contentheader">
@@ -500,7 +484,7 @@
           </span>
           <span
             class="closedashfull"
-            onclick="$('#TODdash,#tdtpone,#tdtptwo').slideUp('fast');"
+            onclick="$('#TODdash,#tdtpone,#tdtptwo,#rc-widget').slideUp('fast')"
             >&times;</span
           >
         </div>
@@ -510,7 +494,7 @@
           </center>
         </div>
         <div id="pviewcontain" align="center">
-          <span onclick="$('#pviewcontain').slideUp('fast');" class="closepview"
+          <span onclick="$('#pviewcontain').slideUp('fast')" class="closepview"
             >Close Preview</span
           >
           <div
@@ -533,7 +517,7 @@
                     <input
                       type="text"
                       id="ttdtitle"
-                      oninput="ProTOD();"
+                      oninput="ProTOD()"
                       class="form-control border-hide todtitle"
                       name="title"
                       placeholder="Title of the topic"
@@ -542,7 +526,9 @@
                     />
                     <div contenteditable="true" id="todconedit" align="left">
                       <p
-                        onclick="document.getElementById('todconedit').innerHTML='';"
+                        onclick="
+                          document.getElementById('todconedit').innerHTML = ''
+                        "
                         style="height: 200px"
                       >
                         Topic briefing..
@@ -550,7 +536,7 @@
                     </div>
                     <textarea
                       class="form-control todbrief"
-                      oninput="ProTOD();"
+                      oninput="ProTOD()"
                       rows="10"
                       name="brief_topic"
                       placeholder="Topic briefing"
@@ -593,7 +579,7 @@
                       <input
                         type="url"
                         name="thumb_ref"
-                        oninput="ProTOD();"
+                        oninput="ProTOD()"
                         id="tthumb"
                         class="form-control border-hide thumbref"
                         placeholder="&#10010; Thumbnail link "
@@ -609,7 +595,10 @@
                     <div id="edtrfntwo">
                       <button
                         type="button"
-                        onclick="$('#pviewcontain').slideDown('fast');ProTOD();"
+                        onclick="
+                          $('#pviewcontain').slideDown('fast');
+                          ProTOD();
+                        "
                         id="previewt"
                         class="btn btn-success"
                         disabled
@@ -658,7 +647,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div align="center" id="connectivityedu">
         <div id="edconnectdiv">
@@ -685,7 +673,10 @@
               id="cls2"
               type="button"
               class="btn-dark"
-              onclick="document.getElementById('connectivityedu').style.display='none';"
+              onclick="
+                document.getElementById('connectivityedu').style.display =
+                  'none'
+              "
               value="Close"
             />
           </div>
@@ -838,7 +829,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="stmmdl" class="modal">
         <div class="modal-content">
@@ -940,7 +930,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="myerded" align="center">
         <div id="prevcard">
@@ -952,14 +941,13 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="scrollEdit" align="center">
         <div id="centrdpredt">
           <p id="edprttl">
             >> Edit profile information<span
               class="closedashfull"
-              onclick="$('#scrollEdit').slideUp('fast');"
+              onclick="$('#scrollEdit').slideUp('fast')"
               >&times;</span
             >
           </p>
@@ -986,73 +974,109 @@
               <div id="avatarBrd" style="display: none; margin-bottom: 20px">
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/WAGVDvx.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/WAGVDvx.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/WAGVDvx.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/J91ETXd.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/J91ETXd.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/J91ETXd.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/GZwxDPC.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/GZwxDPC.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/GZwxDPC.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/VPgRpoP.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/VPgRpoP.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/VPgRpoP.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/zIM34RQ.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/zIM34RQ.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/zIM34RQ.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/vLQpCmM.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/vLQpCmM.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/vLQpCmM.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/rx94KbZ.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/rx94KbZ.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/rx94KbZ.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/iH6WgOT.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/iH6WgOT.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/iH6WgOT.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/kXTCvY5.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/kXTCvY5.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/kXTCvY5.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/Gm8hWSy.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/Gm8hWSy.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/Gm8hWSy.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/sxMCj4b.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/sxMCj4b.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/sxMCj4b.png"
                 /></a>
                 <a
                   class="proThumb"
-                  onclick="document.getElementById('ppic').value= 'https://i.imgur.com/WZsjtn3.png';"
+                  onclick="
+                    document.getElementById('ppic').value =
+                      'https://i.imgur.com/WZsjtn3.png'
+                  "
                 >
                   <img class="avatarPro" src="https://i.imgur.com/WZsjtn3.png"
                 /></a>
@@ -1278,7 +1302,7 @@
                       margin-right: 6px;
                     "
                     id="eduProUpdate"
-                    onclick="update_pro();"
+                    onclick="update_pro()"
                     disabled="disabled"
                   >
                     Save
@@ -1297,7 +1321,7 @@
                       height: 40px;
                     "
                     id=""
-                    onclick="$('#scrollEdit').slideUp('fast');"
+                    onclick="$('#scrollEdit').slideUp('fast')"
                   >
                     Close
                   </button>
@@ -1307,7 +1331,10 @@
               <div id="newpassfacnt">
                 <form
                   id="swtchnwact"
-                  onsubmit="$('#newpassfacnt').slideUp();return false;"
+                  onsubmit="
+                    $('#newpassfacnt').slideUp();
+                    return false;
+                  "
                 >
                   <input
                     type="password"
@@ -1333,7 +1360,7 @@
                   ><button
                     class="btn btn-light"
                     type="button"
-                    onclick="$('#newpassfacnt').slideUp();"
+                    onclick="$('#newpassfacnt').slideUp()"
                   >
                     Close
                   </button>
@@ -1345,18 +1372,20 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="educlassroom" align="center">
         <span
           class="closeclassinfo"
-          onclick="$('#educlassroom').slideUp('fast');"
+          onclick="$('#educlassroom,#rc-widget').slideUp('fast')"
           >&times;</span
         >
         <div
           id="allstu"
           class="clsroomelem"
-          onclick="$('#allstud').slideDown('fast');document.getElementById('allstud-one').style.pointerEvents ='auto';"
+          onclick="
+            $('#allstud').slideDown('fast');
+            document.getElementById('allstud-one').style.pointerEvents = 'auto';
+          "
         >
           All Students
         </div>
@@ -1364,7 +1393,7 @@
         <div
           id="storedtd"
           class="clsroomelem"
-          onclick="$('#crtod').slideDown('fast');"
+          onclick="$('#crtod').slideDown('fast')"
         >
           Create / Store TOD
         </div>
@@ -1372,30 +1401,48 @@
         <div
           id="examinfo"
           class="clsroomelem"
-          onclick="$('#experform').slideDown('fast');"
+          onclick="$('#experform').slideDown('fast')"
         >
           Exams & Performance
         </div>
         <hr />
         <div id="andservices">
-          <span onclick="opensframe();">&#8226; Search</span>
+          <span onclick="opensframe()">&#8226; Search</span>
           <span
-            onclick="window.open('https://library.mastrowall.in', '_blank', 'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes');"
+            onclick="
+              window.open(
+                'https://library.mastrowall.in',
+                '_blank',
+                'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes',
+              )
+            "
             >&#8226; Library</span
           >
           <span
-            onclick="window.open('https://blog.mastrowall.in', '_blank', 'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes');"
+            onclick="
+              window.open(
+                'https://blog.mastrowall.in',
+                '_blank',
+                'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes',
+              )
+            "
           >
             &#8226; Blog</span
           >
-          <span onclick="openlframe();"> &#8226; LinkIns</span>
+          <span onclick="openlframe()"> &#8226; LinkIns</span>
         </div>
         <hr />
         <div>
           <span
             class="clsroomfootfh"
             style="margin-right: 10px"
-            onclick="window.open('https://www.astro.mastrowall.in/members', '_blank', 'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes');"
+            onclick="
+              window.open(
+                'https://www.astro.mastrowall.in/members',
+                '_blank',
+                'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes',
+              )
+            "
             >Forum
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1412,7 +1459,13 @@
           </span>
           <span
             class="clsroomfootfh"
-            onclick="window.open('https://home.mastrowall.in', '_blank', 'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes');"
+            onclick="
+              window.open(
+                'https://home.mastrowall.in',
+                '_blank',
+                'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes',
+              )
+            "
             >Home
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1432,14 +1485,49 @@
               />
             </svg>
           </span>
+          <span> </span>
         </div>
         <hr />
         <div>
           <span
             id="clsroomfoot"
-            onclick="window.open('https://mastrowall.com', '_blank', 'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes');"
-            >M A S T R O W A L L</span
+            onclick="
+              window.open(
+                'https://mastrowall.com',
+                '_blank',
+                'location=center,height=670,width=1600,left=0,top=100,scrollbars=yes,status=yes',
+              )
+            "
+            >M A S T R O W A L L | AMRIT EdTech</span
           >
+        </div>
+        <div>
+          <div class="toolssrtc">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="sciclcsrt"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="#464646"
+            >
+              <path
+                d="M320-240h60v-80h80v-60h-80v-80h-60v80h-80v60h80v80Zm200-30h200v-60H520v60Zm0-100h200v-60H520v60Zm44-152 56-56 56 56 42-42-56-58 56-56-42-42-56 56-56-56-42 42 56 56-56 58 42 42Zm-314-70h200v-60H250v60Zm-50 472q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-80h560v-560H200v560Zm0-560v560-560Z"
+              />
+            </svg>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              id="sktchsrt"
+              height="30px"
+              viewBox="0 -960 960 960"
+              width="30px"
+              fill="#464646"
+            >
+              <path
+                d="M160-120v-170l527-526q12-12 27-18t30-6q16 0 30.5 6t25.5 18l56 56q12 11 18 25.5t6 30.5q0 15-6 30t-18 27L330-120H160Zm80-80h56l393-392-28-29-29-28-392 393v56Zm560-503-57-57 57 57Zm-139 82-29-28 57 57-28-29ZM560-120q74 0 137-37t63-103q0-36-19-62t-51-45l-59 59q23 10 36 22t13 26q0 23-36.5 41.5T560-200q-17 0-28.5 11.5T520-160q0 17 11.5 28.5T560-120ZM183-426l60-60q-20-8-31.5-16.5T200-520q0-12 18-24t76-37q88-38 117-69t29-70q0-55-44-87.5T280-840q-45 0-80.5 16T145-785q-11 13-9 29t15 26q13 11 29 9t27-13q14-14 31-20t42-6q41 0 60.5 12t19.5 28q0 14-17.5 25.5T262-654q-80 35-111 63.5T120-520q0 32 17 54.5t46 39.5Z"
+              />
+            </svg>
+          </div>
         </div>
         <div id="clsrmcmts">
           <svg
@@ -1452,7 +1540,7 @@
               d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353V2zM3.5 3h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1zm0 2.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1 0-1zm0 2.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1z"
             />
           </svg>
-          <span id="allcmntsnm">Add Comments</span>
+          <span id="allcmntsnm">Classroom Comments</span>
         </div>
         <div id="clsrmcmntbox">
           <p id="cmntbxtitle">
@@ -1481,7 +1569,7 @@
           </p>
           <div id="divcmntbx"></div>
           <div id="cmnttoclss">
-            <form id="clsrmcmntfm" onsubmit="return false">
+            <form id="clsrmcmntfm" onsubmit="return false;">
               <textarea
                 class="form-control"
                 placeholder="Comments / Embed (max 400 characters)"
@@ -1497,10 +1585,8 @@
             </form>
           </div>
         </div>
-        <div id="rc-widget"></div>
       </div>
     </section>
-
     <section>
       <div id="fmcontainers" class="fullwidth" align="center">
         <span class="closefw">&times;</span>
@@ -1528,7 +1614,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="fmcontainert" class="fullwidth" align="center">
         <span class="closefw">&times;</span>
@@ -1560,7 +1645,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="resetp" align="center">
         <div id="resetp_one" class="repass">
@@ -1584,7 +1668,7 @@
               type="button"
               class="btn btn-secondary"
               value="Close"
-              onclick="$('#resetp').slideUp('fast');"
+              onclick="$('#resetp').slideUp('fast')"
             />
           </form>
         </div>
@@ -1597,7 +1681,7 @@
               class="form-control"
               placeholder="Verification Code"
               id="vercode"
-              oninput="verfycode();"
+              oninput="verfycode()"
               required
             />
             <br />
@@ -1606,14 +1690,17 @@
               class="btn btn-outline-dark"
               id="verconfirm"
               value="Continue >>"
-              onclick="$('#resetp_two').slideUp('fast');$('#resetp_three').slideDown('fast');"
+              onclick="
+                $('#resetp_two').slideUp('fast');
+                $('#resetp_three').slideDown('fast');
+              "
               disabled
             />
             <input
               type="button"
               class="btn btn-secondary"
               value="Close"
-              onclick="$('#resetp').slideUp('fast');"
+              onclick="$('#resetp').slideUp('fast')"
             />
           </form>
         </div>
@@ -1652,7 +1739,7 @@
               type="button"
               class="btn btn-secondary"
               value="Close"
-              onclick="$('#resetp').slideUp('fast');"
+              onclick="$('#resetp').slideUp('fast')"
             />
           </form>
         </div>
@@ -1680,7 +1767,10 @@
           <button
             class="btn btn-outline-dark"
             style="padding: 6px 40px"
-            onclick="deleteAllCookies();location.reload();"
+            onclick="
+              deleteAllCookies();
+              location.reload();
+            "
           >
             Sign In
           </button>
@@ -1693,7 +1783,6 @@
         <input id="vercodepre" style="display: none" />
       </div>
     </section>
-
     <section>
       <div id="allstud" class="fwidthtwo" align="center">
         <div class="clsrmheader">
@@ -1728,7 +1817,7 @@
               >
                 Waiting List
                 <div id="stuwaitnum"></div>
-                <span class="refreshlist" onclick="allstudwait();">
+                <span class="refreshlist" onclick="allstudwait()">
                   Refresh</span
                 >
               </h5>
@@ -1747,7 +1836,7 @@
               >
                 Approved List
                 <div id="stuapprvnum"></div>
-                <span class="refreshlist" onclick="allstudapprv();">
+                <span class="refreshlist" onclick="allstudapprv()">
                   Refresh</span
                 >
               </h5>
@@ -1771,7 +1860,7 @@
               </svg>
               <p>Are you sure you want to remove?</p>
               <button class="btn btn-danger" id="rmvstclrm">Remove</button>
-              <button class="btn btn-dark" onclick="$('#ntfyrmv').hide();">
+              <button class="btn btn-dark" onclick="$('#ntfyrmv').hide()">
                 Close
               </button>
             </div>
@@ -1805,7 +1894,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="crtod" class="fwidthtwo" align="center">
         <div class="clsrmheader">
@@ -1828,7 +1916,7 @@
           <button
             class="btn btn-danger"
             id="sttodedu"
-            onclick="$('#storetd').slideDown('fast');"
+            onclick="$('#storetd').slideDown('fast')"
           >
             S T O R E
           </button>
@@ -1860,6 +1948,7 @@
             </div>
             <div id="formsttod">
               <form onsubmit="return false;" id="strtodedu">
+                <p id="renotitod"></p>
                 <input
                   type="text"
                   placeholder="TOD Id"
@@ -1882,7 +1971,6 @@
                   rows="3"
                   required
                 ></textarea>
-                <p id="renotitod"></p>
                 <br />
                 <input
                   type="submit"
@@ -1893,7 +1981,7 @@
                 <input
                   type="button"
                   value="Close"
-                  onclick="$('#storetd').slideUp('fast');"
+                  onclick="$('#storetd').slideUp('fast')"
                   class="storetdbtn"
                 />
               </form>
@@ -1928,12 +2016,9 @@
             <button class="btn btn-dark" id="hidedelnote">Close</button>
           </div>
         </div>
-        <div id="lkcopied">
-          <div>Link Copied!</div>
-        </div>
+        <div id="lkcopied"><div>Link Copied!</div></div>
       </div>
     </section>
-
     <section>
       <div id="experform" class="fwidthtwo" align="center">
         <div class="clsrmheader">
@@ -2006,7 +2091,7 @@
                 <input
                   type="button"
                   value="Close"
-                  onclick="$('#experform').slideUp('fast');"
+                  onclick="$('#experform').slideUp('fast')"
                   class="showexbtn"
                 />
               </form>
@@ -2079,7 +2164,7 @@
               </button>
             </span>
             <span style="float: right">
-              <button class="btn btn-primary" onclick="examresultpdf();">
+              <button class="btn btn-primary" onclick="examresultpdf()">
                 Download
               </button>
             </span>
@@ -2087,7 +2172,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="noextlinkdiv" align="center">
         <div id="noexiddiv">
@@ -2129,7 +2213,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="CharExcd" align="center">
         <div
@@ -2144,7 +2227,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div align="center" id="preview">
         <div style="background: white; display: block" id="preTD">
@@ -2160,21 +2242,17 @@
           <br />
           <h4 id="previewPostTitle" style="margin-top: 24px"></h4>
           <hr />
-          <div class="todBody">
-            <div id="previewPost"></div>
-          </div>
+          <div class="todBody"><div id="previewPost"></div></div>
           <div id="preFoot">
             <span id="previewPostTime" class="tx"></span>
             <span id="previewPostId" class="tx" style="float: right"></span>
           </div>
           <br />
           <br />
-          <button class="btn btn-primary" id="backtotdbrd">Close</button>
-          <br />
+          <button class="btn btn-primary" id="backtotdbrd">Close</button> <br />
         </div>
       </div>
     </section>
-
     <section>
       <div id="notifypay">
         <center>
@@ -2207,12 +2285,9 @@
         </center>
       </div>
     </section>
-
     <input style="display: none" id="varvrdigit" value="0" />
     <input style="display: none" id="allsvevnt" />
-
     <!-- OnlineTest -->
-
     <section>
       <div class="otserviceinfo" id="createid">
         <div class="otservprp">
@@ -2223,7 +2298,7 @@
           <hr style="border-width: 2px; border-color: #ffffff" />
           <form
             id="cridone"
-            onsubmit="event.preventDefault();"
+            onsubmit="event.preventDefault()"
             autocomplete="off"
           >
             <div id="crtestone">
@@ -2261,8 +2336,7 @@
                 required
               />
               <br />
-              <label>Test Duration:</label>
-              <br />
+              <label>Test Duration:</label> <br />
               <div
                 style="
                   display: flex;
@@ -2331,7 +2405,7 @@
           </form>
           <form
             id="cridtwo"
-            onsubmit="event.preventDefault();"
+            onsubmit="event.preventDefault()"
             style="display: none"
             autocomplete="off"
           >
@@ -2365,7 +2439,7 @@
                 type="password"
                 class="form-control"
                 id="exampass"
-                oninput="dateUp();"
+                oninput="dateUp()"
                 placeholder="Student Pass (Share with your students)"
                 required
               />
@@ -2381,7 +2455,10 @@
                 type="button"
                 class="submitform"
                 value="‹‹ Back"
-                onclick="$('#cridone').show();$('#cridtwo').hide();"
+                onclick="
+                  $('#cridone').show();
+                  $('#cridtwo').hide();
+                "
                 style="margin-left: 6px"
               />
               <input id="examid" style="display: none" />
@@ -2405,18 +2482,21 @@
                 class="submitform"
                 id="resetcrtexmidfrm"
                 type="button"
-                onclick="$('#cridone').show();$('#cridtwo').hide();
-                $('#cridone, #cridtwo').each(function() {
+                onclick="
+                  $('#cridone').show();
+                  $('#cridtwo').hide();
+                  $('#cridone, #cridtwo').each(function () {
                     const keepVals = {
-                        eduname: $('#eduname').val(),
-                        edueid: $('#edueid').val()
+                      eduname: $('#eduname').val(),
+                      edueid: $('#edueid').val(),
                     };
                     this.reset();
-
                     $('#eduname').val(keepVals.eduname);
                     $('#edueid').val(keepVals.edueid);
-                    });
-                    $('#crtestfour').hide();$('#crtestthree').show();"
+                  });
+                  $('#crtestfour').hide();
+                  $('#crtestthree').show();
+                "
               >
                 + Create
               </button>
@@ -2465,9 +2545,7 @@
         </div>
       </div>
       <div id="exportalpromo" align="center"></div>
-      <div id="enlrgimg" align="center">
-        <img id="emprimgenlrg" src="#" />
-      </div>
+      <div id="enlrgimg" align="center"><img id="emprimgenlrg" src="#" /></div>
       <div id="allexamslst" class="otserviceinfo">
         <h2>
           <svg
@@ -2516,18 +2594,16 @@
             </li>
           </ul>
         </div>
-
         <div class="examdshbrd">
           <div id="examContainer"></div>
           <div id="loading">Loading exams...</div>
         </div>
       </div>
     </section>
-
     <section>
       <div id="continueexamid" align="center">
         <div id="formcontainerexid">
-          <form id="checkexid" onsubmit="event.preventDefault();">
+          <form id="checkexid" onsubmit="event.preventDefault()">
             <label>Exam ID:</label>
             <input
               type="text"
@@ -2559,7 +2635,7 @@
               class="exidbtn"
               type="button"
               style="margin-left: 6px"
-              onclick="$('#continueexamid').hide();"
+              onclick="$('#continueexamid').hide()"
               value="Back"
             />
           </form>
@@ -2570,7 +2646,6 @@
         </div>
       </div>
     </section>
-
     <section>
       <div id="otserviceexamid">
         <span class="tgglqsetvw">
@@ -2588,23 +2663,19 @@
             />
           </svg>
         </span>
-
         <div id="formcontainer">
           <form id="quesfrm" autocomplete="off">
             <!-- Question Section -->
             <div id="stdiv">
-              <label>Question Statement:</label>
-              <span id="qtstfalse"></span>
-
+              <label>Question Statement:</label> <span id="qtstfalse"></span>
               <div contenteditable="true" id="conq">
                 <p
-                  onclick="$(this).remove();"
+                  onclick="$(this).remove()"
                   style="width: 100%; height: 150px; color: #f75252"
                 >
                   **[ required ]**
                 </p>
               </div>
-
               <textarea
                 class="form-control"
                 style="height: 240px; display: none"
@@ -2617,7 +2688,6 @@
                 id="stimg"
               />
               <input id="qstimg" value="null" style="display: none" />
-
               <input type="button" id="admntl" value="Admin Tool" />
               <input
                 type="button"
@@ -2626,7 +2696,6 @@
                 value="Math Operator"
               />
               <br />
-
               <!-- Admin Tool Modal -->
               <div id="amntlmdl" class="modalot">
                 <div class="modalot-content">
@@ -2636,9 +2705,7 @@
                 </div>
               </div>
             </div>
-
             <hr />
-
             <!-- Options Section -->
             <div id="opdiv">
               <label>Options:</label>
@@ -2674,9 +2741,7 @@
               <input id="opimg" value="null" style="display: none" />
               <br /><br />
             </div>
-
             <hr />
-
             <!-- Answer Section -->
             <div id="ansdiv">
               <label>Answer:</label>
@@ -2688,9 +2753,7 @@
                 style="text-transform: uppercase"
               />
             </div>
-
             <hr />
-
             <!-- Submission Section -->
             <div>
               <div style="height: 55px">
@@ -2710,9 +2773,7 @@
                   />
                 </div>
               </div>
-
               <hr />
-
               <!-- Educator Info -->
               <div style="font-size: 14px; padding: 10px">
                 <div class="row" style="width: 100%">
@@ -2771,7 +2832,6 @@
                       </button>
                     </div>
                   </div>
-
                   <div class="col-md-6">
                     <div class="eduinfoex">
                       <p style="color: #f75858">
@@ -2790,7 +2850,7 @@
                       <button
                         class="btn btn-dark"
                         type="button"
-                        onclick="downloadqset();"
+                        onclick="downloadqset()"
                         style="padding: 6px 10px; font-size: 14px; width: 100%"
                       >
                         Download / Print Question Set
@@ -2798,11 +2858,9 @@
                     </div>
                   </div>
                 </div>
-
                 <div id="qsetanst"></div>
                 <br />
                 <hr />
-
                 <!-- Exam State -->
                 <div id="examstate">
                   <div
@@ -2822,7 +2880,6 @@
                       >LIVE</label
                     >
                   </div>
-
                   <div
                     class="form-check form-switch"
                     style="display: inline-block"
@@ -2840,7 +2897,6 @@
                       >CALCULATOR</label
                     >
                   </div>
-
                   <div>
                     ** To have Calculator or to make the Exam Live please check
                     as per requirement. Students will not be able to take Exam
@@ -2849,9 +2905,7 @@
                 </div>
               </div>
             </div>
-
             <div id="qupdated">Question added successfully</div>
-
             <!-- Clear Notification Modal -->
             <div align="center" id="clrqsetnotify">
               <div id="clrqsetnotify-child">
@@ -2876,14 +2930,17 @@
                 <br />
                 <input
                   type="button"
-                  onclick="clrqsetcomplete();"
+                  onclick="clrqsetcomplete()"
                   class="btn btn-danger clrnotibtn"
                   value="Clear Question Set"
                 />
                 <input
                   type="button"
                   class="btn btn-info clrnotibtn"
-                  onclick="$('#clrqsetnotify').hide();$('#falsesecback-two').hide();"
+                  onclick="
+                    $('#clrqsetnotify').hide();
+                    $('#falsesecback-two').hide();
+                  "
                   value="Back"
                 />
                 <div
@@ -2893,13 +2950,10 @@
                 ></div>
               </div>
             </div>
-
             <br />
           </form>
-
           <div id="falsesecback-two"></div>
         </div>
-
         <!-- Preview Section -->
         <div id="previewquestion">
           <div id="previewr">
@@ -2920,7 +2974,6 @@
               </center>
             </div>
           </div>
-
           <div id="previews" align="center">
             <div id="previewqset" style="text-align: left">
               <div align="center" style="color: #d9d8db; margin-top: 120px">
@@ -2938,13 +2991,11 @@
                 </svg>
               </div>
             </div>
-
             <div align="center" id="loaderCon">
               <div id="loader-qst" class="spinner-border text-primary"></div>
             </div>
           </div>
         </div>
-
         <!-- Floating Button Group -->
         <div
           style="bottom: 0; right: 0; position: fixed"
@@ -2954,23 +3005,30 @@
           <button
             class="btn btn-dark"
             id="clrqset"
-            onclick="$('#clrqsetnotify').show();$('#falsesecback-two').show();"
+            onclick="
+              $('#clrqsetnotify').show();
+              $('#falsesecback-two').show();
+            "
           >
             Clear
           </button>
-          <button class="btn btn-primary" onclick="displayQST();" id="preqbtn">
+          <button class="btn btn-primary" onclick="displayQST()" id="preqbtn">
             Preview Question
           </button>
           <button
             class="btn btn-warning"
-            onclick="previewqset();"
+            onclick="previewqset()"
             id="preqsetbtn"
           >
             Preview Question Set
           </button>
           <button
             class="btn btn-danger closeqform"
-            onclick="$('#otserviceexamid').slideUp('fast');$('#falsesecback').slideUp('fast');$('.otserviceinfo').slideUp('fast');"
+            onclick="
+              $('#otserviceexamid').slideUp('fast');
+              $('#falsesecback').slideUp('fast');
+              $('.otserviceinfo').slideUp('fast');
+            "
             title="Close"
           >
             &times;
@@ -3001,7 +3059,6 @@
     <script src="js/stu-aprv.js"></script>
     <script src="js/str-tods.js"></script>
     <script src="divsec/js/test-edit.js"></script>
-
     <script>
       $("#upload").change(function () {
         amritImgUpload(event, 1);
@@ -3015,17 +3072,15 @@
         let result = "";
         for (let i = 0; i < length; i++) {
           result += characters.charAt(
-            Math.floor(Math.random() * characters.length)
+            Math.floor(Math.random() * characters.length),
           );
         }
         result += "-MASTROWALL-ED";
         return result;
       }
-
       function getFileExtension(filename) {
         return filename.split(".").pop();
       }
-
       function amritImgUpload(event, kact) {
         const file = event.target.files[0];
         if (file) {
@@ -3044,38 +3099,29 @@
               image: base64Image,
               image_name: randomImageName,
             };
-
             const imageData = JSON.stringify(imageJSON);
             eventapicallupload(event, kact, imageData);
           };
           reader.readAsDataURL(file);
         }
       }
-
       function eventapicallupload(event, kact, imagedata) {
         const action = "upload";
-
         if (!imagedata) {
           alert("Image data is missing");
           return;
         }
-
         const url = `https://api.amrit-corp.com/_img/?a=${action}`;
         fetch(url, {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ b: imagedata }),
         })
           .then((response) => response.json())
           .then((data) => {
             if (data.success) {
               var link = decodeURIComponent(data.path);
-
-              /*   imagestore(user, link); */
-
-              if (kact === 1) {
+              /* imagestore(user, link); */ if (kact === 1) {
                 document.getElementById("tthumb").value = link;
               } else if (kact === 2) {
                 document.getElementById("ppic").value = link;
@@ -3093,23 +3139,19 @@
           });
       }
     </script>
-
     <script src="TOD/dist/mathlive.min.js"></script>
-
     <script>
       window.addEventListener("DOMContentLoaded", () =>
-        MathLive.renderMathInDocument()
+        MathLive.renderMathInDocument(),
       );
       mf.addEventListener("focus", () => mathVirtualKeyboard.show());
       document.body.addEventListener("click", () => mathVirtualKeyboard.hide());
     </script>
-
     <script type="module">
       import { ComputeEngine } from "https://unpkg.com/@cortex-js/compute-engine?module";
       const ce = new ComputeEngine();
       document.getElementsByClassName("mftd").disabled = true;
     </script>
-
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker.register("service-worker.js");
