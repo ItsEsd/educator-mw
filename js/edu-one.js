@@ -1308,13 +1308,33 @@ $("#opcal").click(function () {
   $("#showServiceEdu").show();
   $("#showServiceEdu").css("overflow-y", "hidden");
   $("#calcontain").show();
+  if (history.state !== "sec-clsrmcal") {
+    history.pushState("sec-clsrmcal", "");
+  }
 });
-
+if (window.innerWidth < 900) {
+  if (history.state !== "sec-clsrmcal") {
+    history.pushState("sec-clsrmcal", "");
+  }
+  window.addEventListener("popstate", function () {
+    $("#showServiceEdu").hide();
+    $("#showServiceEdu").css("overflow-y", "auto");
+    $("#calcontain").hide();
+    if (history.state === "sec-clsrmcal") {
+      history.back();
+    }
+  });
+}
 $("#opensrvc").click(function () {
   $("#showServiceEdu").show();
 
   $("#calcontain").hide();
+
+  if (history.state !== "sec-clsrmcal") {
+    history.pushState("sec-clsrmcal", "");
+  }
 });
+
 $("#hidenavl").click(function () {
   $("#showServiceEdu").hide();
   $("#showServiceEdu").css("overflow-y", "auto");
