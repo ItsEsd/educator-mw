@@ -439,7 +439,9 @@
   max-width: 1000px;
   text-align: justify;
 }
-
+#info {
+  margin-bottom: 10px;
+}
 #info,
 #preFoot {
   float: left;
@@ -512,7 +514,7 @@ math-field:active {
 }
 .tx {
   display: inline-block;
-  padding: 10px;
+  padding: 5px;
 }
 
 #avthumb:hover {
