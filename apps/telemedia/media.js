@@ -71,16 +71,17 @@ function getData(e) {
     frmdcon: {
       border: "0px",
       width: "100%",
-      height: "485px",
+      height: "65vh",
+      borderRadius: "10px",
     },
     inm1confrm: {
       width: "100%",
       backgroundColor: "white",
-      borderRadius: "10px",
       overflow: "hidden",
       display: "block",
       marginBottom: "40px",
-      maxHeight: "498px",
+      maxHeight: "68vh",
+      borderRadius: "10px",
     },
   };
 

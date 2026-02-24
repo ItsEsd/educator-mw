@@ -31,27 +31,28 @@ body {
   height: 100%;
 }
 
-/* width */
-::-webkit-scrollbar {
+width ::-webkit-scrollbar {
   height: 0px;
   width: 6px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #ffffff83;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #1a2ca5;
   border-radius: 2px;
-  border: 1px solid #ffffff83;
+  border: 1.5px solid #ffffff83;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #0d0672;
+}
+* {
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  scrollbar-color: #ffffff #1a2da500;
 }
 .telemhead {
   height: 50px;
@@ -65,7 +66,8 @@ body {
   width: 100%;
   position: fixed;
   background-repeat: repeat;
-  height: 55px;
+  height: 56px;
+  border-bottom: 2px solid #ffffff5f;
 }
 #loader {
   position: absolute;
