@@ -6,6 +6,7 @@ var rShow =
 function telemed() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+  document.body.style.overflowY = "hidden";
   $("#inm1,#inm2,#vid").empty();
   $("#inm1holder,#inm2,#vid").hide();
   $(".box").css("background-color", "#000");
@@ -77,12 +78,9 @@ function getData(e) {
     },
     inm1confrm: {
       width: "100%",
-      backgroundColor: "white",
       overflow: "hidden",
       display: "block",
       marginBottom: "40px",
-      maxHeight: "68vh",
-      borderRadius: "10px",
     },
   };
 
@@ -174,4 +172,5 @@ function getData(e) {
   document.getElementById("loader_in").style.visibility = "hidden";
 
   $("#inm1holder,#inm2,#vid").show();
+  document.body.style.overflowY = "auto";
 }
