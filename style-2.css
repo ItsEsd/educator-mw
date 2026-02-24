@@ -256,7 +256,7 @@
 }
 #experform {
   background-color: #fff;
-  background-image: linear-gradient(-180deg, #070e40, #1f267d);
+  background-image: linear-gradient(-180deg, #070e40, #1a4092);
 }
 #examportalbtn {
   width: 100%;
@@ -950,6 +950,27 @@ math-field:active {
   margin-top: 40px;
   background-color: #ecebeb;
   border-radius: 4px;
+  display: inline-block;
+  margin-top: 0px !important;
+}
+.exmprfinf {
+  width: 100%;
+  font-size: 13px;
+  display: inline-block;
+  margin-top: 10px !important;
+  margin-bottom: 0px;
+  position: relative;
+}
+.exmprfinf button {
+  bottom: 0px;
+  right: 0;
+  position: absolute;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 5px;
+  background: #e6e6e6;
+  cursor: pointer;
+  outline: none !important;
 }
 .exdtlsst p {
   font-size: 14px;

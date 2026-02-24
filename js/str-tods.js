@@ -692,20 +692,50 @@ function rdsvexm(e) {
           <button class="btn btn-primary svshowexres" onclick="shoeprevexresult(this)">Check Performance</button>
           <button class="btn btn-danger svshowexres" onclick="deletesavedexam('${examId}')">Delete</button>
         </span>
-      </div><br>
-      <p style="font-size:14px;">
-        <span style="float:left;" class="svdexmsed">Exam ID: ${examId}</span><br>
-        <span style="float:left;">Exam Pass: ${examPass}</span>
-      </p>
+      </div>
       <div class="exdtlsst">${examDetails}</div>
       <input class="exidsv" type="hidden" value="${examId}">
       <input class="enidsv" type="hidden" value="${examPass}">
-      <br><hr>
+      <p class="exmprfinf">
+        <span style="float:left;" class="svdexmsed">Exam ID: ${examId}</span><br>
+        <span style="float:left;">Exam Pass: ${examPass}</span>
+        <button
+            title="Copy Exam ID & Pass"
+            onclick="copyExamInfo(this)">
+      📋 Copy
+    </button>
+      </p><hr>
     `;
 
     container.appendChild(card);
     srno++;
   }
+}
+
+function copyExamInfo(btn) {
+  const card = btn.closest(".savevexmdiv");
+  if (!card) {
+    console.warn("copyExamInfo: could not locate parent .card element");
+    return;
+  }
+
+  const examId = card.querySelector(".exidsv")?.value ?? "";
+  const examPass = card.querySelector(".enidsv")?.value ?? "";
+  const examDescptn = card.querySelector(".exdtlsst")?.innerText ?? "";
+
+  const txt = `${examDescptn} 
+[ Exam ID: ${examId} ## Exam Pass: ${examPass} ]`;
+  navigator.clipboard
+    .writeText(txt)
+    .then(() => {
+      const original = btn.innerHTML;
+      btn.innerHTML = "✅ Copied!";
+      setTimeout(() => (btn.innerHTML = original), 1000);
+    })
+    .catch((err) => {
+      console.error("Failed to copy exam info:", err);
+      alert("Unable to copy to clipboard. Please try again.");
+    });
 }
 
 function shoeprevexresult(label) {
