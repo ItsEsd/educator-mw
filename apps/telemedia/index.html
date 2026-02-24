@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-IN">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,7 +26,13 @@
     <script src="../../vendor/js/jquery-ui-1.11.2.min.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body onload="myFunction(); telemed();" style="margin: 0">
+  <body
+    onload="
+      myFunction();
+      telemed();
+    "
+    style="margin: 0"
+  >
     <div id="loader2" class="spinner-border text-light"></div>
     <div style="display: none" id="myDiv">
       <div class="telemhead">
@@ -79,6 +85,7 @@
               border-bottom-right-radius: 10px;
               border-bottom-left-radius: 10px;
             "
+            id="inm1holder"
           >
             <div id="inm1"></div>
           </div>
@@ -96,7 +103,7 @@
             <br />
             <div align="center">
               <div id="dquote" style="width: 96%; max-width: 800px">
-                <p style="color: #666666">Loading..</p>
+                <p style="color: #a6a6a6">Loading..</p>
               </div>
             </div>
             <br /><br />
@@ -161,7 +168,7 @@
         });
       });
       document.addEventListener("contextmenu", (event) =>
-        event.preventDefault()
+        event.preventDefault(),
       );
     </script>
   </body>

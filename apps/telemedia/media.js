@@ -7,6 +7,7 @@ function telemed() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
   $("#inm1,#inm2,#vid").empty();
+  $("#inm1holder,#inm2,#vid").hide();
   $(".box").css("background-color", "#000");
   document.getElementById("loader_in").style.visibility = "visible";
   document.getElementById("showhtml").style.display = "block";
@@ -171,4 +172,6 @@ function getData(e) {
   //   }
   $(".box").css("background-color", "#6d0404");
   document.getElementById("loader_in").style.visibility = "hidden";
+
+  $("#inm1holder,#inm2,#vid").show();
 }
