@@ -358,17 +358,19 @@ function ctrlqeduin(e) {
       for (var w = 0; w < lenstr - 1; w++) {
         document.getElementById("LiveTOD").innerHTML +=
           '<div class="wrapTOD"><div class="card">' +
-          '<img class="card-img-top" src="' +
-          singlest[w + 3] +
+          '<img class="card-img-top" onerror="this.style.display=`none`" src="' +
+          singlest[w + 4] +
           '"><div class="card-body"><h4>' +
           singlest[w + 1] +
           '</h4></div> <div class="card-footer" style="text-align:left;"><p>' +
           singlest[w + 2] +
-          '</p></div> </div><div class="notifyotcontain"><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>' +
+          '</p></div> </div><div class="notifyotcontain"><span><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#434343"><path d="M480-144q-70 0-131.13-26.6-61.14-26.6-106.4-71.87-45.27-45.26-71.87-106.4Q144-410 144-480t26.6-131.13q26.6-61.14 71.87-106.4 45.26-45.27 106.4-71.87Q410-816 480-816q81 0 149.5 35T744-686v-130h72v240H576v-72h107q-35.91-44.8-88.45-70.4Q542-744 480-744q-109 0-186.5 77.5T216-480q0 109 77.5 186.5T480-216q109 0 186.5-77.5T744-480h72q0 140-98 238t-238 98Zm100-200L444-480v-192h72v162l115 115-51 51Z"/></svg>' +
+          singlest[w + 3] +
+          '</span><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>' +
           '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></span></div></div><input class="topictdid" style="display: none;" value="' +
           singlest[w] +
           '"><br><hr style="width:90%;max-width:600px;"><br>';
-        w = w + 3;
+        w = w + 4;
       }
     } else {
       document.getElementById("LiveTOD").style.display = "block";
@@ -596,17 +598,19 @@ function ldlivetd(e) {
       for (var w = 0; w < lenstr - 1; w++) {
         document.getElementById("LiveTOD").innerHTML +=
           '<div class="wrapTOD"><div class="card">' +
-          '<img class="card-img-top" src="' +
-          singlest[w + 3] +
+          '<img class="card-img-top" onerror="this.style.display= `none`" src="' +
+          singlest[w + 4] +
           '"><div class="card-body"><h4>' +
           singlest[w + 1] +
           '</h4></div> <div class="card-footer" style="text-align:left;"><p>' +
           singlest[w + 2] +
-          '</p></div> </div><div class="notifyotcontain"><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>' +
+          '</p></div> </div><div class="notifyotcontain"><span><svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#434343"><path d="M480-144q-70 0-131.13-26.6-61.14-26.6-106.4-71.87-45.27-45.26-71.87-106.4Q144-410 144-480t26.6-131.13q26.6-61.14 71.87-106.4 45.26-45.27 106.4-71.87Q410-816 480-816q81 0 149.5 35T744-686v-130h72v240H576v-72h107q-35.91-44.8-88.45-70.4Q542-744 480-744q-109 0-186.5 77.5T216-480q0 109 77.5 186.5T480-216q109 0 186.5-77.5T744-480h72q0 140-98 238t-238 98Zm100-200L444-480v-192h72v162l115 115-51 51Z"/></svg>' +
+          singlest[w + 3] +
+          '</span><span class="rmvtopictd" onclick="notifyrmvtd(this);">Remove<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16"><path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>' +
           '<path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/></svg></span></div></div><input class="topictdid" style="display: none;" value="' +
           singlest[w] +
           '"><br><hr style="width:90%;max-width:600px;"><br>';
-        w = w + 3;
+        w = w + 4;
         document.getElementById("loaderTOD").style.display = "none";
       }
     } else if (reslt[0].TOD == "") {
@@ -868,16 +872,41 @@ function noextlink() {
     jQuery("#noextlinkdiv").fadeOut("fast");
   }, 6000);
 }
+function nowFormatted(timeZone) {
+  const d = new Date();
 
+  const parts = new Intl.DateTimeFormat("en-US", {
+    weekday: "short",
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+    timeZone,
+  }).formatToParts(d);
+
+  const get = (type) => parts.find((p) => p.type === type).value;
+  return `${get("weekday")} ${get("day")}, ${get("month")}, ${get("year")} ${get("hour")}:${get("minute")}`;
+}
 function limitchar() {
   var tdtitle = $("#ttdtitle").val().replace(/%/g, "&#37;");
   var tdbrief = $("#tbrief").val().replace(/%/g, "&#37;");
-  var tdthumb = $("#tthumb").val();
+  var tdthumb = $("#tthumb").val() || "NA";
+  var tttime = nowFormatted();
   var randno =
     Math.random().toString(26).substring(2, 5) +
     Math.random().toString(26).substring(2, 5);
   var valuee =
-    randno + "{td}," + tdtitle + "{td}," + tdbrief + "{td}," + tdthumb;
+    randno +
+    "{td}," +
+    tdtitle +
+    "{td}," +
+    tdbrief +
+    "{td}," +
+    tttime +
+    "{td}," +
+    tdthumb;
   document.getElementById("json_tod").value = encodeURIComponent(valuee);
   var str = String(valuee);
   var len = str.length;

@@ -613,22 +613,22 @@ input:focus {
   background-color: #1a2ca5;
   z-index: 1;
 }
-.card-body {
+.wrapTOD .card-body {
   background-color: #1a2ca5;
   color: white;
 }
-.card-footer {
+.wrapTOD .card-footer {
   width: 100%;
   word-wrap: break-word;
 }
-.card-footer img,
+.wrapTOD .card-footer img,
 #todconedit img {
   width: 100%;
 }
 
-.card {
-  border: 1px solid #1a2ca5;
-  border-radius: 0px;
+.wrapTOD .card {
+  border: 1px dashed #1a2ca5;
+  border-radius: 5px;
 }
 
 a,

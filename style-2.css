@@ -211,21 +211,37 @@
   background-color: #e23535;
   color: white;
   cursor: pointer;
-  margin-bottom: 4px;
-  margin-top: 4px;
-  border-radius: 4px !important;
+  border-radius: 4px;
   font-size: 14px !important;
 }
 .rmvtopictd:hover {
   opacity: 0.9;
+  padding-right: 2px;
+  transition: all 0.2s ease;
 }
 .notifyotcontain {
   width: 100%;
   max-width: 600px;
   text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #d0daff;
+  padding: 0px;
+  padding-left: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  font-size: 13px;
+  border: 1px dashed #3100c4;
+}
+.notifyotcontain span {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 .notifyotcontain svg {
-  margin-left: 4px;
+  margin-left: 4px !important;
+  margin-right: 4px !important;
 }
 
 #srcandsvex .sectodinput {
@@ -366,11 +382,13 @@
 #prevexperform::-webkit-scrollbar-thumb:hover {
   background: #1a2ca5;
 }
+
 #formsttod {
   width: 98%;
   max-width: 600px;
   padding-top: 20px;
 }
+
 .storetdbtn {
   margin-top: 4px;
   margin-right: 4px;
@@ -379,6 +397,7 @@
   color: black;
   border-radius: 5px;
 }
+
 #sttodedu {
   width: 30px;
   border-radius: 0px;
@@ -388,21 +407,25 @@
   border-bottom-left-radius: 6px;
   border-top-left-radius: 6px;
 }
+
 .storetdbtn:focus,
 .storetdbtn:active {
   -webkit-transform: scale(1.04);
   transform: scale(1.04);
 }
+
 #strtodedu .form-control {
   display: inline-block;
   margin: 4px;
   margin-bottom: 6px;
   max-width: 47%;
 }
+
 .todcomm {
   max-width: 96% !important;
   height: 40px !important;
 }
+
 .sectodinput {
   display: inline-block;
   max-width: 48%;
