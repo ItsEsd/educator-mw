@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-IN">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -48,7 +48,12 @@
       }
     </script>
   </head>
-  <body onload="initDoc(); pasteFun();">
+  <body
+    onload="
+      initDoc();
+      pasteFun();
+    "
+  >
     <div id="dashboard" class="container">
       <div id="skcpcon"></div>
       <div id="chrtlpd">
@@ -60,7 +65,7 @@
       </div>
       <div align="center" id="editorBoard" style="display: block; padding: 5px">
         <form name="compForm" onsubmit="return false;" id="texteditform">
-          <input type="hidden" name="myDoc" />
+          <input type="hidden" />
           <div id="toolBar2">
             <img
               class="tb1"
@@ -68,7 +73,7 @@
               data-toggle="modal"
               data-target="#crimg"
               src="https://mastrowall.com/TOD/icons/picture.svg"
-              onclick="document.getElementById('btnOkImg').disabled='true';"
+              onclick="document.getElementById('btnOkImg').disabled = 'true'"
             />
             <img
               class="tb1"
@@ -81,7 +86,7 @@
               id="chrtlepd"
               type="button"
               title="Chartle"
-              onclick="opnchrtl();"
+              onclick="opnchrtl()"
             >
               <img src="../images/icon-pie-chart.png" /></button
             ><img
@@ -100,79 +105,86 @@
             <img
               class="tb1"
               title="Undo"
-              onclick="formatDoc('undo');"
+              onclick="formatDoc('undo')"
               src="https://mastrowall.com/TOD/icons/undo-alt-solid.svg"
             />
             <img
               class="tb1"
               title="Redo"
-              onclick="formatDoc('redo');"
+              onclick="formatDoc('redo')"
               src="https://mastrowall.com/TOD/icons/redo-alt-solid.svg"
             />
             <img
               class="intLink"
               title="Bold"
-              onclick="formatDoc('bold');"
+              onclick="formatDoc('bold')"
               src="https://mastrowall.com/TOD/icons/bold-button.svg"
             />
             <img
               class="intLink"
               title="Italic"
-              onclick="formatDoc('italic');"
+              onclick="formatDoc('italic')"
               src="https://mastrowall.com/TOD/icons/italic-button.svg"
             />
             <img
               class="intLink"
               title="Underline"
-              onclick="formatDoc('underline');"
+              onclick="formatDoc('underline')"
               src="https://mastrowall.com/TOD/icons/underline-text.svg"
             />
             <img
               class="intLink"
               title="Left align"
-              onclick="formatDoc('justifyleft');"
+              onclick="formatDoc('justifyleft')"
               src="https://mastrowall.com/TOD/icons/left-alignment.svg"
             />
             <img
               class="intLink"
               title="Center align"
-              onclick="formatDoc('justifycenter');"
+              onclick="formatDoc('justifycenter')"
               src="https://mastrowall.com/TOD/icons/center-alignment.svg"
             />
 
             <img
               class="intLink"
               title="Right align"
-              onclick="formatDoc('justifyright');"
+              onclick="formatDoc('justifyright')"
               src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJMYXllcl8xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4PSIwcHgiIHk9IjBweCINCgkgdmlld0JveD0iMCAwIDMwMCAzMDAiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMwMCAzMDA7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxnPg0KCTxnPg0KCQk8cGF0aCBkPSJNMTUwLjAwNCwwQzY3LjE2NSwwLDAuMDAxLDY3LjE2MSwwLjAwMSwxNDkuOTk3UzY3LjE2NSwzMDAsMTUwLjAwNCwzMDBzMTQ5Ljk5NS02Ny4xNjMsMTQ5Ljk5NS0xNTAuMDAzDQoJCQlTMjMyLjg0MywwLDE1MC4wMDQsMHogTTYzLjkyOCwxNDEuODkyaDE3Mi4xNDR2MTUuNTYySDYzLjkyOFYxNDEuODkyeiBNMjM2LjA3MiwxMjEuNjM5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTIxLjYzOXoNCgkJCSBNMjM2LjA3MiwxOTMuMjY5SDEwNS4yMXYtMTUuNTYyaDEzMC44NjJWMTkzLjI2OXogTTYzLjkyOCwyMjkuMDgxdi0xNS41NjJoMTcyLjE0NHYxNS41NjJINjMuOTI4eiBNNjMuOTI4LDg1LjgyN1Y3MC4yNjUNCgkJCWgxNzIuMTQ0djE1LjU2MmMwLDAsMC4wMDMsMCwwLjAwMywwSDYzLjkyOHoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg=="
+            />
+
+            <img
+              class="intLink"
+              title="Justify Full"
+              onclick="formatDoc('justifyfull')"
+              src="https://mastrowall.com/TOD/icons/align-justify.svg"
             />
             <img
               class="intLink"
               title="Numbered list"
-              onclick="formatDoc('insertorderedlist');"
+              onclick="formatDoc('insertorderedlist')"
               src="https://mastrowall.com/TOD/icons/text-number-list-ltr.svg"
             />
             <img
               class="intLink"
               title="Dotted list"
-              onclick="formatDoc('insertunorderedlist');"
+              onclick="formatDoc('insertunorderedlist')"
               src="https://mastrowall.com/TOD/icons/list-bullet.svg"
             />
             <img
               class="intLink"
               title="Add indentation"
-              onclick="formatDoc('indent');"
+              onclick="formatDoc('indent')"
               src="https://mastrowall.com/TOD/icons/left-indent-01.svg"
             /><img
               class="intLink"
               title="Delete indentation"
-              onclick="formatDoc('outdent');"
+              onclick="formatDoc('outdent')"
               src="https://mastrowall.com/TOD/icons/right-indent-01.svg"
             />
             <img
               class="intLink"
               title="Print/ Save as PDF"
-              onclick="printDoc();"
+              onclick="printDoc()"
               src="https://mastrowall.com/TOD/icons/print-button.svg"
             />
             <div class="modal" id="crlnk" role="dialog">
@@ -249,15 +261,29 @@
                       id="radioS"
                       style="padding-top: 10px; display: block; color: white"
                     >
-                      <input id="rd1" name="size" type="radio" />
-                      <span onclick="$('#rd1').click();selectImg();"
+                      <input id="rd1" type="radio" />
+                      <span
+                        onclick="
+                          $('#rd1').click();
+                          selectImg();
+                        "
                         >S - Left </span
-                      ><input id="rd2" name="size" type="radio" />
-                      <span onclick="$('#rd2').click();selectImg();">
+                      ><input id="rd2" type="radio" />
+                      <span
+                        onclick="
+                          $('#rd2').click();
+                          selectImg();
+                        "
+                      >
                         M - Right</span
                       >
-                      <input id="rd3" name="size" type="radio" />
-                      <span onclick="$('#rd3').click();selectImg();">
+                      <input id="rd3" type="radio" />
+                      <span
+                        onclick="
+                          $('#rd3').click();
+                          selectImg();
+                        "
+                      >
                         L - Center</span
                       >
                     </div>
@@ -270,7 +296,10 @@
                         background-color: #0c09c9;
                         color: white;
                       "
-                      onclick="document.getElementById('previewImg').style.display='none';"
+                      onclick="
+                        document.getElementById('previewImg').style.display =
+                          'none'
+                      "
                     />
                     <div
                       id="previewImg"
@@ -321,40 +350,55 @@
               </div>
             </div>
           </div>
-          <div
-            id="CharExcd"
-            style="
-              display: none;
-              position: fixed;
-              width: 100%;
-              left: 0;
-              top: 0px;
-              text-align: center;
-            "
-          >
+          <div id="CharExcd">
             <div align="center">
-              <h4
-                onclick="formatDoc('undo');"
-                style="
-                  cursor: pointer;
-                  padding: 10px 6px;
-                  color: white;
-                  font-size: 16px;
-                  background-color: #0916c9;
-                  max-width: 240px;
-                "
-                title="Undo"
-              >
+              <h4 onclick="formatDoc('undo')">
                 Character limit exceeded! &#8634;
               </h4>
             </div>
           </div>
-
+          <div class="tdrv-modal">
+            <div class="tdrv-modal-body">
+              <div class="tdrvfunc">
+                <div>All TOD <span id="ttltods"></span></div>
+                <div>
+                  <input
+                    id="srchtd"
+                    type="text"
+                    placeholder="Search TOD"
+                    autocomplete="off"
+                  />
+                </div>
+                <div>
+                  <span class="rfshtdrvstr"
+                    >Refresh<svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="12px"
+                      viewBox="0 -960 960 960"
+                      width="12px"
+                      fill="#242424"
+                      style="margin-left: 4px"
+                      id="rotttdload"
+                    >
+                      <path
+                        d="M331-126q-107-45-171-141T96-479q0-32 5-62.5t15-60.5l-71 41-36-63 187-108 108 188-62 36-51-88q-11 28-17 57.5t-6 60.5q0 97 54.5 175.5T368-189l-37 63Zm293-474v-72h102q-43-55-107-87.5T480-792q-56 0-105 19t-90 51l-37-63q48-37 107-58t125-21q87 0 160.5 35.5T768-733v-83h72v216H624ZM590 0 403-108l108-187 63 36-51 88q115-17 192-104.5T792-477q0-13-1-25.5t-3-25.5h73q2 12 2.5 24.5t.5 25.5q0 136-87.5 242T555-103l71 41-36 62Z"
+                      /></svg></span
+                  ><span class="clstdrvstr">&times;</span>
+                </div>
+              </div>
+              <div class="tdrv-modal-content" id="tdrvstr">
+                <p class="notdrv">EMPTY!</p>
+              </div>
+            </div>
+          </div>
           <input id="dateQ" style="display: none" />
           <div id="tbxcontn">
             <div id="textBox" contenteditable="true" align="left">
               <p
-                onclick="document.getElementById('textBox').innerHTML='';document.getElementById('topictod').style.display = 'none';"
+                onclick="
+                  document.getElementById('textBox').innerHTML = '';
+                  document.getElementById('topictod').style.display = 'none';
+                "
                 style="height: 500px; width: 100%"
               >
                 Start with a topic..
@@ -367,11 +411,14 @@
               class="intLink"
               title="Download Text"
               id="export"
-              onclick="saveasDoc();"
+              onclick="saveasDoc()"
               src="https://www.svgrepo.com/show/120995/download.svg"
             />
             <select
-              onchange="formatDoc('fontname',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('fontname', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option class="heading" selected>Font</option>
               <option>Arial</option>
@@ -382,7 +429,10 @@
               <option>Times New Roman</option>
             </select>
             <select
-              onchange="formatDoc('formatblock',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('formatblock', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option selected>Formatting</option>
               <option value="h1">Heading 1</option>
@@ -395,7 +445,10 @@
               <option value="pre">Preformatted</option>
             </select>
             <select
-              onchange="formatDoc('forecolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('forecolor', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option class="heading" selected>Color</option>
               <option value="red">Red</option>
@@ -407,7 +460,10 @@
               <option value="white">White</option>
             </select>
             <select
-              onchange="formatDoc('backcolor',this[this.selectedIndex].value);this.selectedIndex=0;"
+              onchange="
+                formatDoc('backcolor', this[this.selectedIndex].value);
+                this.selectedIndex = 0;
+              "
             >
               <option class="heading" selected>Background</option>
               <option value="red">Red</option>
@@ -432,22 +488,27 @@
               id="sktchpd"
               type="button"
               class="btn btn-dark"
-              onclick="opnskpd();"
+              onclick="opnskpd()"
             >
               Sketch Pad
             </button>
             <button
               type="button"
               id="postTD"
-              onclick="document.getElementById('postT').style.display='block';document.getElementById('p1').style.display='block';document.getElementById('prepost').style.display='none'; dateUp();"
+              onclick="
+                document.getElementById('postT').style.display = 'block';
+                document.getElementById('p1').style.display = 'block';
+                document.getElementById('prepost').style.display = 'none';
+                dateUp();
+              "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="18"
+                height="18"
                 fill="currentColor"
                 class="bi bi-folder-symlink-fill"
-                viewBox="0 0 16 16"
+                viewBox="0 0 18 18"
               >
                 <path
                   d="M13.81 3H9.828a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 6.172 1H2.5a2 2 0 0 0-2 2l.04.87a1.99 1.99 0 0 0-.342 1.311l.637 7A2 2 0 0 0 2.826 14h10.348a2 2 0 0 0 1.991-1.819l.637-7A2 2 0 0 0 13.81 3zM2.19 3c-.24 0-.47.042-.684.12L1.5 2.98a1 1 0 0 1 1-.98h3.672a1 1 0 0 1 .707.293L7.586 3H2.19zm9.608 5.271l-3.182 1.97c-.27.166-.616-.036-.616-.372V9.1s-2.571-.3-4 2.4c.571-4.8 3.143-4.8 4-4.8v-.769c0-.336.346-.538.616-.371l3.182 1.969c.27.166.27.576 0 .742z"
@@ -458,15 +519,18 @@
             <button
               type="button"
               id="previewTD"
-              onclick="document.getElementById('p2').style.display='block';document.getElementById('prepost').style.display='none';"
+              onclick="
+                document.getElementById('p2').style.display = 'block';
+                document.getElementById('prepost').style.display = 'none';
+              "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
+                width="18"
+                height="18"
                 fill="currentColor"
                 class="bi bi-bullseye"
-                viewBox="0 0 16 16"
+                viewBox="0 0 18 18"
               >
                 <path
                   d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
@@ -481,6 +545,34 @@
               </svg>
               View TOD
             </button>
+            <button type="button" id="uptodnw" disabled>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20px"
+                viewBox="0 -960 960 960"
+                width="20px"
+                fill="#ffffff"
+              >
+                <path
+                  d="M740-160v-488l-44 44-56-56 140-140 140 140-57 56-43-43v487h-80Zm-620-80v-163l295-294q24-24 57.5-23t56.5 25l48 50q23 23 22.5 56T576-533L283-240H120Zm80-80h50l162-162-25-25-25-25-162 162v50Zm269-219-50-50 50 50Z"
+                />
+              </svg>
+
+              Update TOD
+            </button>
+            <button type="button" id="discrtdnw">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="20px"
+                viewBox="0 -960 960 960"
+                width="20px"
+                fill="#ffffff"
+              >
+                <path
+                  d="m476-420 84-84 84 84 56-56-84-84 84-84-56-56-84 84-84-84-56 56 84 84-84 84 56 56ZM320-240q-33 0-56.5-23.5T240-320v-480q0-33 23.5-56.5T320-880h480q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H320Zm0-80h480v-480H320v480ZM160-80q-33 0-56.5-23.5T80-160v-560h80v560h560v80H160Zm160-720v480-480Z"
+                />
+              </svg>
+            </button>
             <button class="newtdc" title="Create New">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -493,6 +585,19 @@
                 />
               </svg>
             </button>
+            <button class="alltd" title="All TODs">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="30px"
+                viewBox="0 -960 960 960"
+                width="30px"
+                fill="#ffffff"
+              >
+                <path
+                  d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm0-507h560v-133H200v133Zm0 214h560v-134H200v134Zm0 213h560v-133H200v133Zm40-454v-80h80v80h-80Zm0 214v-80h80v80h-80Zm0 214v-80h80v80h-80Z"
+                />
+              </svg>
+            </button>
           </div>
           <div style="display: none">
             <p id="editMode">
@@ -500,7 +605,7 @@
                 type="checkbox"
                 name="switchMode"
                 id="switchBox"
-                onchange="setDocMode(this.checked);"
+                onchange="setDocMode(this.checked)"
               />
               <label for="switchBox">Show HTML</label>
             </p>
@@ -527,73 +632,109 @@
             <div id="avatarBrd" style="display: none; margin-bottom: 20px">
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/WAGVDvx.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/WAGVDvx.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/WAGVDvx.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/J91ETXd.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/J91ETXd.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/J91ETXd.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/GZwxDPC.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/GZwxDPC.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/GZwxDPC.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/VPgRpoP.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/VPgRpoP.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/VPgRpoP.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/zIM34RQ.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/zIM34RQ.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/zIM34RQ.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/vLQpCmM.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/vLQpCmM.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/vLQpCmM.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/rx94KbZ.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/rx94KbZ.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/rx94KbZ.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/iH6WgOT.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/iH6WgOT.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/iH6WgOT.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/kXTCvY5.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/kXTCvY5.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/kXTCvY5.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/Gm8hWSy.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/Gm8hWSy.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/Gm8hWSy.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/sxMCj4b.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/sxMCj4b.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/sxMCj4b.png"
               /></a>
               <a
                 class="proThumb"
-                onclick="document.getElementById('ppic').value= 'https://i.imgur.com/WZsjtn3.png';"
+                onclick="
+                  document.getElementById('ppic').value =
+                    'https://i.imgur.com/WZsjtn3.png'
+                "
               >
                 <img class="avatarPro" src="https://i.imgur.com/WZsjtn3.png"
               /></a>
@@ -678,7 +819,7 @@
                   style="
                     border: none;
                     border-radius: 4px;
-                    padding: 4px 10px;
+                    padding: 4px 15px;
                     background-color: #e6e6e6;
                   "
                 >
@@ -706,10 +847,18 @@
                 >
                   Post
                 </button>
+                <button type="submit" class="sub" value="Post" id="upTOD">
+                  Update
+                </button>
                 <button
                   type="button"
                   class="sub"
-                  onclick="document.getElementById('p1').style.display='none';document.getElementById('prepost').style.display='block'; document.getElementById('copied').innerHTML = 'Copy to Clipboard'"
+                  onclick="
+                    document.getElementById('p1').style.display = 'none';
+                    document.getElementById('prepost').style.display = 'block';
+                    document.getElementById('copied').innerHTML =
+                      'Copy to Clipboard';
+                  "
                 >
                   Close
                 </button>
@@ -772,7 +921,10 @@
                 ><button
                   type="button"
                   class="sub"
-                  onclick="document.getElementById('p2').style.display='none';document.getElementById('prepost').style.display='block';"
+                  onclick="
+                    document.getElementById('p2').style.display = 'none';
+                    document.getElementById('prepost').style.display = 'block';
+                  "
                 >
                   Close
                 </button>
@@ -848,17 +1000,17 @@
     <div align="center" style="background: white; display: none" id="preview">
       <div style="background: white; display: block" id="preTD">
         <div id="info">
-          <h5 id="previewPostCreator" class="tx" style="margin-top: 7px"></h5>
+          <h5 id="previewPostCreator" class="tx"></h5>
           <span
             id="avthumb"
-            title="Create TOD"
-            style="float: right; cursor: pointer"
-            onclick="document.getElementById('preview').style.display='none';document.getElementById('dashboard').style.display='block';"
+            title="‹‹ Back"
+            onclick="
+              document.getElementById('preview').style.display = 'none';
+              document.getElementById('dashboard').style.display = 'block';
+            "
           ></span>
         </div>
-        <br />
-        <br />
-        <h4 id="previewPostTitle" style="margin-top: 24px"></h4>
+        <h4 id="previewPostTitle"></h4>
         <hr />
         <div class="todBody">
           <div id="previewPost"></div>
@@ -867,18 +1019,17 @@
           <span id="previewPostTime" class="tx"></span>
           <span id="previewPostId" class="tx" style="float: right"></span>
         </div>
-        <br /><br /><button class="btn btn-primary" id="backtotdbrd">
-          Close</button
-        ><br />
+        <button class="btn btn-primary" id="backtotdbrd">Close</button><br />
       </div>
     </div>
+
     <script>
       $("#previewTD").click(function () {
         $("html,body").animate(
           {
             scrollTop: $("#p1").offset().top + 400,
           },
-          1000
+          1000,
         );
       });
       $("#textBox").click(function () {
@@ -889,8 +1040,8 @@
         $("#avatarBrd").slideUp("fast");
       });
       $("#backtotdbrd").click(function () {
-        $("#preview").slideUp();
-        $("#dashboard").slideDown();
+        $("#preview").hide();
+        $("#dashboard").show();
       });
       function opnskpd() {
         var elem1 = document.getElementById("skcpcon");
@@ -955,7 +1106,7 @@
         var valHTM = document.getElementById("inHtml").value;
         if (valHTM != "") {
           var postedTOD = JSON.stringify(
-            document.getElementById("inHtml").value
+            document.getElementById("inHtml").value,
           );
           var posts = JSON.parse(postedTOD);
           document.getElementById("genId").value =
@@ -966,7 +1117,7 @@
             {
               scrollTop: $("#p1").offset().top + 400,
             },
-            1000
+            1000,
           );
         } else {
           document.getElementById("p1").style.display = "none";
@@ -994,7 +1145,7 @@
         localStorage.setItem("tddraft_" + edvalue, valuee);
         var str = String(valuee);
         var len = str.length;
-        if (len >= 35000) {
+        if (len >= 40000) {
           document.getElementById("CharExcd").style.display = "block";
           document.getElementById("poTOD").disabled = true;
           document.getElementById("postTD").disabled = true;
@@ -1097,7 +1248,7 @@
           var oPrntWin = window.open(
             "",
             "_blank",
-            "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes"
+            "width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes",
           );
           oPrntWin.document.open();
           oPrntWin.document.write(toprint);
@@ -1120,14 +1271,14 @@
             document.getElementById("btnOkImg").disabled = false;
             formatDoc(
               "insertHTML",
-              '<img class="ForTypePs" src="' + imgS + '">'
+              '<img class="ForTypePs" src="' + imgS + '">',
             );
           }
           if (document.getElementById("rd2").checked) {
             document.getElementById("btnOkImg").disabled = false;
             formatDoc(
               "insertHTML",
-              '<img class="ForTypePm" src="' + imgS + '" >'
+              '<img class="ForTypePm" src="' + imgS + '" >',
             );
           }
           if (document.getElementById("rd3").checked) {
@@ -1136,7 +1287,7 @@
               "insertHTML",
               '<img class="limg" src="' +
                 imgS +
-                '" style="background:transparent;">'
+                '" style="background:transparent;">',
             );
           } else {
             return false;
@@ -1186,11 +1337,362 @@
             "insertHTML",
             '<br><div class="youvidF embed-responsive"><iframe src="' +
               myId +
-              '" frameborder="0" allowfullscreen="true"></iframe></div><br>'
+              '" frameborder="0" allowfullscreen="true"></iframe></div><br>',
           );
         } else {
           return false;
         }
+      }
+      const tdrvmdl = document.querySelector(".tdrv-modal");
+      const clstdrvmdl = document.querySelector(".clstdrvstr");
+      const strtod = document.querySelector(".alltd");
+      const rfshtdrvmdl = document.querySelector(".rfshtdrvstr");
+      const rfshldr = document.querySelector("#rotttdload");
+      const prevbrd = document.querySelector("#preview");
+
+      const tdrvstr = document.querySelector("#tdrvstr");
+      rfshtdrvmdl.addEventListener("click", getalltod);
+      strtod.addEventListener("click", function () {
+        tdrvmdl.style.display = "flex";
+      });
+      clstdrvmdl.addEventListener("click", function () {
+        tdrvmdl.style.display = "none";
+      });
+      function getalltod() {
+        rfshtdrvmdl.style.pointerEvents = "none";
+        rfshldr.classList.add("active");
+        var url_string = window.parent.location.href;
+        var xid = window.atob(url_string.split("ed=")[1].split("#true")[0]);
+        const GATE_URL =
+          "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=";
+        const appurl =
+          "https://script.google.com/macros/s/AKfycbwe9Dn1ec03P5ASGQbvSG1HIPT-Eck3v817DYTzdiHUBBbTSXrLDXfRmFZ1c6MNHPss5w/exec" +
+          "?action=getalltd" +
+          "&callback=ctrlalltd&xid=" +
+          xid +
+          "&xdmn=mastrowall.com";
+        const urlsrc = GATE_URL + encodeURIComponent(appurl);
+        var request = jQuery.ajax({
+          crossDomain: true,
+          url: urlsrc,
+          method: "GET",
+          dataType: "jsonp",
+        });
+      }
+      function stripQuotes(str) {
+        // const s = String(str).trim();
+        // return s.replace(/^["']|["']$/g, "");
+        const s = JSON.parse(str);
+        return s;
+      }
+      function ctrlalltd(response) {
+        if (!response || typeof response.ok !== "boolean") {
+          console.error("❌ malformed response", response);
+
+          rfshtdrvmdl.style.pointerEvents = "auto";
+
+          rfshldr.classList.remove("active");
+          alert("Server returned an unexpected response – see console.");
+          return;
+        }
+        if (!response.ok) {
+          rfshtdrvmdl.style.pointerEvents = "auto";
+          rfshldr.classList.remove("active");
+          console.error("❌ Server reported an error →", response.error);
+          alert("Server error – see console.");
+          return;
+        }
+
+        const rows = response.result.reverse() || [];
+
+        document.getElementById("ttltods").innerText = "(" + rows.length + ")";
+        rfshtdrvmdl.style.pointerEvents = "auto";
+        rfshldr.classList.remove("active");
+        const container = document.getElementById("tdrvstr");
+        if (!container) {
+          console.error("❌ Could not find #tdrvstr container");
+          return;
+        }
+        container.innerHTML = "";
+
+        if (rows.length === 0) {
+          container.innerHTML = "<p class='tod-notfound'>Nothing found.</p>";
+          return;
+        }
+
+        rows.forEach((row) => {
+          const [date, title, genId, html, creator, key] = row;
+
+          const rowDiv = document.createElement("div");
+          rowDiv.className = "tod-row";
+
+          rowDiv.dataset.date = date;
+          rowDiv.dataset.title = title;
+          rowDiv.dataset.genid = genId;
+          rowDiv.dataset.html = html;
+          rowDiv.dataset.creator = creator;
+          rowDiv.dataset.key = key;
+
+          const leftDiv = document.createElement("div");
+          leftDiv.className = "tod-left";
+
+          function makeField(label, value) {
+            const f = document.createElement("div");
+            f.className = "tod-field";
+            f.textContent = `${label}: ${value}`;
+            return f;
+          }
+          function makesubField(label, value) {
+            const f = document.createElement("div");
+            f.className = "tod-fieldsub";
+            f.textContent = `${label}: ${value}`;
+            return f;
+          }
+
+          leftDiv.appendChild(makeField("Date", date));
+          leftDiv.appendChild(makeField("Title", stripQuotes(title)));
+          const infodv = document.createElement("div");
+          infodv.className = "tdinfodv";
+
+          infodv.appendChild(makesubField("Creator", stripQuotes(creator)));
+          infodv.appendChild(makesubField("GenId", stripQuotes(genId)));
+          infodv.appendChild(makesubField("Key", stripQuotes(key)));
+          leftDiv.appendChild(infodv);
+
+          rowDiv.appendChild(leftDiv);
+
+          const rightDiv = document.createElement("div");
+          rightDiv.className = "tod-right";
+
+          const editBtn = document.createElement("button");
+          editBtn.className = "tod-btn edit";
+          editBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff"><path d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-30.11 21-51.56Q186-817 216-816h346l-72 72H216v528h528v-274l72-72v346q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm264-336Zm-96 96v-153l354-354q11-11 24-16t26.5-5q14.4 0 27.45 5 13.05 5 23.99 15.78L891-840q11 11 16 24t5 27q0 14-5.02 27.09Q901.96-748.83 891-738L537-384H384Zm456-405-51-51 51 51ZM456-456h51l231-231-25-26-26-25-231 231v51Zm257-257-26-25 26 25 25 26-25-26Z"/></svg> Edit`;
+          editBtn.addEventListener("click", () => {
+            todeditact(
+              stripQuotes(rowDiv.dataset.genid),
+              stripQuotes(rowDiv.dataset.key),
+              stripQuotes(rowDiv.dataset.creator),
+              stripQuotes(rowDiv.dataset.title),
+              JSON.parse(JSON.parse(rowDiv.dataset.html)),
+            );
+          });
+
+          const openBtn = document.createElement("button");
+          openBtn.className = "tod-btn open";
+          openBtn.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="16px" viewBox="0 -960 960 960" width="16px" fill="#ffffff"><path d="M288-168v-432q0-30.08 21-51.04T360-672h432q29.7 0 50.85 21.15Q864-629.7 864-600v312L672-96H360q-29.7 0-50.85-21.15Q288-138.3 288-168ZM98-703q-5-29 12.5-54t46.5-30l425-76q29-5 53.5 12.5T665-804l11 60h-73l-9-48-425 76 47 263v228q-16-7-27.5-21.08Q177-260.16 174-278L98-703Zm262 103v432h264v-168h168v-264H360Zm216 216Z"/></svg> Open`;
+          openBtn.addEventListener("click", () => {
+            const TOdraw = JSON.parse(JSON.parse(rowDiv.dataset.html));
+            showpreview(TOdraw, rowDiv.dataset.date);
+          });
+
+          rightDiv.appendChild(editBtn);
+          rightDiv.appendChild(openBtn);
+          rowDiv.appendChild(rightDiv);
+          container.appendChild(rowDiv);
+        });
+
+        const searchInput = document.getElementById("srchtd");
+        if (!searchInput.dataset.listenerAdded) {
+          searchInput.addEventListener("keyup", () => {
+            const term = searchInput.value.trim().toLowerCase();
+
+            const allRows = document.querySelectorAll("#tdrvstr .tod-row");
+            let anyVisible = false;
+
+            allRows.forEach((row) => {
+              const leftText = row
+                .querySelector(".tod-left")
+                .textContent.toLowerCase();
+              const matches = leftText.includes(term);
+              row.style.display = matches ? "" : "none";
+              if (matches) anyVisible = true;
+            });
+
+            let notFoundMsg = document.querySelector("#tdrvstr .tod-notfound");
+            if (!anyVisible) {
+              if (!notFoundMsg) {
+                notFoundMsg = document.createElement("p");
+                notFoundMsg.className = "tod-notfound";
+                notFoundMsg.textContent = "Nothing found.";
+                container.appendChild(notFoundMsg);
+              }
+              notFoundMsg.style.display = "";
+            } else if (notFoundMsg) {
+              notFoundMsg.style.display = "none";
+            }
+          });
+          searchInput.dataset.listenerAdded = "true";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", getalltod);
+
+      function showpreview(TOdraw, time) {
+        document.getElementById("dashboard").style.display = "none";
+        document.getElementById("preview").style.display = "block";
+        var inHTML = atob(TOdraw.TODContent);
+        document.getElementById("previewPost").innerHTML = unescape(
+          decodeURIComponent(inHTML),
+        );
+        document.getElementById("previewPostTime").textContent = time;
+        document.getElementById("previewPostId").textContent =
+          "ID: " + TOdraw.TODId;
+        document.getElementById("previewPostCreator").innerHTML =
+          TOdraw.TODCreator;
+
+        document.getElementById("avthumb").innerHTML =
+          '<img src="' + TOdraw.AVPic + '" style="padding:4px;">';
+        document.getElementById("previewPostTitle").innerHTML = TOdraw.TODTitle;
+        document.getElementById("loaderTD").style.visibility = "hidden";
+        document.getElementById("loaderTD").style.display = "none";
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+
+      function todeditact(id, key, creator, title, htm) {
+        document.getElementById("todTitle").value = title;
+        document.getElementById("creatorN").value = creator;
+        document.getElementById("genK").value = key;
+        document.getElementById("confirmK").value = key;
+        document.getElementById("genId").value = id;
+        document.getElementById("ppic").value = htm.AVPic;
+        document.getElementById("profilePic").innerHTML =
+          '<img width="140px" src="' + htm.AVPic + '">';
+        document.getElementById("poTOD").style.display = "none";
+        document.getElementById("upTOD").style.display = "inline-block";
+        document.getElementById("inHtml").value = htm;
+        dateUp();
+        tdrvmdl.style.display = "none";
+        const editrbx = document.getElementById("textBox");
+        editrbx.innerHTML = "";
+        editrbx.innerHTML = unescape(decodeURIComponent(atob(htm.TODContent)));
+        const updttdbtn = document.getElementById("uptodnw");
+        const discrduptd = document.getElementById("discrtdnw");
+        updttdbtn.disabled = true;
+        editrbx.addEventListener("input", function () {
+          updttdbtn.disabled = false;
+        });
+        const updttdnow = document.getElementById("upTOD");
+        document.getElementById("postTD").style.display = "none";
+        document.getElementById("previewTD").style.display = "none";
+
+        updttdbtn.style.display = "inline-block";
+        discrduptd.style.display = "inline-block";
+        discrduptd.addEventListener("click", function () {
+          updttdbtn.style.display = "none";
+          discrduptd.style.display = "none";
+          document.getElementById("postTD").style.display = "inline-block";
+          document.getElementById("previewTD").style.display = "inline-block";
+          document.getElementById("copytoC").style.display = "none";
+          document.getElementById("poTOD").style.display = "inline-block";
+          document.getElementById("upTOD").style.display = "none";
+          document.getElementById("genK").disabled = false;
+          document.getElementById("genId").disabled = false;
+          document.getElementById("confirmK").disabled = false;
+        });
+
+        updttdbtn.addEventListener("click", function () {
+          const GATE_URL =
+            "https://api.amrit-corp.com/_header/gate/mastrowall/";
+
+          const APP_URL =
+            "https://script.google.com/macros/s/AKfycbwe9Dn1ec03P5ASGQbvSG1HIPT-Eck3v817DYTzdiHUBBbTSXrLDXfRmFZ1c6MNHPss5w/exec";
+
+          document.getElementById("genK").disabled = true;
+          document.getElementById("genId").disabled = true;
+          document.getElementById("confirmK").disabled = true;
+          document.getElementById("postT").style.display = "block";
+          document.getElementById("p1").style.display = "block";
+          document.getElementById("prepost").style.display = "none";
+          var avthumb = jQuery("#ppic").val();
+          var currentTime = jQuery("#dateQ").val();
+
+          var recip = encodeURIComponent(
+            JSON.stringify(JSON.stringify($("form").serializeObject())),
+          );
+
+          var url_string = window.parent.location.href;
+          var xid = window.atob(url_string.split("ed=")[1].split("#true")[0]);
+          updttdnow.addEventListener("click", function () {
+            var title = encodeURIComponent(
+              JSON.stringify($("#todTitle").val()),
+            );
+            var creator = encodeURIComponent(
+              JSON.stringify($("#creatorN").val()),
+            );
+            var food = encodeURIComponent(JSON.stringify($("#genK").val()));
+            var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
+            var recip = encodeURIComponent(
+              JSON.stringify(JSON.stringify($("form").serializeObject())),
+            );
+            var url_string = window.parent.location.href;
+            var xid = window.atob(url_string.split("ed=")[1].split("#true")[0]);
+            var currentTime = jQuery("#dateQ").val();
+            async function updateTOD() {
+              document.getElementById("upTOD").disabled = true;
+              document.getElementById("upTOD").textContent = "Updating...";
+              const formData = {
+                target_url: APP_URL,
+
+                genId: itemno,
+
+                creatorN: creator,
+
+                basehtm: recip,
+
+                genK: food,
+
+                title: title,
+
+                dateQ: currentTime,
+
+                usrkk: xid,
+
+                action: "updatetd",
+
+                callback: "ctrlqintd",
+              };
+
+              try {
+                const response = await fetch(GATE_URL, {
+                  method: "POST",
+
+                  headers: {
+                    "Content-Type": "application/x-www-form-urlencoded",
+                  },
+
+                  body: new URLSearchParams(formData),
+                });
+
+                const text = await response.text();
+
+                const jsonString = text.substring(
+                  text.indexOf("(") + 1,
+
+                  text.lastIndexOf(")"),
+                );
+
+                const jsonObj = JSON.parse(jsonString);
+                document.getElementById("upTOD").disabled = false;
+                document.getElementById("upTOD").textContent = "Update";
+                if (jsonObj.ok === true) {
+                  successNotify(title);
+                  getalltod();
+                } else {
+                  requestFailed();
+                }
+              } catch (err) {
+                document.getElementById("upTOD").disabled = false;
+                document.getElementById("upTOD").textContent = "Update";
+                console.error("Request failed:", err);
+
+                requestFailed();
+              }
+            }
+
+            updateTOD();
+          });
+        });
       }
     </script>
     <script>
@@ -1207,7 +1709,7 @@
               oDoc.innerHTML +
               "<\/div><\/div><\/body><\/html>",
           ],
-          { type: "text/html" }
+          { type: "text/html" },
         );
         url = URL.createObjectURL(blob);
         link = document.createElement("A");
@@ -1247,7 +1749,7 @@
         var valuee = $("#inHtml").val();
         var str = String(valuee);
         var len = str.length;
-        if ($("#genK").val() == $("#confirmK").val() && len <= 20000) {
+        if ($("#genK").val() == $("#confirmK").val() && len <= 40000) {
           $("#message").html("Matching").css("font-size", "12px");
           document.getElementById("poTOD").disabled = false;
         } else {
@@ -1261,7 +1763,7 @@
         var valuee = $("#inHtml").val();
         var str = String(valuee);
         var len = str.length;
-        if ($("#genK").val() == $("#confirmK").val() && len <= 20000) {
+        if ($("#genK").val() == $("#confirmK").val() && len <= 40000) {
           $("#message").html("Matching").css("font-size", "12px");
           document.getElementById("poTOD").disabled = false;
         } else {
@@ -1291,7 +1793,7 @@
       $(function () {
         $("#confirmK").on("input", function () {
           document.getElementById("toddoc").value = JSON.stringify(
-            $("form").serializeObject()
+            $("form").serializeObject(),
           );
           return false;
         });
@@ -1335,63 +1837,175 @@
         document.getElementById("dateQ").value = currentTime;
       }
       document.getElementById("poTOD").addEventListener("click", insertgenTOD);
+
       function insertgenTOD() {
-        var TOD_script_url =
-          "https://script.google.com/macros/s/AKfycbyWEr6h0j11fjP2hudAJ-2P_21jRbSd8DC4pxqL_YiskIok_wnURI6lEcu_nyGIzlAbZQ/exec";
+        const GATE_URL = "https://api.amrit-corp.com/_header/gate/mastrowall/";
+
+        const APP_URL =
+          "https://script.google.com/macros/s/AKfycbwe9Dn1ec03P5ASGQbvSG1HIPT-Eck3v817DYTzdiHUBBbTSXrLDXfRmFZ1c6MNHPss5w/exec";
+
         var title = encodeURIComponent(JSON.stringify($("#todTitle").val()));
         var creator = encodeURIComponent(JSON.stringify($("#creatorN").val()));
         var food = encodeURIComponent(JSON.stringify($("#genK").val()));
         var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
         var recip = encodeURIComponent(JSON.stringify($("#toddoc").val()));
         var currentTime = jQuery("#dateQ").val();
-        var splitString = splitStringByLength(recip, 4500);
-        var clln = splitString.length;
-        var urlmd = [];
-        var urmi;
+
         var ti = $("#todTitle").val();
         var cre = $("#creatorN").val();
         var fo = $("#genK").val();
         var itemn = $("#genId").val();
         var reci = $("#toddoc").val();
+
+        var url_string = window.parent.location.href;
+        var xid = window.atob(url_string.split("ed=")[1].split("#true")[0]);
+
         if (ti != 0 && cre != 0 && fo != 0 && itemn != 0 && reci != 0) {
-          for (var k = 0; k < clln; k++) {
-            var urrl = urmi + k;
-            urrl =
-              TOD_script_url +
-              "?callback=ctrlqinst&genId=" +
-              itemno +
-              "&todTitle=" +
-              title +
-              "&creatorN=" +
-              creator +
-              "&toddoc=" +
-              splitString[k] +
-              "&ptno=" +
-              k +
-              "&genK=" +
-              food +
-              "&dateQ=" +
-              currentTime +
-              "&action=insertTD";
-            urlmd[k] = urrl;
+          async function addingTOD() {
+            const formData = {
+              target_url: APP_URL,
+
+              genId: itemno,
+
+              creatorN: creator,
+
+              basehtm: recip,
+
+              genK: food,
+
+              title: title,
+
+              dateQ: currentTime,
+
+              usrkk: xid,
+
+              action: "inserttd",
+
+              callback: "ctrlqintd",
+            };
+
+            try {
+              const response = await fetch(GATE_URL, {
+                method: "POST",
+
+                headers: {
+                  "Content-Type": "application/x-www-form-urlencoded",
+                },
+
+                body: new URLSearchParams(formData),
+              });
+
+              const text = await response.text();
+
+              const jsonString = text.substring(
+                text.indexOf("(") + 1,
+
+                text.lastIndexOf(")"),
+              );
+
+              const jsonObj = JSON.parse(jsonString);
+
+              if (jsonObj.ok === true) {
+                successNotify(title);
+                getalltod();
+              } else {
+                requestFailed();
+              }
+            } catch (err) {
+              console.error("Request failed:", err);
+
+              requestFailed();
+            }
           }
-          makeAjaxRequest(urlmd, 0);
-          var element = document.getElementById("genstrngary");
-          if (element !== null) {
-            element.value = JSON.stringify(urlmd);
-          } else {
-            var elem = document.createElement("input");
-            elem.id = "genstrngary";
-            elem.value = "";
-            elem.value = JSON.stringify(urlmd);
-            elem.style.display = "none";
-          }
-          $("body").append(elem);
+          addingTOD();
           document.getElementById("loader-potd").style.display = "block";
           document.getElementById("poTOD").disabled = true;
         } else {
           return false;
         }
+      }
+
+      function successNotify(title) {
+        document.getElementById("loader-potd").style.display = "none";
+        var title = encodeURIComponent(JSON.stringify($("#todTitle").val()));
+        var creator = encodeURIComponent(JSON.stringify($("#creatorN").val()));
+        var food = encodeURIComponent(JSON.stringify($("#genK").val()));
+        var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
+        var recip = encodeURIComponent(JSON.stringify($("#toddoc").val()));
+        var currentTime = jQuery("#dateQ").val();
+        var ti = $("#todTitle").val();
+        var cre = $("#creatorN").val();
+        var fo = $("#genK").val();
+        var itemn = $("#genId").val();
+        var reci = $("#toddoc").val();
+        document.getElementById("preId").value = JSON.parse(
+          decodeURIComponent(itemno),
+        );
+        document.getElementById("preK").value = JSON.parse(
+          decodeURIComponent(food),
+        );
+        document.getElementById("topictod").style.display = "block";
+        document.getElementById("AppShare").style.display = "block";
+        document.getElementById("copytoC").style.display = "block";
+        document.getElementById("topictod").innerHTML = "Topic Posted.";
+        var itemno1 = encodeURIComponent(JSON.stringify($("#genId").val()));
+        var food1 = encodeURIComponent(JSON.stringify($("#genK").val()));
+        var item = JSON.stringify($("#genId").val());
+        var foodF = JSON.stringify($("#genK").val());
+        document.getElementById("postT").style.display = "none";
+        document.getElementById("AppShare").innerHTML =
+          "<a class='ApShare' style='font-size:14px; text-decoration:none;color:#008000;background:#e6e6e6;padding:6px 10px;border-radius:4px;' type='button' target='_blank' href='https://wa.me/?text=" +
+          creator +
+          " has created a TOD. Create your TOD and share at https://mastrowall.com/. Shared TOD ID : " +
+          itemno1 +
+          " Key: " +
+          food1 +
+          " N.B: MASTROWALL is An Art of Learning. Do not misuse.' data-action='share/whatsapp/share'><b>Share On WhatsApp </b><i class='fa fa-whatsapp' style='font-size:20px;color:green;'></i></a><br><a class='ApShare' style='font-size:14px;margin-top:10px; text-decoration:none;color:#0c09c9;background:#e6e6e6;padding:6px 10px;border-radius:4px;' target='_parent' type='button' href='sms:?body=" +
+          creator +
+          " has created a TOD. Create your TOD and share at https://mastrowall.com/. Shared TOD ID : " +
+          itemno1 +
+          " Key: " +
+          food1 +
+          " N.B: MASTROWALL is An Art of Learning. Do not misuse.'><b>Send SMS </b><i class='fa fa-commenting' style='font-size:20px;color:#cc6600;'></i></a><a class='ApShare' style='font-size:14px;margin-top:10px; margin-left:6px;text-decoration:none;color:#0c09c9;background:#e6e6e6;padding:6px 10px;border-radius:4px;' target='_parent' type='button' href='mailto:?body=" +
+          creator +
+          " has created a TOD. Create your TOD and share at https://mastrowall.com/. Shared TOD ID : " +
+          itemno1 +
+          " Key: " +
+          food1 +
+          " N.B: MASTROWALL is An Art of Learning. Do not misuse.'><b>Send Mail </b><i class='fa fa-envelope' style='font-size:20px;color:#cc6600;'></i></a>";
+        document.getElementById("copyto").value =
+          "ID: " + item + " KEY: " + foodF;
+        setTimeout(function () {
+          $("#topictod").fadeOut("fast");
+        }, 5000);
+        var edvalue = getEdValue();
+        localStorage.removeItem("tddraft_" + edvalue);
+        var ndate = new Date().toDateString();
+        var txtdn = "M A S T R O W A L L || An Art of Learning\n";
+        txtdn += `
+ +-++-++-+
+ |T||O||D|  - Topic of the Day (https://tods.mastrowall.com )
+ +-++-++-+
+        \n\n`;
+        txtdn += "Title: " + ti + " | Author: " + cre + "\n";
+        txtdn += "ID: " + item + " KEY: " + foodF + "\n";
+        txtdn += "Date:" + ndate + "\n\n";
+        txtdn +=
+          "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- TOD | M A S T R O W A L L";
+        var blob = new Blob([txtdn], { type: "text/plain" });
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download =
+          "TOD_" + stripQuotes(unescape(title)) + "_" + ndate + ".txt";
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(a.href);
+        document.body.removeChild(a);
+      }
+
+      function requestFailed() {
+        document.getElementById("loader-potd").style.display = "none";
+        alert("Request Failed!");
       }
 
       function splitStringByLength(str, length) {
@@ -1414,104 +2028,6 @@
             alert("Request aborted");
           }
         });
-      }
-
-      function ctrlqinst(e) {
-        var upsts = e.result.split("/");
-        var arrystng = [];
-        arrystng = JSON.parse(document.getElementById("genstrngary").value);
-        var flln = arrystng.length;
-        if (upsts[0] === "updated") {
-          var upvl = parseInt(upsts[1]);
-          var nxtcl = upvl + 1;
-          if (nxtcl < flln) {
-            makeAjaxRequest(arrystng, nxtcl);
-          } else if ((nxtcl = flln)) {
-            document.getElementById("loader-potd").style.display = "none";
-            document.getElementById("genstrngary").value = "";
-            var title = encodeURIComponent(
-              JSON.stringify($("#todTitle").val())
-            );
-            var creator = encodeURIComponent(
-              JSON.stringify($("#creatorN").val())
-            );
-            var food = encodeURIComponent(JSON.stringify($("#genK").val()));
-            var itemno = encodeURIComponent(JSON.stringify($("#genId").val()));
-            var recip = encodeURIComponent(JSON.stringify($("#toddoc").val()));
-            var currentTime = jQuery("#dateQ").val();
-            var ti = $("#todTitle").val();
-            var cre = $("#creatorN").val();
-            var fo = $("#genK").val();
-            var itemn = $("#genId").val();
-            var reci = $("#toddoc").val();
-            document.getElementById("preId").value = JSON.parse(
-              decodeURIComponent(itemno)
-            );
-            document.getElementById("preK").value = JSON.parse(
-              decodeURIComponent(food)
-            );
-            document.getElementById("topictod").style.display = "block";
-            document.getElementById("AppShare").style.display = "block";
-            document.getElementById("copytoC").style.display = "block";
-            document.getElementById("topictod").innerHTML = "Topic Posted.";
-            var itemno1 = encodeURIComponent(JSON.stringify($("#genId").val()));
-            var food1 = encodeURIComponent(JSON.stringify($("#genK").val()));
-            var item = JSON.stringify($("#genId").val());
-            var foodF = JSON.stringify($("#genK").val());
-            document.getElementById("postT").style.display = "none";
-            document.getElementById("AppShare").innerHTML =
-              "<a class='ApShare' style='font-size:14px; text-decoration:none;color:#008000;background:#e6e6e6;padding:6px 10px;border-radius:4px;' type='button' target='_blank' href='https://wa.me/?text=" +
-              creator +
-              " has created a TOD. Create your TOD and share at https://mastrowall.com/. Shared TOD ID : " +
-              itemno1 +
-              " Key: " +
-              food1 +
-              " N.B: MASTROWALL is An Art of Learning. Do not misuse.' data-action='share/whatsapp/share'><b>Share On WhatsApp </b><i class='fa fa-whatsapp' style='font-size:20px;color:green;'></i></a><br><a class='ApShare' style='font-size:14px;margin-top:10px; text-decoration:none;color:#0c09c9;background:#e6e6e6;padding:6px 10px;border-radius:4px;' target='_parent' type='button' href='sms:?body=" +
-              creator +
-              " has created a TOD. Create your TOD and share at https://mastrowall.com/. Shared TOD ID : " +
-              itemno1 +
-              " Key: " +
-              food1 +
-              " N.B: MASTROWALL is An Art of Learning. Do not misuse.'><b>Send SMS </b><i class='fa fa-commenting' style='font-size:20px;color:#cc6600;'></i></a><a class='ApShare' style='font-size:14px;margin-top:10px; margin-left:6px;text-decoration:none;color:#0c09c9;background:#e6e6e6;padding:6px 10px;border-radius:4px;' target='_parent' type='button' href='mailto:?body=" +
-              creator +
-              " has created a TOD. Create your TOD and share at https://mastrowall.com/. Shared TOD ID : " +
-              itemno1 +
-              " Key: " +
-              food1 +
-              " N.B: MASTROWALL is An Art of Learning. Do not misuse.'><b>Send Mail </b><i class='fa fa-envelope' style='font-size:20px;color:#cc6600;'></i></a>";
-            document.getElementById("copyto").value =
-              "ID: " + item + " KEY: " + foodF;
-            setTimeout(function () {
-              $("#topictod").fadeOut("fast");
-            }, 5000);
-            document.getElementById("genK").value = "";
-            document.getElementById("confirmK").value = "";
-            var edvalue = getEdValue();
-            localStorage.removeItem("tddraft_" + edvalue);
-            var ndate = new Date().toDateString();
-            var txtdn = "M A S T R O W A L L || An Art of Learning\n";
-            txtdn += `
- +-++-++-+
- |T||O||D|  - Topic of the Day (https://tods.mastrowall.com )
- +-++-++-+
-        \n\n`;
-            txtdn += "Title: " + ti + " | Author: " + cre + "\n";
-            txtdn += "ID: " + item + " KEY: " + foodF + "\n";
-            txtdn += "Date:" + ndate + "\n\n";
-            txtdn +=
-              "------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- TOD | M A S T R O W A L L";
-            var blob = new Blob([txtdn], { type: "text/plain" });
-            var a = document.createElement("a");
-            a.href = URL.createObjectURL(blob);
-            a.download = "TOD_" + ndate + ".txt";
-            document.body.appendChild(a);
-            a.click();
-            window.URL.revokeObjectURL(a.href);
-            document.body.removeChild(a);
-          } else {
-            return;
-          }
-        }
       }
     </script>
     <script>
@@ -1557,20 +2073,18 @@
           document.getElementById("notfound").style.display = "none";
           var prepostpre = JSON.parse(JSON.parse(reslt[0].TODhtm));
           var inHTML = atob(prepostpre.TODContent);
-          document.getElementById("previewPost").innerHTML = decodeURIComponent(
-            unescape(inHTML)
+          document.getElementById("previewPost").innerHTML = unescape(
+            decodeURIComponent(inHTML),
           );
           document.getElementById("previewPostTime").innerHTML =
             reslt[0].TimeStamp;
           document.getElementById("previewPostId").innerHTML =
             "ID: " + JSON.parse(reslt[0].TODidd);
           document.getElementById("previewPostCreator").innerHTML = JSON.parse(
-            reslt[0].TODAddmin
+            reslt[0].TODAddmin,
           );
           document.getElementById("avthumb").innerHTML =
-            '<img width="60px" src="' +
-            prepostpre.AVPic +
-            '" style="padding:4px;">';
+            '<img src="' + prepostpre.AVPic + '" style="padding:4px;">';
           document.getElementById("previewPostTitle").innerHTML =
             prepostpre.TODTitle;
           document.getElementById("loaderTD").style.visibility = "hidden";
@@ -1605,7 +2119,7 @@
           document.getElementById("profilePic").innerHTML =
             '<img width="140px" src="' + z + '">';
           document.getElementById("toddoc").value = JSON.stringify(
-            $("form").serializeObject()
+            $("form").serializeObject(),
           );
         });
       });
@@ -1629,7 +2143,7 @@
             document.execCommand(
               "inserttext",
               false,
-              event.clipboardData.getData("text/plain")
+              event.clipboardData.getData("text/plain"),
             );
           });
       }
@@ -1638,11 +2152,11 @@
       $("#genK").keyup(function (e) {
         var strongRegex = new RegExp(
           "^(?=.{8,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$",
-          "g"
+          "g",
         );
         var mediumRegex = new RegExp(
           "^(?=.{7,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$",
-          "g"
+          "g",
         );
         var enoughRegex = new RegExp("(?=.{4,}).*", "g");
         if (false == enoughRegex.test($(this).val())) {
@@ -1741,10 +2255,10 @@
         var eqnv = $("#eqntst").val();
         formatDoc(
           "insertHTML",
-          `<math-field class="mftd">` + eqnv + `</math-field><br>`
+          `<math-field class="mftd">` + eqnv + `</math-field><br>`,
         );
         window.addEventListener("DOMContentLoaded", () =>
-          MathLive.renderMathInDocument()
+          MathLive.renderMathInDocument(),
         );
       }
       mf.addEventListener("beforeinput", (ev) => {
@@ -1756,7 +2270,7 @@
     </script>
     <script>
       window.addEventListener("DOMContentLoaded", () =>
-        MathLive.renderMathInDocument()
+        MathLive.renderMathInDocument(),
       );
       mf.addEventListener("focus", () => mathVirtualKeyboard.show());
       document.body.addEventListener("click", () => mathVirtualKeyboard.hide());
@@ -1789,13 +2303,12 @@
         if (tddraft) {
           try {
             if (tddraft == "" || tddraft == "JTNDYnIlM0U=") {
-              document.getElementById(
-                "textBox"
-              ).innerHTML = `<p onclick=" document.getElementById('textBox').innerHTML='' ;" style="height:200px;">Start with a topic....</p>`;
+              document.getElementById("textBox").innerHTML =
+                `<p onclick=" document.getElementById('textBox').innerHTML='' ;" style="height:200px;">Start with a topic....</p>`;
             } else {
               document.getElementById("textBox").innerHTML = "";
               document.getElementById("textBox").innerHTML = unescape(
-                atob(tddraft)
+                decodeURIComponent(atob(tddraft)),
               );
             }
           } catch (error) {
