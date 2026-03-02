@@ -385,7 +385,12 @@ math-field:active {
     display: none !important;
   }
 }
-
+.todBody .mftd {
+  width: auto;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
 .form-control {
   margin-bottom: 6px;
   width: 100%;
