@@ -1565,6 +1565,7 @@
         tdrvmdl.style.display = "none";
         const editrbx = document.getElementById("textBox");
         editrbx.innerHTML = "";
+        editrbx.scrollTop = "0";
         editrbx.innerHTML = unescape(decodeURIComponent(atob(htm.TODContent)));
         const updttdbtn = document.getElementById("uptodnw");
         const discrduptd = document.getElementById("discrtdnw");

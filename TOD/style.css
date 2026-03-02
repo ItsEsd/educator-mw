@@ -379,10 +379,10 @@ math-field:active {
 
 @media not (pointer: coarse) {
   .mftd::part(virtual-keyboard-toggle) {
-    display: none;
+    display: none !important;
   }
   .mftd::part(menu-toggle) {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -409,6 +409,9 @@ input:valid {
   color: white;
   margin-left: 0px;
   outline: none !important;
+}
+#preTD .ML__virtual-keyboard-toggle {
+  display: none !important;
 }
 #topictod {
   font-size: 16px;
