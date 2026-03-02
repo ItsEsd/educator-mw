@@ -463,17 +463,37 @@
   text-align: justify;
 }
 #info {
-  margin-bottom: 10px;
-}
-#info,
-#preFoot {
-  float: left;
   background-color: #e6e6e6;
   border-radius: 10px;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px;
+  padding-left: 5px;
+}
+#info h5 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.05rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#preFoot {
+  background-color: #e6e6e6;
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  margin-bottom: 10px;
+  margin-top: 20px;
 }
 #previewPostTitle {
   padding-left: 10px;
+  margin-top: 15px;
 }
 #preview {
   top: 0px;
@@ -535,11 +555,11 @@ math-field:active {
   margin-top: 10px;
   padding: 8px;
 }
-.tx {
-  display: inline-block;
-  padding: 5px;
+#avthumb img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
-
 #avthumb:hover {
   -webkit-transform: scale(1.02);
   transform: scale(1.02);
@@ -1845,6 +1865,11 @@ ul.icons li:last-child {
 
 /* Mobile devices (up to 600px wide) */
 @media (max-width: 1000px) {
+  #avthumb img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
   #examportalbtn {
     font-size: 14px;
   }
