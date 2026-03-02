@@ -955,6 +955,11 @@ a.ApShare:hover,
   .notification-dialog button {
     width: 90%;
   }
+  #avthumb img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
 }
 @media screen and (max-width: 600px) {
   #toolBar2 {
