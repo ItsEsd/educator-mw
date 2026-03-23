@@ -1,5 +1,7 @@
 * {
+  scrollbar-width: thin;
   scroll-behavior: smooth;
+  scrollbar-color: #ffffff #1a2da500;
 }
 body {
   overflow-y: auto;
@@ -36,24 +38,6 @@ width ::-webkit-scrollbar {
   width: 6px;
 }
 
-::-webkit-scrollbar-track {
-  background: #ffffff83;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #1a2ca5;
-  border-radius: 2px;
-  border: 1.5px solid #ffffff83;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #0d0672;
-}
-* {
-  scrollbar-width: thin;
-  scroll-behavior: smooth;
-  scrollbar-color: #ffffff #1a2da500;
-}
 .telemhead {
   height: 50px;
   display: flex;
@@ -72,7 +56,7 @@ width ::-webkit-scrollbar {
 #loader {
   position: absolute;
   left: 50%;
-  top: 130px;
+  top: 25vh;
   z-index: 1;
   width: 60px;
   height: 60px;
@@ -316,6 +300,11 @@ a:hover {
 #inm1 {
   max-width: 820px;
   min-height: 120px;
+  text-align: left;
+}
+#vidcontainer {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 #inm2 {
   background-color: #fff;

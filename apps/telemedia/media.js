@@ -10,7 +10,7 @@ function telemed() {
   $("#inm1,#inm2,#vid").empty();
   $("#inm1holder,#inm2,#vid").hide();
   $(".box").css("background-color", "#000");
-  document.getElementById("loader_in").style.visibility = "visible";
+  document.getElementById("loader_in").style.display = "block";
   document.getElementById("showhtml").style.display = "block";
   var url = rB + rShow + "?callback=getData&action=rdtmin";
   var request = jQuery.ajax({
@@ -168,8 +168,8 @@ function getData(e) {
   //   var inqt = JSON.parse(data[0].ExamInfo);
   //   document.getElementById("exinfoin").innerHTML += '<div class="exinf">' + inqt.exminfo + '</div> ';
   //   }
-  $(".box").css("background-color", "#6d0404");
-  document.getElementById("loader_in").style.visibility = "hidden";
+  $(".box").css("background-color", "#4c4c4c");
+  document.getElementById("loader_in").style.display = "none";
 
   $("#inm1holder,#inm2,#vid").show();
   document.body.style.overflowY = "auto";
