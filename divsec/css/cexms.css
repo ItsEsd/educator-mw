@@ -1102,6 +1102,13 @@
 #allexamslst .closeot:hover {
   opacity: 0.7;
 }
+#allexamslst h2 span {
+  top: 0px;
+  right: 15px;
+  position: fixed;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
 #examdashInfo {
   padding: 20px;
   margin-top: 70px;
