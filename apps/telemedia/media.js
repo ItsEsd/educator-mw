@@ -59,14 +59,7 @@ function getData(e) {
   var dataset = db + 1;
   var data = nwone[dataset];
   var innews = JSON.parse(data[0].InMedia1);
-  document.getElementById("inm1").innerHTML =
-    '<div class="inm1con"><p style="color:black;" class="telenewsblock">' +
-    innews.conTitle1 +
-    '<a target="_blank" class="readmore" href="' +
-    innews.conLink1 +
-    '">' +
-    innews.conSiteName1 +
-    "</a> </p><hr></div>";
+
   document.getElementById("inm1").innerHTML +=
     '<div class="inm1confrm"><p class="telenewsblock"><iframe class="frmdcon" src="https://telemedia.mastrowall.com/qrcontent/index.html" allowfullscreen></iframe></p></div>';
   var styles = {
