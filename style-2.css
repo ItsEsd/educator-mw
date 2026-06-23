@@ -39,6 +39,7 @@
   cursor: pointer;
   color: #1a2ca5;
   background-color: white;
+  border-radius: 4px;
 }
 .refreshlist:hover {
   border: 1px solid #ffffff;
@@ -306,6 +307,8 @@
   width: 46%;
   color: black;
   border-radius: 8px;
+  font-size: 18px;
+  font-weight: 550;
 }
 
 .showexbtn:focus,
@@ -397,6 +400,8 @@
   border: 2px solid #d71e099e;
   color: black;
   border-radius: 5px;
+  font-size: 18px;
+  font-weight: 550;
 }
 
 #sttodedu {

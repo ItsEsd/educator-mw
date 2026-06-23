@@ -1219,6 +1219,7 @@ a:hover {
   display: inline-block;
   box-shadow: 0px 2px 6px 0px #1a2ca5;
   background-color: white;
+  border-radius: 8px;
 }
 #clsrmalst {
   padding-top: 30px;
@@ -1232,9 +1233,11 @@ a:hover {
 }
 #apprvst {
   background-image: linear-gradient(-45deg, green, white);
+  border-radius: 8px;
 }
 #waitst {
   background-image: linear-gradient(-45deg, red, white);
+  border-radius: 8px;
 }
 #clsrmalst h5 {
   padding-top: 5px;
@@ -1251,6 +1254,8 @@ a:hover {
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
 }
 #allstud-one a,
 #allstud-two a {
