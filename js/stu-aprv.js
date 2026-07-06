@@ -116,7 +116,7 @@ function srcstid(stidsrc) {
       });
 
       container.style.backgroundImage = "none";
-    }
+    },
   );
 }
 
@@ -285,19 +285,21 @@ function ldallstaprv(e) {
     }
   }
 }
+var currentVisibleIds = [];
+var statusCheckInterval = null;
 
 function srcstidapprv(stidsrc) {
   if (!Array.isArray(stidsrc) || stidsrc.length === 0) {
     console.warn("No approved student IDs provided.");
     return;
   }
-
+  currentVisibleIds = stidsrc;
   const ur1 = "https://script.google.com/macros/s/";
   const ur2 =
     "AKfycbwUXXLNfbjlRQxPPe2sT2MIqZUyLnVO26YSa9GM9DDiQGQiqtsoDRLz5NMkyYso1xkKFA";
-  const url = `${ur1}${ur2}/exec?action=stsrclist&stidArray=${encodeURIComponent(
-    stidsrc.join(",")
-  )}`;
+  const url = `${ur1}${ur2}/exec?action=stsrclist&stidArray=${encodeURIComponent(stidsrc.join(","))}`;
+
+  if (statusCheckInterval) clearInterval(statusCheckInterval);
 
   $.getJSON(
     "https://api.amrit-corp.com/_header/gate/mastrowall/?target_url=" +
@@ -310,12 +312,18 @@ function srcstidapprv(stidsrc) {
         if (stidsrc.includes(record.STid)) {
           container.innerHTML += `
             <div class="stproclroom">
-              <span class="stnametitle">${record.FName} ${record.LName}</span>
+              <span class="stnametitle">
+                ${record.FName} ${record.LName}
+                
+              </span>
               <img class="stpropic" src="${record.ProfilePic}" alt="${record.FName}">
               <button onclick="rmvstclsrm(this);" class="rmvstbtn btn btn-light">Remove</button>
-              <br>&#8226; ${record.Class} &#8226; ${record.Board}
-              <br>&#8226; <a href="mailto:${record.Email}">${record.Email}</a>
-              &#8226; <a href="tel:${record.CountryCode}${record.PhoneNo}">+${record.CountryCode} ${record.PhoneNo}</a>
+              <div id="badge-${record.STid}" style="display: block; margin-left: 10px; font-size: 14px;font-weight:400">
+                  <span class='status-badge' style='color: #95a5a6;'>Checking...</span>
+                </div>
+              <br>• ${record.Class} • ${record.Board}
+              <br>• <a href="mailto:${record.Email}">${record.Email}</a>
+              • <a href="tel:${record.CountryCode}${record.PhoneNo}">+${record.CountryCode} ${record.PhoneNo}</a>
             </div>
             <input class="strmvid" style="display: none;" value="${record.STid}"/>
           `;
@@ -330,9 +338,64 @@ function srcstidapprv(stidsrc) {
         refreshBtn.style.opacity = "1";
         refreshBtn.style.pointerEvents = "auto";
       }
-    }
+
+      updateLiveStatuses();
+      statusCheckInterval = setInterval(updateLiveStatuses, 5000);
+    },
   ).fail(function () {
     console.error("Failed to load approved student data.");
+  });
+}
+
+function updateLiveStatuses() {
+  if (currentVisibleIds.length === 0) return;
+
+  var nodeServerUrl =
+    "https://sse-stat.amrit-corp.com/api/status?ids=" +
+    encodeURIComponent(currentVisibleIds.join(","));
+
+  $.getJSON(nodeServerUrl, function (statusData) {
+    currentVisibleIds.forEach(function (id) {
+      var badgeContainer = document.getElementById("badge-" + id);
+
+      if (badgeContainer) {
+        var isOnline = statusData[id] === "online";
+
+        badgeContainer.innerHTML = isOnline
+          ? "<span class='status-badge' style='color: #2ecc71;font-weight:500'>🟢 Online</span>"
+          : "<span class='status-badge' style='color: #95a5a6;'>🔴 Offline</span>";
+      }
+    });
+  }).fail(function () {
+    console.log("Failed to connect status server.");
+  });
+}
+
+function broadcastToVisibleStudents(eventMessage, client, action) {
+  if (!currentVisibleIds || currentVisibleIds.length === 0) {
+    console.warn("No visible students on screen to send events to.");
+    return;
+  }
+
+  var broadcastAbsoluteUrl =
+    "https://sse-stat.amrit-corp.com/api/event-broadcast/";
+
+  $.ajax({
+    url: broadcastAbsoluteUrl,
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({
+      clientIds: currentVisibleIds,
+      message: eventMessage,
+      sender: client,
+      action: action,
+    }),
+    success: function (response) {
+      console.warn("Broadcast results:", response.summary);
+    },
+    error: function (xhr, status, error) {
+      console.error("Failed to execute educator broadcast:", error);
+    },
   });
 }
 

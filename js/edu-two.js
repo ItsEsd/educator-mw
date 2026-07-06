@@ -328,6 +328,62 @@ function ctrlqcmnt(e) {
   totlcmnt((cmntlen - 1) / 6);
   var nmF = document.getElementById("mednam").innerText;
   if (cmntlen > 6) {
+    broadcastToVisibleStudents(
+      "💬 Classroom Comments Updated",
+      userClient,
+      "classroom_comment",
+    );
+    $("#divcmntbx").empty();
+    for (var k = 0; k <= cmntlen - 1; k += 6) {
+      let content = cmelm[k + 5];
+      try {
+        if (content && content !== "undefined") {
+          content = JSON.parse(content);
+        } else {
+          return;
+        }
+      } catch (err) {
+        content = "[broken comment]";
+      }
+      comlem.innerHTML +=
+        '<center><div class="edcmnt"><span class="delcmnted" onclick="deletecmnted(this)">Delete</span><input class="cmntidval" style="display:none;"value="' +
+        cmelm[k] +
+        '"><div class="cmntinfo"><p class="cmmntor"><span class="cmntrimg"><img src="' +
+        cmelm[k + 4] +
+        '"></span><span class="cmnttrnm">' +
+        cmelm[k + 3] +
+        '</span></p><p class="cmnttim">' +
+        cmelm[k + 2] +
+        "</p></div>" +
+        '<div class="cmntcon">' +
+        content +
+        "</div>" +
+        "</div><hr><center>";
+      if (cmelm[k + 3] != nmF) {
+        document
+          .getElementsByClassName("edcmnt")
+          [k / 6].classList.add("stcmnt");
+      }
+    }
+  } else {
+    comlem.innerHTML =
+      '<center><div class="nocmntedc"><svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-exclamation-circle" viewBox="0 0 16 16">' +
+      '<path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>' +
+      '<path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/></svg>' +
+      "<br><h5>Empty</h5></div></center>";
+  }
+}
+
+function ctrlqcmntrfsh(e) {
+  document.getElementById("rfrshcmtsv").style.animation = "none";
+  $("#rfshcmntbx").prop("disabled", false);
+  $("#rfshcmntbx").css("pointer-events", "auto").css("opacity", "1");
+  var cmelm = e.result.split("{-/},");
+  var cmntlen = cmelm.length;
+  var comlem = document.getElementById("divcmntbx");
+  totlcmnt((cmntlen - 1) / 6);
+  var nmF = document.getElementById("mednam").innerText;
+  if (cmntlen > 6) {
     $("#divcmntbx").empty();
     for (var k = 0; k <= cmntlen - 1; k += 6) {
       let content = cmelm[k + 5];
@@ -406,7 +462,12 @@ function rfshcmnt() {
   var ur2 =
     "AKfycbz0Okd0T9pMS-Q4nLUstxONTlswNXbKu4qUud4tfge6_ToM0uQZQxda5SrpcRPNUsCKrA";
   var url =
-    ur1 + ur2 + "/exec" + "?callback=ctrlqcmnt&cdid=" + edid + "&action=rcmnt";
+    ur1 +
+    ur2 +
+    "/exec" +
+    "?callback=ctrlqcmntrfsh&cdid=" +
+    edid +
+    "&action=rcmnt";
   var request = $.ajax({
     crossDomain: true,
     url: url,

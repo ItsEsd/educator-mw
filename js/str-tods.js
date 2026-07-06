@@ -107,6 +107,7 @@ function ctrlqsttd(e) {
     document.getElementById("renotitod").innerHTML = "TOD not found!";
   } else if (e.result == "TOD Found!") {
     document.getElementById("renotitod").innerHTML = "TOD stored!";
+    broadcastToVisibleStudents("📃 TOD Store Updated", userClient, "edu_tod");
   }
   setTimeout(function () {
     jQuery("#renotitod").fadeOut("fast");

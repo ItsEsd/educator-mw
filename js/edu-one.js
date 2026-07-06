@@ -232,6 +232,9 @@ function inwallEdu() {
   }
 }
 
+let platformAct = null;
+let userClient = null;
+
 function ctrlqeduin(e) {
   var res = e.records;
   if (res != "ID not found!") {
@@ -267,6 +270,9 @@ function ctrlqeduin(e) {
       "&#8226; Email: " +
       res[0].Email +
       "</span></div>";
+
+    startEducatorStream(res[0].CardId);
+    userClient = res[0].FName + " " + res[0].LName;
     if (res[0].ExternalNoteId != 0) {
       document.getElementById("notes").innerHTML =
         '<a style="color:black;text-decoration:none;"target="_blank" href="' +
@@ -968,6 +974,11 @@ function ctrlqaddtod(e) {
     document.getElementById("todconedit").innerHTML =
       ` <p onclick="document.getElementById('todconedit').innerHTML='';" style="height:200px;">Topic briefing..</p>`;
     live_tod();
+    broadcastToVisibleStudents(
+      "📝 Topic of The Day Updated",
+      userClient,
+      "topicoftheday",
+    );
   } else {
     document.getElementById("uptday").disabled = false;
     document.getElementById("previewt").disabled = true;
