@@ -179,6 +179,13 @@ function ctrlqaddst() {
 }
 
 function ctrlqaddedu() {
+  var studid = $("#stuid").val();
+  broadcastToIndvStudent(
+    studid,
+    "Classroom Request Approved ✅",
+    userClient,
+    "student_approved",
+  );
   var p = $("#posof").val();
   var z = document.getElementsByClassName("addstbtn");
   z[p].innerHTML = "Approved";
@@ -223,6 +230,13 @@ function rmvstuwait(label) {
 }
 
 function ctrlqrmvwaitst() {
+  var studid = $("#stuid").val();
+  broadcastToIndvStudent(
+    studid,
+    "Classroom Request Cancelled ⚠️",
+    userClient,
+    "student_wait_removed",
+  );
   document.getElementById("allstud-one").style.pointerEvents = "auto";
   allstudwait();
 }
@@ -399,6 +413,33 @@ function broadcastToVisibleStudents(eventMessage, client, action) {
   });
 }
 
+function broadcastToIndvStudent(stuIam, eventMessage, client, action) {
+  if (!Array.isArray(stuIam)) {
+    stuIam = [stuIam];
+  }
+
+  var broadcastAbsoluteUrl =
+    "https://sse-stat.amrit-corp.com/api/event-broadcast/";
+
+  $.ajax({
+    url: broadcastAbsoluteUrl,
+    type: "POST",
+    contentType: "application/json",
+    data: JSON.stringify({
+      clientIds: stuIam,
+      message: eventMessage,
+      sender: client,
+      action: action,
+    }),
+    success: function (response) {
+      console.warn("Broadcast results:", response.summary);
+    },
+    error: function (xhr, status, error) {
+      console.error("Failed to execute educator broadcast:", error);
+    },
+  });
+}
+
 function rmvstclsrm(label) {
   $("#ntfyrmv").show();
   var click = 1;
@@ -451,4 +492,11 @@ function ctrlqrmvst() {
   document.getElementById("rmvstclrm").innerHTML = "Remove";
   document.getElementById("rmvstclrm").disabled = false;
   allstudapprv();
+  var studid = $("#stuid").val();
+  broadcastToIndvStudent(
+    studid,
+    "Removed From Classroom ⚠️",
+    userClient,
+    "student_removed",
+  );
 }

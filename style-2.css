@@ -645,7 +645,7 @@ math-field:active {
   float: right;
   margin-left: 4px;
   border: none;
-  color: white;
+  color: white !important;
   background-color: #f88b8b;
   border-radius: 4px;
 }
@@ -653,9 +653,9 @@ math-field:active {
   background-color: #f86161;
 }
 .rmvwait svg {
-  color: white;
-  width: 18px;
-  height: 18px;
+  color: white !important;
+  width: 22px;
+  height: 22px;
 }
 
 .contentheader {
@@ -2388,6 +2388,10 @@ ul.icons li:last-child {
   border-radius: 4px;
   cursor: pointer;
   font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
 }
 
 #modal-notification-list {

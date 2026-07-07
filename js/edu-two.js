@@ -364,6 +364,10 @@ function ctrlqcmnt(e) {
           .getElementsByClassName("edcmnt")
           [k / 6].classList.add("stcmnt");
       }
+      const div = document.getElementById("divcmntbx");
+      if (div) {
+        div.scrollTop = div.scrollHeight;
+      }
     }
   } else {
     comlem.innerHTML =
@@ -415,6 +419,10 @@ function ctrlqcmntrfsh(e) {
           .getElementsByClassName("edcmnt")
           [k / 6].classList.add("stcmnt");
       }
+    }
+    const div = document.getElementById("divcmntbx");
+    if (div) {
+      div.scrollTop = div.scrollHeight;
     }
   } else {
     comlem.innerHTML =
