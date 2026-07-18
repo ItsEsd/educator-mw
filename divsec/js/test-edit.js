@@ -1130,9 +1130,9 @@ function ctrlqset(e) {
   $("#falsesecback-two").hide();
   document.getElementById("loader-clrq").style.display = "none";
 }
-// $("#crtnewexid").click(function () {
-//   createnewexid();
-// });
+$("#crtnewexid").click(function () {
+  createnewexid();
+});
 function createnewexid() {
   document.getElementById("crtnewexid").disabled = true;
   var d = new Date();
