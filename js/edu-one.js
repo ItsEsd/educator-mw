@@ -1413,7 +1413,7 @@ $(document).ready(function () {
 
 var optionsS = {
   key: "rzp_live_LTmvi7swL9EliZ",
-  amount: "360000",
+  amount: "210000",
   currency: "INR",
   name: "M A S T R O W A L L",
   image:
